@@ -62,6 +62,11 @@ header > ul.icons > li > i {
     background-color: transparent;
 }
 
+footer {
+    padding: 1rem;
+    background-color: #3342;
+}
+
 nav {
     position: fixed;
     top: 4rem;
@@ -105,26 +110,6 @@ nav > a > i {
     background-color: transparent;
 }
 
-.hasNav {
-    margin-left: 0;
-}
-
-div.border {
-    border: 1px solid #3343;
-}
-
-div.center {
-    text-align: center;
-}
-
-div.left {
-    text-align: left;
-}
-
-div.right {
-    text-align: right;
-}
-
 p {
     font-size: 1rem;
     color: #334a;
@@ -161,6 +146,12 @@ h2 {
 
 h1 {
     font-size: 5rem;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #3342;
+    margin: 1rem 0;
 }
 
 button,
@@ -410,6 +401,182 @@ div.chip > img {
     margin: -0.3rem 0.5rem -0.6rem -0.7rem;
 }
 
+div.grid {
+    width: 90%;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.grid div.row {
+    position: relative;
+    width: 100%;
+}
+
+div.grid div.row > [class^='col-'] {
+    float: left;
+    min-height: 1rem;
+    margin: 0.5% 0.166%;
+    color: #334A;
+}
+
+div.grid div.row > div.col-1,
+div.grid div.row > div.col-2,
+div.grid div.row > div.col-3,
+div.grid div.row > div.col-4,
+div.grid div.row > div.col-5,
+div.grid div.row > div.col-6,
+div.grid div.row > div.col-7,
+div.grid div.row > div.col-8,
+div.grid div.row > div.col-9,
+div.grid div.row > div.col-10,
+div.grid div.row > div.col-11,
+div.grid div.row > div.col-12 {
+    width: 100%;
+}
+
+div.grid div.row > div.col-1-sm {
+    width: 8.002%;
+}
+
+div.grid div.row > div.col-2-sm {
+    width: 16.333%;
+}
+
+div.grid div.row > div.col-3-sm {
+    width: 24.666%;
+}
+
+div.grid div.row > div.col-4-sm {
+    width: 33%;
+}
+
+div.grid div.row > div.col-5-sm {
+    width: 41.333%;
+}
+
+div.grid div.row > div.col-6-sm {
+    width: 49.666%;
+}
+
+div.grid div.row > div.col-7-sm {
+    width: 58%;
+}
+
+div.grid div.row > div.col-8-sm {
+    width: 66.333%;
+}
+
+div.grid div.row > div.col-9-sm {
+    width: 74.666%;
+}
+
+div.grid div.row > div.col-10-sm {
+    width: 83%;
+}
+
+div.grid div.row > div.col-11-sm {
+    width: 91.333%;
+}
+
+div.grid div.row > div.col-12-sm {
+    width: 99.7%;
+}
+
+div.row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+div.gallery {
+    width: 100%;
+    display: inline-block;
+}
+
+div.gallery > div.item {
+    overflow: hidden;
+    border: 2px solid transparent;
+    float: left;
+    cursor: pointer;
+    margin: 0.1rem;
+    width: calc(25% - 0.2rem);
+    position: relative;
+}
+
+div.gallery.gap-1 > div.item {
+    margin: 0.1rem;
+    width: calc(25% - 0.2rem);
+}
+
+div.gallery.gap-2 > div.item {
+    margin: 0.1rem;
+    width: calc(25% - 0.2rem);
+}
+
+div.gallery.gap-3 > div.item {
+    margin: 0.1rem;
+    width: calc(25% - 0.2rem);
+}
+
+div.gallery.gap-1 > div.item,
+div.gallery.two.gap-1 > div.item {
+    margin: 0.1rem;
+    width: calc(50% - 0.2rem);
+}
+
+div.gallery.two.gap-2 > div.item {
+    margin: 0.1rem;
+    width: calc(50% - 0.2rem);
+}
+
+div.gallery.two.gap-3 > div.item {
+    margin: 0.1rem;
+    width: calc(50% - 0.2rem);
+}
+
+div.gallery.six > div.item,
+div.gallery.six.gap-1 > div.item {
+    margin: 0.1rem;
+    width: calc(16.666% - 0.2rem);
+}
+
+div.gallery.six.gap-2 > div.item {
+    margin: 0.1rem;
+    width: calc(16.666% - 0.2rem);
+}
+
+div.gallery.six.gap-3 > div.item {
+    margin: 0.1rem;
+    width: calc(16.666% - 0.2rem);
+}
+
+div.gallery > div.item:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+div.gallery > div.item:hover {
+    border: 2px solid #3342;
+}
+
+div.gallery > div.item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+}
+
+div.gallery > div.item > img.narrower {
+    width: auto;
+    height: 100%;
+}
+
 .pv-1 {
     padding-top: 1rem;
 }
@@ -434,96 +601,32 @@ div.chip > img {
     padding-top: 13rem;
 }
 
-.grid {
-    width: 90%;
-    margin-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.grid .row {
-    position: relative;
-    width: 100%;
-}
-
-.grid .row [class^='col-'] {
-    float: left;
-    min-height: 1rem;
-    margin: 0.5% 0.166%;
-    color: #334A;
-}
-
-.grid .row .col-1,
-.grid .row .col-2,
-.grid .row .col-3,
-.grid .row .col-4,
-.grid .row .col-5,
-.grid .row .col-6,
-.grid .row .col-7,
-.grid .row .col-8,
-.grid .row .col-9,
-.grid .row .col-10,
-.grid .row .col-11,
-.grid .row .col-12 {
-    width: 100%;
-}
-
-.grid .row .col-1-sm {
-    width: 8.002%;
-}
-
-.grid .row .col-2-sm {
-    width: 16.333%;
-}
-
-.grid .row .col-3-sm {
-    width: 24.666%;
-}
-
-.grid .row .col-4-sm {
-    width: 33%;
-}
-
-.grid .row .col-5-sm {
-    width: 41.333%;
-}
-
-.grid .row .col-6-sm {
-    width: 49.666%;
-}
-
-.grid .row .col-7-sm {
-    width: 58%;
-}
-
-.grid .row .col-8-sm {
-    width: 66.333%;
-}
-
-.grid .row .col-9-sm {
-    width: 74.666%;
-}
-
-.grid .row .col-10-sm {
-    width: 83%;
-}
-
-.grid .row .col-11-sm {
-    width: 91.333%;
-}
-
-.grid .row .col-12-sm {
-    width: 99.7%;
-}
-
-.row::after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
 .hideOnSmall {
     display: none;
+}
+
+.paddingless {
+    padding: 0;
+}
+
+.hasNav {
+    margin-left: 0;
+}
+
+.border {
+    border: 1px solid #3343;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
 }
 
 @media only screen and (min-width: 33.75rem) {
@@ -532,56 +635,56 @@ div.chip > img {
 
 @media only screen and (min-width: 45rem) {
     /* 720px */
-    .grid .row .col-1 {
+    div.grid div.row > div.col-1 {
         width: 8.002%;
     }
 
-    .grid .row .col-2 {
+    div.grid div.row > div.col-2 {
         width: 16.333%;
     }
 
-    .grid .row .col-3 {
+    div.grid div.row > div.col-3 {
         width: 24.666%;
     }
 
-    .grid .row .col-4 {
+    div.grid div.row > div.col-4 {
         width: 33%;
     }
 
-    .grid .row .col-5 {
+    div.grid div.row > div.col-5 {
         width: 41.333%;
     }
 
-    .grid .row .col-6 {
+    div.grid div.row > div.col-6 {
         width: 49.666%;
     }
 
-    .grid .row .col-7 {
+    div.grid div.row > div.col-7 {
         width: 58%;
     }
 
-    .grid .row .col-8 {
+    div.grid div.row > div.col-8 {
         width: 66.333%;
     }
 
-    .grid .row .col-9 {
+    div.grid div.row > div.col-9 {
         width: 74.666%;
     }
 
-    .grid .row .col-10 {
+    div.grid div.row > div.col-10 {
         width: 83%;
     }
 
-    .grid .row .col-11 {
+    div.grid div.row > div.col-11 {
         width: 91.333%;
     }
 
-    .grid .row .col-12 {
+    div.grid div.row > div.col-12 {
         width: 99.7%;
     }
 
     .hideOnSmall {
-        display: block;
+        display: initial;
     }
 
     .hideOnLarge,
@@ -603,6 +706,66 @@ div.chip > img {
     button,
     a.button {
         width: auto;
+    }
+
+    div.gallery > div.item {
+        margin: 0.1rem;
+        width: calc(25% - 0.2rem);
+    }
+
+    div.gallery.gap-1 > div.item {
+        margin: 0.3rem;
+        width: calc(25% - 0.6rem);
+    }
+
+    div.gallery.gap-2 > div.item {
+        margin: 0.5rem;
+        width: calc(25% - 1rem);
+    }
+
+    div.gallery.gap-3 > div.item {
+        margin: 1rem;
+        width: calc(25% - 2rem);
+    }
+
+    div.gallery.two > div.item {
+        margin: 0.1rem;
+        width: calc(50% - 0.2rem);
+    }
+
+    div.gallery.two.gap-1 > div.item {
+        margin: 0.3rem;
+        width: calc(50% - 0.6rem);
+    }
+
+    div.gallery.two.gap-2 > div.item {
+        margin: 0.5rem;
+        width: calc(50% - 1rem);
+    }
+
+    div.gallery.two.gap-3 > div.item {
+        margin: 1rem;
+        width: calc(50% - 2rem);
+    }
+
+    div.gallery.six > div.item {
+        margin: 0.1rem;
+        width: calc(16.666% - 0.2rem);
+    }
+
+    div.gallery.six.gap-1 > div.item {
+        margin: 0.3rem;
+        width: calc(16.666% - 0.6rem);
+    }
+
+    div.gallery.six.gap-2 > div.item {
+        margin: 0.5rem;
+        width: calc(16.666% - 1rem);
+    }
+
+    div.gallery.six.gap-3 > div.item {
+        margin: 1rem;
+        width: calc(16.666% - 2rem);
     }
 }
 

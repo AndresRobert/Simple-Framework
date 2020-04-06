@@ -23,7 +23,9 @@
     <a href="#cards"><i class="fas fa-address-card"></i>Cards</a>
     <a href="#chips"><i class="fas fa-minus"></i>Chips</a>
     <a href="#tables"><i class="fas fa-table"></i>Tables</a>
-    <a href="#tables"><i class="fas fa-window-restore"></i>Dialog</a>
+    <a href="#dialog"><i class="fas fa-window-restore"></i>Dialog</a>
+    <a href="#typo"><i class="fas fa-heading"></i>Typo</a>
+    <a href="#gallery"><i class="fas fa-images"></i>Gallery</a>
 </nav>
 <main class="pv-4 hasNav">
     <div id="grid" class="grid">
@@ -240,14 +242,91 @@
         <h3>Dialog</h3>
         <div class="row">
             <div class="col-12">
-                <button onclick="$.dialog('Dialog body very, very, long text example for testing purposes', { title: 'Dialog Header', buttons: [ { text: 'Action 1', id: 'action1' }, { text: 'Action 2', id: 'action2' } ] })">Show Dialog</button>
+                <button onclick="
+                    $.dialog(
+                        'Dialog body very, very, long text example for testing purposes',
+                        {
+                            title: 'Dialog Header',
+                            buttons: [
+                                { text: 'Action 1', id: 'action1' },
+                                { text: 'Action 2', id: 'action2' }
+                            ]
+                        })">Show Dialog</button>
+            </div>
+        </div>
+    </div>
+    <div id="typo" class="grid">
+        <h3>Typo & Dividers</h3>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="paddingless">Header 1</h1>
+                <h2 class="paddingless">Header 2</h2>
+                <h3 class="paddingless">Header 3</h3>
+                <h4 class="paddingless">Header 4</h4>
+                <h5 class="paddingless">Header 5</h5>
+                <h6 class="paddingless">Header 6</h6>
+                <p>Paragraph</p>
+                <hr>
+                <p>Divider</p>
+            </div>
+        </div>
+    </div>
+    <div id="gallery" class="grid">
+        <h3>Image Gallery</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="gallery">
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example2.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="gallery six">
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example2.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="gallery two">
+                    <div class="item">
+                        <img src="src/img/example.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="src/img/example2.jpg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </main>
-<aside>aside content</aside>
-<footer class="hasNav">
-
+<footer class="hasNav right">
+Acode Design & Development
 </footer>
 <script src="src/acode.0.1.0.js?v=1"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>

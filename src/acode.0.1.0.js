@@ -5,6 +5,10 @@ $ = sel => {
     return el.length === 1 ? el[0] : el;
 };
 
+$$ = sel => {
+    return document.querySelectorAll(sel);
+};
+
 $.ready = fn => {
     if (document.readyState !== 'loading') fn();
     else document.addEventListener('DOMContentLoaded', fn);
@@ -309,10 +313,29 @@ $.init = component => {
                 });
             });
             break;
+        case 'gallery':
+            let galleries = $$('.gallery');
+            galleries.forEach((gallery) => {
+                let images = gallery.find('img');
+                images.forEach((item, index, list) => {
+                    let _height = item.height;
+                    let _width = item.width;
+                    if (_height < _width) {
+                        item.addClass('narrower');
+                    }
+                    item.on('click', e => {
+                        list.forEach(link => { link.removeClass('active') });
+                        e.target.addClass('active');
+                        $('nav').removeClass('active');
+                    });
+                });
+            });
+            break;
         default:
     }
 };
 
 $.ready(() => {
     $.init('nav');
+    $.init('gallery');
 });
