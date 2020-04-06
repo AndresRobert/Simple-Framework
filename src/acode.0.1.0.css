@@ -519,7 +519,7 @@ div.gallery.gap-3 > div.item {
     width: calc(25% - 0.2rem);
 }
 
-div.gallery.gap-1 > div.item,
+div.gallery.two > div.item,
 div.gallery.two.gap-1 > div.item {
     margin: 0.1rem;
     width: calc(50% - 0.2rem);
