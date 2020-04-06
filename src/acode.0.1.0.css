@@ -1,0 +1,611 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #334;
+    background-color: #FFF;
+    transition: all 100ms ease-in-out 0ms;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 0.5rem 0;
+    position: fixed;
+    width: 100%;
+    height: 4rem;
+    box-shadow: 0 0.5rem 1rem -0.5rem #3344;
+    display: inline-flex;
+    user-select: none;
+    line-height: 3rem;
+    z-index: 102;
+}
+
+header img.logo {
+    height: 2.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+header i.menu {
+    font-size: 1.4rem;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+header > ul.icons {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.3rem;
+}
+
+header > ul.icons > li {
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.3rem;
+    border-radius: 50%;
+    line-height: 2.5rem;
+    cursor: pointer;
+}
+
+header > ul.icons > li:hover {
+    background-color: #3344;
+}
+
+header > ul.icons > li > i {
+    font-size: 1.4rem;
+    background-color: transparent;
+}
+
+nav {
+    position: fixed;
+    top: 4rem;
+    height: 100%;
+    width: 15rem;
+    left: -15rem;
+    border-right: 1px solid #3344;
+    z-index: 101;
+}
+
+nav.active {
+    left: 0;
+    box-shadow: 0 0 0 99999px #3344;
+}
+
+nav > img.logo {
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+nav > a {
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+nav > a:hover {
+    background-color: #3344;
+}
+
+nav > a.active {
+    border-right: 3px solid #334;
+}
+
+nav > a > i {
+    font-size: 1rem;
+    width: 2rem;
+    background-color: transparent;
+}
+
+.hasNav {
+    margin-left: 0;
+}
+
+div.border {
+    border: 1px solid #3343;
+}
+
+div.center {
+    text-align: center;
+}
+
+div.left {
+    text-align: left;
+}
+
+div.right {
+    text-align: right;
+}
+
+p {
+    font-size: 1rem;
+    color: #334a;
+}
+
+p.titled {
+    margin-top: -2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 4rem 0 2rem 0;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 2.7rem;
+}
+
+h2 {
+    font-size: 3.7rem;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+button,
+a.button {
+    border: 1px solid #334;
+    color: #334;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 0.3rem;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button > i,
+a.button > i {
+    background-color: transparent;
+    margin-right: 0.5rem;
+}
+
+button.fill,
+a.button.fill {
+    background-color: #334;
+    color: #FFF;
+}
+
+button.fill > i,
+a.button.fill > i {
+    color: #FFF;
+}
+
+button.text,
+a.button.text {
+    border-color: transparent;
+    color: #54B;
+    font-weight: bold;
+}
+
+button.text > i,
+a.button.text > i {
+    color: #54B;
+}
+
+button:hover,
+a.button:hover {
+    background-color: #3342;
+}
+
+button.fill:hover,
+a.button.fill:hover {
+    background-color: #54B;
+    border-color: #54B;
+}
+
+button:disabled,
+a.button:disabled {
+    border: 1px solid #3344;
+    color: #334;
+    background-color: #3344;
+    cursor: default;
+}
+
+button.round,
+a.button.round {
+    border-radius: 2rem;
+}
+
+button.square,
+a.button.square {
+    border-radius: 0;
+}
+
+button.fab,
+a.button.fab {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    line-height: 2rem;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 0.5rem 0.5rem -0.3rem #3343;
+}
+
+button.fab > i,
+a.button.fab > i {
+    margin: 0;
+    font-size: 1rem;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table th {
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #3343;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+table tr:hover > td {
+    background-color: #3342;
+}
+
+table td {
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #3343;
+    vertical-align: middle;
+}
+
+div.overflow {
+    overflow-x: auto;
+}
+
+div.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3343;
+    z-index: 201;
+}
+
+div.overlay > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 80%;
+    max-width: 90%;
+    width: fit-content;
+    overflow: auto;
+    box-shadow: 0 1rem 3rem -0.5rem #334 !important;
+}
+
+div.card {
+    background-color: #FFF;
+    border: 1px solid #3343;
+    padding: 1rem;
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    position: relative;
+}
+
+div.card.elevated {
+    border: 1px solid #3341;
+    box-shadow: 0 0.5rem 2.5rem -1rem #3344;
+}
+
+div.card h1,
+div.card h2,
+div.card h3,
+div.card h4,
+div.card h5,
+div.card h6 {
+    padding: 0 0 1rem 0;
+}
+
+div.card > p.title {
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+div.card > img {
+    width: 110%;
+    height: auto;
+    margin: -1rem -1rem 1rem -1rem;
+}
+
+div.card.title > img {
+    margin: 0 -1rem 1rem -1rem;
+}
+
+div.card > div.buttons {
+    margin: 1rem -0.5rem 0 -0.5rem;
+}
+
+div.card > .buttons > button,
+div.card > .buttons > a.button {
+    padding: 0.5rem;
+    width: auto;
+}
+
+div.card > .buttons > button.icon,
+div.card > .buttons > a.button.icon {
+    float: right;
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    line-height: 1rem;
+}
+
+div.card > .buttons > button.icon > i,
+div.card > .buttons > a.button.icon > i {
+    margin: 0;
+    color: #3348;
+}
+
+div.chip {
+    float: left;
+    padding: 0.5rem 1rem;
+    border: 1px solid #3342;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin: 0 0.2rem 0.2rem 0;
+    height: 2.5rem;
+}
+
+div.chip.fill {
+    background-color: #3342;
+    border: none;
+}
+
+div.chip > i {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 1rem 0 0;
+    background-color: transparent;
+}
+
+div.chip.dismiss > i {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: -0.8rem -0.6rem 0 0.5rem;
+    border-radius: 50%;
+    background-color: #3343;
+    text-align: center;
+    line-height: 1.65rem;
+    font-size: 1rem;
+}
+
+div.chip.dismiss > i:hover {
+    background-color: #334;
+    color: #FFF;
+}
+
+div.chip > img {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin: -0.3rem 0.5rem -0.6rem -0.7rem;
+}
+
+.pv-1 {
+    padding-top: 1rem;
+}
+
+.pv-2 {
+    padding-top: 2rem;
+}
+
+.pv-3 {
+    padding-top: 3rem;
+}
+
+.pv-4 {
+    padding-top: 5rem;
+}
+
+.pv-5 {
+    padding-top: 8rem;
+}
+
+.pv-6 {
+    padding-top: 13rem;
+}
+
+.grid {
+    width: 90%;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid .row {
+    position: relative;
+    width: 100%;
+}
+
+.grid .row [class^='col-'] {
+    float: left;
+    min-height: 1rem;
+    margin: 0.5% 0.166%;
+    color: #334A;
+}
+
+.grid .row .col-1,
+.grid .row .col-2,
+.grid .row .col-3,
+.grid .row .col-4,
+.grid .row .col-5,
+.grid .row .col-6,
+.grid .row .col-7,
+.grid .row .col-8,
+.grid .row .col-9,
+.grid .row .col-10,
+.grid .row .col-11,
+.grid .row .col-12 {
+    width: 100%;
+}
+
+.grid .row .col-1-sm {
+    width: 8.002%;
+}
+
+.grid .row .col-2-sm {
+    width: 16.333%;
+}
+
+.grid .row .col-3-sm {
+    width: 24.666%;
+}
+
+.grid .row .col-4-sm {
+    width: 33%;
+}
+
+.grid .row .col-5-sm {
+    width: 41.333%;
+}
+
+.grid .row .col-6-sm {
+    width: 49.666%;
+}
+
+.grid .row .col-7-sm {
+    width: 58%;
+}
+
+.grid .row .col-8-sm {
+    width: 66.333%;
+}
+
+.grid .row .col-9-sm {
+    width: 74.666%;
+}
+
+.grid .row .col-10-sm {
+    width: 83%;
+}
+
+.grid .row .col-11-sm {
+    width: 91.333%;
+}
+
+.grid .row .col-12-sm {
+    width: 99.7%;
+}
+
+.row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.hideOnSmall {
+    display: none;
+}
+
+@media only screen and (min-width: 33.75rem) {
+    /* 540px */
+}
+
+@media only screen and (min-width: 45rem) {
+    /* 720px */
+    .grid .row .col-1 {
+        width: 8.002%;
+    }
+
+    .grid .row .col-2 {
+        width: 16.333%;
+    }
+
+    .grid .row .col-3 {
+        width: 24.666%;
+    }
+
+    .grid .row .col-4 {
+        width: 33%;
+    }
+
+    .grid .row .col-5 {
+        width: 41.333%;
+    }
+
+    .grid .row .col-6 {
+        width: 49.666%;
+    }
+
+    .grid .row .col-7 {
+        width: 58%;
+    }
+
+    .grid .row .col-8 {
+        width: 66.333%;
+    }
+
+    .grid .row .col-9 {
+        width: 74.666%;
+    }
+
+    .grid .row .col-10 {
+        width: 83%;
+    }
+
+    .grid .row .col-11 {
+        width: 91.333%;
+    }
+
+    .grid .row .col-12 {
+        width: 99.7%;
+    }
+
+    .hideOnSmall {
+        display: block;
+    }
+
+    .hideOnLarge,
+    nav > img.logo,
+    header i.menu {
+        display: none;
+    }
+
+    nav,
+    nav.active {
+        left: 0;
+        box-shadow: none;
+    }
+
+    .hasNav {
+        margin-left: 15rem;
+    }
+
+    button,
+    a.button {
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 60rem) {
+    /* 960px */
+}

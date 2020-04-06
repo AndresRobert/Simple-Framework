@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="src/img/favicon.png">
+    <title>Simple Framework</title>
+    <link href="src/acode.0.1.0.css?v=1" rel="stylesheet">
+</head>
+<body>
+<header>
+    <i onclick="$('nav').toggleClass('active')" class="fas fa-bars menu"></i>
+    <img class="logo" src="src/img/logo.svg" alt>
+    <p>Simple Framework</p>
+    <ul class="icons">
+        <li><i class="fas fa-home"></i></li>
+        <li><i class="fas fa-meteor"></i></li>
+        <li><i class="fas fa-bed"></i></li>
+    </ul>
+</header>
+<nav>
+    <a href="#grid" class="active"><i class="fas fa-grip-horizontal"></i>Grid</a>
+    <a href="#buttons"><i class="fas fa-mouse-pointer"></i>Buttons</a>
+    <a href="#cards"><i class="fas fa-address-card"></i>Cards</a>
+    <a href="#chips"><i class="fas fa-minus"></i>Chips</a>
+    <a href="#tables"><i class="fas fa-table"></i>Tables</a>
+    <a href="#tables"><i class="fas fa-window-restore"></i>Dialog</a>
+</nav>
+<main class="pv-4 hasNav">
+    <div id="grid" class="grid">
+        <h3>Grid</h3>
+        <div class="row hideOnSmall">
+            <div class="col-12 border center">12</div>
+        </div>
+        <div class="row">
+            <div class="col-1-sm border center">1</div>
+            <div class="col-11-sm border center">11</div>
+        </div>
+        <div class="row">
+            <div class="col-2-sm border center">2</div>
+            <div class="col-10-sm border center">10</div>
+        </div>
+        <div class="row">
+            <div class="col-3-sm border center">3</div>
+            <div class="col-9-sm border center">9</div>
+        </div>
+        <div class="row">
+            <div class="col-4-sm border center">4</div>
+            <div class="col-8-sm border center">8</div>
+        </div>
+        <div class="row">
+            <div class="col-5-sm border center">5</div>
+            <div class="col-7-sm border center">7</div>
+        </div>
+        <div class="row">
+            <div class="col-6-sm border center">6</div>
+            <div class="col-6-sm border center">6</div>
+        </div>
+        <div class="row hideOnSmall">
+            <div class="col-4 border center">4</div>
+            <div class="col-4 border center">4</div>
+            <div class="col-4 border center">4</div>
+        </div>
+        <div class="row hideOnSmall">
+            <div class="col-3 border center">3</div>
+            <div class="col-3 border center">3</div>
+            <div class="col-3 border center">3</div>
+            <div class="col-3 border center">3</div>
+        </div>
+        <div class="row hideOnSmall">
+            <div class="col-2 border center">2</div>
+            <div class="col-2 border center">2</div>
+            <div class="col-2 border center">2</div>
+            <div class="col-2 border center">2</div>
+            <div class="col-2 border center">2</div>
+            <div class="col-2 border center">2</div>
+        </div>
+        <div class="row hideOnSmall">
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+            <div class="col-1 border center">1</div>
+        </div>
+    </div>
+    <div id="buttons" class="grid">
+        <h3>Buttons</h3>
+        <p class="titled">This style applies to button and a.button</p>
+        <div class="row">
+            <div class="col-4 center">
+                <button><i class="fas fa-star"></i>button</button>
+            </div>
+            <div class="col-4 center">
+                <button class="fill"><i class="fas fa-star"></i>button .fill</button>
+            </div>
+            <div class="col-4 center">
+                <button class="text"><i class="fas fa-star"></i>button .text</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 center">
+                <button class="square"><i class="fas fa-star"></i>button .square</button>
+            </div>
+            <div class="col-4 center">
+                <button class="round fill"><i class="fas fa-star"></i>.round.fill</button>
+            </div>
+            <div class="col-4 center">
+                <button disabled><i class="fas fa-times"></i>disabled</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 center">
+                <button class="fab"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="col-4 center">
+                <button class="fab fill"><i class="fas fa-pen"></i></button>
+            </div>
+            <div class="col-4 center">
+                <button class="fab text"><i class="fas fa-link"></i></button>
+            </div>
+        </div>
+    </div>
+    <div id="cards" class="grid">
+        <h3>Cards</h3>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <h5>Card Title</h5>
+                    <p class="title">Title description</p>
+                    <p>Regular Card body text</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card elevated">
+                    <h5>Elevated Card Title</h5>
+                    <p class="title">Title description</p>
+                    <p>Card body text</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <img src="src/img/example.jpg" alt>
+                    <h5>Card Title</h5>
+                    <p class="title">Title description</p>
+                    <p>Regular Card body text with image and buttons</p>
+                    <div class="buttons">
+                        <button class="text">More Info</button>
+                        <button class="text">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card title">
+                    <h5>Card Title First</h5>
+                    <img src="src/img/example.jpg" alt>
+                    <p>Card body text text with image and buttons</p>
+                    <div class="buttons">
+                        <button class="text">More Info</button>
+                        <button class="text">Close</button>
+                        <button class="text icon"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="chips" class="grid">
+        <h3>Chips</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="chip">Basic Chip</div>
+                <div class="chip"><i class="fas fa-star"></i>Chip with Icon</div>
+                <div class="chip fill">Filled Chip</div>
+                <div class="chip fill dismiss">Closable Chip<i class="fas fa-times"></i></div>
+                <div class="chip"><img src="src/img/avatar.jpg" alt>Image and Name Chip</div>
+            </div>
+        </div>
+    </div>
+    <div id="tables" class="grid">
+        <h3>Tables</h3>
+        <div class="row">
+            <div class="col-12 overflow border">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                        <th>Header 4</th>
+                        <th>Header 5</th>
+                        <th>Header 6</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Cell A1</td>
+                        <td>Cell A2</td>
+                        <td>Cell A3</td>
+                        <td>Cell A4</td>
+                        <td>Cell A5</td>
+                        <td>Cell A6</td>
+                    </tr>
+                    <tr>
+                        <td>Cell B1</td>
+                        <td>Cell B2</td>
+                        <td>Cell B3</td>
+                        <td>Cell B4</td>
+                        <td>Cell B5</td>
+                        <td>Cell B6</td>
+                    </tr>
+                    <tr>
+                        <td>Cell C1</td>
+                        <td>Cell C2</td>
+                        <td>Cell C3</td>
+                        <td>Cell C4</td>
+                        <td>Cell C5</td>
+                        <td>Cell C6</td>
+                    </tr>
+                    <tr>
+                        <td>Cell D1</td>
+                        <td>Cell D2</td>
+                        <td>Cell D3</td>
+                        <td>Cell D4</td>
+                        <td>Cell D5</td>
+                        <td>Cell D6</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="dialog" class="grid">
+        <h3>Dialog</h3>
+        <div class="row">
+            <div class="col-12">
+                <button onclick="$.dialog('Dialog body very, very, long text example for testing purposes', { title: 'Dialog Header', buttons: [ { text: 'Action 1', id: 'action1' }, { text: 'Action 2', id: 'action2' } ] })">Show Dialog</button>
+            </div>
+        </div>
+    </div>
+</main>
+<aside>aside content</aside>
+<footer class="hasNav">
+
+</footer>
+<script src="src/acode.0.1.0.js?v=1"></script>
+<script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
+</body>
+</html>
