@@ -24,6 +24,7 @@
     <a href="#dialog"><i class="fas fa-window-restore"></i>Dialog</a>
     <a href="#typo"><i class="fas fa-heading"></i>Typo</a>
     <a href="#gallery"><i class="fas fa-images"></i>Gallery</a>
+    <a href="#lists"><i class="fas fa-list-ul"></i>Lists</a>
 </nav>
 <main class="pv-4 hasNav">
     <div id="grid" class="grid">
@@ -321,6 +322,105 @@
                     <div class="item round">
                         <img src="src/img/example2.jpg" alt="">
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="lists" class="grid">
+        <h3>Lists</h3>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <h5>Single-Line List</h5>
+                    <ul>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <h5>Two-Line List</h5>
+                    <ul class="two">
+                        <li>List Item <p>Secondary text</p></li>
+                        <li>List Item <p>Secondary text</p></li>
+                        <li>List Item <p>Secondary text</p></li>
+                        <li>List Item <p>Secondary text</p></li>
+                        <li>List Item <p>Secondary text</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <h5>Three-Line List</h5>
+                    <ul class="three">
+                        <li>List Item
+                            <p>Secondary text</p>
+                            <p>Tertiary text</p>
+                        </li>
+                        <li>List Item
+                            <p>Secondary text</p>
+                            <p>Tertiary text</p>
+                        </li>
+                        <li>List Item
+                            <p>Secondary text</p>
+                            <p>Tertiary text</p>
+                        </li>
+                        <li>List Item
+                            <p>Secondary text</p>
+                            <p>Tertiary text</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <h5>1-Line + Icon</h5>
+                    <ul class="icon">
+                        <li>List Item<i class="far fa-star"></i></li>
+                        <li>List Item<i class="far fa-star"></i></li>
+                        <li>List Item<i class="far fa-star"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <h5>2-Line + Icon & Image</h5>
+                    <ul class="two icon image">
+                        <li>List Item
+                            <p>Secondary text</p>
+                            <i class="far fa-star"></i>
+                            <img src="src/img/avatar.jpg" alt>
+                        </li>
+                        <li>List Item
+                            <p>Secondary text</p>
+                            <i class="far fa-star"></i>
+                            <img src="src/img/avatar.jpg" alt>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <h5>3-Line + Image</h5>
+                    <ul class="three image">
+                        <li>List Item
+                            <p>Secondary text</p>
+                            <p>Tertiary text</p>
+                            <img src="src/img/avatar.jpg" alt>
+                        </li>
+                        <li>List Item
+                            <p>Secondary text</p>
+                            <p>Tertiary text</p>
+                            <img src="src/img/avatar.jpg" alt>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
