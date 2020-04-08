@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.0.1.0.css?v=3" rel="stylesheet">
+    <link href="src/acode.0.1.0.css?v=0.1.2" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -12,7 +12,7 @@
     <img class="logo" src="src/img/logo.svg" alt>
     <p class="hideOnSmall">Simple Framework</p>
     <ul class="icons">
-        <li><i class="fas fa-meteor"></i></li>
+        <li><a href="https://github.com/AndresRobert/Simple-Framework" target="_blank"><i class="fab fa-github"></i></a></li>
     </ul>
 </header>
 <nav>
@@ -257,6 +257,7 @@
     </div>
     <div id="typo" class="grid">
         <h3>Typo & Dividers</h3>
+        <p class="title">Uses Open Sans out from the box (300 & 600 only, but you can add more if needed)</p>
         <div class="row">
             <div class="col-12">
                 <h1 class="paddingless">Header 1</h1>
@@ -428,10 +429,14 @@
     </div>
     <div id="navigation" class="grid hideOnSmall">
         <h3>Navigation</h3>
-        <p class="title">Only affects desktop view, on mobile is always collapsed</p>
+        <p class="title">Only affects desktop view, on mobile is always collapsed. If Rail is on on mobile is always visible</p>
         <div class="row">
             <div class="col-12">
                 <button onclick="$('body').toggleClass('menuAlwaysHidden')">Toggle NavBar View</button>
+                <button onclick="
+                    $('nav').toggleClass('rail');
+                    $('main').toggleClass('hasNav').toggleClass('hasRail');
+                    $('footer').toggleClass('hasNav').toggleClass('hasRail');">Toggle Rail View</button>
             </div>
         </div>
     </div>
@@ -445,14 +450,14 @@
                 <p>Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
-                <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework">Github</a>
-                <a class="button text slim" href="https://www.acode.cl">ACODE</a>
-                <a class="button text slim" href="mailto://contact@acode.cl">Feedback</a>
+                <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank">Github</a>
+                <a class="button text slim" href="https://www.acode.cl" target="_blank">ACODE</a>
+                <a class="button text slim" href="mailto://contact@acode.cl" target="_blank">Feedback</a>
             </div>
         </div>
     </div>
 </footer>
-<script src="src/acode.0.1.0.js?v=3"></script>
+<script src="src/acode.0.1.0.js?v=v=0.1.1"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 </body>
 </html>
