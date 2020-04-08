@@ -20,43 +20,54 @@ const pro = HTMLElement.prototype;
 
 pro.on = function (eventName, eventHandler) {
     this.addEventListener(eventName, eventHandler);
+    return this;
 };
 
 pro.val = function (newVal) {
-    return (newVal !== undefined ? this.value = newVal : this.value);
+    if (newVal === undefined)  return this.value;
+    this.value = newVal;
+    return this;
 };
 
 pro.html = function (html) {
     if (html === undefined) return this.innerHTML;
     this.innerHTML = html;
+    return this;
 };
 
 pro.append = function (html) {
     this.innerHTML = this.innerHTML + html;
+    return this;
 };
 
 pro.prepend = function (html) {
     this.innerHTML = html + this.innerHTML;
+    return this;
 };
 
 pro.addClass = function (className) {
     this.classList.add(className);
+    return this;
 };
 
 pro.removeClass = function (className) {
     this.classList.remove(className);
+    return this;
 };
 
 pro.toggleClass = function (className) {
     this.classList.toggle(className);
+    return this;
 };
 
 pro.hide = function () {
     this.style.display = 'none';
+    return this;
 };
 
 pro.show = function () {
     if (this.style.display === 'none') this.style.display = '';
+    return this;
 };
 
 pro.remove = function () {
@@ -64,9 +75,9 @@ pro.remove = function () {
 };
 
 pro.attr = function (attributeName, value) {
-    return typeof value === 'undefined'
-        ? this.getAttribute(attributeName)
-        : this.setAttribute(attributeName, value);
+    if (typeof value === 'undefined') return this.getAttribute(attributeName);
+    this.setAttribute(attributeName, value);
+    return this;
 };
 
 pro.hasClass = function (className) {
@@ -92,8 +103,7 @@ pro.find = function (sel) {
 // Components
 
 /*
-// Modo de uso
-
+// How to use
 $(body).append(
     div({ id: 'app', className: 'card' },
         header({ className: 'header' },
@@ -110,12 +120,9 @@ $(body).append(
         ),
     )
 );
-
 */
 
-const attributeExceptions = [
-    'role',
-];
+const attributeExceptions = ['role'];
 
 const appendText = (el, text) => {
     const textNode = document.createTextNode(text);

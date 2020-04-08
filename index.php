@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.0.1.0.css?v=2" rel="stylesheet">
+    <link href="src/acode.0.1.0.css?v=1" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -25,6 +25,7 @@
     <a href="#typo"><i class="fas fa-heading"></i>Typo</a>
     <a href="#gallery"><i class="fas fa-images"></i>Gallery</a>
     <a href="#lists"><i class="fas fa-list-ul"></i>Lists</a>
+    <a href="#navigation" class="hideOnSmall"><i class="fas fa-bars"></i>Navigation</a>
 </nav>
 <main class="pv-4 hasNav">
     <div id="grid" class="grid">
@@ -92,7 +93,7 @@
     </div>
     <div id="buttons" class="grid">
         <h3>Buttons</h3>
-        <p class="titled">This style applies to button and a.button</p>
+        <p class="title">This style applies to button and a.button</p>
         <div class="row">
             <div class="col-4 center">
                 <button><i class="fas fa-star"></i>button</button>
@@ -425,11 +426,33 @@
             </div>
         </div>
     </div>
+    <div id="navigation" class="grid hideOnSmall">
+        <h3>Navigation</h3>
+        <p class="title">Only affects desktop view, on mobile is always collapsed</p>
+        <div class="row">
+            <div class="col-12">
+                <button onclick="$('body').toggleClass('menuAlwaysHidden')">Toggle NavBar View</button>
+            </div>
+        </div>
+    </div>
 </main>
 <footer class="hasNav right">
-Acode Design & Development
+    <div id="" class="grid">
+        <div class="row">
+            <div class="col-6 hideOnSmall"></div>
+            <div class="col-6">
+                <h6><img src="src/img/isotype.svg" style="height:2rem;margin: 0 1rem -0.5rem 0" alt=""> Acode Design & Development</h6>
+                <p>Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices
+                    of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
+                <hr>
+                <button class="text slim">Github</button>
+                <button class="text slim">ACODE</button>
+                <button class="text slim">Feedback</button>
+            </div>
+        </div>
+    </div>
 </footer>
-<script src="src/acode.0.1.0.js?v=2"></script>
+<script src="src/acode.0.1.0.js?v=1"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 </body>
 </html>
