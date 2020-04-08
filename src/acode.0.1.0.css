@@ -275,7 +275,7 @@ div.overlay {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #3343;
+    background-color: #3349;
     z-index: 201;
 }
 
@@ -500,23 +500,23 @@ div.gallery > div.item {
     float: left;
     cursor: pointer;
     margin: 0.1rem;
-    width: calc(25% - 0.2rem);
+    width: calc(50% - 0.2rem);
     position: relative;
 }
 
 div.gallery.gap-1 > div.item {
     margin: 0.1rem;
-    width: calc(25% - 0.2rem);
+    width: calc(50% - 0.2rem);
 }
 
 div.gallery.gap-2 > div.item {
     margin: 0.1rem;
-    width: calc(25% - 0.2rem);
+    width: calc(50% - 0.2rem);
 }
 
 div.gallery.gap-3 > div.item {
     margin: 0.1rem;
-    width: calc(25% - 0.2rem);
+    width: calc(50% - 0.2rem);
 }
 
 div.gallery.two > div.item,
@@ -538,17 +538,17 @@ div.gallery.two.gap-3 > div.item {
 div.gallery.six > div.item,
 div.gallery.six.gap-1 > div.item {
     margin: 0.1rem;
-    width: calc(16.666% - 0.2rem);
+    width: calc(50% - 0.2rem);
 }
 
 div.gallery.six.gap-2 > div.item {
     margin: 0.1rem;
-    width: calc(16.666% - 0.2rem);
+    width: calc(50% - 0.2rem);
 }
 
 div.gallery.six.gap-3 > div.item {
     margin: 0.1rem;
-    width: calc(16.666% - 0.2rem);
+    width: calc(50% - 0.2rem);
 }
 
 div.gallery > div.item:before {
@@ -575,6 +575,42 @@ div.gallery > div.item > img {
 div.gallery > div.item > img.narrower {
     width: auto;
     height: 100%;
+}
+
+div.gallery > div.item > p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3349;
+    color: #FFF;
+    padding: 0.5rem 2rem 0.5rem 0.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div.gallery > div.item > p > i {
+    position: absolute;
+    right: 0.4rem;
+    bottom: 0.6rem;
+    color: #FFF;
+    background-color: transparent;
+}
+
+img.galleryFullImage {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.round {
+    border-radius: 0.5rem;
 }
 
 .pv-1 {

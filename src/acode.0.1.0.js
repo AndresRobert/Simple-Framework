@@ -198,10 +198,12 @@ const h4 = (...args) => makeElement('h4', ...args);
 const h5 = (...args) => makeElement('h5', ...args);
 const h6 = (...args) => makeElement('h6', ...args);
 const header = (...args) => makeElement('header', ...args);
+const img = (...args) => makeElement('img', ...args);
 const main = (...args) => makeElement('main', ...args);
 const nav = (...args) => makeElement('nav', ...args);
 const p = (...args) => makeElement('p', ...args);
 const span = (...args) => makeElement('span', ...args);
+
 
 const Render = (html) => {
     document.body.appendChild(html);
@@ -218,6 +220,13 @@ const Dialog = props => (
             p(props.message),
             div({ className: 'buttons right' }, props.buttons)
         )
+    )
+);
+
+const Gallery = props => (
+    div(
+        { className: 'overlay', id: 'sfGallery' },
+        img({ className: 'galleryFullImage', alt: '', src: props.src })
     )
 );
 
@@ -301,6 +310,15 @@ $.dialog = (message = '', options = {}) => {
     });
 };
 
+$.fullscreenImg = src => {
+    if (isset(src)) {
+        Render(Gallery({ src: src }));
+        $('#sfGallery').on('click', e => {
+            $('#sfGallery').remove();
+        });
+    }
+};
+
 $.init = component => {
     switch (component) {
         case 'nav':
@@ -324,9 +342,7 @@ $.init = component => {
                         item.addClass('narrower');
                     }
                     item.on('click', e => {
-                        list.forEach(link => { link.removeClass('active') });
-                        e.target.addClass('active');
-                        $('nav').removeClass('active');
+                        $.fullscreenImg(e.target.attr('src'));
                     });
                 });
             });

@@ -4,17 +4,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.0.1.0.css?v=1" rel="stylesheet">
+    <link href="src/acode.0.1.0.css?v=2" rel="stylesheet">
 </head>
 <body>
 <header>
     <i onclick="$('nav').toggleClass('active')" class="fas fa-bars menu"></i>
     <img class="logo" src="src/img/logo.svg" alt>
-    <p>Simple Framework</p>
+    <p class="hideOnSmall">Simple Framework</p>
     <ul class="icons">
-        <li><i class="fas fa-home"></i></li>
         <li><i class="fas fa-meteor"></i></li>
-        <li><i class="fas fa-bed"></i></li>
     </ul>
 </header>
 <nav>
@@ -278,11 +276,12 @@
                 <div class="gallery">
                     <div class="item">
                         <img src="src/img/example.jpg" alt="">
+                        <p>Image Info <i class="far fa-star"></i></p>
                     </div>
                     <div class="item">
                         <img src="src/img/example2.jpg" alt="">
                     </div>
-                    <div class="item">
+                    <div class="item round">
                         <img src="src/img/example.jpg" alt="">
                     </div>
                     <div class="item">
@@ -294,11 +293,12 @@
                 <div class="gallery six">
                     <div class="item">
                         <img src="src/img/example.jpg" alt="">
+                        <p>Image Info <i class="far fa-star"></i></p>
                     </div>
                     <div class="item">
                         <img src="src/img/example2.jpg" alt="">
                     </div>
-                    <div class="item">
+                    <div class="item round">
                         <img src="src/img/example.jpg" alt="">
                     </div>
                     <div class="item">
@@ -316,8 +316,9 @@
                 <div class="gallery two">
                     <div class="item">
                         <img src="src/img/example.jpg" alt="">
+                        <p>Image Info <i class="far fa-star"></i></p>
                     </div>
-                    <div class="item">
+                    <div class="item round">
                         <img src="src/img/example2.jpg" alt="">
                     </div>
                 </div>
@@ -328,7 +329,7 @@
 <footer class="hasNav right">
 Acode Design & Development
 </footer>
-<script src="src/acode.0.1.0.js?v=1"></script>
+<script src="src/acode.0.1.0.js?v=2"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 </body>
 </html>
