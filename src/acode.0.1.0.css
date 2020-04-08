@@ -66,6 +66,10 @@ header > ul.icons > li > i {
     font-size: 1.4rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 footer {
     padding: 1rem 0 3rem 0;
     background-color: #3342;
@@ -97,7 +101,6 @@ nav > a {
     width: 100%;
     padding: 1rem;
     display: block;
-    text-decoration: none;
     box-sizing: border-box;
 }
 

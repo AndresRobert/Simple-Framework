@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.0.1.0.css?v=1" rel="stylesheet">
+    <link href="src/acode.0.1.0.css?v=3" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -445,14 +445,14 @@
                 <p>Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
-                <button class="text slim">Github</button>
-                <button class="text slim">ACODE</button>
-                <button class="text slim">Feedback</button>
+                <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework">Github</a>
+                <a class="button text slim" href="https://www.acode.cl">ACODE</a>
+                <a class="button text slim" href="mailto://contact@acode.cl">Feedback</a>
             </div>
         </div>
     </div>
 </footer>
-<script src="src/acode.0.1.0.js?v=1"></script>
+<script src="src/acode.0.1.0.js?v=3"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 </body>
 </html>
