@@ -2,7 +2,7 @@
 
 $ = sel => {
     const el = document.querySelectorAll(sel);
-    return el.length === 1 ? el[0] : el;
+    return (el.length === 1) ? el[0] : el.length === 0 ? null : el;
 };
 
 $$ = sel => {
@@ -210,7 +210,7 @@ const main = (...args) => makeElement('main', ...args);
 const nav = (...args) => makeElement('nav', ...args);
 const p = (...args) => makeElement('p', ...args);
 const span = (...args) => makeElement('span', ...args);
-
+const SVGcircle = () => document.createElementNS('http://www.w3.org/2000/svg', 'circle') ;
 
 const Render = (html) => {
     document.body.appendChild(html);
@@ -236,6 +236,33 @@ const Gallery = props => (
         img({ className: 'galleryFullImage', alt: '', src: props.src })
     )
 );
+
+const AsyncLoadingBar = () => (
+    div(
+        { className: 'asyncProgressIndicator', id: 'sfAsyncLoadingBar' },
+        div({ className: 'bar' })
+    )
+);
+
+const SyncLoadingCircle = () => {
+    let _circle = SVGcircle();
+    _circle.setAttribute('cx', '50');
+    _circle.setAttribute('cy', '50');
+    _circle.setAttribute('r', '20');
+    _circle.setAttribute('fill', 'none');
+    _circle.setAttribute('stroke-width', '5');
+    _circle.setAttribute('stroke-miterlimit', '10');
+    let _svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    _svg.appendChild(_circle);
+    let _div = document.createElement('div');
+    _div.addClass('syncProgressIndicator');
+    _div.appendChild(_svg);
+    let _overlay = document.createElement('div');
+    _overlay.addClass('overlay');
+    _overlay.id = 'sfSyncLoadingCircle';
+    _overlay.appendChild(_div);
+    return _overlay;
+};
 
 // Functions
 
@@ -326,6 +353,23 @@ $.fullscreenImg = src => {
     }
 };
 
+$.loading = {};
+
+$.loading.async = () => {
+    Render(AsyncLoadingBar());
+};
+
+$.loading.sync = () => {
+    Render(SyncLoadingCircle());
+};
+
+$.loading.dismiss = () => {
+    let sfAsyncLoadingBar = $('#sfAsyncLoadingBar'),
+        sfSyncLoadingCircle = $('#sfSyncLoadingCircle');
+    if (isset(sfAsyncLoadingBar)) sfAsyncLoadingBar.remove();
+    if (isset(sfSyncLoadingCircle)) sfSyncLoadingCircle.remove();
+};
+
 $.init = component => {
     switch (component) {
         case 'nav':
@@ -354,6 +398,35 @@ $.init = component => {
                 });
             });
             break;
+        case 'circleIndicator':
+            let indicators = $$('.circleIndicator');
+            indicators.forEach(indicator => {
+                let circleBG = SVGcircle();
+                circleBG.setAttribute('cx', '24');
+                circleBG.setAttribute('cy', '24');
+                circleBG.setAttribute('r', '22');
+                circleBG.style.strokeDasharray = '100 0';
+                indicator.appendChild(circleBG);
+                let circle = SVGcircle();
+                circle.setAttribute('cx', '24');
+                circle.setAttribute('cy', '24');
+                circle.setAttribute('r', '22');
+                const circumference = 44 * Math.PI;
+                circle.style.strokeDasharray = `${ circumference } ${ circumference }`;
+                circle.style.strokeDashoffset = '' + (circumference - indicator.dataset.percent / 100 * circumference);
+                indicator.appendChild(circle);
+            });
+            let indeterminateIndicators = $$('.circleIndicatorIndeterminate');
+            indeterminateIndicators.forEach(indicator => {
+                let circle = SVGcircle();
+                circle.setAttribute('cx', '24');
+                circle.setAttribute('cy', '24');
+                circle.setAttribute('r', '22');
+                circle.style.strokeDasharray = '1, 200';
+                circle.style.strokeDashoffset = '0';
+                indicator.appendChild(circle);
+            });
+            break;
         default:
     }
 };
@@ -361,4 +434,5 @@ $.init = component => {
 $.ready(() => {
     $.init('nav');
     $.init('gallery');
+    $.init('circleIndicator');
 });

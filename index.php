@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.0.1.0.css?v=0.1.2" rel="stylesheet">
+    <link href="src/acode.0.1.0.css?v=0.1.3" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -26,6 +26,7 @@
     <a href="#gallery"><i class="fas fa-images"></i>Gallery</a>
     <a href="#lists"><i class="fas fa-list-ul"></i>Lists</a>
     <a href="#navigation" class="hideOnSmall"><i class="fas fa-bars"></i>Navigation</a>
+    <a href="#progress"><i class="fas fa-spinner"></i>Progress</a>
 </nav>
 <main class="pv-4 hasNav">
     <div id="grid" class="grid">
@@ -440,24 +441,96 @@
             </div>
         </div>
     </div>
+    <div id="progress" class="grid">
+        <h3>Progress Indicators</h3>
+        <div class="row">
+            <div class="col-12">
+                <h4 class="paddingless" style="padding-bottom:1rem">Environment</h4>
+                <button onclick="showAsyncProgressBar(3)">Async Bar</button>
+                <button onclick="showSyncProgressBar(3)">Sync Circular</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h4 class="paddingless">Inline</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <p>25%</p>
+                <div class="linearIndicator">
+                    <div class="fixed" style="width: 25%"></div>
+                </div>
+            </div>
+            <div class="col-3">
+                <p>50%</p>
+                <div class="linearIndicator">
+                    <div class="fixed" style="width: 50%"></div>
+                </div>
+            </div>
+            <div class="col-3">
+                <p>100%</p>
+                <div class="linearIndicator">
+                    <div class="fixed" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="col-3">
+                <p>Indeterminate</p>
+                <div class="linearIndicator">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <p>Circular 25%</p>
+                <svg class="circleIndicator" data-percent="25"></svg>
+            </div>
+            <div class="col-3">
+                <p>Circular 50%</p>
+                <svg class="circleIndicator" data-percent="50"></svg>
+            </div>
+            <div class="col-3">
+                <p>Circular 70%</p>
+                <svg class="circleIndicator" data-percent="75"></svg>
+            </div>
+            <div class="col-3">
+                <p>Circular Indeterminate</p>
+                <svg class="circleIndicatorIndeterminate"></svg>
+            </div>
+        </div>
+    </div>
 </main>
-<footer class="hasNav right">
+
+<footer class="hasNav">
     <div id="" class="grid">
         <div class="row">
-            <div class="col-6 hideOnSmall"></div>
-            <div class="col-6">
+            <div class="col-12">
                 <h6><img src="src/img/isotype.svg" style="height:2rem;margin: 0 1rem -0.5rem 0" alt=""> Acode Design & Development</h6>
                 <p>Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
-                <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank">Github</a>
-                <a class="button text slim" href="https://www.acode.cl" target="_blank">ACODE</a>
-                <a class="button text slim" href="mailto://contact@acode.cl" target="_blank">Feedback</a>
+                <div class="right">
+                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank">Github</a>
+                    <a class="button text slim" href="https://www.acode.cl" target="_blank">ACODE</a>
+                    <a class="button text slim" href="mailto://contact@acode.cl" target="_blank">Feedback</a>
+                </div>
             </div>
         </div>
     </div>
 </footer>
-<script src="src/acode.0.1.0.js?v=v=0.1.1"></script>
+<script src="src/acode.0.1.0.js?v=v=0.1.3"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
+<script>
+    const showAsyncProgressBar = time => {
+        $.loading.async();
+        setTimeout(() => $.loading.dismiss(), time * 1000)
+    };
+
+    const showSyncProgressBar = time => {
+        $.loading.sync();
+        setTimeout(() => $.loading.dismiss(), time * 1000)
+    };
+</script>
 </body>
 </html>

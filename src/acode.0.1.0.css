@@ -231,7 +231,7 @@ a.button.fill > i {
 button.text,
 a.button.text {
     border-color: transparent;
-    color: #54B;
+    color: #779;
     font-weight: bold;
 }
 
@@ -242,7 +242,7 @@ a.button.text.slim {
 
 button.text > i,
 a.button.text > i {
-    color: #54B;
+    color: #779;
 }
 
 button:hover,
@@ -252,8 +252,8 @@ a.button:hover {
 
 button.fill:hover,
 a.button.fill:hover {
-    background-color: #54B;
-    border-color: #54B;
+    background-color: #779;
+    border-color: #779;
 }
 
 button:disabled,
@@ -333,11 +333,6 @@ div.overlay > div {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-height: 80%;
-    max-width: 90%;
-    width: fit-content;
-    overflow: auto;
-    box-shadow: 0 1rem 3rem -0.5rem #334 !important;
 }
 
 div.card {
@@ -403,6 +398,14 @@ div.card > .buttons > button.icon > i,
 div.card > .buttons > a.button.icon > i {
     margin: 0;
     color: #3349;
+}
+
+div.overlay > div.card {
+    max-height: 80%;
+    max-width: 90%;
+    width: fit-content;
+    overflow: auto;
+    box-shadow: 0 1rem 3rem -0.5rem #334;
 }
 
 div.chip {
@@ -715,7 +718,7 @@ ul.two > li > p {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding-left: 0.2rem;
+    font-size: 0.9rem;
 }
 
 ul.three > li {
@@ -728,7 +731,130 @@ ul.three > li > p {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding-left: 0.2rem;
+    font-size: 0.9rem;
+}
+
+div.asyncProgressIndicator {
+    background-color: #3342;
+    position: fixed;
+    top: 3.8rem;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    z-index: 200;
+}
+
+div.linearIndicator > div.bar,
+div.asyncProgressIndicator > div.bar {
+    position: absolute;
+    background: #779;
+    width: 0;
+    height: 0.2rem;
+    animation: loadingBar 2.5s ease-in infinite;
+}
+
+@keyframes loadingBar {
+    0% { left: 0; width: 0; }
+    35% { left: 40%; width: 65%; }
+    59.9% { left: 100%; width: 0; }
+    60% { left: -25%; width: 25%; }
+    100% { left: 125%; width: 25%; }
+}
+
+div.linearIndicator {
+    position: relative;
+    background-color: #3342;
+    width: 100%;
+    height: 0.2rem;
+    margin: 1.4rem 0;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+
+div.linearIndicator > div.fixed {
+    position: absolute;
+    background: #779;
+    height: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+div.syncProgressIndicator {
+    width: 100px;
+    height: 100px;
+}
+
+div.syncProgressIndicator > svg {
+    position: relative;
+    animation: loadingRotation 2.5s linear infinite;
+    width: 100px;
+    height: 100px;
+}
+
+div.syncProgressIndicator > svg > circle {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke: #FFF6;
+    animation: loadingDash 1.5s ease-in-out infinite;
+    stroke-linecap: square;
+}
+
+@keyframes loadingRotation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loadingDash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}
+
+svg.circleIndicator {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+}
+
+svg.circleIndicator > circle {
+    stroke-width: 3;
+    stroke: #779;
+    fill: transparent;
+    transition: stroke-dashoffset 350ms;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+svg.circleIndicator > circle:first-child {
+    stroke: #3342;
+}
+
+svg.circleIndicatorIndeterminate {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    animation: loadingRotation 2.5s linear infinite;
+}
+
+svg.circleIndicatorIndeterminate > circle {
+    stroke-width: 3;
+    stroke: #779;
+    fill: transparent;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: loadingDash 1.5s ease-in-out infinite;
+    stroke-linecap: square;
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
