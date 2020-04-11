@@ -4,11 +4,7 @@ $ = sel => {
     const el = document.querySelectorAll(sel);
     return (el.length === 1) ? el[0] : el.length === 0 ? null : el;
 };
-
-$$ = sel => {
-    return document.querySelectorAll(sel);
-};
-
+$$ = sel => document.querySelectorAll(sel);
 $.ready = fn => {
     if (document.readyState !== 'loading') fn();
     else document.addEventListener('DOMContentLoaded', fn);
@@ -17,91 +13,77 @@ $.ready = fn => {
 // Prototypes
 
 const pro = HTMLElement.prototype;
-
 pro.on = function (eventName, eventHandler) {
     this.addEventListener(eventName, eventHandler);
     return this;
 };
-
 pro.val = function (newVal) {
     if (newVal === undefined)  return this.value;
     this.value = newVal;
     return this;
 };
-
 pro.html = function (html) {
     if (html === undefined) return this.innerHTML;
     this.innerHTML = html;
     return this;
 };
-
 pro.append = function (html) {
     this.innerHTML = this.innerHTML + html;
     return this;
 };
-
 pro.prepend = function (html) {
     this.innerHTML = html + this.innerHTML;
     return this;
 };
-
 pro.addClass = function (className) {
     this.classList.add(className);
     return this;
 };
-
 pro.removeClass = function (className) {
     this.classList.remove(className);
     return this;
 };
-
 pro.toggleClass = function (className) {
     this.classList.toggle(className);
     return this;
 };
-
 pro.hide = function () {
     this.style.display = 'none';
     return this;
 };
-
 pro.show = function () {
     if (this.style.display === 'none') this.style.display = '';
     return this;
 };
-
 pro.remove = function () {
     this.parentNode.removeChild(this);
 };
-
 pro.attr = function (attributeName, value) {
     if (typeof value === 'undefined') return this.getAttribute(attributeName);
     this.setAttribute(attributeName, value);
     return this;
 };
-
 pro.hasClass = function (className) {
     return this.classList.contains(className);
 };
-
 pro.prev = function () {
     return this.previousElementSibling;
 };
-
 pro.next = function () {
     return this.nextElementSibling;
 };
-
 pro.parent = function () {
     return this.parentNode;
 };
-
 pro.find = function (sel) {
     return this.querySelectorAll(sel);
 };
+pro.fadeRemove = function () {
+    this.addClass('fadeOut');
+    setTimeout(() => this.remove(), 200);
+};
 
 // Components
-
 /*
 // How to use
 $(body).append(
@@ -122,29 +104,22 @@ $(body).append(
 );
 */
 
-const attributeExceptions = ['role'];
+$.attributeExceptions = ['role'];
 
-const appendText = (el, text) => {
+$.appendText = (el, text) => {
     const textNode = document.createTextNode(text);
     el.appendChild(textNode);
 };
 
-const appendArray = (el, children) => {
+$.appendArray = (el, children) => {
     children.forEach((child) => {
-        if (Array.isArray(child)) {
-            appendArray(el, child);
-        }
-        else
-            if (child instanceof window.Element) {
-                el.appendChild(child);
-            }
-            else
-                if (typeof child === 'string') {
-                    appendText(el, child);
-                }
+        if (Array.isArray(child)) $.appendArray(el, child);
+        else if (child instanceof window.Element) el.appendChild(child);
+        else if (typeof child === 'string') $.appendText(el, child);
     });
 };
-const setStyles = (el, styles) => {
+
+$.setStyles = (el, styles) => {
     if (!styles) {
         el.removeAttribute('styles');
         return;
@@ -158,71 +133,50 @@ const setStyles = (el, styles) => {
         }
     });
 };
-const makeElement = (type, textOrPropsOrChild, ...children) => {
-    const el = document.createElement(type);
-    if (Array.isArray(textOrPropsOrChild)) {
-        appendArray(el, textOrPropsOrChild);
-    }
-    else
-        if (textOrPropsOrChild instanceof window.Element) {
-            el.appendChild(textOrPropsOrChild);
-        }
-        else
-            if (typeof textOrPropsOrChild === 'string') {
-                appendText(el, textOrPropsOrChild);
-            }
-            else
-                if (typeof textOrPropsOrChild === 'object') {
-                    Object.keys(textOrPropsOrChild).forEach((propName) => {
-                        if (propName in el || attributeExceptions.includes(propName)) {
-                            const value = textOrPropsOrChild[propName];
 
-                            if (propName === 'style') {
-                                setStyles(el, value);
-                            }
-                            else
-                                if (value) {
-                                    el[propName] = value;
-                                }
-                        }
-                        else {
-                            console.warn(`${ propName } is not a valid property of a <${ type }>`);
-                        }
-                    });
-                }
-    if (children) appendArray(el, children);
+$.makeElement = (type, textOrPropsOrChild, ...children) => {
+    const el = document.createElement(type);
+    if (Array.isArray(textOrPropsOrChild)) $.appendArray(el, textOrPropsOrChild);
+    else if (textOrPropsOrChild instanceof window.Element) el.appendChild(textOrPropsOrChild);
+    else if (typeof textOrPropsOrChild === 'string') $.appendText(el, textOrPropsOrChild);
+    else if (typeof textOrPropsOrChild === 'object') {
+        Object.keys(textOrPropsOrChild).forEach((propName) => {
+            if (propName in el || $.attributeExceptions.includes(propName)) {
+                const value = textOrPropsOrChild[propName];
+                if (propName === 'style') $.setStyles(el, value);
+                else if (value) el[propName] = value;
+            }
+            else console.warn(`${ propName } is not a valid property of a <${ type }>`);
+        });
+    }
+    if (children) $.appendArray(el, children);
     return el;
 };
 
-const a = (...args) => makeElement('a', ...args);
-const button = (...args) => makeElement('button', ...args);
-const div = (...args) => makeElement('div', ...args);
-const footer = (...args) => makeElement('footer', ...args);
-const h1 = (...args) => makeElement('h1', ...args);
-const h2 = (...args) => makeElement('h2', ...args);
-const h3 = (...args) => makeElement('h3', ...args);
-const h4 = (...args) => makeElement('h4', ...args);
-const h5 = (...args) => makeElement('h5', ...args);
-const h6 = (...args) => makeElement('h6', ...args);
-const header = (...args) => makeElement('header', ...args);
-const img = (...args) => makeElement('img', ...args);
-const main = (...args) => makeElement('main', ...args);
-const nav = (...args) => makeElement('nav', ...args);
-const p = (...args) => makeElement('p', ...args);
-const span = (...args) => makeElement('span', ...args);
+const a = (...args) => $.makeElement('a', ...args);
+const button = (...args) => $.makeElement('button', ...args);
+const div = (...args) => $.makeElement('div', ...args);
+const footer = (...args) => $.makeElement('footer', ...args);
+const h1 = (...args) => $.makeElement('h1', ...args);
+const h2 = (...args) => $.makeElement('h2', ...args);
+const h3 = (...args) => $.makeElement('h3', ...args);
+const h4 = (...args) => $.makeElement('h4', ...args);
+const h5 = (...args) => $.makeElement('h5', ...args);
+const h6 = (...args) => $.makeElement('h6', ...args);
+const header = (...args) => $.makeElement('header', ...args);
+const img = (...args) => $.makeElement('img', ...args);
+const main = (...args) => $.makeElement('main', ...args);
+const nav = (...args) => $.makeElement('nav', ...args);
+const p = (...args) => $.makeElement('p', ...args);
+const span = (...args) => $.makeElement('span', ...args);
 const SVGcircle = () => document.createElementNS('http://www.w3.org/2000/svg', 'circle') ;
-
-const Render = (html) => {
-    document.body.appendChild(html);
-};
+const Render = html => document.body.appendChild(html);
 
 // Custom Components
 
 const Dialog = props => (
-    div(
-        { className: 'overlay', id: 'sfDialog' },
-        div(
-            { className: 'card elevated' },
+    div({ className: 'overlay' },
+        div({ className: 'card elevated' },
             h5(props.title),
             p(props.message),
             div({ className: 'buttons right' }, props.buttons)
@@ -230,16 +184,26 @@ const Dialog = props => (
     )
 );
 
+const SheetBottom = props => (
+    div({ className: 'overlay sheet-bottom' },
+        div({ className: 'card', id: props.id })
+    )
+);
+
+const SheetSide = props => (
+    div({ className: 'overlay sheet-side' },
+        div({ className: 'card', id: props.id })
+    )
+);
+
 const Gallery = props => (
-    div(
-        { className: 'overlay', id: 'sfGallery' },
+    div({ className: 'overlay', id: 'sfGallery' },
         img({ className: 'galleryFullImage', alt: '', src: props.src })
     )
 );
 
 const AsyncLoadingBar = () => (
-    div(
-        { className: 'asyncProgressIndicator', id: 'sfAsyncLoadingBar' },
+    div({ className: 'asyncProgressIndicator', id: 'sfAsyncLoadingBar' },
         div({ className: 'bar' })
     )
 );
@@ -323,6 +287,26 @@ async function ajax (url = '', data = {}, options = {}) {
     return await response.json(); // parses JSON response into native JavaScript objects
 }
 
+setCookie = (name, value, days = 90) => {
+    let date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    let expires = "; expires=" + date.toUTCString();
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+};
+
+getCookie = name => {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+};
+
+eraseCookie = name => document.cookie = name + '=; Max-Age=-99999999;';
+
 // Framework
 
 $.dialog = (message = '', options = {}) => {
@@ -337,37 +321,57 @@ $.dialog = (message = '', options = {}) => {
         }
     });
     Render(Dialog({ title: title, message: message, buttons: _buttons }));
-    $('#sfDialog').on('click', e => {
-        if (e.target.id === 'sfDialog') {
-            e.target.remove();
-        }
-    });
+    $.init('overlay');
+};
+
+$.sheet = (type = '', html = '') => {
+    if (type === 'side') {
+        Render(SheetSide({ id: 'sfSheet' }));
+    }
+    else {
+        Render(SheetBottom({ id: 'sfSheet' }));
+    }
+    $('#sfSheet').innerHTML = html;
+    $.init('overlay');
 };
 
 $.fullscreenImg = src => {
     if (isset(src)) {
         Render(Gallery({ src: src }));
-        $('#sfGallery').on('click', e => {
-            $('#sfGallery').remove();
+        $('#sfGallery').on('click', () => {
+            $('#sfGallery').fadeRemove();
         });
     }
 };
 
 $.loading = {};
 
-$.loading.async = () => {
-    Render(AsyncLoadingBar());
-};
+$.loading.async = () => Render(AsyncLoadingBar());
 
-$.loading.sync = () => {
-    Render(SyncLoadingCircle());
-};
+$.loading.sync = () => Render(SyncLoadingCircle());
 
 $.loading.dismiss = () => {
     let sfAsyncLoadingBar = $('#sfAsyncLoadingBar'),
         sfSyncLoadingCircle = $('#sfSyncLoadingCircle');
-    if (isset(sfAsyncLoadingBar)) sfAsyncLoadingBar.remove();
-    if (isset(sfSyncLoadingCircle)) sfSyncLoadingCircle.remove();
+    if (isset(sfAsyncLoadingBar)) sfAsyncLoadingBar.fadeRemove();
+    if (isset(sfSyncLoadingCircle)) sfSyncLoadingCircle.fadeRemove();
+};
+
+$.snackbarId = 1;
+
+$.snackbar = (message, button = '') => {
+    let _id = $.snackbarId++,
+    _container = $('.snackbarContainer');
+    if (button === '') {
+        _container.appendChild(div({ id: 'snackItem' + _id }, message));
+        let _time = message.length * 50 + 3000;
+        setTimeout(() => $('#snackItem' + _id).fadeRemove() , _time);
+    }
+    else {
+        _container.appendChild(div({ id: 'snackItem' + _id }, message, span(button)));
+        let _snackbar = $('#snackItem' + _id);
+        _snackbar.find('span')[0].on('click', () => _snackbar.fadeRemove());
+    }
 };
 
 $.init = component => {
@@ -379,6 +383,19 @@ $.init = component => {
                     list.forEach(link => { link.removeClass('active') });
                     e.target.addClass('active');
                     $('nav').removeClass('active');
+                });
+            });
+            break;
+        case 'snackbar':
+            Render(div({ className: 'snackbarContainer' }));
+            break;
+        case 'overlay':
+            let overlays = $$('.overlay');
+            overlays.forEach(overlay => {
+                overlay.on('click', e => {
+                    if (e.target.hasClass('overlay')) {
+                        overlay.fadeRemove();
+                    }
                 });
             });
             break;
@@ -433,6 +450,7 @@ $.init = component => {
 
 $.ready(() => {
     $.init('nav');
+    $.init('snackbar');
     $.init('gallery');
     $.init('circleIndicator');
 });

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.0.1.0.css?v=0.1.3" rel="stylesheet">
+    <link href="src/acode.0.1.0.css?v=0.1.4" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -19,9 +19,8 @@
     <a href="#grid" class="active"><i class="fas fa-grip-horizontal"></i>Grid</a>
     <a href="#buttons"><i class="fas fa-mouse-pointer"></i>Buttons</a>
     <a href="#cards"><i class="fas fa-address-card"></i>Cards</a>
-    <a href="#chips"><i class="fas fa-minus"></i>Chips</a>
     <a href="#tables"><i class="fas fa-table"></i>Tables</a>
-    <a href="#dialog"><i class="fas fa-window-restore"></i>Dialog</a>
+    <a href="#dialog"><i class="fas fa-window-restore"></i>Dialogs</a>
     <a href="#typo"><i class="fas fa-heading"></i>Typo</a>
     <a href="#gallery"><i class="fas fa-images"></i>Gallery</a>
     <a href="#lists"><i class="fas fa-list-ul"></i>Lists</a>
@@ -174,18 +173,6 @@
             </div>
         </div>
     </div>
-    <div id="chips" class="grid">
-        <h3>Chips</h3>
-        <div class="row">
-            <div class="col-12">
-                <div class="chip">Basic Chip</div>
-                <div class="chip"><i class="fas fa-star"></i>Chip with Icon</div>
-                <div class="chip fill">Filled Chip</div>
-                <div class="chip fill dismiss">Closable Chip<i class="fas fa-times"></i></div>
-                <div class="chip"><img src="src/img/avatar.jpg" alt>Image and Name Chip</div>
-            </div>
-        </div>
-    </div>
     <div id="tables" class="grid">
         <h3>Tables</h3>
         <div class="row">
@@ -240,7 +227,7 @@
         </div>
     </div>
     <div id="dialog" class="grid">
-        <h3>Dialog</h3>
+        <h3>Dialogs, Sheets & Snackbar</h3>
         <div class="row">
             <div class="col-12">
                 <button onclick="
@@ -252,7 +239,20 @@
                                 { text: 'Action 1', id: 'action1' },
                                 { text: 'Action 2', id: 'action2' }
                             ]
-                        })">Show Dialog</button>
+                        }
+                    )">Show Dialog</button>
+                <button onclick="
+                    $.sheet(
+                        'bottom',
+                        '<h5>Bottom Sheet</h5><p class=\'title\'>It\'s a card! you can add html on it!</p><p>And any Text you want.</p>'
+                    )">Bottom Sheet</button>
+                <button onclick="
+                    $.sheet(
+                        'side',
+                        '<h5>Side Sheet</h5><p class=\'title\'>It\'s a card! you can add html on it!</p><p>And any Text you want.</p>'
+                    )">Side Sheet</button>
+                <button onclick="$.snackbar('This will be dismissed in 3 secs')">Timed Snackbar</button>
+                <button onclick="$.snackbar('This will stay here until you click on: ', 'Dismiss')">Snackbar</button>
             </div>
         </div>
     </div>
@@ -276,7 +276,7 @@
     <div id="gallery" class="grid">
         <h3>Image Gallery</h3>
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 hideOnSmall">
                 <div class="gallery">
                     <div class="item">
                         <img src="src/img/example.jpg" alt="">
@@ -293,7 +293,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 hideOnSmall">
                 <div class="gallery six">
                     <div class="item">
                         <img src="src/img/example.jpg" alt="">
@@ -330,7 +330,16 @@
         </div>
     </div>
     <div id="lists" class="grid">
-        <h3>Lists</h3>
+        <h3>Lists & Chips</h3>
+        <div class="row">
+            <div class="col-12">
+                <div class="chip">Basic Chip</div>
+                <div class="chip"><i class="fas fa-star"></i>Chip with Icon</div>
+                <div class="chip fill">Filled Chip</div>
+                <div class="chip fill dismiss">Closable Chip<i class="fas fa-times"></i></div>
+                <div class="chip"><img src="src/img/avatar.jpg" alt>Image and Name Chip</div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-4">
                 <div class="card">
@@ -339,9 +348,9 @@
                         <li>List Item</li>
                         <li>List Item</li>
                         <li>List Item</li>
-                        <li>List Item</li>
-                        <li>List Item</li>
-                        <li>List Item</li>
+                        <li class="hideOnSmall">List Item</li>
+                        <li class="hideOnSmall">List Item</li>
+                        <li class="hideOnSmall">List Item</li>
                     </ul>
                 </div>
             </div>
@@ -351,9 +360,9 @@
                     <ul class="two">
                         <li>List Item <p>Secondary text</p></li>
                         <li>List Item <p>Secondary text</p></li>
-                        <li>List Item <p>Secondary text</p></li>
-                        <li>List Item <p>Secondary text</p></li>
-                        <li>List Item <p>Secondary text</p></li>
+                        <li class="hideOnSmall">List Item <p>Secondary text</p></li>
+                        <li class="hideOnSmall">List Item <p>Secondary text</p></li>
+                        <li class="hideOnSmall">List Item <p>Secondary text</p></li>
                     </ul>
                 </div>
             </div>
@@ -369,11 +378,11 @@
                             <p>Secondary text</p>
                             <p>Tertiary text</p>
                         </li>
-                        <li>List Item
+                        <li class="hideOnSmall">List Item
                             <p>Secondary text</p>
                             <p>Tertiary text</p>
                         </li>
-                        <li>List Item
+                        <li class="hideOnSmall">List Item
                             <p>Secondary text</p>
                             <p>Tertiary text</p>
                         </li>
@@ -445,14 +454,14 @@
         <h3>Progress Indicators</h3>
         <div class="row">
             <div class="col-12">
-                <h4 class="paddingless" style="padding-bottom:1rem">Environment</h4>
+                <h5 class="paddingless" style="padding-bottom:1rem">Environment</h5>
                 <button onclick="showAsyncProgressBar(3)">Async Bar</button>
                 <button onclick="showSyncProgressBar(3)">Sync Circular</button>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <h4 class="paddingless">Inline</h4>
+                <h5 class="paddingless">Inline</h5>
             </div>
         </div>
         <div class="row">
@@ -501,7 +510,6 @@
         </div>
     </div>
 </main>
-
 <footer class="hasNav">
     <div id="" class="grid">
         <div class="row">
@@ -519,7 +527,7 @@
         </div>
     </div>
 </footer>
-<script src="src/acode.0.1.0.js?v=v=0.1.3"></script>
+<script src="src/acode.0.1.0.js?v=v=0.1.4"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 <script>
     const showAsyncProgressBar = time => {

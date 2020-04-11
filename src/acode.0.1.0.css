@@ -8,7 +8,7 @@
     font-size: 14px;
     color: #334;
     background-color: transparent;
-    transition: all 100ms ease-in-out 0ms;
+    transition: all 200ms ease-in-out 0ms;
     box-sizing: border-box;
 }
 
@@ -124,24 +124,24 @@ nav.rail {
     margin-top: 4rem;
     background-color: #334;
     height: 100%;
-    width: 4rem;
+    width: 3.2rem;
 }
 
 nav.rail > a {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    height: 4rem;
+    height: 3.2rem;
     display: block;
 }
 
 nav.rail > a > i {
     color: #FFF;
-    font-size: 1.5rem;
-    height: 4rem;
-    width: 4rem;
+    font-size: 1.2rem;
+    height: 3.2rem;
+    width: 3.2rem;
     text-align: center;
-    line-height: 4rem;
+    line-height: 3.2rem;
     pointer-events: none;
     border-right: 0.2rem solid #334;
 }
@@ -406,6 +406,33 @@ div.overlay > div.card {
     width: fit-content;
     overflow: auto;
     box-shadow: 0 1rem 3rem -0.5rem #334;
+}
+
+div.overlay.sheet-bottom > div.card {
+    width: 100%;
+    max-width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    box-shadow: none;
+    border-radius: 0;
+    top: unset;
+    margin: 0;
+    max-height: 70%;
+}
+
+div.overlay.sheet-side > div.card {
+    height: 100%;
+    max-height: 100%;
+    top: 0;
+    right: 0;
+    left: unset;
+    transform: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    min-width: 30%;
+    max-width: 80%;
 }
 
 div.chip {
@@ -857,6 +884,35 @@ svg.circleIndicatorIndeterminate > circle {
     stroke-linecap: square;
 }
 
+div.snackbarContainer {
+    position: fixed;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    z-index: 300;
+}
+
+div.snackbarContainer > div {
+    background-color: #334E;
+    width: fit-content;
+    max-width: 90%;
+    display: block;
+    margin: 0.5rem auto;
+    border-radius: 0.5rem;
+    color: #FFF;
+    padding: 1rem;
+    font-size: 0.9em;
+    box-shadow: 0 0.8rem 0.6rem -0.6rem #334;
+}
+
+div.snackbarContainer > div > span {
+    color: #BAF;
+    font-size: 1em;
+    cursor: pointer;
+    padding-left: 1rem;
+    text-transform: uppercase;
+}
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .round {
@@ -913,6 +969,10 @@ svg.circleIndicatorIndeterminate > circle {
 
 .right {
     text-align: right;
+}
+
+.fadeOut {
+    opacity: 0;
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -992,7 +1052,7 @@ svg.circleIndicatorIndeterminate > circle {
     }
 
     body .hasRail {
-        margin-left: 4rem;
+        margin-left: 3.2rem;
     }
 
     button,
@@ -1058,6 +1118,18 @@ svg.circleIndicatorIndeterminate > circle {
     div.gallery.six.gap-3 > div.item {
         margin: 1rem;
         width: calc(16.666% - 2rem);
+    }
+
+    div.overlay.sheet-bottom > div.card {
+        max-height: 50%;
+    }
+
+    div.overlay.sheet-side > div.card {
+        max-width: 50%;
+    }
+
+    div.snackbarContainer > div {
+        max-width: 30%;
     }
 }
 
