@@ -2,9 +2,12 @@
 
 $ = sel => {
     const el = document.querySelectorAll(sel);
-    return (el.length === 1) ? el[0] : el.length === 0 ? null : el;
+    return el.length === 0 ? null : el[0];
 };
-$$ = sel => document.querySelectorAll(sel);
+$$ = sel => {
+    const el = document.querySelectorAll(sel);
+    return (el.length === 0) ? null : el;
+};
 $.ready = fn => {
     if (document.readyState !== 'loading') fn();
     else document.addEventListener('DOMContentLoaded', fn);
@@ -105,12 +108,10 @@ $(body).append(
 */
 
 $.attributeExceptions = ['role'];
-
 $.appendText = (el, text) => {
     const textNode = document.createTextNode(text);
     el.appendChild(textNode);
 };
-
 $.appendArray = (el, children) => {
     children.forEach((child) => {
         if (Array.isArray(child)) $.appendArray(el, child);
@@ -118,7 +119,6 @@ $.appendArray = (el, children) => {
         else if (typeof child === 'string') $.appendText(el, child);
     });
 };
-
 $.setStyles = (el, styles) => {
     if (!styles) {
         el.removeAttribute('styles');
@@ -133,7 +133,6 @@ $.setStyles = (el, styles) => {
         }
     });
 };
-
 $.makeElement = (type, textOrPropsOrChild, ...children) => {
     const el = document.createElement(type);
     if (Array.isArray(textOrPropsOrChild)) $.appendArray(el, textOrPropsOrChild);
@@ -235,7 +234,7 @@ const SyncLoadingCircle = () => {
  * @param item
  * @returns {boolean}
  */
-const isset = item => {
+$.isset = item => {
     return typeof item !== 'undefined' && item !== null;
 };
 
@@ -252,26 +251,26 @@ const isset = item => {
  * @returns {Promise}
  *
  */
-async function ajax (url = '', data = {}, options = {}) {
-    const method = isset(options.method)
+$.ajax = async function (url = '', data = {}, options = {}) {
+    const method = $.isset(options.method)
         ? options.method
         : { 'Content-Type': 'application/json' }; // *GET, POST, PUT, DELETE, etc.
-    const contentType = isset(options.content_type)
+    const contentType = $.isset(options.content_type)
         ? options.content_type
         : { 'Content-Type': 'application/json' }; // 'Content-Type': 'application/x-www-form-urlencoded'
-    const cors = isset(options.cors)
+    const cors = $.isset(options.cors)
         ? options.cors // no-cors, *cors, same-origin
         : 'cors';
-    const cache = isset(options.cache)
+    const cache = $.isset(options.cache)
         ? options.cache // *default, no-cache, reload, force-cache, only-if-cached
         : 'no-cache';
-    const credentials = isset(options.credentials)
+    const credentials = $.isset(options.credentials)
         ? options.credentials // include, *same-origin, omit
         : 'same-origin';
-    const redirect = isset(options.redirect)
+    const redirect = $.isset(options.redirect)
         ? options.redirect // manual, *follow, error
         : 'follow';
-    const policy = isset(options.policy)
+    const policy = $.isset(options.policy)
         ? options.policy // no-referrer, *client
         : 'client';
     const response = await fetch(url, {
@@ -285,16 +284,16 @@ async function ajax (url = '', data = {}, options = {}) {
         body: JSON.stringify(data) // body data type must match 'Content-Type' header
     });
     return await response.json(); // parses JSON response into native JavaScript objects
-}
+};
 
-setCookie = (name, value, days = 90) => {
+$.cookie = {};
+$.cookie.set = (name, value, days = 90) => {
     let date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     let expires = "; expires=" + date.toUTCString();
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 };
-
-getCookie = name => {
+$.cookie.get = name => {
     let nameEQ = name + "=";
     let ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
@@ -304,18 +303,17 @@ getCookie = name => {
     }
     return null;
 };
-
-eraseCookie = name => document.cookie = name + '=; Max-Age=-99999999;';
+$.cookie.delete = name => document.cookie = name + '=; Max-Age=-99999999;';
 
 // Framework
 
 $.dialog = (message = '', options = {}) => {
-    let title = isset(options.title) ? options.title : 'Information',
-        buttons = isset(options.buttons) ? options.buttons : [],
+    let title = $.isset(options.title) ? options.title : 'Information',
+        buttons = $.isset(options.buttons) ? options.buttons : [],
         _buttons = [];
     buttons.forEach(_button => {
-        let _id = isset(_button.id) ? _button.id : '',
-            _text = isset(_button.text) ? _button.text : '';
+        let _id = $.isset(_button.id) ? _button.id : '',
+            _text = $.isset(_button.text) ? _button.text : '';
         if (_text !== '') {
             _buttons.push(button({ className: 'text', id: _id }, _text));
         }
@@ -336,7 +334,7 @@ $.sheet = (type = '', html = '') => {
 };
 
 $.fullscreenImg = src => {
-    if (isset(src)) {
+    if ($.isset(src)) {
         Render(Gallery({ src: src }));
         $('#sfGallery').on('click', () => {
             $('#sfGallery').fadeRemove();
@@ -345,26 +343,22 @@ $.fullscreenImg = src => {
 };
 
 $.loading = {};
-
 $.loading.async = () => Render(AsyncLoadingBar());
-
 $.loading.sync = () => Render(SyncLoadingCircle());
-
 $.loading.dismiss = () => {
     let sfAsyncLoadingBar = $('#sfAsyncLoadingBar'),
         sfSyncLoadingCircle = $('#sfSyncLoadingCircle');
-    if (isset(sfAsyncLoadingBar)) sfAsyncLoadingBar.fadeRemove();
-    if (isset(sfSyncLoadingCircle)) sfSyncLoadingCircle.fadeRemove();
+    if ($.isset(sfAsyncLoadingBar)) sfAsyncLoadingBar.fadeRemove();
+    if ($.isset(sfSyncLoadingCircle)) sfSyncLoadingCircle.fadeRemove();
 };
 
 $.snackbarId = 1;
-
 $.snackbar = (message, button = '') => {
     let _id = $.snackbarId++,
     _container = $('.snackbarContainer');
     if (button === '') {
         _container.appendChild(div({ id: 'snackItem' + _id }, message));
-        let _time = message.length * 50 + 3000;
+        let _time = message.length * 20 + 3000;
         setTimeout(() => $('#snackItem' + _id).fadeRemove() , _time);
     }
     else {
@@ -372,6 +366,18 @@ $.snackbar = (message, button = '') => {
         let _snackbar = $('#snackItem' + _id);
         _snackbar.find('span')[0].on('click', () => _snackbar.fadeRemove());
     }
+};
+
+$.inView = (elm, threshold = 0) => {
+    const rect = elm.getBoundingClientRect();
+    const vpWidth = window.innerWidth;
+    const vpHeight = window.innerHeight;
+    const above = rect && rect.bottom - threshold <= 0;
+    const below = rect && rect.top - vpHeight + threshold >= 0;
+    const left = rect && rect.right - threshold <= 0;
+    const right = rect && rect.left - vpWidth + threshold >= 0;
+    const inside = !!rect && !above && !below && !left && !right;
+    return { inside, above, below, left, right };
 };
 
 $.init = component => {
@@ -384,6 +390,48 @@ $.init = component => {
                     e.target.addClass('active');
                     $('nav').removeClass('active');
                 });
+            });
+            break;
+        case 'followScroll':
+            let active = true;
+            window.addEventListener('scroll', () => {
+                const item = $('.followScroll').find('a'),
+                    first = 0,
+                    last = item.length - 1,
+                    scrollTop = ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) === 0,
+                    scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight,
+                    scrolledToBottom = (((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) + window.innerHeight) >= scrollHeight;
+                console.log(window.innerHeight, scrollHeight);
+                if (scrollTop) {
+                    if (!item[first].hasClass('active')) {
+                        item.forEach(e => { e.removeClass('active') });
+                        item[first].addClass('active')
+                    }
+                }
+                else
+                    if (scrolledToBottom) {
+                        if (!item[last].hasClass('active')) {
+                            item.forEach(e => { e.removeClass('active') });
+                            item[last].addClass('active')
+                        }
+                    }
+                    else {
+                        item.forEach(e => {
+                            let { inside } = $.inView($(e.attr('href')));
+                            if (!active) {
+                                if (inside && !e.hasClass('active')) {
+                                    e.addClass('active');
+                                    active = true;
+                                }
+                            }
+                            else {
+                                if (!inside && e.hasClass('active')) {
+                                    e.removeClass('active');
+                                    active = false;
+                                }
+                            }
+                        });
+                    }
             });
             break;
         case 'snackbar':
@@ -450,6 +498,7 @@ $.init = component => {
 
 $.ready(() => {
     $.init('nav');
+    $.init('followScroll');
     $.init('snackbar');
     $.init('gallery');
     $.init('circleIndicator');
