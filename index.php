@@ -570,8 +570,8 @@
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
                 <div class="right">
-                    <a class="button text slim" href="src/acode.css" target="_blank">CSS</a>
-                    <a class="button text slim" href="src/acode.js" target="_blank">JS</a>
+                    <a class="button text slim" href="src/acode.css" target="_blank">CSS (15Kb)</a>
+                    <a class="button text slim" href="src/acode.js" target="_blank">JS (9Kb)</a>
                     <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank">Github</a>
                     <a class="button text slim" href="https://www.acode.cl" target="_blank">ACODE</a>
                     <a class="button text slim" href="mailto://contact@acode.cl" target="_blank">Feedback</a>
