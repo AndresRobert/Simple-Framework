@@ -1,3 +1,4 @@
+<?php $v = '0.1.2'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.css?v=0.1.0" rel="stylesheet">
+    <link href="src/acode.css?v=<?=$v?>" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -570,17 +571,17 @@
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
                 <div class="right">
-                    <a class="button text slim" href="src/acode.css" target="_blank">CSS (15Kb)</a>
-                    <a class="button text slim" href="src/acode.js" target="_blank">JS (9Kb)</a>
-                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank">Github</a>
-                    <a class="button text slim" href="https://www.acode.cl" target="_blank">ACODE</a>
-                    <a class="button text slim" href="mailto://contact@acode.cl" target="_blank">Feedback</a>
+                    <a class="button text slim" href="src/acode.min.css" target="_blank"><i class="fab fa-css3"></i></a>
+                    <a class="button text slim" href="src/acode.min.js" target="_blank"><i class="fab fa-js"></i></a>
+                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank"><i class="fab fa-github"></i></a>
+                    <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="fas fa-envelope"></i></a>
+                    <a class="button text slim" href="https://www.acode.cl" target="_blank"><img src="src/img/icon.svg" class="fa" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-<script src="src/acode.js?v=v=0.1.0"></script>
+<script src="src/acode.js?v=<?=$v?>"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 <script>
     let showAsyncProgressBar = time => {

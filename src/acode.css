@@ -31,6 +31,11 @@ header {
     z-index: 102;
 }
 
+img.fa {
+    height: 0.9rem;
+    margin-bottom: -0.1rem;
+}
+
 header img.logo {
     height: 2.5rem;
     padding: 0.5rem 0.5rem 0 0.5rem;
