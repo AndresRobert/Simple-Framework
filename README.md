@@ -158,6 +158,48 @@ $.dialog(
 );
 ```
 
+## jQuery-ish Functions
+```javascript
+$.ready(() => {
+    $('#myDiv').find('.someClass').forEach(item => console.log);
+    $('.myClass').hide(); // returns first
+    $$('.myClass').forEach(item => item.hide()); // returns all
+});
+
+$('#myButton')
+    .on('click', event => event.target.addClass('clicked'))
+    .append($('#someOther').val())
+    .next()
+    .hide();
+```
+
+## JSX-ish Declarative Views and Encapsulated Components
+```javascript
+
+// Real Dialog creation
+
+Render(
+    div({ className: 'overlay' },
+        div({ className: 'card elevated' },
+            h5('My Title'),
+            p('My Message'),
+            div(
+                { className: 'buttons right' }, 
+                button({ className: 'text', id: 'my_button' }, 'My Button')
+            )
+        )
+    )
+);
+
+// Also mixable
+
+button(
+    { className: 'text', id: 'my_button' },
+    'My Button'
+).on('click', () => $.snackbar('Button pressed'));
+
+```
+
 ## Start Here
 ```html
 <head>

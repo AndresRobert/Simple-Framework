@@ -89,7 +89,7 @@ pro.fadeRemove = function () {
 // Components
 /*
 // How to use
-$(body).append(
+Render(
     div({ id: 'app', className: 'card' },
         header({ className: 'header' },
             h1({ className: 'header_title' }, 'Simple Framework'),
@@ -108,18 +108,18 @@ $(body).append(
 */
 
 $.attributeExceptions = ['role'];
-$.appendText = (el, text) => {
+$.setTxt = (el, text) => {
     const textNode = document.createTextNode(text);
     el.appendChild(textNode);
 };
-$.appendArray = (el, children) => {
+$.addArry = (el, children) => {
     children.forEach((child) => {
-        if (Array.isArray(child)) $.appendArray(el, child);
+        if (Array.isArray(child)) $.addArry(el, child);
         else if (child instanceof window.Element) el.appendChild(child);
-        else if (typeof child === 'string') $.appendText(el, child);
+        else if (typeof child === 'string') $.setTxt(el, child);
     });
 };
-$.setStyles = (el, styles) => {
+$.setAttr = (el, styles) => {
     if (!styles) {
         el.removeAttribute('styles');
         return;
@@ -133,41 +133,41 @@ $.setStyles = (el, styles) => {
         }
     });
 };
-$.makeElement = (type, textOrPropsOrChild, ...children) => {
+$.create = (type, textOrPropsOrChild, ...children) => {
     const el = document.createElement(type);
-    if (Array.isArray(textOrPropsOrChild)) $.appendArray(el, textOrPropsOrChild);
+    if (Array.isArray(textOrPropsOrChild)) $.addArry(el, textOrPropsOrChild);
     else if (textOrPropsOrChild instanceof window.Element) el.appendChild(textOrPropsOrChild);
-    else if (typeof textOrPropsOrChild === 'string') $.appendText(el, textOrPropsOrChild);
+    else if (typeof textOrPropsOrChild === 'string') $.setTxt(el, textOrPropsOrChild);
     else if (typeof textOrPropsOrChild === 'object') {
         Object.keys(textOrPropsOrChild).forEach((propName) => {
             if (propName in el || $.attributeExceptions.includes(propName)) {
                 const value = textOrPropsOrChild[propName];
-                if (propName === 'style') $.setStyles(el, value);
+                if (propName === 'style') $.setAttr(el, value);
                 else if (value) el[propName] = value;
             }
             else console.warn(`${ propName } is not a valid property of a <${ type }>`);
         });
     }
-    if (children) $.appendArray(el, children);
+    if (children) $.addArry(el, children);
     return el;
 };
 
-const a = (...args) => $.makeElement('a', ...args);
-const button = (...args) => $.makeElement('button', ...args);
-const div = (...args) => $.makeElement('div', ...args);
-const footer = (...args) => $.makeElement('footer', ...args);
-const h1 = (...args) => $.makeElement('h1', ...args);
-const h2 = (...args) => $.makeElement('h2', ...args);
-const h3 = (...args) => $.makeElement('h3', ...args);
-const h4 = (...args) => $.makeElement('h4', ...args);
-const h5 = (...args) => $.makeElement('h5', ...args);
-const h6 = (...args) => $.makeElement('h6', ...args);
-const header = (...args) => $.makeElement('header', ...args);
-const img = (...args) => $.makeElement('img', ...args);
-const main = (...args) => $.makeElement('main', ...args);
-const nav = (...args) => $.makeElement('nav', ...args);
-const p = (...args) => $.makeElement('p', ...args);
-const span = (...args) => $.makeElement('span', ...args);
+const a = (...args) => $.create('a', ...args);
+const button = (...args) => $.create('button', ...args);
+const div = (...args) => $.create('div', ...args);
+const footer = (...args) => $.create('footer', ...args);
+const h1 = (...args) => $.create('h1', ...args);
+const h2 = (...args) => $.create('h2', ...args);
+const h3 = (...args) => $.create('h3', ...args);
+const h4 = (...args) => $.create('h4', ...args);
+const h5 = (...args) => $.create('h5', ...args);
+const h6 = (...args) => $.create('h6', ...args);
+const header = (...args) => $.create('header', ...args);
+const img = (...args) => $.create('img', ...args);
+const main = (...args) => $.create('main', ...args);
+const nav = (...args) => $.create('nav', ...args);
+const p = (...args) => $.create('p', ...args);
+const span = (...args) => $.create('span', ...args);
 const SVGcircle = () => document.createElementNS('http://www.w3.org/2000/svg', 'circle') ;
 const Render = html => document.body.appendChild(html);
 
