@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.0.1.0.css?v=0.1.6" rel="stylesheet">
+    <link href="src/acode.css?v=0.1.0" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -580,7 +580,7 @@
         </div>
     </div>
 </footer>
-<script src="src/acode.0.1.0.js?v=v=0.1.6"></script>
+<script src="src/acode.js?v=v=0.1.0"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 <script>
     let showAsyncProgressBar = time => {
