@@ -448,7 +448,7 @@ $.init = component => {
             break;
         case 'gallery':
             let galleries = $$('.gallery');
-            galleries.forEach((gallery) => {
+            galleries.forEach(gallery => {
                 let images = gallery.find('img');
                 images.forEach((item, index, list) => {
                     let _height = item.height;
@@ -491,6 +491,14 @@ $.init = component => {
                 indicator.appendChild(circle);
             });
             break;
+        case 'range':
+            let ranges = $$('input[type="range"]');
+            ranges.forEach(range => {
+                range.on('input', e => {
+                    e.target.prev().find('.range')[0].html(e.target.value);
+                });
+            });
+            break;
         default:
     }
 };
@@ -501,4 +509,5 @@ $.ready(() => {
     $.init('snackbar');
     $.init('gallery');
     $.init('circleIndicator');
+    $.init('range');
 });

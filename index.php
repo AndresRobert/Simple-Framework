@@ -1,4 +1,4 @@
-<?php $v = '0.1.3'; ?>
+<?php $v = '0.1.4'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +18,7 @@
     </ul>
 </header>
 <nav class="followScroll">
+    <a href="#download"><i class="fas fa-cloud-download-alt"></i>Download</a>
     <a href="#grid" class="active"><i class="fas fa-grip-horizontal"></i>Grid</a>
     <a href="#cards"><i class="fas fa-address-card"></i>Cards</a>
     <a href="#typo"><i class="fas fa-heading"></i>Typo</a>
@@ -30,6 +31,16 @@
     <a href="#forms"><i class="fas fa-mouse-pointer"></i>Forms</a>
 </nav>
 <main class="pv-4 hasNav">
+    <div id="download" class="grid">
+        <div class="row">
+            <div class="col-12 center">
+                <h6 class="center">The Simplest framework you will ever need</h6>
+            </div>
+            <div class="col-12 center">
+                <a class="button" href="src/files/simpleFramework.zip">Download Now</a>
+            </div>
+        </div>
+    </div>
     <div id="grid" class="grid">
         <h3>Grid</h3>
         <div class="row hideOnSmall">
@@ -504,7 +515,7 @@
         </div>
         <div class="row">
             <div class="col-4 center">
-                <button class="fab"><i class="fas fa-plus"></i></button>
+                <button class="fab pulse"><i class="fas fa-plus"></i></button>
             </div>
             <div class="col-4 center">
                 <button class="fab fill"><i class="fas fa-pen"></i></button>
@@ -558,6 +569,71 @@
             </div>
             <div class="col-3">
                 <input type="submit" class="fill" value="Submit">
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col-6">
+                <label for="rng1">Range 1 <span class="range">25</span></label>
+                <input id="rng1" type="range" value="25">
+            </div>
+            <div class="col-6">
+                <label for="rng2">Disabled <span class="range">50</span></label>
+                <input id="rng2" type="range" value="50" disabled>
+            </div>
+        </div>
+        <h4 class="sub">Radio & Checkbox</h4>
+        <div class="row form">
+            <div class="col-3">
+                <label for="chk1" class="checkbox">Checkbox 1</label>
+                <input id="chk1" type="checkbox" checked>
+            </div>
+            <div class="col-3">
+                <label for="chk2" class="checkbox">Checkbox 2</label>
+                <input id="chk2" type="checkbox">
+            </div>
+            <div class="col-3">
+                <label for="chk3" class="checkbox">Checkbox 3</label>
+                <input id="chk3" type="checkbox">
+            </div>
+            <div class="col-3">
+                <label for="chk4">Compare</label>
+                <input id="chk3" type="text" placeholder="Alignment">
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col-3">
+                <label for="sw1" class="switch">Switch 1</label>
+                <input id="sw1" class="switch" type="checkbox" checked>
+            </div>
+            <div class="col-3">
+                <label for="sw2" class="switch">Switch 2</label>
+                <input id="sw2" class="switch" type="checkbox">
+            </div>
+            <div class="col-3">
+                <label for="sw3" class="switch">Switch 3</label>
+                <input id="sw3" class="switch" type="checkbox">
+            </div>
+            <div class="col-3">
+                <label for="sw4">Compare</label>
+                <input id="sw3" type="text" placeholder="Alignment">
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col-3">
+                <label for="rd1" class="radio">Radio 1</label>
+                <input id="rd1" name="radio" type="radio" checked>
+            </div>
+            <div class="col-3">
+                <label for="rd2" class="radio">Radio 2</label>
+                <input id="rd2" name="radio" type="radio">
+            </div>
+            <div class="col-3">
+                <label for="rd3" class="radio">Radio 3</label>
+                <input id="rd3" name="radio" type="radio">
+            </div>
+            <div class="col-3">
+                <label for="rd4">Compare</label>
+                <input id="rd3" type="text" placeholder="Alignment">
             </div>
         </div>
     </div>

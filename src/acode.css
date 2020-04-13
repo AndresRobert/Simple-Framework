@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1.sub, h2.sub, h3.sub, h4.sub, h5.sub, h6.sub {
-    padding-top: 0;
+    padding-top: 2rem;
 }
 
 h6 {
@@ -209,7 +209,7 @@ hr {
 }
 
 label {
-    margin-bottom: -1.4rem;
+    margin-bottom: -1.36rem;
     width: 100%;
     display: block;
     position: relative;
@@ -398,6 +398,28 @@ a.button.fab > i {
     font-size: 1rem;
 }
 
+button.pulse {
+    box-shadow: 0 0 0 0 #334;
+    transform: scale(1);
+    animation: sonar 1.3s infinite;
+}
+
+@keyframes sonar {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #334A;
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px #3340;
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 #3340;
+    }
+}
+
 table {
     width: 100%;
     text-align: center;
@@ -490,6 +512,167 @@ div.card > .buttons > a.button,
 div.card > .buttons > input[type='submit'] {
     padding: 0.5rem;
     width: auto;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 2rem 0.2rem 1.5rem;
+    outline: none;
+    border: 0.2rem solid #3346;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 0.2rem #FFF;
+    cursor: pointer;
+}
+
+input[type='radio'] {
+    border-radius: 50%;
+}
+
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+    background: #334;
+    border: 0.2rem solid #334;
+}
+
+label.checkbox,
+label.radio {
+    position: absolute;
+    top: 2.1rem;
+    left: 0;
+    padding-left: 2.4rem;
+}
+
+input[type='checkbox'].switch {
+    border-radius: 1rem;
+    width: 3rem;
+    background: #3342 radial-gradient(circle closest-side at 23% 50%, #3349 0.45rem, transparent 0.45rem);
+    box-shadow: inset 0 0 0 0.1rem #FFF;
+}
+
+input[type='checkbox'].switch:checked {
+    background: radial-gradient(circle closest-side at 75% 50%, #334 0.45rem, transparent 0.45rem);
+    border: 0.2rem solid #334;
+}
+
+label.switch {
+    position: absolute;
+    top: 2.1rem;
+    left: 0;
+    padding-left: 3.8rem;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    padding: 0 4rem 0 0;
+    border: none;
+}
+
+input[type=range]:disabled {
+    background-color: transparent;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.15rem;
+    cursor: pointer;
+    box-shadow: none;
+    background: #779;
+    border-radius: 0.15rem;
+    border: none;
+}
+
+input[type=range]:disabled::-webkit-slider-runnable-track {
+    background: #3342;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: none;
+    border: 0.1rem solid #334;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: #FFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -0.7rem;
+}
+
+input[type=range]:disabled::-webkit-slider-thumb {
+    border: 0.1rem solid #3342;
+    background: #AAB;
+    cursor: default;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #334;
+}
+
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 0.15rem;
+    cursor: pointer;
+    box-shadow: none;
+    background: #779;
+    border-radius: 0.15rem;
+    border: none;
+}
+
+input[type=range]:disabled::-moz-range-track {
+    background: #3342;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: none;
+    border: 0.1rem solid #334;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background: #FFF;
+    cursor: pointer;
+}
+
+input[type=range]:disabled::-moz-range-thumb {
+    border: 0.1rem solid #3342;
+    background: #AAB;
+    cursor: default;
+}
+
+input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+
+label > span.range {
+    position: absolute;
+    top: 2rem;
+    z-index: 1;
+    right: 0;
+    background: #334;
+    color: #FFF;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+    width: 3.5rem;
+    text-align: center;
+}
+
+label > span.range:after {
+    right: 100%;
+    top: 50%;
+    content: ' ';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 5px solid rgba(51, 51, 68, 0);border-right-color: #334;
+    margin-top: -5px;
 }
 
 div.card > .buttons > button.icon,
@@ -604,6 +787,7 @@ div.grid div.row > [class^='col-'] {
     min-height: 1rem;
     margin: 0.5% 0.166%;
     color: #334A;
+    position: relative;
 }
 
 div.grid div.row > div.col-1,
