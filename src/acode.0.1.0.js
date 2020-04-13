@@ -401,7 +401,6 @@ $.init = component => {
                     scrollTop = ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) === 0,
                     scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight,
                     scrolledToBottom = (((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) + window.innerHeight) >= scrollHeight;
-                console.log(window.innerHeight, scrollHeight);
                 if (scrollTop) {
                     if (!item[first].hasClass('active')) {
                         item.forEach(e => { e.removeClass('active') });

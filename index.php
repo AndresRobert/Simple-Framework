@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <title>Simple Framework</title>
-    <link href="src/acode.0.1.0.css?v=0.1.4" rel="stylesheet">
+    <link href="src/acode.0.1.0.css?v=0.1.6" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -25,7 +25,7 @@
     <a href="#navigation" class="hideOnSmall"><i class="fas fa-bars"></i>Navigation</a>
     <a href="#dialog"><i class="fas fa-window-restore"></i>Dialogs</a>
     <a href="#progress"><i class="fas fa-spinner"></i>Progress</a>
-    <a href="#buttons"><i class="fas fa-mouse-pointer"></i>Buttons</a>
+    <a href="#forms"><i class="fas fa-mouse-pointer"></i>Forms</a>
 </nav>
 <main class="pv-4 hasNav">
     <div id="grid" class="grid">
@@ -419,18 +419,15 @@
     </div>
     <div id="progress" class="grid">
         <h3>Progress Indicators</h3>
+        <h4 class="sub">Environment</h4>
+        <p class="title">Indeterminate loading indicators on screen that applies to environment processes</p>
         <div class="row">
             <div class="col-12">
-                <h5 class="paddingless" style="padding-bottom:1rem">Environment</h5>
                 <button onclick="showAsyncProgressBar(3)">Async Bar</button>
                 <button onclick="showSyncProgressBar(3)">Sync Circular</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <h5 class="paddingless">Inline</h5>
-            </div>
-        </div>
+        <h4 class="sub">Inline</h4>
         <div class="row">
             <div class="col-3">
                 <p>25%</p>
@@ -476,8 +473,10 @@
             </div>
         </div>
     </div>
-    <div id="buttons" class="grid">
-        <h3>Buttons</h3>
+    <div id="forms" class="grid">
+        <h3>Forms</h3>
+        <p class="title">All components almost out of the box (no classes needed for default styles)</p>
+        <h4 class="sub">Buttons</h4>
         <p class="title">This style applies to button and a.button</p>
         <div class="row">
             <div class="col-4 center">
@@ -512,6 +511,53 @@
                 <button class="fab text"><i class="fas fa-link"></i></button>
             </div>
         </div>
+        <h4 class="sub">Text Fields</h4>
+        <div class="row form">
+            <div class="col-3">
+                <label for="default">Default</label>
+                <input id="default" type="text" placeholder="Text field">
+            </div>
+            <div class="col-3">
+                <label for="leading">Leading Icon <i class="fas fa-star"></i></label>
+                <input id="leading" class="leading" type="text" placeholder="icon to left">
+            </div>
+            <div class="col-3">
+                <label for="trailing" class="trailing">Trailing Icon <i class="fas fa-star"></i></label>
+                <input id="trailing" class="trailing" type="text" placeholder="icon to right">
+                <span class="input">* Required</span>
+            </div>
+            <div class="col-3">
+                <label for="error" class="error">With error</label>
+                <input id="error" class="error" type="text" placeholder="Invalid data">
+                <span class="input error">Error info</span>
+            </div>
+        </div>
+        <div class="row form">
+            <div class="col-3">
+                <label for="disabled">Disabled</label>
+                <input id="disabled" type="text" value="Fixed value" disabled>
+            </div>
+            <div class="col-3">
+                <label for="select">Select</label>
+                <select id="select">
+                    <option>Item 1</option>
+                    <option>Item 2</option>
+                    <option>Item 3</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <label for="select3">Error</label>
+                <select id="select3" class="error" disabled>
+                    <option>Disabled</option>
+                    <option>Disabled 1</option>
+                    <option>Disabled 1</option>
+                </select>
+                <span class="input">Unavailable</span>
+            </div>
+            <div class="col-3">
+                <input type="submit" class="fill" value="Submit">
+            </div>
+        </div>
     </div>
 </main>
 <footer class="hasNav">
@@ -531,7 +577,7 @@
         </div>
     </div>
 </footer>
-<script src="src/acode.0.1.0.js?v=v=0.1.4"></script>
+<script src="src/acode.0.1.0.js?v=v=0.1.6"></script>
 <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 <script>
     let showAsyncProgressBar = time => {

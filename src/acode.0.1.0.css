@@ -167,6 +167,10 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
 }
 
+h1.sub, h2.sub, h3.sub, h4.sub, h5.sub, h6.sub {
+    padding-top: 0;
+}
+
 h6 {
     font-size: 1.2rem;
 }
@@ -197,8 +201,92 @@ hr {
     margin: 1rem 0;
 }
 
+label {
+    margin-bottom: -1.4rem;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+label > i {
+    position: absolute;
+    left: 0.4rem;
+    top: 2.15rem;
+}
+
+label.trailing > i {
+    right: 0.6rem;
+    left: unset;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    outline: none;
+    border: 1px solid #3346;
+    margin: 1.5rem 0 1rem;
+    height: 2.5rem;
+    background-color: #FFF;
+}
+
+select:focus,
+select:active,
+input:focus,
+input:active {
+    border-color: #334;
+}
+
+select.leading,
+input.leading {
+    padding-left: 1.8rem;
+}
+
+input:not(.leading).trailing {
+    padding-right: 2rem;
+}
+
+span.input {
+    font-size: 0.8rem;
+    margin-top: -1rem;
+    display: block;
+    color: #3349;
+    width: 100%;
+    padding-left: 0.3rem;
+}
+
+select.error,
+input.error {
+    border-color: #F44;
+}
+
+input.error::-webkit-input-placeholder,
+input.error::placeholder {
+    color: #FCC;
+}
+
+label.error,
+span.input.error {
+    color: #F44;
+}
+
+::-webkit-input-placeholder,
+::placeholder {
+    color: #3344;
+}
+
+select:disabled,
+input:disabled,
+input:read-only {
+    background-color: #3342;
+    border-color: #3341;
+    color: #3346;
+}
+
 button,
-a.button {
+a.button,
+input[type='submit'] {
     border: 1px solid #334;
     color: #334;
     padding: 0.5rem 1rem;
@@ -210,6 +298,7 @@ a.button {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    margin: 1.5rem 0 1rem;
 }
 
 button > i,
@@ -218,7 +307,8 @@ a.button > i {
 }
 
 button.fill,
-a.button.fill {
+a.button.fill,
+input[type='submit'].fill {
     background-color: #334;
     color: #FFF;
 }
@@ -229,15 +319,11 @@ a.button.fill > i {
 }
 
 button.text,
-a.button.text {
+a.button.text,
+input[type='submit'].text {
     border-color: transparent;
     color: #779;
     font-weight: bold;
-}
-
-button.text.slim,
-a.button.text.slim {
-    font-weight: normal;
 }
 
 button.text > i,
@@ -246,18 +332,21 @@ a.button.text > i {
 }
 
 button:hover,
-a.button:hover {
+a.button:hover,
+input[type='submit']:hover {
     background-color: #3342;
 }
 
 button.fill:hover,
-a.button.fill:hover {
+a.button.fill:hover,
+input[type='submit'].fill:hover {
     background-color: #779;
     border-color: #779;
 }
 
 button:disabled,
-a.button:disabled {
+a.button:disabled,
+input[type='submit']:disabled {
     border: 1px solid #3342;
     color: #334;
     background-color: #3342;
@@ -265,17 +354,20 @@ a.button:disabled {
 }
 
 button.round,
-a.button.round {
+a.button.round,
+input[type='submit'].round {
     border-radius: 2rem;
 }
 
 button.square,
-a.button.square {
+a.button.square,
+input[type='submit'].square {
     border-radius: 0;
 }
 
 button.fab,
-a.button.fab {
+a.button.fab,
+input[type='submit'].fab {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
@@ -379,7 +471,8 @@ div.card > div.buttons {
 }
 
 div.card > .buttons > button,
-div.card > .buttons > a.button {
+div.card > .buttons > a.button,
+div.card > .buttons > input[type='submit'] {
     padding: 0.5rem;
     width: auto;
 }
@@ -975,6 +1068,14 @@ div.snackbarContainer > div > span {
     opacity: 0;
 }
 
+.slim {
+    font-weight: normal !important;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 @media only screen and (min-width: 33.75rem) {
@@ -1029,6 +1130,10 @@ div.snackbarContainer > div > span {
 
     div.grid div.row > div.col-12 {
         width: 99.7%;
+    }
+
+    div.grid div.row.form > [class^='col-'] {
+        padding: 0 0.2rem;
     }
 
     .hideOnSmall {
