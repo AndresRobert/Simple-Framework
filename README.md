@@ -202,16 +202,19 @@ button(
 
 ## Start Here
 ```html
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Framework</title>
-    <link href="pathTo/acode.css" rel="stylesheet">
-</head>
-<body>
-<!-- Content -->
-<script src="pathTo/acode.js"></script>
-<script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Framework</title>
+        <link href="pathTo/acode.css" rel="stylesheet">
+    </head>
+    <body>
+    <!-- Content -->
+    <script src="pathTo/acode.js"></script>
+    <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
+    </body>
+</html>
 ```
 
 ## Use it Now!
