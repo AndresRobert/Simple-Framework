@@ -1,253 +1,176 @@
 # ACODE Simple Framework
-This very lightweight CSS/JS framework for lightning fast frontend development. Keep It Simple!!
+Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.
 
-## Breadcrumbs
+## GRID
 ```html
-<ul class="breadcrumbs">
-  <li><a href="#toHome">Home</a></li>
-  <li><a href="#somewhere">Somewhere</a></li>
-  <li>Here</li>
+<div class="grid">
+    <div class="row">
+        <div class="col-12"></div>
+    </div>
+</div>
+```
+## Regular Card
+```html
+<div class="card">
+    <h5>Card Title</h5>
+    <p class="title">Title description</p>
+    <p>Regular Card body text</p>
+</div>
+```
+
+## Elevated Card
+```html
+<div class="card elevated">
+    <h5>Elevated Card Title</h5>
+    <p class="title">Title description</p>
+    <p>Card body text</p>
+</div>
+```
+
+## Card with image
+```html
+<div class="card">
+    <img src="src/img/example.jpg" alt>
+    <h5>Card Title</h5>
+    <p class="title">Title description</p>
+    <p>Regular Card body text with image and buttons</p>
+    <div class="buttons">
+        <button class="text">More Info</button>
+        <button class="text">Close</button>
+    </div>
+</div>
+```
+
+## Chips
+```html
+<div class="chip">Basic Chip</div>
+<div class="chip"><i class="fas fa-star"></i>Chip with Icon</div>
+<div class="chip fill">Filled Chip</div>
+<div class="chip fill dismiss">Closable Chip<i class="fas fa-times"></i></div>
+<div class="chip"><img src="src/img/avatar.jpg" alt>Image and Name Chip</div>
+```
+
+## Lists
+```html
+<ul class="icon">
+    <li>One Line + Icon<i class="far fa-star"></i></li>
+</ul>
+<ul class="two">
+    <li>Two Lines
+        <p>Secondary text</p>
+    </li>
+</ul>
+<ul class="three">
+    <li>Three Lines
+        <p>Secondary text</p>
+        <p>Tertiary text</p>
+    </li>
 </ul>
 ```
-## Cards & Colors
+
+## Gallery
+Default 4 images per row
 ```html
-<div class="card">
-  Content
+<div class="gallery">
+    <div class="item">
+        <img src="src/img/example.jpg" alt="">
+        <p>Image Info <i class="far fa-star"></i></p>
+    </div>
+    <div class="item">
+        <img src="src/img/example2.jpg" alt="">
+    </div>
+    <div class="item round">
+        <img src="src/img/example.jpg" alt="">
+    </div>
+    <div class="item">
+        <img src="src/img/example.jpg" alt="">
+    </div>
+</div>
+
+<div class="gallery six">
+    <div class="item">
+        <img src="src/img/example.jpg" alt="">
+        <p>Image Info <i class="far fa-star"></i></p>
+    </div>
+    <div class="item">
+        <img src="src/img/example2.jpg" alt="">
+    </div>
+    <div class="item round">
+        <img src="src/img/example.jpg" alt="">
+    </div>
+    <div class="item">
+        <img src="src/img/example.jpg" alt="">
+    </div>
+    <div class="item">
+        <img src="src/img/example.jpg" alt="">
+    </div>
+    <div class="item">
+        <img src="src/img/example.jpg" alt="">
+    </div>
+</div>
+
+<div class="gallery two">
+    <div class="item">
+        <img src="src/img/example.jpg" alt="">
+        <p>Image Info <i class="far fa-star"></i></p>
+    </div>
+    <div class="item round">
+        <img src="src/img/example2.jpg" alt="">
+    </div>
 </div>
 ```
+
+## Navigation
 ```html
-<div class="card">
-  <div class="title">Card Title</div>
-  Content
-</div>
-```
-```css
-/* Colors */
-.disable {}
-.main {}
-.inverted {}
-.accent {}
-.primary {}
-.secondary {}
-.tertiary {}
-```
-and somo more to use and explore!
-## Typo
-All headers, span, pre, etc... redefined! no classes needed
-## Grid
-Use f2 to f11 to handle flexbox widths
-```html
-<section class="toCenter">
-  <div>1</div>
-  <div>2</div>
-  <div class="f2">3</div>
-</section>
-```
-## Images
-Always responsive, `.rounded` corners or `.circle` shaped
-## Buttons
-Buttons are full width on grid, can also be `.circle` shaped or `.fab` (float action button)
-## Navbar
-```html
-<nav>
-  <ul>
-    <li>Link 1</li>
-    <li>Link 2</li>
-    <li class="submenu collapse-next close">Dropdown</li>
-    <li class="submenu">
-      <ul>
-        <li>Sub Link 1</li>
-        <li>Sub Link 2</li>
-      </ul>
-    </li>
-  </ul>
+<nav class="followScroll">
+    <a href="#grid" class="active"><i class="fas fa-grip-horizontal"></i>Grid</a>
+    <a href="#cards"><i class="fas fa-address-card"></i>Cards</a>
+    <a href="#typo"><i class="fas fa-heading"></i>Typo</a>
+    <a href="#tables"><i class="fas fa-table"></i>Tables</a>
+    <a href="#lists"><i class="fas fa-list-ul"></i>Lists</a>
+    <a href="#gallery"><i class="fas fa-images"></i>Gallery</a>
+    <a href="#navigation" class="hideOnSmall"><i class="fas fa-bars"></i>Navigation</a>
+    <a href="#dialog"><i class="fas fa-window-restore"></i>Dialogs</a>
+    <a href="#progress"><i class="fas fa-spinner"></i>Progress</a>
+    <a href="#forms"><i class="fas fa-mouse-pointer"></i>Forms</a>
 </nav>
 ```
-## Icons
-Add custom icons:
-```css
-.icon.yourIcon {
-    -webkit-mask-image: url(/src/icon/yourIcon.svg);
-    mask-image: url(/src/icon/yourIcon.svg);
-}
-```
-Library:
-```html
-<span class="icon add"></span>
-<span class="icon close"></span>
-<span class="icon delete"></span>
-<span class="icon down"></span>
-<span class="icon empty"></span>
-<span class="icon filled"></span>
-<span class="icon left"></span>
-<span class="icon mail"></span>
-<span class="icon menu"></span>
-```
-etcetera...
-## Lists
-Redefined!
-```html
-<ul>
-  <li></li>
-</ul>
-```
-## Forms
-Check it out at the demo page.
-## Loaders
-```html
-<div class="loading"></div>
-```
-and some variations!
-## Tables
-Out of the box and Datatable plugin compatible
-## Collapsible
-```html
-<ul>
-  <li class="collapse-next">Collapsible title</li>
-  <li>Collapsible content</li>
-</ul>
-```
+
+## Environment Progress Indicators
 ```javascript
-init.collapse();
+$.loading.async();
+$.loading.sync();
+$.loading.dismiss();
 ```
-## Carousel
-```html
-<div class="carousel">
-  <div>Item 1</div>
-  <div>Item 2</div>
-  <div>Item 3</div>
-</div>
-```
-## Modals
-```html
-<div class="modal close" id="myModal">
-  <div class="header"></div>
-  <div class="body"></div>
-  <div class="footer"></div>
-</div>
-```
+
+## Snackbar & Dialog
 ```javascript
-on.click('openMyModal', () => {add.class('myModal', 'open')});
+$.snackbar('This will be dismissed in 3 secs');
+$.dialog(
+    'Dialog body very, very, long text example for testing purposes',
+    {
+        title: 'Dialog Header',
+        buttons: [
+            { text: 'Action 1', id: 'action1' },
+            { text: 'Action 2', id: 'action2' }
+        ]
+    }
+);
 ```
-## Tabs
+
+## Start Here
 ```html
-<div class="tabs">
-  <div>
-    <input type="radio" id="tab-1" name="tab-group-1" checked>
-    <label for="tab-1">Tab One</label>
-    <div>Content for Tab One</div>
-  </div>
-  <div>
-    <input type="radio" id="tab-2" name="tab-group-1">
-    <label for="tab-2">Tab One</label>
-    <div>Content for Tab Two</div>
-  </div>
-  <div>
-    <input type="radio" id="tab-3" name="tab-group-1">
-    <label for="tab-3">Tab One</label>
-    <div>Content for Tab Three</div>
-  </div>
-</div>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Framework</title>
+    <link href="pathTo/acode.css" rel="stylesheet">
+</head>
+<body>
+<!-- Content -->
+<script src="pathTo/acode.js"></script>
+<script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
+</body>
 ```
-## Bottom Menu
-```html
-<div id="bottomMenu" class="myBottomMenu">
-    <div class="items">
-        <div class="active">
-            <span class="icon add"></span>Add
-        </div>
-        <div>
-            <span class="icon message"></span>Chat
-        </div>
-        <div>
-            <span class="icon mail"></span>Mail
-        </div>
-        <div>
-            <span class="icon power"></span>Logout
-        </div>
-    </div>
-    <div class="contents">
-        <div>Add content for tab</div>
-        <div>Maybe a form to sent a comment</div>
-        <div>Feed with mails</div>
-        <div>Good bye message...</div>
-    </div>
-</div>
-```
-```javascript
-init.bottomMenu('myBottomMenu');
-```
-## JS Helpers
-```javascript
-// toggle between classes
-toggle.class('id', 'className');
-// add classes
-add.class('id', 'className');
-// remove classes
-remove.class('id', 'className');
-// on events
-on.click('id', handler => {});
-on.change('id', handler => {});
-on.keyup('id', handler => {});
-on.mousedown('id', handler => {});
-on.focus('id', handler => {});
-on.blur('id', handler => {});
-// init specific components by id
-init.counter('id');
-init.bottomMenu('id');
-// init all components
-init.checkbox();
-init.radio();
-init.range();
-init.collapse();
-// show snackbar
-snackbar.show('message', 'classes', duration);
-// ajax Promise
-ajax.post('/url', {data});
-```
-## CSS Helpers
-```css
-/* Fixed header and footer */
-.fixed {}
-/* Convert div on a card */
-.card {}
-/* Point out buttons */
-.sonar {}
-/* 
-pre, div & span resized font
-.d5 -> .d1 (0.5em -> 0.9em)
-.x1 -> .x9 (1em -> 3em)
- */
-/* Shadows */
-.flat {}
-.shadow1 {}
-.shadow2 {}
-.shadow3 {}
-/* Flex width
-.f2 -> .f11
-Icon sizes
-.x2 -> .x9 (1.2em -> 3em)
- */
-/* Font weight */
-.light {}
-.normal {}
-.bold {}
-/* Text align */
-.toLeft {} 
-.toCenter {} 
-.toRight {}
-/* Attributes */
-.unselectable {} 
-.truncated {} 
-.clickable {} 
-.rounded {} 
-.hidden {} 
-.hideOnSmall {} 
-.showOnSmall {} 
-.keepOnSmall {}
-/* Separation */
-.upperGap {} 
-.lowerGap {}
-```
+
 ## Use it Now!
-Visit [ACODE Simple Framework](https://acode.cl/)
+Visit [ACODE Simple Framework](https://simple.acode.cl/)
