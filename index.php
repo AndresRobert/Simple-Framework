@@ -1,4 +1,4 @@
-<?php $v = '0.1.4'; ?>
+<?php $v = '0.1.5'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +20,10 @@
 <nav class="followScroll">
     <a href="#download"><i class="fas fa-cloud-download-alt"></i>Download</a>
     <a href="#grid" class="active"><i class="fas fa-grip-horizontal"></i>Grid</a>
-    <a href="#cards"><i class="fas fa-address-card"></i>Cards</a>
+    <a href="#cards"><i class="fas fa-address-card"></i>Cards & Tabs</a>
     <a href="#typo"><i class="fas fa-heading"></i>Typo</a>
     <a href="#tables"><i class="fas fa-table"></i>Tables</a>
-    <a href="#lists"><i class="fas fa-list-ul"></i>Lists</a>
+    <a href="#lists"><i class="fas fa-list-ul"></i>Lists & Chips</a>
     <a href="#gallery"><i class="fas fa-images"></i>Gallery</a>
     <a href="#navigation" class="hideOnSmall"><i class="fas fa-bars"></i>Navigation</a>
     <a href="#dialog"><i class="fas fa-window-restore"></i>Dialogs</a>
@@ -105,7 +105,7 @@
         </div>
     </div>
     <div id="cards" class="grid">
-        <h3>Cards</h3>
+        <h3>Cards & Tabs</h3>
         <div class="row">
             <div class="col-6">
                 <div class="card">
@@ -148,18 +148,44 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="tabs">
+                    <button class="tab active">Tab 1</button>
+                    <button class="tab">Tab 2</button>
+                    <button class="tab">Tab 3</button>
+                    <button class="tab">Tab 4</button>
+                    <button class="tab">Tab 5</button>
+                    <button class="tab">Tab 6</button>
+                    <button class="tab">Tab 7</button>
+                    <button class="tab">Tab 8</button>
+                    <button class="tab">Tab 9</button>
+                    <button class="tab">Tab 10</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="tabs wide">
+                    <button class="tab active"><i class="fas fa-thumbs-up"></i>Like</button>
+                    <button class="tab"><i class="fas fa-share-alt"></i>Share</button>
+                    <button class="tab"><i class="fas fa-heart"></i>Favorite</button>
+                    <button class="tab"><i class="fas fa-star"></i>Star</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="typo" class="grid">
-        <h3>Typo & Dividers</h3>
+        <h3>Typo</h3>
         <p class="title">Uses Open Sans out from the box (300 & 600 only, but you can add more if needed)</p>
         <div class="row">
             <div class="col-12">
-                <h1 class="paddingless">Header 1</h1>
-                <h2 class="paddingless">Header 2</h2>
-                <h3 class="paddingless">Header 3</h3>
-                <h4 class="paddingless">Header 4</h4>
-                <h5 class="paddingless">Header 5</h5>
-                <h6 class="paddingless">Header 6</h6>
+                <h1 class="p0">Header 1</h1>
+                <h2 class="p0">Header 2</h2>
+                <h3 class="p0">Header 3</h3>
+                <h4 class="p0">Header 4</h4>
+                <h5 class="p0">Header 5</h5>
+                <h6 class="p0">Header 6</h6>
                 <p>Paragraph</p>
                 <hr>
                 <p>Divider</p>
@@ -524,7 +550,7 @@
                 <button class="fab text"><i class="fas fa-link"></i></button>
             </div>
         </div>
-        <h4 class="sub">Text Fields</h4>
+        <h4 class="sub">Input Fields</h4>
         <div class="row form">
             <div class="col-3">
                 <label for="default">Default</label>
@@ -595,7 +621,7 @@
                 <label for="chk3" class="checkbox">Checkbox 3</label>
                 <input id="chk3" type="checkbox">
             </div>
-            <div class="col-3">
+            <div class="col-3 hideOnSmall">
                 <label for="chk4">Compare</label>
                 <input id="chk3" type="text" placeholder="Alignment">
             </div>
@@ -613,7 +639,7 @@
                 <label for="sw3" class="switch">Switch 3</label>
                 <input id="sw3" class="switch" type="checkbox">
             </div>
-            <div class="col-3">
+            <div class="col-3 hideOnSmall">
                 <label for="sw4">Compare</label>
                 <input id="sw3" type="text" placeholder="Alignment">
             </div>
@@ -631,7 +657,7 @@
                 <label for="rd3" class="radio">Radio 3</label>
                 <input id="rd3" name="radio" type="radio">
             </div>
-            <div class="col-3">
+            <div class="col-3 hideOnSmall">
                 <label for="rd4">Compare</label>
                 <input id="rd3" type="text" placeholder="Alignment">
             </div>
@@ -647,10 +673,10 @@
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
                 <div class="right">
-                    <a class="button text slim" href="src/acode.min.css" target="_blank"><i class="fab fa-css3"></i></a>
-                    <a class="button text slim" href="src/acode.min.js" target="_blank"><i class="fab fa-js"></i></a>
-                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank"><i class="fab fa-github"></i></a>
-                    <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="fas fa-envelope"></i></a>
+                    <a class="button text slim" href="src/acode.min.css" target="_blank"><i class="fab fa-css3 m0"></i></a>
+                    <a class="button text slim" href="src/acode.min.js" target="_blank"><i class="fab fa-js m0"></i></a>
+                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank"><i class="fab fa-github m0"></i></a>
+                    <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="fas fa-envelope m0"></i></a>
                     <a class="button text slim" href="https://www.acode.cl" target="_blank"><img src="src/img/icon.svg" class="fa" alt=""></a>
                 </div>
             </div>

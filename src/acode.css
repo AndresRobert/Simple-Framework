@@ -568,9 +568,6 @@ input[type=range] {
     -webkit-appearance: none;
     padding: 0 4rem 0 0;
     border: none;
-}
-
-input[type=range]:disabled {
     background-color: transparent;
 }
 
@@ -689,6 +686,42 @@ div.card > .buttons > button.icon > i,
 div.card > .buttons > a.button.icon > i {
     margin: 0;
     color: #3349;
+}
+
+div.tabs {
+    overflow-x: auto;
+    display: inline-flex;
+    width: 100%;
+}
+
+div.tabs > button.tab {
+    width: auto;
+    min-width: 7rem;
+    border: none;
+    border-bottom: 0.1rem solid #3342;
+    border-radius: 0.1rem 0.1rem 0 0;
+    float: left;
+    text-transform: none;
+    position: relative;
+}
+
+div.tabs > button.tab > i {
+    position: absolute;
+    top: 0.3rem;
+    left: 50%;
+    margin: 0 0 0 -0.7rem;
+    font-size: 1.4rem;
+}
+
+div.tabs.wide > button.tab {
+    flex: 1;
+    padding: 2rem 0 0.2rem;
+    min-width: unset;
+}
+
+div.tabs > button.tab.active {
+    border-color: #334;
+    border-width: 0.1rem;
 }
 
 div.overlay > div.card {
@@ -1239,10 +1272,6 @@ div.snackbarContainer > div > span {
     display: none;
 }
 
-.paddingless {
-    padding: 0;
-}
-
 .hasNav {
     margin-left: 0;
 }
@@ -1273,6 +1302,14 @@ div.snackbarContainer > div > span {
 
 .bold {
     font-weight: bold !important;
+}
+
+.m0 {
+    margin: 0 !important;
+}
+
+.p0 {
+    padding: 0 !important;
 }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

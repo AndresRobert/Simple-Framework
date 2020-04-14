@@ -499,6 +499,17 @@ $.init = component => {
                 });
             });
             break;
+        case 'tabs':
+            let tabContainers = $$('.tabs');
+            tabContainers.forEach(tabContainer => {
+                tabContainer.find('.tab').forEach((tab, i, _tabs) => {
+                    tab.on('click', e => {
+                        _tabs.forEach(_tab => _tab.removeClass('active'));
+                        e.target.addClass('active');
+                    });
+                });
+            });
+            break;
         default:
     }
 };
@@ -510,4 +521,5 @@ $.ready(() => {
     $.init('gallery');
     $.init('circleIndicator');
     $.init('range');
+    $.init('tabs');
 });
