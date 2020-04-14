@@ -31,6 +31,12 @@ header {
     z-index: 102;
 }
 
+button, label {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
 img.fa {
     height: 0.9rem;
     margin-bottom: -0.1rem;
