@@ -2,11 +2,11 @@
 
 $ = sel => {
     const el = document.querySelectorAll(sel);
-    return el.length === 0 ? null : el[0];
+    return el.length === 0 ? document.createElement('div') : el[0];
 };
 $$ = sel => {
     const el = document.querySelectorAll(sel);
-    return (el.length === 0) ? null : el;
+    return el;
 };
 $.ready = fn => {
     if (document.readyState !== 'loading') fn();
@@ -235,7 +235,7 @@ const SyncLoadingCircle = () => {
  * @returns {boolean}
  */
 $.isset = item => {
-    return typeof item !== 'undefined' && item !== null;
+    return item instanceof Element ? $.exists(item) : typeof item !== 'undefined' && item !== null;
 };
 
 /**
@@ -254,26 +254,26 @@ $.isset = item => {
 $.ajax = async function (url = '', data = {}, options = {}) {
     const method = $.isset(options.method)
         ? options.method
-        : { 'Content-Type': 'application/json' }; // *GET, POST, PUT, DELETE, etc.
-    const contentType = $.isset(options.content_type)
+        : 'POST', // *GET, POST, PUT, DELETE, etc.
+    contentType = $.isset(options.content_type)
         ? options.content_type
-        : { 'Content-Type': 'application/json' }; // 'Content-Type': 'application/x-www-form-urlencoded'
-    const cors = $.isset(options.cors)
+        : { 'Content-Type': 'application/json' }, // 'Content-Type': 'application/x-www-form-urlencoded'
+    cors = $.isset(options.cors)
         ? options.cors // no-cors, *cors, same-origin
-        : 'cors';
-    const cache = $.isset(options.cache)
+        : 'cors',
+    cache = $.isset(options.cache)
         ? options.cache // *default, no-cache, reload, force-cache, only-if-cached
-        : 'no-cache';
-    const credentials = $.isset(options.credentials)
+        : 'no-cache',
+    credentials = $.isset(options.credentials)
         ? options.credentials // include, *same-origin, omit
-        : 'same-origin';
-    const redirect = $.isset(options.redirect)
+        : 'same-origin',
+    redirect = $.isset(options.redirect)
         ? options.redirect // manual, *follow, error
-        : 'follow';
-    const policy = $.isset(options.policy)
+        : 'follow',
+    policy = $.isset(options.policy)
         ? options.policy // no-referrer, *client
-        : 'client';
-    const response = await fetch(url, {
+        : 'no-referrer',
+        response = await fetch(url, {
         method: method,
         mode: cors,
         cache: cache,
@@ -304,6 +304,8 @@ $.cookie.get = name => {
     return null;
 };
 $.cookie.delete = name => document.cookie = name + '=; Max-Age=-99999999;';
+
+$.exists = sel => sel instanceof Element ? document.body.contains(sel) : document.body.contains($(sel));
 
 // Framework
 
@@ -348,8 +350,8 @@ $.loading.sync = () => Render(SyncLoadingCircle());
 $.loading.dismiss = () => {
     let sfAsyncLoadingBar = $('#sfAsyncLoadingBar'),
         sfSyncLoadingCircle = $('#sfSyncLoadingCircle');
-    if ($.isset(sfAsyncLoadingBar)) sfAsyncLoadingBar.fadeRemove();
-    if ($.isset(sfSyncLoadingCircle)) sfSyncLoadingCircle.fadeRemove();
+    if ($.exists('#sfAsyncLoadingBar')) sfAsyncLoadingBar.fadeRemove();
+    if ($.exists('#sfSyncLoadingCircle')) sfSyncLoadingCircle.fadeRemove();
 };
 
 $.snackbarId = 1;
@@ -401,36 +403,38 @@ $.init = component => {
                     scrollTop = ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) === 0,
                     scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight,
                     scrolledToBottom = (((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) + window.innerHeight) >= scrollHeight;
-                if (scrollTop) {
-                    if (!item[first].hasClass('active')) {
-                        item.forEach(e => { e.removeClass('active') });
-                        item[first].addClass('active')
-                    }
-                }
-                else
-                    if (scrolledToBottom) {
-                        if (!item[last].hasClass('active')) {
+                if (item.length > 0) {
+                    if (scrollTop) {
+                        if (!item[first].hasClass('active')) {
                             item.forEach(e => { e.removeClass('active') });
-                            item[last].addClass('active')
+                            item[first].addClass('active')
                         }
                     }
-                    else {
-                        item.forEach(e => {
-                            let { inside } = $.inView($(e.attr('href')));
-                            if (!active) {
-                                if (inside && !e.hasClass('active')) {
-                                    e.addClass('active');
-                                    active = true;
-                                }
+                    else
+                        if (scrolledToBottom) {
+                            if (!item[last].hasClass('active')) {
+                                item.forEach(e => { e.removeClass('active') });
+                                item[last].addClass('active')
                             }
-                            else {
-                                if (!inside && e.hasClass('active')) {
-                                    e.removeClass('active');
-                                    active = false;
+                        }
+                        else {
+                            item.forEach(e => {
+                                let { inside } = $.inView($(e.attr('href')));
+                                if (!active) {
+                                    if (inside && !e.hasClass('active')) {
+                                        e.addClass('active');
+                                        active = true;
+                                    }
                                 }
-                            }
-                        });
-                    }
+                                else {
+                                    if (!inside && e.hasClass('active')) {
+                                        e.removeClass('active');
+                                        active = false;
+                                    }
+                                }
+                            });
+                        }
+                }
             });
             break;
         case 'snackbar':
@@ -511,12 +515,11 @@ $.init = component => {
             });
             break;
         case 'tooltip':
-            let _tooltip = $('#sfTooltip');
-            if (!$.isset(_tooltip)) {
+            if (!$.exists('#sfTooltip')) {
                 Render(span({ id: 'sfTooltip', className: 'tooltip' }, ''));
-                _tooltip = $('#sfTooltip');
                 window.onscroll = () => _tooltip.removeClass('show');
             }
+            let _tooltip = $('#sfTooltip');
             let hasTooltips = $$('[data-tooltip]');
             hasTooltips.forEach(hasTooltip => {
                 hasTooltip.on('mouseenter', e => {
