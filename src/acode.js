@@ -368,8 +368,25 @@ $.snackbar = (message, button = '') => {
     }
 };
 
-$.inView = (elm, threshold = 0) => {
-    const rect = elm.getBoundingClientRect();
+$.tooltip = (element, message) => {
+    let _tooltip = $('#sfTooltip');
+    if (!$.isset(_tooltip)) {
+        Render(span({ id: 'sfTooltip', className: 'tooltip' }, message));
+        _tooltip = $('#sfTooltip');
+        window.onscroll = () => _tooltip.removeClass('show');
+    }
+    element.on('mouseleave', () => _tooltip.removeClass('show'));
+    _tooltip.html(message);
+    let { right, bottom, left } = element.getBoundingClientRect();
+    _tooltip.style.top = (bottom + 10) + 'px';
+    _tooltip.style.left = (left + (right - left) / 2) + 'px';
+    _tooltip.style.maxWidth = (element.clientWidth + 10) + 'px';
+    _tooltip.style.marginLeft = '-' + (_tooltip.clientWidth / 2) + 'px';
+    _tooltip.addClass('show');
+};
+
+$.inView = (element, threshold = 0) => {
+    const rect = element.getBoundingClientRect();
     const vpWidth = window.innerWidth;
     const vpHeight = window.innerHeight;
     const above = rect && rect.bottom - threshold <= 0;

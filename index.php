@@ -453,6 +453,7 @@
                 </button>
                 <button onclick="$.snackbar('This will be dismissed in 3 secs')">Timed Snackbar</button>
                 <button onclick="$.snackbar('This will stay here until you click on: ', 'Dismiss')">Snackbar</button>
+                <button onmouseenter="$.tooltip(this, 'Very Long Description')">Tooltip</button>
             </div>
         </div>
     </div>
