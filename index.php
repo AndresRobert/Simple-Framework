@@ -1,11 +1,11 @@
-<?php $v = '0.1.2'; ?>
+<?php $v = '0.1.3'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Simplest CSS/JS framework you will ever need">
-    <link href="vendor/FontAwesome/css/all.min.css" rel="stylesheet">
+    <link href="vendor/FontAwesome/css/all.css" rel="stylesheet">
     <link href="src/acode.min.css?v=<?=$v?>" rel="stylesheet">
     <title>Simple Framework</title>
     <link rel="icon" type="image/png" href="src/img/favicon.png">
@@ -19,7 +19,7 @@
 </head>
 <body>
 <header>
-    <i onclick="$('nav').toggleClass('active')" class="fas fa-bars menu"></i>
+    <i onclick="$('nav').toggleClass('active')" class="fab fa-ioxhost menu"></i>
     <img class="logo" src="src/img/logo.svg" alt>
     <p class="hideOnSmall">Simple Framework</p>
     <ul class="icons">
@@ -27,17 +27,17 @@
     </ul>
 </header>
 <nav class="followScroll">
-    <a href="#download"><i class="fas fa-cloud-download-alt"></i>Download</a>
-    <a href="#grid" class="active"><i class="fas fa-grip-horizontal"></i>Grid</a>
-    <a href="#cards"><i class="fas fa-address-card"></i>Cards & Tabs</a>
-    <a href="#typo"><i class="fas fa-heading"></i>Typo</a>
-    <a href="#tables"><i class="fas fa-table"></i>Tables</a>
-    <a href="#lists"><i class="fas fa-list-ul"></i>Lists & Chips</a>
-    <a href="#gallery"><i class="fas fa-images"></i>Gallery</a>
-    <a href="#navigation" class="hideOnSmall"><i class="fas fa-bars"></i>Navigation</a>
-    <a href="#dialog"><i class="fas fa-window-restore"></i>Dialogs</a>
-    <a href="#progress"><i class="fas fa-spinner"></i>Progress</a>
-    <a href="#forms"><i class="fas fa-mouse-pointer"></i>Forms</a>
+    <a href="#download"><i class="far fa-arrow-alt-circle-down"></i>Download</a>
+    <a href="#grid" class="active"><i class="fab fa-buromobelexperte"></i>Grid</a>
+    <a href="#cards"><i class="far fa-address-card"></i>Cards & Tabs</a>
+    <a href="#typo"><i class="fab fa-acquisitions-incorporated"></i>Typo</a>
+    <a href="#tables"><i class="fab fa-schlix"></i>Tables</a>
+    <a href="#lists"><i class="far fa-list-alt"></i>Lists & Chips</a>
+    <a href="#gallery"><i class="far fa-images"></i>Gallery</a>
+    <a href="#navigation" class="hideOnSmall"><i class="fab fa-ioxhost"></i>Navigation</a>
+    <a href="#dialog"><i class="far fa-window-restore"></i>Dialogs</a>
+    <a href="#progress"><i class="fab fa-whmcs"></i>Progress</a>
+    <a href="#forms"><i class="fab fa-wpforms"></i>Forms</a>
 </nav>
 <main class="pv-4 hasNav">
     <div id="download" class="grid">
@@ -152,7 +152,7 @@
                     <div class="buttons">
                         <button class="text">More Info</button>
                         <button class="text">Close</button>
-                        <button class="text icon" aria-label="More Options"><i class="fas fa-ellipsis-v"></i></button>
+                        <button class="text icon" aria-label="More Options"><i class="far fa-bookmark"></i></button>
                     </div>
                 </div>
             </div>
@@ -176,10 +176,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="tabs wide">
-                    <button class="tab active"><i class="fas fa-thumbs-up"></i>Like</button>
-                    <button class="tab"><i class="fas fa-share-alt"></i>Share</button>
-                    <button class="tab"><i class="fas fa-heart"></i>Favorite</button>
-                    <button class="tab"><i class="fas fa-star"></i>Star</button>
+                    <button class="tab active"><i class="far fa-thumbs-up"></i>Likes</button>
+                    <button class="tab"><i class="far fa-bookmark"></i>Bookmarks</button>
+                    <button class="tab"><i class="far fa-heart"></i>Favorites</button>
+                    <button class="tab"><i class="far fa-star"></i>Starred</button>
                 </div>
             </div>
         </div>
@@ -275,9 +275,9 @@
         <div class="row">
             <div class="col-12">
                 <div class="chip">Basic Chip</div>
-                <div class="chip"><i class="fas fa-star"></i>Chip with Icon</div>
+                <div class="chip"><i class="far fa-star"></i>Chip with Icon</div>
                 <div class="chip fill">Filled Chip</div>
-                <div class="chip fill dismiss">Closable Chip<i class="fas fa-times"></i></div>
+                <div class="chip fill dismiss">Closable Chip <span class="close">x</span></div>
                 <div class="chip"><img src="" data-src="src/img/avatar.jpg" alt>Image and Name Chip</div>
             </div>
         </div>
@@ -545,35 +545,35 @@
         <p class="title">This style applies to button and a.button</p>
         <div class="row">
             <div class="col-4 center">
-                <button><i class="fas fa-star"></i>button</button>
+                <button><i class="far fa-star"></i>button</button>
             </div>
             <div class="col-4 center">
-                <button class="fill"><i class="fas fa-star"></i>button .fill</button>
+                <button class="fill"><i class="far fa-star"></i>button .fill</button>
             </div>
             <div class="col-4 center">
-                <button class="text"><i class="fas fa-star"></i>button .text</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 center">
-                <button class="square"><i class="fas fa-star"></i>button .square</button>
-            </div>
-            <div class="col-4 center">
-                <button class="round fill"><i class="fas fa-star"></i>.round.fill</button>
-            </div>
-            <div class="col-4 center">
-                <button disabled><i class="fas fa-times"></i>disabled</button>
+                <button class="text"><i class="far fa-star"></i>button .text</button>
             </div>
         </div>
         <div class="row">
             <div class="col-4 center">
-                <a class="button fab pulse" aria-label="Add new"><i class="fas fa-plus"></i></a>
+                <button class="square"><i class="far fa-star"></i>button .square</button>
             </div>
             <div class="col-4 center">
-                <a class="button fab fill" aria-label="Edit"><i class="fas fa-pen"></i></a>
+                <button class="round fill"><i class="far fa-star"></i>.round.fill</button>
             </div>
             <div class="col-4 center">
-                <a class="button fab text" aria-label="Go to somewhere"><i class="fas fa-link"></i></a>
+                <button disabled><i class="far fa-times"></i>disabled</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 center">
+                <a class="button fab pulse" aria-label="Add new"><i class="far fa-plus"></i></a>
+            </div>
+            <div class="col-4 center">
+                <a class="button fab fill" aria-label="Edit"><i class="far fa-pen"></i></a>
+            </div>
+            <div class="col-4 center">
+                <a class="button fab text" aria-label="Go to somewhere"><i class="far fa-link"></i></a>
             </div>
         </div>
         <h4 class="sub">Input Fields</h4>
@@ -583,11 +583,11 @@
                 <input id="default" type="text" placeholder="Text field">
             </div>
             <div class="col-3">
-                <label for="leading">Leading Icon <i class="fas fa-star"></i></label>
+                <label for="leading">Leading Icon <i class="far fa-star"></i></label>
                 <input id="leading" class="leading" type="text" placeholder="icon to left">
             </div>
             <div class="col-3">
-                <label for="trailing" class="trailing">Trailing Icon <i class="fas fa-star"></i></label>
+                <label for="trailing" class="trailing">Trailing Icon <i class="far fa-star"></i></label>
                 <input id="trailing" class="trailing" type="text" placeholder="icon to right">
                 <span class="input">* Required</span>
             </div>
@@ -700,7 +700,7 @@
                 <hr>
                 <div class="right">
                     <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" rel="noreferrer" target="_blank"><i class="fab fa-github m0"></i> Github</a>
-                    <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="fas fa-envelope m0"></i> Contact</a>
+                    <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="far fa-envelope m0"></i> Contact</a>
                     <a class="button text slim" href="https://www.acode.cl" rel="noreferrer" target="_blank"><img src="" data-src="src/img/icon.svg" class="fa" alt=""> Acode</a>
                 </div>
             </div>

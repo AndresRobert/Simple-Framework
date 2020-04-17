@@ -487,11 +487,13 @@ $.init = component => {
                 galleries.forEach(gallery => {
                     let images = gallery.find('img');
                     images.forEach((item, index, list) => {
-                        let _height = item.height;
-                        let _width = item.width;
-                        if (_height < _width) {
-                            item.addClass('narrower');
-                        }
+                        item.on('load', function () {
+                            let _height = this.naturalHeight,
+                                _width = item.naturalWidth;
+                            if (_height < _width) {
+                                item.addClass('narrower');
+                            }
+                        });
                         item.on('click', e => {
                             $.fullscreenImg(e.target.attr('src'));
                         });

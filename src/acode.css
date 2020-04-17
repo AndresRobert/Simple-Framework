@@ -814,24 +814,22 @@ label > .range:after {
     margin: 0 1rem 0 0;
 }
 
-.chip.dismiss > i {
-    width: 1.6rem;
-    height: 1.6rem;
-    margin: -0.8rem -0.6rem 0 0.5rem;
+.chip.dismiss > .close {
+    background-color: var(--base-2);
     border-radius: 50%;
-    background-color: var(--base-1);
+    width: 1.5rem;
+    height: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
     text-align: center;
-    line-height: 1.65rem;
-    font-size: 1rem;
-}
-
-.chip.dismiss > i {
+    line-height: 1.4rem;
+    margin-right: -0.5rem;
     color: var(--base-3);
 }
 
-.chip.dismiss > i:hover {
-    background-color: var(--hover-2);
-    color: var(--border);
+.chip.dismiss > .close:hover {
+    background-color: var(--base-3);
+    color: var(--base-2);
 }
 
 .chip > img {
