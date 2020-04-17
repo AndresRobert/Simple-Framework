@@ -1,4 +1,4 @@
-<?php $v = '0.1.1'; ?>
+<?php $v = '0.1.2'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -203,7 +203,7 @@
                 <div class="row hideOnDarkMode">
                     <div class="col-3-sm demoColor base-bg-1">#EEEEFA</div>
                     <div class="col-3-sm demoColor base-bg-2">#CCD</div>
-                    <div class="col-3-sm demoColor base-bg-2-inv base-text-inv">#779</div>
+                    <div class="col-3-sm demoColor base-bg-2-inv base-text-inv">#557</div>
                     <div class="col-3-sm demoColor base-bg-inv base-text-inv">#334</div>
                 </div>
                 <p class="hideOnDarkMode">Highlight Colors</p>
