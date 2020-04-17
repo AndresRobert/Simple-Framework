@@ -337,6 +337,10 @@ $.sheet = (type = '', html = '') => {
 
 $.fullscreenImg = src => {
     if ($.isset(src)) {
+        let sfGallery = $('#sfGallery');
+        if ($.isset(sfGallery)) {
+            sfGallery.remove();
+        }
         Render(Gallery({ src: src }));
         $('#sfGallery').on('click', () => {
             $('#sfGallery').fadeRemove();
@@ -375,15 +379,28 @@ $.darkmode = () => {
 };
 
 $.inView = (element, threshold = 0) => {
-    const rect = element.getBoundingClientRect();
-    const vpWidth = window.innerWidth;
-    const vpHeight = window.innerHeight;
-    const above = rect && rect.bottom - threshold <= 0;
-    const below = rect && rect.top - vpHeight + threshold >= 0;
-    const left = rect && rect.right - threshold <= 0;
-    const right = rect && rect.left - vpWidth + threshold >= 0;
-    const inside = !!rect && !above && !below && !left && !right;
-    return { inside, above, below, left, right };
+    const rect = element.getBoundingClientRect(),
+        vpWidth = window.innerWidth,
+        vpHeight = window.innerHeight,
+        above = rect && rect.bottom - threshold <= 0,
+        below = rect && rect.top - vpHeight + threshold >= 0,
+        left = rect && rect.right - threshold <= 0,
+        right = rect && rect.left - vpWidth + threshold >= 0,
+        inside = !!rect && !above && !below && !left && !right,
+        any = above || below || left || right || inside;
+    return { inside, above, below, left, right, any };
+};
+
+$.loadImg = () => {
+    let images = $$('[data-src]');
+    images.forEach(image => {
+        let { any } = $.inView(image);
+        if (any === true) {
+            image.attr('src', image.attr('data-src'));
+            image.removeAttribute('data-src');
+            $.init('gallery')
+        }
+    });
 };
 
 $.init = component => {
@@ -518,6 +535,11 @@ $.init = component => {
                 });
             });
             break;
+        case 'imgLazyLoad':
+            window.addEventListener('scroll', e => { $.loadImg() });
+            window.addEventListener('resize', e => { $.loadImg() });
+            window.addEventListener('orientationchange', e => { $.loadImg() });
+            break;
         case 'tooltip':
             if (!$.exists('#sfTooltip')) {
                 Render(span({ id: 'sfTooltip', className: 'tooltip' }, ''));
@@ -556,7 +578,6 @@ $.init = component => {
 };
 
 $.ready(() => {
-    document.body.style.visibility = 'visible';
     $.init('nav');
     $.init('followScroll');
     $.init('snackbar');
@@ -565,4 +586,6 @@ $.ready(() => {
     $.init('range');
     $.init('tabs');
     $.init('tooltip');
+    $.init('imgLazyLoad');
+    document.body.style.opacity = 1;
 });

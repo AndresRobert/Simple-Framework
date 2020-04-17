@@ -1,6 +1,8 @@
 # ACODE Simple Framework
 Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.
 
+###v0.1.0
+
 ## GRID
 ```html
 <div class="grid">
@@ -156,6 +158,12 @@ $.dialog(
         ]
     }
 );
+```
+
+## Lazy Img Load available
+```html
+<img src="src/img/example.jpg" alt="my normal load picture">
+<img src="" data-src="src/img/example.jpg" alt="my lazy picture">
 ```
 
 ## jQuery-ish Functions

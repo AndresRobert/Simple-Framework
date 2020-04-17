@@ -1,4 +1,4 @@
-<?php $v = '0.1.15'; ?>
+<?php $v = '0.2.0'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,7 +134,7 @@
         <div class="row">
             <div class="col-6">
                 <div class="card">
-                    <img src="src/img/example.jpg" alt>
+                    <img src="" data-src="src/img/example.jpg" alt>
                     <h5>Card Title</h5>
                     <p class="title">Title description</p>
                     <p>Regular Card body text with image and buttons</p>
@@ -147,7 +147,7 @@
             <div class="col-6">
                 <div class="card title">
                     <h5>Card Title First</h5>
-                    <img src="src/img/example.jpg" alt>
+                    <img src="" data-src="src/img/example.jpg" alt>
                     <p>Card body text text with image and buttons</p>
                     <div class="buttons">
                         <button class="text">More Info</button>
@@ -278,7 +278,7 @@
                 <div class="chip"><i class="fas fa-star"></i>Chip with Icon</div>
                 <div class="chip fill">Filled Chip</div>
                 <div class="chip fill dismiss">Closable Chip<i class="fas fa-times"></i></div>
-                <div class="chip"><img src="src/img/avatar.jpg" alt>Image and Name Chip</div>
+                <div class="chip"><img src="" data-src="src/img/avatar.jpg" alt>Image and Name Chip</div>
             </div>
         </div>
         <div class="row">
@@ -349,12 +349,12 @@
                         <li>List Item
                             <p>Secondary text</p>
                             <i class="far fa-star"></i>
-                            <img src="src/img/avatar.jpg" alt>
+                            <img src="" data-src="src/img/avatar.jpg" alt>
                         </li>
                         <li>List Item
                             <p>Secondary text</p>
                             <i class="far fa-star"></i>
-                            <img src="src/img/avatar.jpg" alt>
+                            <img src="" data-src="src/img/avatar.jpg" alt>
                         </li>
                     </ul>
                 </div>
@@ -366,12 +366,12 @@
                         <li>List Item
                             <p>Secondary text</p>
                             <p>Tertiary text</p>
-                            <img src="src/img/avatar.jpg" alt>
+                            <img src="" data-src="src/img/avatar.jpg" alt>
                         </li>
                         <li>List Item
                             <p>Secondary text</p>
                             <p>Tertiary text</p>
-                            <img src="src/img/avatar.jpg" alt>
+                            <img src="" data-src="src/img/avatar.jpg" alt>
                         </li>
                     </ul>
                 </div>
@@ -384,51 +384,51 @@
             <div class="col-12 hideOnSmall">
                 <div class="gallery">
                     <div class="item">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                         <p>Image Info <i class="far fa-star"></i></p>
                     </div>
                     <div class="item">
-                        <img src="src/img/example2.jpg" alt="">
+                        <img src="" data-src="src/img/example2.jpg" alt="">
                     </div>
                     <div class="item round">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                     </div>
                     <div class="item">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-12 hideOnSmall">
                 <div class="gallery six">
                     <div class="item">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                         <p>Image Info <i class="far fa-star"></i></p>
                     </div>
                     <div class="item">
-                        <img src="src/img/example2.jpg" alt="">
+                        <img src="" data-src="src/img/example2.jpg" alt="">
                     </div>
                     <div class="item round">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                     </div>
                     <div class="item">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                     </div>
                     <div class="item">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                     </div>
                     <div class="item">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-12">
                 <div class="gallery two">
                     <div class="item">
-                        <img src="src/img/example.jpg" alt="">
+                        <img src="" data-src="src/img/example.jpg" alt="">
                         <p>Image Info <i class="far fa-star"></i></p>
                     </div>
                     <div class="item round">
-                        <img src="src/img/example2.jpg" alt="">
+                        <img src="" data-src="src/img/example2.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -694,14 +694,14 @@
     <div id="" class="grid">
         <div class="row">
             <div class="col-12">
-                <h6><img src="src/img/isotype.svg" class="footerIsotype" alt=""> Acode Design & Development</h6>
+                <h6><img src="" data-src="src/img/isotype.svg" class="footerIsotype" alt=""> Acode Design & Development</h6>
                 <p>Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
                 <div class="right">
                     <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" rel="noreferrer" target="_blank"><i class="fab fa-github m0"></i> Github</a>
                     <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="fas fa-envelope m0"></i> Contact</a>
-                    <a class="button text slim" href="https://www.acode.cl" rel="noreferrer" target="_blank"><img src="src/img/icon.svg" class="fa" alt=""> Acode</a>
+                    <a class="button text slim" href="https://www.acode.cl" rel="noreferrer" target="_blank"><img src="" data-src="src/img/icon.svg" class="fa" alt=""> Acode</a>
                 </div>
             </div>
         </div>

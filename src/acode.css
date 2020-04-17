@@ -39,7 +39,7 @@
 
 body {
     background-color: var(--bg);
-    visibility: hidden;
+    opacity: 0;
 }
 
 main {
