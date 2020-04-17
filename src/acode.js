@@ -10,14 +10,14 @@ $$ = sel => {
 };
 $.ready = fn => {
     if (document.readyState !== 'loading') fn();
-    else document.addEventListener('DOMContentLoaded', fn);
+    else document.addEventListener('DOMContentLoaded', fn, { passive: true });
 };
 
 // Prototypes
 
 const pro = HTMLElement.prototype;
 pro.on = function (eventName, eventHandler) {
-    this.addEventListener(eventName, eventHandler);
+    this.addEventListener(eventName, eventHandler, { passive: true });
     return this;
 };
 pro.val = function (newVal) {
@@ -439,7 +439,7 @@ $.init = component => {
                             });
                         }
                 }
-            });
+            }, { passive: true });
             break;
         case 'snackbar':
             Render(div({ className: 'snackbarContainer' }));

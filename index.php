@@ -1,11 +1,12 @@
-<?php $v = '0.1.12'; ?>
+<?php $v = '0.1.15'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Simplest CSS/JS framework you will ever need">
     <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
-    <link href="src/acode.css?v=<?=$v?>" rel="stylesheet">
+    <link href="src/acode.min.css?v=<?=$v?>" rel="stylesheet">
     <title>Simple Framework</title>
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <style>
@@ -22,7 +23,7 @@
     <img class="logo" src="src/img/logo.svg" alt>
     <p class="hideOnSmall">Simple Framework</p>
     <ul class="icons">
-        <li><a href="https://github.com/AndresRobert/Simple-Framework" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://github.com/AndresRobert/Simple-Framework" rel="noreferrer" target="_blank" aria-label="Visit this repo Github"><i class="fab fa-github"></i></a></li>
     </ul>
 </header>
 <nav class="followScroll">
@@ -151,7 +152,7 @@
                     <div class="buttons">
                         <button class="text">More Info</button>
                         <button class="text">Close</button>
-                        <button class="text icon"><i class="fas fa-ellipsis-v"></i></button>
+                        <button class="text icon" aria-label="More Options"><i class="fas fa-ellipsis-v"></i></button>
                     </div>
                 </div>
             </div>
@@ -566,13 +567,13 @@
         </div>
         <div class="row">
             <div class="col-4 center">
-                <button class="fab pulse"><i class="fas fa-plus"></i></button>
+                <a class="button fab pulse" aria-label="Add new"><i class="fas fa-plus"></i></a>
             </div>
             <div class="col-4 center">
-                <button class="fab fill"><i class="fas fa-pen"></i></button>
+                <a class="button fab fill" aria-label="Edit"><i class="fas fa-pen"></i></a>
             </div>
             <div class="col-4 center">
-                <button class="fab text"><i class="fas fa-link"></i></button>
+                <a class="button fab text" aria-label="Go to somewhere"><i class="fas fa-link"></i></a>
             </div>
         </div>
         <h4 class="sub">Input Fields</h4>
@@ -698,15 +699,15 @@
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
                 <div class="right">
-                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank"><i class="fab fa-github m0"></i> Github</a>
+                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" rel="noreferrer" target="_blank"><i class="fab fa-github m0"></i> Github</a>
                     <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="fas fa-envelope m0"></i> Contact</a>
-                    <a class="button text slim" href="https://www.acode.cl" target="_blank"><img src="src/img/icon.svg" class="fa" alt=""> Acode</a>
+                    <a class="button text slim" href="https://www.acode.cl" rel="noreferrer" target="_blank"><img src="src/img/icon.svg" class="fa" alt=""> Acode</a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-<script src="src/acode.js?v=<?=$v?>"></script>
+<script src="src/acode.min.js?v=<?=$v?>"></script>
 <script>
     let showAsyncProgressBar = time => {
         $.loading.async();
