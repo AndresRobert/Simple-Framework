@@ -370,6 +370,10 @@ $.snackbar = (message, button = '') => {
     }
 };
 
+$.darkmode = () => {
+    $('html').toggleClass('darkmode');
+};
+
 $.inView = (element, threshold = 0) => {
     const rect = element.getBoundingClientRect();
     const vpWidth = window.innerWidth;
@@ -552,6 +556,7 @@ $.init = component => {
 };
 
 $.ready(() => {
+    document.body.style.visibility = 'visible';
     $.init('nav');
     $.init('followScroll');
     $.init('snackbar');

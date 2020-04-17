@@ -1,12 +1,20 @@
-<?php $v = '0.1.11'; ?>
+<?php $v = '0.1.12'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="src/img/favicon.png">
-    <title>Simple Framework</title>
+    <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
     <link href="src/acode.css?v=<?=$v?>" rel="stylesheet">
+    <title>Simple Framework</title>
+    <link rel="icon" type="image/png" href="src/img/favicon.png">
+    <style>
+        div.demoColor {
+            text-align: right;
+            padding: 3rem 0.5rem 0.5rem;
+            border-radius: 1rem 0 0 0;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -42,7 +50,7 @@
         </div>
     </div>
     <div id="grid" class="grid">
-        <h3>Grid</h3>
+        <h3>Grid System</h3>
         <div class="row hideOnSmall">
             <div class="col-12 border center">12</div>
         </div>
@@ -189,6 +197,22 @@
                 <p>Paragraph</p>
                 <hr>
                 <p>Divider</p>
+                <hr>
+                <p class="hideOnDarkMode">Base Colors</p>
+                <div class="row hideOnDarkMode">
+                    <div class="col-3-sm demoColor base-bg-1">#EEEEFA</div>
+                    <div class="col-3-sm demoColor base-bg-2">#CCD</div>
+                    <div class="col-3-sm demoColor base-bg-2-inv base-text-inv">#779</div>
+                    <div class="col-3-sm demoColor base-bg-inv base-text-inv">#334</div>
+                </div>
+                <p class="hideOnDarkMode">Highlight Colors</p>
+                <div class="row hideOnDarkMode">
+                    <div class="col-3-sm demoColor highlight-bg-inv">#FFD</div>
+                    <div class="col-3-sm demoColor highlight-bg base-text-inv">#E68</div>
+                    <div class="col-3-sm demoColor highlight-bg-2-inv">#DCF</div>
+                    <div class="col-3-sm demoColor highlight-bg-2 base-text-inv">#86E</div>
+                </div>
+                <button onclick="$.darkmode()">Toggle Darkmode</button>
             </div>
         </div>
     </div>
@@ -669,23 +693,20 @@
     <div id="" class="grid">
         <div class="row">
             <div class="col-12">
-                <h6><img src="src/img/isotype.svg" style="height:2rem;margin: 0 1rem -0.5rem 0" alt=""> Acode Design & Development</h6>
+                <h6><img src="src/img/isotype.svg" class="footerIsotype" alt=""> Acode Design & Development</h6>
                 <p>Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices
                     of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
                 <hr>
                 <div class="right">
-                    <a class="button text slim" href="src/acode.min.css" target="_blank"><i class="fab fa-css3 m0"></i></a>
-                    <a class="button text slim" href="src/acode.min.js" target="_blank"><i class="fab fa-js m0"></i></a>
-                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank"><i class="fab fa-github m0"></i></a>
-                    <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="fas fa-envelope m0"></i></a>
-                    <a class="button text slim" href="https://www.acode.cl" target="_blank"><img src="src/img/icon.svg" class="fa" alt=""></a>
+                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" target="_blank"><i class="fab fa-github m0"></i> Github</a>
+                    <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="fas fa-envelope m0"></i> Contact</a>
+                    <a class="button text slim" href="https://www.acode.cl" target="_blank"><img src="src/img/icon.svg" class="fa" alt=""> Acode</a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 <script src="src/acode.js?v=<?=$v?>"></script>
-<script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
 <script>
     let showAsyncProgressBar = time => {
         $.loading.async();
