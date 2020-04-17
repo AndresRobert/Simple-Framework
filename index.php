@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Simplest CSS/JS framework you will ever need">
-    <link href="vendor/FontAwesome/css/all.css" rel="stylesheet">
+    <link href="vendor/FontAwesome/css/all.min.css" rel="stylesheet">
     <link href="src/acode.min.css?v=<?=$v?>" rel="stylesheet">
     <title>Simple Framework</title>
     <link rel="icon" type="image/png" href="src/img/favicon.png">
