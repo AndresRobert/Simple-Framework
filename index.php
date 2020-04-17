@@ -1,12 +1,12 @@
-<?php $v = '0.2.0'; ?>
+<?php $v = '0.1.1'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Simplest CSS/JS framework you will ever need">
-    <script src="https://kit.fontawesome.com/a93fffc8fc.js" crossorigin="anonymous"></script>
-    <link href="src/acode.min.css?v=<?=$v?>" rel="stylesheet">
+    <link href="vendor/FontAwesome/css/all.min.css" rel="stylesheet">
+    <link href="src/acode.css?v=<?=$v?>" rel="stylesheet">
     <title>Simple Framework</title>
     <link rel="icon" type="image/png" href="src/img/favicon.png">
     <style>
@@ -707,7 +707,7 @@
         </div>
     </div>
 </footer>
-<script src="src/acode.min.js?v=<?=$v?>"></script>
+<script src="src/acode.js?v=<?=$v?>"></script>
 <script>
     let showAsyncProgressBar = time => {
         $.loading.async();

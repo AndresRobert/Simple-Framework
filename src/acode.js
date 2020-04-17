@@ -229,6 +229,10 @@ const SyncLoadingCircle = () => {
 
 // Functions
 
+$.asyncLoad = fn => {
+    setTimeout(fn(), 0);
+};
+
 /**
  *
  * @param item
@@ -406,131 +410,145 @@ $.loadImg = () => {
 $.init = component => {
     switch (component) {
         case 'nav':
-            let items = $('nav').find('a');
-            items.forEach((item, index, list) => {
-                item.on('click', e => {
-                    list.forEach(link => { link.removeClass('active') });
-                    e.target.addClass('active');
-                    $('nav').removeClass('active');
+            $.asyncLoad(() => {
+                let items = $('nav').find('a');
+                items.forEach((item, index, list) => {
+                    item.on('click', e => {
+                        list.forEach(link => { link.removeClass('active') });
+                        e.target.addClass('active');
+                        $('nav').removeClass('active');
+                    });
                 });
             });
             break;
         case 'followScroll':
-            let active = true;
-            window.addEventListener('scroll', () => {
-                const item = $('.followScroll').find('a'),
-                    first = 0,
-                    last = item.length - 1,
-                    scrollTop = ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) === 0,
-                    scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight,
-                    scrolledToBottom = (((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) + window.innerHeight) >= scrollHeight;
-                if (item.length > 0) {
-                    if (scrollTop) {
-                        if (!item[first].hasClass('active')) {
-                            item.forEach(e => { e.removeClass('active') });
-                            item[first].addClass('active')
-                        }
-                    }
-                    else
-                        if (scrolledToBottom) {
-                            if (!item[last].hasClass('active')) {
+            $.asyncLoad(() => {
+                let active = true;
+                window.addEventListener('scroll', () => {
+                    const item = $('.followScroll').find('a'),
+                        first = 0,
+                        last = item.length - 1,
+                        scrollTop = ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) === 0,
+                        scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight,
+                        scrolledToBottom = (((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) + window.innerHeight) >= scrollHeight;
+                    if (item.length > 0) {
+                        if (scrollTop) {
+                            if (!item[first].hasClass('active')) {
                                 item.forEach(e => { e.removeClass('active') });
-                                item[last].addClass('active')
+                                item[first].addClass('active')
                             }
                         }
-                        else {
-                            item.forEach(e => {
-                                let { inside } = $.inView($(e.attr('href')));
-                                if (!active) {
-                                    if (inside && !e.hasClass('active')) {
-                                        e.addClass('active');
-                                        active = true;
-                                    }
+                        else
+                            if (scrolledToBottom) {
+                                if (!item[last].hasClass('active')) {
+                                    item.forEach(e => { e.removeClass('active') });
+                                    item[last].addClass('active')
                                 }
-                                else {
-                                    if (!inside && e.hasClass('active')) {
-                                        e.removeClass('active');
-                                        active = false;
+                            }
+                            else {
+                                item.forEach(e => {
+                                    let { inside } = $.inView($(e.attr('href')));
+                                    if (!active) {
+                                        if (inside && !e.hasClass('active')) {
+                                            e.addClass('active');
+                                            active = true;
+                                        }
                                     }
-                                }
-                            });
-                        }
-                }
-            }, { passive: true });
+                                    else {
+                                        if (!inside && e.hasClass('active')) {
+                                            e.removeClass('active');
+                                            active = false;
+                                        }
+                                    }
+                                });
+                            }
+                    }
+                }, { passive: true });
+            });
             break;
         case 'snackbar':
             Render(div({ className: 'snackbarContainer' }));
             break;
         case 'overlay':
-            let overlays = $$('.overlay');
-            overlays.forEach(overlay => {
-                overlay.on('click', e => {
-                    if (e.target.hasClass('overlay')) {
-                        overlay.fadeRemove();
-                    }
+            $.asyncLoad(() => {
+                let overlays = $$('.overlay');
+                overlays.forEach(overlay => {
+                    overlay.on('click', e => {
+                        if (e.target.hasClass('overlay')) {
+                            overlay.fadeRemove();
+                        }
+                    });
                 });
             });
             break;
         case 'gallery':
-            let galleries = $$('.gallery');
-            galleries.forEach(gallery => {
-                let images = gallery.find('img');
-                images.forEach((item, index, list) => {
-                    let _height = item.height;
-                    let _width = item.width;
-                    if (_height < _width) {
-                        item.addClass('narrower');
-                    }
-                    item.on('click', e => {
-                        $.fullscreenImg(e.target.attr('src'));
+            $.asyncLoad(() => {
+                let galleries = $$('.gallery');
+                galleries.forEach(gallery => {
+                    let images = gallery.find('img');
+                    images.forEach((item, index, list) => {
+                        let _height = item.height;
+                        let _width = item.width;
+                        if (_height < _width) {
+                            item.addClass('narrower');
+                        }
+                        item.on('click', e => {
+                            $.fullscreenImg(e.target.attr('src'));
+                        });
                     });
                 });
             });
             break;
         case 'circleIndicator':
-            let indicators = $$('.circleIndicator');
-            indicators.forEach(indicator => {
-                let circleBG = SVGcircle();
-                circleBG.setAttribute('cx', '24');
-                circleBG.setAttribute('cy', '24');
-                circleBG.setAttribute('r', '22');
-                circleBG.style.strokeDasharray = '100 0';
-                indicator.appendChild(circleBG);
-                let circle = SVGcircle();
-                circle.setAttribute('cx', '24');
-                circle.setAttribute('cy', '24');
-                circle.setAttribute('r', '22');
-                const circumference = 44 * Math.PI;
-                circle.style.strokeDasharray = `${ circumference } ${ circumference }`;
-                circle.style.strokeDashoffset = '' + (circumference - indicator.dataset.percent / 100 * circumference);
-                indicator.appendChild(circle);
-            });
-            let indeterminateIndicators = $$('.circleIndicatorIndeterminate');
-            indeterminateIndicators.forEach(indicator => {
-                let circle = SVGcircle();
-                circle.setAttribute('cx', '24');
-                circle.setAttribute('cy', '24');
-                circle.setAttribute('r', '22');
-                circle.style.strokeDasharray = '1, 200';
-                circle.style.strokeDashoffset = '0';
-                indicator.appendChild(circle);
+            $.asyncLoad(() => {
+                let indicators = $$('.circleIndicator');
+                indicators.forEach(indicator => {
+                    let circleBG = SVGcircle();
+                    circleBG.setAttribute('cx', '24');
+                    circleBG.setAttribute('cy', '24');
+                    circleBG.setAttribute('r', '22');
+                    circleBG.style.strokeDasharray = '100 0';
+                    indicator.appendChild(circleBG);
+                    let circle = SVGcircle();
+                    circle.setAttribute('cx', '24');
+                    circle.setAttribute('cy', '24');
+                    circle.setAttribute('r', '22');
+                    const circumference = 44 * Math.PI;
+                    circle.style.strokeDasharray = `${ circumference } ${ circumference }`;
+                    circle.style.strokeDashoffset = '' + (circumference - indicator.dataset.percent / 100 * circumference);
+                    indicator.appendChild(circle);
+                });
+                let indeterminateIndicators = $$('.circleIndicatorIndeterminate');
+                indeterminateIndicators.forEach(indicator => {
+                    let circle = SVGcircle();
+                    circle.setAttribute('cx', '24');
+                    circle.setAttribute('cy', '24');
+                    circle.setAttribute('r', '22');
+                    circle.style.strokeDasharray = '1, 200';
+                    circle.style.strokeDashoffset = '0';
+                    indicator.appendChild(circle);
+                });
             });
             break;
         case 'range':
-            let ranges = $$('input[type="range"]');
-            ranges.forEach(range => {
-                range.on('input', e => {
-                    e.target.prev().find('.range')[0].html(e.target.value);
+            $.asyncLoad(() => {
+                let ranges = $$('input[type="range"]');
+                ranges.forEach(range => {
+                    range.on('input', e => {
+                        e.target.prev().find('.range')[0].html(e.target.value);
+                    });
                 });
             });
             break;
         case 'tabs':
-            let tabContainers = $$('.tabs');
-            tabContainers.forEach(tabContainer => {
-                tabContainer.find('.tab').forEach((tab, i, _tabs) => {
-                    tab.on('click', e => {
-                        _tabs.forEach(_tab => _tab.removeClass('active'));
-                        e.target.addClass('active');
+            $.asyncLoad(() => {
+                let tabContainers = $$('.tabs');
+                tabContainers.forEach(tabContainer => {
+                    tabContainer.find('.tab').forEach((tab, i, _tabs) => {
+                        tab.on('click', e => {
+                            _tabs.forEach(_tab => _tab.removeClass('active'));
+                            e.target.addClass('active');
+                        });
                     });
                 });
             });
@@ -541,35 +559,37 @@ $.init = component => {
             window.addEventListener('orientationchange', e => { $.loadImg() });
             break;
         case 'tooltip':
-            if (!$.exists('#sfTooltip')) {
-                Render(span({ id: 'sfTooltip', className: 'tooltip' }, ''));
-                window.onscroll = () => _tooltip.removeClass('show');
-            }
-            let _tooltip = $('#sfTooltip');
-            let hasTooltips = $$('[data-tooltip]');
-            hasTooltips.forEach(hasTooltip => {
-                hasTooltip.on('mouseenter', e => {
-                    let element = e.target,
-                        message = element.dataset.tooltip;
-                    _tooltip.html(message);
-                    let { right, bottom, left } = element.getBoundingClientRect();
-                    _tooltip.style.top = (bottom + 10) + 'px';
-                    _tooltip.style.left = (left + (right - left) / 2) + 'px';
-                    _tooltip.style.maxWidth = (element.clientWidth + 10) + 'px';
-                    _tooltip.style.marginLeft = '-' + (_tooltip.clientWidth / 2) + 'px';
-                    _tooltip.addClass('show');
-                });
-                hasTooltip.on('mouseleave', () => _tooltip.removeClass('show'));
-                hasTooltip.on('touchstart', e => {
-                    let element = e.target,
-                        message = element.dataset.tooltip;
-                    _tooltip.html(message);
-                    let { right, bottom, left } = element.getBoundingClientRect();
-                    _tooltip.style.top = (bottom + 10) + 'px';
-                    _tooltip.style.left = (left + (right - left) / 2) + 'px';
-                    _tooltip.style.maxWidth = (element.clientWidth + 10) + 'px';
-                    _tooltip.style.marginLeft = '-' + (_tooltip.clientWidth / 2) + 'px';
-                    _tooltip.toggleClass('show');
+            $.asyncLoad(() => {
+                if (!$.exists('#sfTooltip')) {
+                    Render(span({ id: 'sfTooltip', className: 'tooltip' }, ''));
+                    window.onscroll = () => _tooltip.removeClass('show');
+                }
+                let _tooltip = $('#sfTooltip');
+                let hasTooltips = $$('[data-tooltip]');
+                hasTooltips.forEach(hasTooltip => {
+                    hasTooltip.on('mouseenter', e => {
+                        let element = e.target,
+                            message = element.dataset.tooltip;
+                        _tooltip.html(message);
+                        let { right, bottom, left } = element.getBoundingClientRect();
+                        _tooltip.style.top = (bottom + 10) + 'px';
+                        _tooltip.style.left = (left + (right - left) / 2) + 'px';
+                        _tooltip.style.maxWidth = (element.clientWidth + 10) + 'px';
+                        _tooltip.style.marginLeft = '-' + (_tooltip.clientWidth / 2) + 'px';
+                        _tooltip.addClass('show');
+                    });
+                    hasTooltip.on('mouseleave', () => _tooltip.removeClass('show'));
+                    hasTooltip.on('touchstart', e => {
+                        let element = e.target,
+                            message = element.dataset.tooltip;
+                        _tooltip.html(message);
+                        let { right, bottom, left } = element.getBoundingClientRect();
+                        _tooltip.style.top = (bottom + 10) + 'px';
+                        _tooltip.style.left = (left + (right - left) / 2) + 'px';
+                        _tooltip.style.maxWidth = (element.clientWidth + 10) + 'px';
+                        _tooltip.style.marginLeft = '-' + (_tooltip.clientWidth / 2) + 'px';
+                        _tooltip.toggleClass('show');
+                    });
                 });
             });
             break;
