@@ -1,4 +1,4 @@
-<?php $v = '0.1.3'; ?>
+<?php $v = '0.1.4'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@
 </head>
 <body>
 <header>
-    <i onclick="$('nav').toggleClass('active')" class="fab fa-ioxhost menu"></i>
+    <i onclick="$('nav').toggleClass('active');this.toggleClass('active')" class="fa menu"></i>
     <img class="logo" src="src/img/logo.svg" alt>
     <p class="hideOnSmall">Simple Framework</p>
     <ul class="icons">
@@ -567,13 +567,13 @@
         </div>
         <div class="row">
             <div class="col-4 center">
-                <a class="button fab pulse" aria-label="Add new"><i class="far fa-plus"></i></a>
+                <a class="button fab pulse" aria-label="Add new"><i class="far fa-keyboard"></i></a>
             </div>
             <div class="col-4 center">
-                <a class="button fab fill" aria-label="Edit"><i class="far fa-pen"></i></a>
+                <a class="button fab fill" aria-label="Edit"><i class="far fa-user"></i></a>
             </div>
             <div class="col-4 center">
-                <a class="button fab text" aria-label="Go to somewhere"><i class="far fa-link"></i></a>
+                <a class="button fab text" aria-label="Go to somewhere"><i class="far fa-chart-bar"></i></a>
             </div>
         </div>
         <h4 class="sub">Input Fields</h4>

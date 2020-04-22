@@ -76,9 +76,15 @@ header img.logo {
 }
 
 header i.menu {
-    font-size: 1.4rem;
-    padding: 0.8rem;
     cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.7rem;
+    background: linear-gradient(to bottom, var(--base-4) 0%, var(--base-4) 20%, var(--no-color) 20%, var(--no-color) 40%, var(--base-4) 40%, var(--base-4) 60%, var(--no-color) 60%, var(--no-color) 80%, var(--base-4) 80%, var(--base-4) 100%);
+}
+
+header i.menu.active {
+    background: -webkit-linear-gradient(-45deg, var(--no-color) 0%, var(--no-color) 46%, var(--base-4) 46%, var(--base-4) 56%, var(--no-color) 56%, var(--no-color) 100%), -webkit-linear-gradient(45deg, var(--no-color) 0%, var(--no-color) 46%, var(--base-4) 46%, var(--base-4) 56%, var(--no-color) 56%, var(--no-color) 100%);
 }
 
 header > .icons {
