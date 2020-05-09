@@ -5,8 +5,7 @@ $ = sel => {
     return el.length === 0 ? document.createElement('div') : el[0];
 };
 $$ = sel => {
-    const el = document.querySelectorAll(sel);
-    return el;
+    return document.querySelectorAll(sel);
 };
 $.ready = fn => {
     if (document.readyState !== 'loading') fn();
@@ -85,7 +84,12 @@ pro.fadeRemove = function () {
     this.addClass('fadeOut');
     setTimeout(() => this.remove(), 200);
 };
-
+pro.trigger = function (eventName) {
+    const event = document.createEvent('HTMLEvents');
+    event.initEvent(eventName, true, false);
+    this.dispatchEvent(event);
+    return this;
+};
 // Components
 /*
 // How to use
@@ -163,13 +167,20 @@ const h4 = (...args) => $.create('h4', ...args);
 const h5 = (...args) => $.create('h5', ...args);
 const h6 = (...args) => $.create('h6', ...args);
 const header = (...args) => $.create('header', ...args);
+const i = (...args) => $.create('i', ...args);
 const img = (...args) => $.create('img', ...args);
+const input = (...args) => $.create('input', ...args);
 const main = (...args) => $.create('main', ...args);
 const nav = (...args) => $.create('nav', ...args);
+const option = (...args) => $.create('option', ...args);
 const p = (...args) => $.create('p', ...args);
+const select = (...args) => $.create('select', ...args)
 const span = (...args) => $.create('span', ...args);
+const tr = (...args) => $.create('tr', ...args);
+const th = (...args) => $.create('th', ...args);
+const td = (...args) => $.create('td', ...args);
 const SVGcircle = () => document.createElementNS('http://www.w3.org/2000/svg', 'circle') ;
-const Render = html => document.body.appendChild(html);
+const Render = (html, container = document.body) => container.appendChild(html);
 
 // Custom Components
 
@@ -244,7 +255,7 @@ $.isset = item => {
 
 /**
  *
- *  ajax('https://acode.cl/test', { parameter: 9 })
+ *  $.ajax('https://acode.cl/test', { parameter: 9 })
  *  .then( response => {
  *      console.log(response); // JSON data parsed by 'response.json()' call
  *  });
@@ -341,12 +352,11 @@ $.sheet = (type = '', html = '') => {
 
 $.fullscreenImg = src => {
     if ($.isset(src)) {
-        let sfGallery = $('#sfGallery');
-        if ($.isset(sfGallery)) {
-            sfGallery.remove();
-        }
-        Render(Gallery({ src: src }));
-        $('#sfGallery').on('click', () => {
+        let oldGallery = $('#sfGallery');
+        if ($.isset(oldGallery)) oldGallery.remove();
+        let newGallery = Gallery({ src: src });
+        Render(newGallery);
+        newGallery.on('click', () => {
             $('#sfGallery').fadeRemove();
         });
     }
@@ -425,7 +435,7 @@ $.init = component => {
             $.asyncLoad(() => {
                 let active = true;
                 window.addEventListener('scroll', () => {
-                    const item = $('.followScroll').find('a'),
+                    const item = $('.followScroll').find('a:not(.link)'),
                         first = 0,
                         last = item.length - 1,
                         scrollTop = ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) === 0,
@@ -486,7 +496,7 @@ $.init = component => {
                 let galleries = $$('.gallery');
                 galleries.forEach(gallery => {
                     let images = gallery.find('img');
-                    images.forEach((item, index, list) => {
+                    images.forEach(item => {
                         item.on('load', function () {
                             let _height = this.naturalHeight,
                                 _width = item.naturalWidth;
@@ -556,9 +566,9 @@ $.init = component => {
             });
             break;
         case 'imgLazyLoad':
-            window.addEventListener('scroll', e => { $.loadImg() });
-            window.addEventListener('resize', e => { $.loadImg() });
-            window.addEventListener('orientationchange', e => { $.loadImg() });
+            window.addEventListener('scroll', _ => { $.loadImg() });
+            window.addEventListener('resize', _ => { $.loadImg() });
+            window.addEventListener('orientationchange', _ => { $.loadImg() });
             break;
         case 'tooltip':
             $.asyncLoad(() => {
@@ -609,5 +619,5 @@ $.ready(() => {
     $.init('tabs');
     $.init('tooltip');
     $.init('imgLazyLoad');
-    document.body.style.opacity = 1;
+    document.body.style.opacity = '1';
 });

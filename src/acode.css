@@ -118,6 +118,18 @@ a {
     text-decoration: none;
 }
 
+a.link {
+    border-radius: 0.2rem;
+    padding: 0 0.2rem;
+    margin: 0 -0.3rem;
+    color: #E68;
+}
+
+a.link:hover {
+    background-color: #CCD4;
+    color: #F25;
+}
+
 footer {
     padding: 1rem 0 3rem 0;
     background-color: var(--base-1);
@@ -1610,7 +1622,19 @@ img.footerIsotype {
     }
 
     .hideOnSmall {
-        display: inherit;
+        display: initial;
+    }
+
+    table.hideOnSmall {
+        display: table;
+    }
+
+    tr.hideOnSmall {
+        display: table-row;
+    }
+
+    td.hideOnSmall {
+        display: table-cell;
     }
 
     .hideOnLarge,
