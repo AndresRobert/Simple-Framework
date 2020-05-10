@@ -280,7 +280,8 @@ label.trailing > i {
 }
 
 select,
-input {
+input,
+textarea {
     width: 100%;
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;
@@ -302,7 +303,9 @@ select {
 select:focus,
 select:active,
 input:focus,
-input:active {
+input:active,
+textarea:focus,
+textarea:active {
     border-color: var(--base-4);
 }
 
@@ -325,7 +328,8 @@ span.input {
 }
 
 select.error,
-input.error {
+input.error,
+textarea.error {
     border-color: var(--sup-12);
 }
 
@@ -346,7 +350,9 @@ span.input.error {
 
 select:disabled,
 input:disabled,
-input:read-only {
+input:read-only,
+textarea:disabled,
+textarea:read-only{
     background-color: var(--base-1);
     border-color: var(--base-1);
     color: var(--border);
@@ -1658,7 +1664,8 @@ img.footerIsotype {
     }
 
     button,
-    a.button {
+    a.button,
+    input[type="submit"]{
         width: auto;
     }
 

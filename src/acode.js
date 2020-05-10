@@ -90,6 +90,11 @@ pro.trigger = function (eventName) {
     this.dispatchEvent(event);
     return this;
 };
+pro.empty = function () {
+    this.innerHTML = '';
+    return this;
+};
+
 // Components
 /*
 // How to use
@@ -144,7 +149,7 @@ $.create = (type, textOrPropsOrChild, ...children) => {
     else if (typeof textOrPropsOrChild === 'string') $.setTxt(el, textOrPropsOrChild);
     else if (typeof textOrPropsOrChild === 'object') {
         Object.keys(textOrPropsOrChild).forEach((propName) => {
-            if (propName in el || $.attributeExceptions.includes(propName)) {
+            if (propName in el || $.attributeExceptions.includes(propName) || propName.startsWith('data-')) {
                 const value = textOrPropsOrChild[propName];
                 if (propName === 'style') $.setAttr(el, value);
                 else if (value) el[propName] = value;
