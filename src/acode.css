@@ -65,6 +65,10 @@ button, label {
     -moz-user-select: none;
 }
 
+b {
+    font-weight: bold;
+}
+
 img.fa {
     height: 1rem;
     margin-bottom: -0.1rem;
