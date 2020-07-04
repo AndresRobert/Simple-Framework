@@ -414,8 +414,8 @@ $.inView = (element, threshold = 0) => {
 $.loadImg = () => {
     let images = $$('[data-src]');
     images.forEach(image => {
-        let { any } = $.inView(image);
-        if (any === true) {
+        let { inside } = $.inView(image);
+        if (inside === true) {
             image.attr('src', image.attr('data-src'));
             image.removeAttribute('data-src');
             $.init('gallery')

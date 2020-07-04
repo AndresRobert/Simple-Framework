@@ -1,7 +1,7 @@
 # ACODE Simple Framework
 Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.
 
-###v0.1.0
+### v0.1.0
 
 ## GRID
 ```html
@@ -9,8 +9,13 @@ Simple Framework adapts Material & Mobile First guidelines on components to supp
     <div class="row">
         <div class="col-12"></div>
     </div>
+    <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6"></div>
+    </div>
 </div>
 ```
+
 ## Regular Card
 ```html
 <div class="card">
