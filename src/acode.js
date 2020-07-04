@@ -9,14 +9,15 @@ $$ = sel => {
 };
 $.ready = fn => {
     if (document.readyState !== 'loading') fn();
-    else document.addEventListener('DOMContentLoaded', fn, { passive: true });
+    else document.addEventListener('DOMContentLoaded', fn, $.evtOptions);
 };
+$.evtOptions = { capture: true, once: false, passive: true };
 
 // Prototypes
 
 const pro = HTMLElement.prototype;
 pro.on = function (eventName, eventHandler) {
-    this.addEventListener(eventName, eventHandler, { passive: true });
+    this.addEventListener(eventName, eventHandler, $.evtOptions);
     return this;
 };
 pro.val = function (newVal) {
@@ -444,8 +445,7 @@ $.init = component => {
                         first = 0,
                         last = item.length - 1,
                         scrollTop = ((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) === 0,
-                        scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight,
-                        scrolledToBottom = (((document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop) + window.innerHeight) >= scrollHeight;
+                        scrolledToBottom = (window.scrollY + window.innerHeight) >= document.body.scrollHeight;
                     if (item.length > 0) {
                         if (scrollTop) {
                             if (!item[first].hasClass('active')) {
@@ -453,32 +453,32 @@ $.init = component => {
                                 item[first].addClass('active')
                             }
                         }
-                        else
+                        else {
+                            item.forEach(e => {
+                                let { inside } = $.inView($(e.attr('href')));
+                                if (!active) {
+                                    if (inside && !e.hasClass('active')) {
+                                        e.addClass('active');
+                                        active = true;
+                                    }
+                                }
+                                else {
+                                    if (!inside && e.hasClass('active')) {
+                                        e.removeClass('active');
+                                        active = false;
+                                    }
+                                }
+                            });
                             if (scrolledToBottom) {
+                                console.log("scrolledToBottom");
                                 if (!item[last].hasClass('active')) {
                                     item.forEach(e => { e.removeClass('active') });
                                     item[last].addClass('active')
                                 }
                             }
-                            else {
-                                item.forEach(e => {
-                                    let { inside } = $.inView($(e.attr('href')));
-                                    if (!active) {
-                                        if (inside && !e.hasClass('active')) {
-                                            e.addClass('active');
-                                            active = true;
-                                        }
-                                    }
-                                    else {
-                                        if (!inside && e.hasClass('active')) {
-                                            e.removeClass('active');
-                                            active = false;
-                                        }
-                                    }
-                                });
-                            }
+                        }
                     }
-                }, { passive: true });
+                }, $.evtOptions);
             });
             break;
         case 'snackbar':
@@ -571,9 +571,9 @@ $.init = component => {
             });
             break;
         case 'imgLazyLoad':
-            window.addEventListener('scroll', _ => { $.loadImg() });
-            window.addEventListener('resize', _ => { $.loadImg() });
-            window.addEventListener('orientationchange', _ => { $.loadImg() });
+            window.addEventListener('scroll', _ => { $.loadImg() }, $.evtOptions);
+            window.addEventListener('resize', _ => { $.loadImg() }, $.evtOptions);
+            window.addEventListener('orientationchange', _ => { $.loadImg() }, $.evtOptions);
             break;
         case 'tooltip':
             $.asyncLoad(() => {
