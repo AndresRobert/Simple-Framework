@@ -1640,7 +1640,7 @@ img.footerIsotype {
     }
 
     .hideOnSmall {
-        display: initial;
+        display: inherit;
     }
 
     table.hideOnSmall {
