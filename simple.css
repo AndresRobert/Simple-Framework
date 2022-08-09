@@ -175,8 +175,8 @@ html.simple-me > body a {
     cursor: pointer;
 }
 
-html.simple-me > body header a,
-html.simple-me > body footer a {
+html.simple-me > body > header a,
+html.simple-me > body > footer a {
     color: var(--hover-light);
 }
 
