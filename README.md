@@ -432,4 +432,4 @@ Radial
 ```
 
 ## See it in action
-Visit [ACODE Simple Framework](https://andresrobert.github.io/simple-framework/)
+Visit [ACODE Simple Framework](https://andresrobert.github.io/Simple-Framework/)
