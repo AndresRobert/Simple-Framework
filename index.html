@@ -1,722 +1,482 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="simple-me">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Simplest CSS/JS framework you will ever need">
-    <link href="vendor/FontAwesome/css/all.min.css" rel="stylesheet">
-    <link href="src/acode.min.css" rel="stylesheet">
+    <link href="simple.css?v=1" rel="stylesheet">
     <title>Simple Framework</title>
-    <link rel="icon" type="image/png" href="src/img/favicon.png">
-    <style>
-        div.demoColor {
-            text-align: right;
-            padding: 3rem 0.5rem 0.5rem;
-            border-radius: 1rem 0 0 0;
-        }
-    </style>
+    <meta name="description" content="The Simplest CSS framework you will ever need">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABkElEQVRIie3Wv0ocURQG8N9qGkFMAnkBI6ZQ86fwAdKJzxCwEdLZJaiND5JKUibbhhACS8oUaQIWuiIsJJZRTLGL4KrFzrKXmTu7M7sLWuwHB+6cOff7OOeec2eY4A7xHle4GZNd4V1aZCoivILpMSYyjedFhP+OUbSLP3clnOG8VxlngrCKSkFbjewfOuMnEV8eHkV8mWQeRIL+oYWZwLeBVwMEP+AcD1P+VuIvhLry89qtymbKfxQTiJWa8g12rZfV4yJcsVIPEn4pe2Y3aCfruVGEY53dRVv/M0s3V5RrmIzfoJHynaGarNPNdTqK8GVAsIXZ1PufgXChjIs21wkWEqtmw50F65GE08Fh+b7gIHiu43NOLCUnpIKm3ixeRGKWxS+VRrCvmXCVwnFA0MYunvWJn9f54LeCffWyolATv6F+Yw9LWMQOfuXE1oYR/phDVsb288jzmovxfJejMzwIL3Bo+GwPRf61yuAp3uIT/vcRauI7tnXOvy/KtvoMXmMda4nvG77ih05HT3C/cAvf5qbT58OaiwAAAABJRU5ErkJggg==">
 </head>
 <body>
-<header>
-    <i onclick="$('nav').toggleClass('active');this.toggleClass('active')" class="fa menu"></i>
-    <img class="logo" src="src/img/logo.svg" alt>
-    <p class="hideOnSmall">Simple Framework</p>
-    <ul class="icons">
-        <li><a href="https://github.com/AndresRobert/Simple-Framework" rel="noreferrer" target="_blank" aria-label="Visit this repo Github"><i class="fab fa-github"></i></a></li>
-    </ul>
-</header>
-<nav class="followScroll">
-    <a href="#download"><i class="far fa-arrow-alt-circle-down"></i>Download</a>
-    <a href="#grid" class="active"><i class="fab fa-buromobelexperte"></i>Grid</a>
-    <a href="#cards"><i class="far fa-address-card"></i>Cards & Tabs</a>
-    <a href="#typo"><i class="fab fa-acquisitions-incorporated"></i>Typo</a>
-    <a href="#tables"><i class="fab fa-schlix"></i>Tables</a>
-    <a href="#lists"><i class="far fa-list-alt"></i>Lists & Chips</a>
-    <a href="#gallery"><i class="far fa-images"></i>Gallery</a>
-    <a href="#navigation" class="hideOnSmall"><i class="fab fa-ioxhost"></i>Navigation</a>
-    <a href="#dialog"><i class="far fa-window-restore"></i>Dialogs</a>
-    <a href="#progress"><i class="fab fa-whmcs"></i>Progress</a>
-    <a href="#forms"><i class="fab fa-wpforms"></i>Forms</a>
-</nav>
-<main class="pv-4 hasNav">
-    <div id="download" class="grid">
-        <div class="row">
-            <div class="col-12 center">
-                <h6 class="center">The Simplest framework you will ever need</h6>
-            </div>
-            <div class="col-12 center">
-                <a class="button" href="src/files/simpleFramework.zip">Download Now</a>
-            </div>
-        </div>
-    </div>
-    <div id="grid" class="grid">
-        <h3>Grid System</h3>
-        <div class="row hideOnSmall">
-            <div class="col-12 border center">12</div>
-        </div>
-        <div class="row">
-            <div class="col-1-sm border center">1</div>
-            <div class="col-11-sm border center">11</div>
-        </div>
-        <div class="row">
-            <div class="col-2-sm border center">2</div>
-            <div class="col-10-sm border center">10</div>
-        </div>
-        <div class="row">
-            <div class="col-3-sm border center">3</div>
-            <div class="col-9-sm border center">9</div>
-        </div>
-        <div class="row">
-            <div class="col-4-sm border center">4</div>
-            <div class="col-8-sm border center">8</div>
-        </div>
-        <div class="row">
-            <div class="col-5-sm border center">5</div>
-            <div class="col-7-sm border center">7</div>
-        </div>
-        <div class="row">
-            <div class="col-6-sm border center">6</div>
-            <div class="col-6-sm border center">6</div>
-        </div>
-        <div class="row hideOnSmall">
-            <div class="col-4 border center">4</div>
-            <div class="col-4 border center">4</div>
-            <div class="col-4 border center">4</div>
-        </div>
-        <div class="row hideOnSmall">
-            <div class="col-3 border center">3</div>
-            <div class="col-3 border center">3</div>
-            <div class="col-3 border center">3</div>
-            <div class="col-3 border center">3</div>
-        </div>
-        <div class="row hideOnSmall">
-            <div class="col-2 border center">2</div>
-            <div class="col-2 border center">2</div>
-            <div class="col-2 border center">2</div>
-            <div class="col-2 border center">2</div>
-            <div class="col-2 border center">2</div>
-            <div class="col-2 border center">2</div>
-        </div>
-        <div class="row hideOnSmall">
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-            <div class="col-1 border center">1</div>
-        </div>
-    </div>
-    <div id="cards" class="grid">
-        <h3>Cards & Tabs</h3>
-        <div class="row">
-            <div class="col-6">
-                <div class="card">
-                    <h5>Card Title</h5>
-                    <p class="title">Title description</p>
-                    <p>Regular Card body text</p>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card elevated">
-                    <h5>Elevated Card Title</h5>
-                    <p class="title">Title description</p>
-                    <p>Card body text</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="card">
-                    <img src="" data-src="src/img/example.jpg" alt>
-                    <h5>Card Title</h5>
-                    <p class="title">Title description</p>
-                    <p>Regular Card body text with image and buttons</p>
-                    <div class="buttons">
-                        <button class="text">More Info</button>
-                        <button class="text">Close</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card title">
-                    <h5>Card Title First</h5>
-                    <img src="" data-src="src/img/example.jpg" alt>
-                    <p>Card body text text with image and buttons</p>
-                    <div class="buttons">
-                        <button class="text">More Info</button>
-                        <button class="text">Close</button>
-                        <button class="text icon" aria-label="More Options"><i class="far fa-bookmark"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="tabs">
-                    <button class="tab active">Tab 1</button>
-                    <button class="tab">Tab 2</button>
-                    <button class="tab">Tab 3</button>
-                    <button class="tab">Tab 4</button>
-                    <button class="tab">Tab 5</button>
-                    <button class="tab">Tab 6</button>
-                    <button class="tab">Tab 7</button>
-                    <button class="tab">Tab 8</button>
-                    <button class="tab">Tab 9</button>
-                    <button class="tab">Tab 10</button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="tabs wide">
-                    <button class="tab active"><i class="far fa-thumbs-up"></i>Likes</button>
-                    <button class="tab"><i class="far fa-bookmark"></i>Bookmarks</button>
-                    <button class="tab"><i class="far fa-heart"></i>Favorites</button>
-                    <button class="tab"><i class="far fa-star"></i>Starred</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="typo" class="grid">
-        <h3>Typo</h3>
-        <p class="title">Uses Open Sans out from the box (300 & 600 only, but you can add more if needed)</p>
-        <div class="row">
-            <div class="col-12">
-                <h1 class="p0">Header 1</h1>
-                <h2 class="p0">Header 2</h2>
-                <h3 class="p0">Header 3</h3>
-                <h4 class="p0">Header 4</h4>
-                <h5 class="p0">Header 5</h5>
-                <h6 class="p0">Header 6</h6>
-                <p>Paragraph</p>
-                <hr>
-                <p>Divider</p>
-                <hr>
-                <p class="hideOnDarkMode">Base Colors</p>
-                <div class="row hideOnDarkMode">
-                    <div class="col-3-sm demoColor base-bg-1">#EEEEFA</div>
-                    <div class="col-3-sm demoColor base-bg-2">#CCD</div>
-                    <div class="col-3-sm demoColor base-bg-2-inv base-text-inv">#557</div>
-                    <div class="col-3-sm demoColor base-bg-inv base-text-inv">#334</div>
-                </div>
-                <p class="hideOnDarkMode">Highlight Colors</p>
-                <div class="row hideOnDarkMode">
-                    <div class="col-3-sm demoColor highlight-bg-inv">#FFD</div>
-                    <div class="col-3-sm demoColor highlight-bg base-text-inv">#E68</div>
-                    <div class="col-3-sm demoColor highlight-bg-2-inv">#DCF</div>
-                    <div class="col-3-sm demoColor highlight-bg-2 base-text-inv">#86E</div>
-                </div>
-                <button onclick="$.darkmode()">Toggle Darkmode</button>
-            </div>
-        </div>
-    </div>
-    <div id="tables" class="grid">
-        <h3>Tables</h3>
-        <div class="row">
-            <div class="col-12 overflow border">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Header 1</th>
-                        <th>Header 2</th>
-                        <th>Header 3</th>
-                        <th>Header 4</th>
-                        <th>Header 5</th>
-                        <th>Header 6</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Cell A1</td>
-                        <td>Cell A2</td>
-                        <td>Cell A3</td>
-                        <td>Cell A4</td>
-                        <td>Cell A5</td>
-                        <td>Cell A6</td>
-                    </tr>
-                    <tr>
-                        <td>Cell B1</td>
-                        <td>Cell B2</td>
-                        <td>Cell B3</td>
-                        <td>Cell B4</td>
-                        <td>Cell B5</td>
-                        <td>Cell B6</td>
-                    </tr>
-                    <tr>
-                        <td>Cell C1</td>
-                        <td>Cell C2</td>
-                        <td>Cell C3</td>
-                        <td>Cell C4</td>
-                        <td>Cell C5</td>
-                        <td>Cell C6</td>
-                    </tr>
-                    <tr>
-                        <td>Cell D1</td>
-                        <td>Cell D2</td>
-                        <td>Cell D3</td>
-                        <td>Cell D4</td>
-                        <td>Cell D5</td>
-                        <td>Cell D6</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div id="lists" class="grid">
-        <h3>Lists & Chips</h3>
-        <div class="row">
-            <div class="col-12">
-                <div class="chip">Basic Chip</div>
-                <div class="chip"><i class="far fa-star"></i>Chip with Icon</div>
-                <div class="chip fill">Filled Chip</div>
-                <div class="chip fill dismiss">Closable Chip <span class="close">x</span></div>
-                <div class="chip"><img src="" data-src="src/img/avatar.jpg" alt>Image and Name Chip</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="card">
-                    <h5>Single-Line List</h5>
-                    <ul>
-                        <li>List Item</li>
-                        <li>List Item</li>
-                        <li>List Item</li>
-                        <li class="hideOnSmall">List Item</li>
-                        <li class="hideOnSmall">List Item</li>
-                        <li class="hideOnSmall">List Item</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <h5>Two-Line List</h5>
-                    <ul class="two">
-                        <li>List Item <p>Secondary text</p></li>
-                        <li>List Item <p>Secondary text</p></li>
-                        <li class="hideOnSmall">List Item <p>Secondary text</p></li>
-                        <li class="hideOnSmall">List Item <p>Secondary text</p></li>
-                        <li class="hideOnSmall">List Item <p>Secondary text</p></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <h5>Three-Line List</h5>
-                    <ul class="three">
-                        <li>List Item
-                            <p>Secondary text</p>
-                            <p>Tertiary text</p>
-                        </li>
-                        <li>List Item
-                            <p>Secondary text</p>
-                            <p>Tertiary text</p>
-                        </li>
-                        <li class="hideOnSmall">List Item
-                            <p>Secondary text</p>
-                            <p>Tertiary text</p>
-                        </li>
-                        <li class="hideOnSmall">List Item
-                            <p>Secondary text</p>
-                            <p>Tertiary text</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="card">
-                    <h5>1-Line + Icon</h5>
-                    <ul class="icon">
-                        <li>List Item<i class="far fa-star"></i></li>
-                        <li>List Item<i class="far fa-star"></i></li>
-                        <li>List Item<i class="far fa-star"></i></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <h5>2-Line + Icon & Image</h5>
-                    <ul class="two icon image">
-                        <li>List Item
-                            <p>Secondary text</p>
-                            <i class="far fa-star"></i>
-                            <img src="" data-src="src/img/avatar.jpg" alt>
-                        </li>
-                        <li>List Item
-                            <p>Secondary text</p>
-                            <i class="far fa-star"></i>
-                            <img src="" data-src="src/img/avatar.jpg" alt>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <h5>3-Line + Image</h5>
-                    <ul class="three image">
-                        <li>List Item
-                            <p>Secondary text</p>
-                            <p>Tertiary text</p>
-                            <img src="" data-src="src/img/avatar.jpg" alt>
-                        </li>
-                        <li>List Item
-                            <p>Secondary text</p>
-                            <p>Tertiary text</p>
-                            <img src="" data-src="src/img/avatar.jpg" alt>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="gallery" class="grid">
-        <h3>Image Gallery</h3>
-        <div class="row">
-            <div class="col-12 hideOnSmall">
-                <div class="gallery">
-                    <div class="item">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                        <p>Image Info <i class="far fa-star"></i></p>
-                    </div>
-                    <div class="item">
-                        <img src="" data-src="src/img/example2.jpg" alt="">
-                    </div>
-                    <div class="item round">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 hideOnSmall">
-                <div class="gallery six">
-                    <div class="item">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                        <p>Image Info <i class="far fa-star"></i></p>
-                    </div>
-                    <div class="item">
-                        <img src="" data-src="src/img/example2.jpg" alt="">
-                    </div>
-                    <div class="item round">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="gallery two">
-                    <div class="item">
-                        <img src="" data-src="src/img/example.jpg" alt="">
-                        <p>Image Info <i class="far fa-star"></i></p>
-                    </div>
-                    <div class="item round">
-                        <img src="" data-src="src/img/example2.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="navigation" class="grid hideOnSmall">
-        <h3>Navigation</h3>
-        <p class="title">Only affects desktop view, on mobile is always collapsed. If Rail is on on mobile is always visible</p>
-        <div class="row">
-            <div class="col-12">
-                <button onclick="$('body').toggleClass('menuAlwaysHidden')">Toggle NavBar View</button>
-                <button onclick="
-                    $('nav').toggleClass('rail');
-                    $('main').toggleClass('hasNav').toggleClass('hasRail');
-                    $('footer').toggleClass('hasNav').toggleClass('hasRail');">Toggle Rail View
-                </button>
-            </div>
-        </div>
-    </div>
-    <div id="dialog" class="grid">
-        <h3>Dialogs, Sheets & Snackbar</h3>
-        <div class="row">
-            <div class="col-12">
-                <button onclick="
-                    $.dialog(
-                        'Dialog body very, very, long text example for testing purposes',
-                        {
-                            title: 'Dialog Header',
-                            buttons: [
-                                { text: 'Action 1', id: 'action1' },
-                                { text: 'Action 2', id: 'action2' }
-                            ]
-                        }
-                    )">Show Dialog
-                </button>
-                <button onclick="
-                    $.sheet(
-                        'bottom',
-                        '<h5>Bottom Sheet</h5><p class=\'title\'>It\'s a card! you can add html on it!</p><p>And any Text you want.</p>'
-                    )">Bottom Sheet
-                </button>
-                <button onclick="
-                    $.sheet(
-                        'side',
-                        '<h5>Side Sheet</h5><p class=\'title\'>It\'s a card! you can add html on it!</p><p>And any Text you want.</p>'
-                    )">Side Sheet
-                </button>
-                <button onclick="$.snackbar('This will be dismissed in 3 secs')">Timed Snackbar</button>
-                <button onclick="$.snackbar('This will stay here until you click on: ', 'Dismiss')">Snackbar</button>
-                <button data-tooltip="Very Long Description">Tooltip</button>
-            </div>
-        </div>
-    </div>
-    <div id="progress" class="grid">
-        <h3>Progress Indicators</h3>
-        <h4 class="sub">Environment</h4>
-        <p class="title">Indeterminate loading indicators on screen that applies to environment processes</p>
-        <div class="row">
-            <div class="col-12">
-                <button onclick="showAsyncProgressBar(3)">Async Bar</button>
-                <button onclick="showSyncProgressBar(3)">Sync Circular</button>
-            </div>
-        </div>
-        <h4 class="sub">Inline</h4>
-        <div class="row">
-            <div class="col-3">
-                <p>25%</p>
-                <div class="linearIndicator">
-                    <div class="fixed" style="width: 25%"></div>
-                </div>
-            </div>
-            <div class="col-3">
-                <p>50%</p>
-                <div class="linearIndicator">
-                    <div class="fixed" style="width: 50%"></div>
-                </div>
-            </div>
-            <div class="col-3">
-                <p>100%</p>
-                <div class="linearIndicator">
-                    <div class="fixed" style="width: 100%"></div>
-                </div>
-            </div>
-            <div class="col-3">
-                <p>Indeterminate</p>
-                <div class="linearIndicator">
-                    <div class="bar"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <p>Circular 25%</p>
-                <svg class="circleIndicator" data-percent="25"></svg>
-            </div>
-            <div class="col-3">
-                <p>Circular 50%</p>
-                <svg class="circleIndicator" data-percent="50"></svg>
-            </div>
-            <div class="col-3">
-                <p>Circular 70%</p>
-                <svg class="circleIndicator" data-percent="75"></svg>
-            </div>
-            <div class="col-3">
-                <p>Circular Indeterminate</p>
-                <svg class="circleIndicatorIndeterminate"></svg>
-            </div>
-        </div>
-    </div>
-    <div id="forms" class="grid">
-        <h3>Forms</h3>
-        <p class="title">All components almost out of the box (no classes needed for default styles)</p>
-        <h4 class="sub">Buttons</h4>
-        <p class="title">This style applies to button and a.button</p>
-        <div class="row">
-            <div class="col-4 center">
-                <button><i class="far fa-star"></i>button</button>
-            </div>
-            <div class="col-4 center">
-                <button class="fill"><i class="far fa-star"></i>button .fill</button>
-            </div>
-            <div class="col-4 center">
-                <button class="text"><i class="far fa-star"></i>button .text</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 center">
-                <button class="square"><i class="far fa-star"></i>button .square</button>
-            </div>
-            <div class="col-4 center">
-                <button class="round fill"><i class="far fa-star"></i>.round.fill</button>
-            </div>
-            <div class="col-4 center">
-                <button disabled><i class="far fa-times"></i>disabled</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4 center">
-                <a class="button fab pulse" aria-label="Add new"><i class="far fa-keyboard"></i></a>
-            </div>
-            <div class="col-4 center">
-                <a class="button fab fill" aria-label="Edit"><i class="far fa-user"></i></a>
-            </div>
-            <div class="col-4 center">
-                <a class="button fab text" aria-label="Go to somewhere"><i class="far fa-chart-bar"></i></a>
-            </div>
-        </div>
-        <h4 class="sub">Input Fields</h4>
-        <div class="row form">
-            <div class="col-3">
-                <label for="default">Default</label>
-                <input id="default" type="text" placeholder="Text field">
-            </div>
-            <div class="col-3">
-                <label for="leading">Leading Icon <i class="far fa-star"></i></label>
-                <input id="leading" class="leading" type="text" placeholder="icon to left">
-            </div>
-            <div class="col-3">
-                <label for="trailing" class="trailing">Trailing Icon <i class="far fa-star"></i></label>
-                <input id="trailing" class="trailing" type="text" placeholder="icon to right">
-                <span class="input">* Required</span>
-            </div>
-            <div class="col-3">
-                <label for="error" class="error">With error</label>
-                <input id="error" class="error" type="text" placeholder="Invalid data">
-                <span class="input error">Error info</span>
-            </div>
-        </div>
-        <div class="row form">
-            <div class="col-3">
-                <label for="disabled">Disabled</label>
-                <input id="disabled" type="text" value="Fixed value" disabled>
-            </div>
-            <div class="col-3">
-                <label for="select">Select</label>
-                <select id="select">
-                    <option>Item 1</option>
-                    <option>Item 2</option>
-                    <option>Item 3</option>
-                </select>
-            </div>
-            <div class="col-3">
-                <label for="select3">Error</label>
-                <select id="select3" class="error" disabled>
-                    <option>Disabled</option>
-                    <option>Disabled 1</option>
-                    <option>Disabled 1</option>
-                </select>
-                <span class="input">Unavailable</span>
-            </div>
-            <div class="col-3">
-                <input type="submit" class="fill" value="Submit">
-            </div>
-        </div>
-        <div class="row form">
-            <div class="col-6">
-                <label for="rng1">Range 1 <span class="range">25</span></label>
-                <input id="rng1" type="range" value="25">
-            </div>
-            <div class="col-6">
-                <label for="rng2">Disabled <span class="range">50</span></label>
-                <input id="rng2" type="range" value="50" disabled>
-            </div>
-        </div>
-        <h4 class="sub">Radio & Checkbox</h4>
-        <div class="row form">
-            <div class="col-3">
-                <label for="chk1" class="checkbox">Checkbox 1</label>
-                <input id="chk1" type="checkbox" checked>
-            </div>
-            <div class="col-3">
-                <label for="chk2" class="checkbox">Checkbox 2</label>
-                <input id="chk2" type="checkbox">
-            </div>
-            <div class="col-3">
-                <label for="chk3" class="checkbox">Checkbox 3</label>
-                <input id="chk3" type="checkbox">
-            </div>
-            <div class="col-3 hideOnSmall">
-                <label for="chk4">Compare</label>
-                <input id="chk3" type="text" placeholder="Alignment">
-            </div>
-        </div>
-        <div class="row form">
-            <div class="col-3">
-                <label for="sw1" class="switch">Switch 1</label>
-                <input id="sw1" class="switch" type="checkbox" checked>
-            </div>
-            <div class="col-3">
-                <label for="sw2" class="switch">Switch 2</label>
-                <input id="sw2" class="switch" type="checkbox">
-            </div>
-            <div class="col-3">
-                <label for="sw3" class="switch">Switch 3</label>
-                <input id="sw3" class="switch" type="checkbox">
-            </div>
-            <div class="col-3 hideOnSmall">
-                <label for="sw4">Compare</label>
-                <input id="sw3" type="text" placeholder="Alignment">
-            </div>
-        </div>
-        <div class="row form">
-            <div class="col-3">
-                <label for="rd1" class="radio">Radio 1</label>
-                <input id="rd1" name="radio" type="radio" checked>
-            </div>
-            <div class="col-3">
-                <label for="rd2" class="radio">Radio 2</label>
-                <input id="rd2" name="radio" type="radio">
-            </div>
-            <div class="col-3">
-                <label for="rd3" class="radio">Radio 3</label>
-                <input id="rd3" name="radio" type="radio">
-            </div>
-            <div class="col-3 hideOnSmall">
-                <label for="rd4">Compare</label>
-                <input id="rd3" type="text" placeholder="Alignment">
-            </div>
-        </div>
-    </div>
-</main>
-<footer class="hasNav">
-    <div id="" class="grid">
-        <div class="row">
-            <div class="col-12">
-                <h6><img src="" data-src="src/img/isotype.svg" class="footerIsotype" alt=""> Acode Design & Development</h6>
-                <p>Simple Framework adapts Material & Mobile First guidelines on components to support most of the best practices
-                    of UI in the lightest way possible for designers and developers to lightning fast build apps and websites.</p>
-                <hr>
-                <div class="right">
-                    <a class="button text slim" href="https://github.com/AndresRobert/Simple-Framework" rel="noreferrer" target="_blank"><i class="fab fa-github m0"></i> Github</a>
-                    <a class="button text slim" href="mailto:contact@acode.cl" target="_blank"><i class="far fa-envelope m0"></i> Contact</a>
-                    <a class="button text slim" href="https://www.acode.cl" rel="noreferrer" target="_blank"><img src="" data-src="src/img/icon.svg" class="fa" alt=""> Acode</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="src/acode.min.js"></script>
-<script>
-    let showAsyncProgressBar = time => {
-        $.loading.async();
-        setTimeout(() => $.loading.dismiss(), time * 1000)
-    };
+    <button class="nav" id="nav" onclick="toggleClass(getById('navbar'), 'is-hidden')">+</button>
+    <nav id="navbar" class="is-hidden">
+        <h3>Navbar</h3>
+        <p>You can add <em>div</em> as items</p>
+        <div>nav item 1</div>
+        <div>nav item 2</div>
+        <div>nav item 3</div>
+        <div>nav item 4</div>
+        <div>nav item 5</div>
+        <div>nav item 6</div>
+    </nav>
 
-    let showSyncProgressBar = time => {
-        $.loading.sync();
-        setTimeout(() => $.loading.dismiss(), time * 1000)
-    };
-</script>
-</body>
+    <header>
+        <h1>Simple Framework</h1>
+        <p>The Simplest framework you will ever need.</p>
+    </header>
+    
+    <p>Use <em>.simple-me</em> in your <em>html</em> tag and you are ready to go.</p>
+
+    <h3><br />Grid System</h3>
+    <p>Grid system can be activated using class <em>.grid</em>, the children will be rows and the and the children of every child will be a cell.</p>
+    <main class="grid">
+        <section class="border-inside to-c-inside">
+            <article>1</article>
+            <article>2</article>
+        </section>
+        <section class="border-inside to-c-inside">
+            <article>1</article>
+            <article>2</article>
+            <article>3</article>
+        </section>
+        <section class="border-inside to-c-inside">
+            <article>1</article>
+            <article>2</article>
+            <article>3</article>
+            <article>4</article>
+        </section>
+        <section class="border-inside to-c-inside">
+            <article>1</article>
+            <article>2</article>
+            <article>3</article>
+            <article>4</article>
+            <article>5</article>
+        </section>
+        <section class="border-inside to-c-inside">
+            <article>1</article>
+            <article>2</article>
+            <article>3</article>
+            <article>4</article>
+            <article>5</article>
+            <article>6</article>
+        </section>
+    </main>
+
+    <h3><br />Typo</h3>
+    <p>Default web-safe font Helvetica, Arial, sans-serif</p>
+    <main class="grid">
+        <section>
+            <article><h1>h1</h1></article>
+            <article><h2>h2</h2></article>
+            <article><h3>h3</h3></article>
+            <article><h4>h4</h4></article>
+            <article><h5>h5</h5></article>
+            <article><h6>h6</h6></article>
+        </section>
+        <section>
+            <article>
+                <p>normal paragraph.</p>
+                <p><b>bold</b> paragraph</p>
+                <p><i>italic</i> paragraph</p>
+                <p>paragraph with: <mark>marked</mark>, <em>emphasized</em>, <a href="#link">link</a> or <span class="hoverable">.hoverable</span>.</p>
+            </article>
+        </section>
+    </main>
+
+    <h3><br />Cards</h3>
+    <p>Use <em>.card</em> on a div and use <em>header</em>, <em>main</em> and <em>footer</em> as template</p>
+    <main class="grid">
+        <section>
+            <div class="card">
+                <header>
+                    <img src="data:image/png;base64,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GG57MHMOBFI/QCQpgDkd4XPYhKwxLIGU91NyApj6T6ywW4HZcyaQoqNKSgBTTFDOG4616yOQ2gEjCQFM+YiubwsQUe4EUtpv0Qsgf/Ax9+3I+kMRSOEPBkctgFjeUKXPvBD4l0DsljhKAUzpCM5GgkDsBGLej9EJIJY39u1C/KkSiNESRyWAWN5Utw7rSoVAbJY4CgGM+YidSmGzDgiUJRDTflUvgFjesmVHOwjoIhCDJVYtgFheXQVNNBCoSkC7JVYpgDEdoasWBO0hkBsBzftZnQBq/4mRW/GyXgi4IqDR0akSQI2AXCWfcSAAAX0fnFYhgJqPyBQtBCDgloCm/R5cALG8bouL0SAQCwENji+oAGoAEEuxECcEUiQQ+gAURAA1HYFTLCrWBIGYCITUg9YFMLTix1QYxAqBnAiEcIStCmCIBeZUQKwVArETaPuA1IoAhjzixl4QxA+B3Ai0qRfeBZDf5c2tfFkvBNwQaON3ib0KIJbXTSEwCgRyJeDbEnsRwDaPsLkWBuuGQC4EfOqJcwHE8uZSlqwTAu0S8GGJnQoglrfdgmA2CORGwLUldiKAPo+ouSWY9UIAAt0JuNSbxgKI5aVcIQCBEARcWOJGAojlDZF25oSADgI//vijfP3117L55pvLaqutNiOov/76Sz7++GOZmJiQTTfdVNZYY40Z97///ntZsWKFDA0NlV7MXGPOtsS//vqrDA8Py8477yw9PT1TY5vvm1g32WQTWXXVVae+X0sAXR5BS6+ehhCAgBoC5557rlx99dU2njXXXFPOOussufDCC+3X7777ruy+++7yyy+/2K/XX399ef7552WzzTYTI2KHHXaYPProo/belltuKS+//LKss846XdfWbczpenTNNdfInXfeacV1UnQvv/xyueCCC6ZiNfNtt9129uvKAojlVVODBAKBIATeeecd2X777eWBBx6QfffdV26//XYrMEuWLJH+/n7ZaqutZGBgQO69914ZGRmxgnfggQfKrbfeKjfccIMVyhdffFH6+vpkn332ka233loefvjhrmvpNuZkRzPfcccdZ7+cFMC33npLdthhB7nnnntsrGeccYa88MIL8s0330hvb281AcTyBqk3JoWAKgK33XabFbJPPvnExjU2NmZPeU888YTssssustZaa8krr7wiu+22m71/8cUXy3XXXSc///yztctGEC+55BJ7z4x18sknyw8//CDHHnustcQ333yzvXfSSSfJb7/9Zudae+21O445eZIzJ8xDDz3UCu+XX34pG264oZx++uliRPDVV1+1Y37wwQf21PnSSy/JHnvsUU4Asbyq6o9gIBCUwD///GOf7S1fvlzee+89ueWWW+SZZ56xQmier5nvbbvttjJv3jz5+++/rR1eb7315MEHH7SnrqeeesqexsxlTmN77rmnfV74+eefywEHHCCPPPKI/P7773L00UfLm2++KVtssUXHMc3J0cRjTpJG8I488kgrbB9++KGsvvrqVkSN3b3qqqvsfOZZ4Pz58+Wuu+6SE044oVgAsbxBa43JIaCWwBtvvCF77bWXfdZnROyhhx6a8Szvs88+kxNPPFGMZTYnrnXXXdee8F577TXZaaed7LpMG/OSxJzSjK0+5ZRTrLU21/nnny/mWeP0a/aYps/1119vbbiZ5+2337YCaCywOVVus802VgQvuuiiqWEWLVpkxzWnw67PALG8amuPwCCggoA5fZkTnzllGVtrnu8Zx3jZZZfJpZdeKocffri1sIODg/LHH3/YFxPmBchBBx1k43///fftM0AjVsbmmueIRqDMi5Xx8XF7ijNXpzGN1d14443t3DvuuKN9AWPE7bHHHrOCak6RZm5zAjT/NZd5O2zs+v777z+3AGJ5VdQWQUBAJYFzzjlHli1bZl9qTF7m2Z8RGGNfjznmGHn22WftidCcxqZfpt0hhxwiZ555pv22aXP22WfL6Oio/frUU0+V++67z54qr732WvvSwlydxjTP9IyVnbyMY/3000+tBb/yyivl9ddft6fLG2+80TYxH9fZaKON5KuvvrKn0ZVOgFhelTVHUBBQQ+Dxxx+Xo446yn7cxJyijL09+OCD5aabbpIjjjjCWl3z0ZPJ53wm8FVWWcW+HT7vvPPk7rvvts/2vvvuOyteRhTvuOMO+xzR9DGns48++kiM0JoTonmj3G3M6WCMvTbjTb4Ffvrpp2W//fazgmxOmOZ0+MUXX9h/5iQ4QwCxvGpqjEAgoJaAERfzJvfJJ5+civH444+3z+Gee+45+yJjrsu8ODFvgo0gGaEyl7Gtpo/5fKB5i7v33nvL/fffb7/eddddbfsrrrjCCmynMad/35z4zIegJwXQzHnaaadZcTaX+ZiOidPMa06sVgBHR0cnTAdzmWOheVPDBQEIQKAbASMe5jc6NthgA/uZviqX+XygORWavm1c5hmjiXXyw9hmfnOZN9U9w8PDE+bV8IIFC9qIhTkgAAEIBCdgnmOaj/L8D8AwhZinzaC6AAAAAElFTkSuQmCC">
+                </header>
+                <main>
+                    <p>This is a main tag section to add info</p>
+                    <p>Second line paragraph</p>
+                </main>
+                <footer class="to-r">
+                    <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+                </footer>
+            </div>
+            <div class="card">
+                <header>
+                    <h3>h3</h3>
+                    <p>header</p>
+                </header>
+                <main>
+                    <img src="data:image/png;base64,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GG57MHMOBFI/QCQpgDkd4XPYhKwxLIGU91NyApj6T6ywW4HZcyaQoqNKSgBTTFDOG4616yOQ2gEjCQFM+YiubwsQUe4EUtpv0Qsgf/Ax9+3I+kMRSOEPBkctgFjeUKXPvBD4l0DsljhKAUzpCM5GgkDsBGLej9EJIJY39u1C/KkSiNESRyWAWN5Utw7rSoVAbJY4CgGM+YidSmGzDgiUJRDTflUvgFjesmVHOwjoIhCDJVYtgFheXQVNNBCoSkC7JVYpgDEdoasWBO0hkBsBzftZnQBq/4mRW/GyXgi4IqDR0akSQI2AXCWfcSAAAX0fnFYhgJqPyBQtBCDgloCm/R5cALG8bouL0SAQCwENji+oAGoAEEuxECcEUiQQ+gAURAA1HYFTLCrWBIGYCITUg9YFMLTix1QYxAqBnAiEcIStCmCIBeZUQKwVArETaPuA1IoAhjzixl4QxA+B3Ai0qRfeBZDf5c2tfFkvBNwQaON3ib0KIJbXTSEwCgRyJeDbEnsRwDaPsLkWBuuGQC4EfOqJcwHE8uZSlqwTAu0S8GGJnQoglrfdgmA2CORGwLUldiKAPo+ouSWY9UIAAt0JuNSbxgKI5aVcIQCBEARcWOJGAojlDZF25oSADgI//vijfP3117L55pvLaqutNiOov/76Sz7++GOZmJiQTTfdVNZYY40Z97///ntZsWKFDA0NlV7MXGPOtsS//vqrDA8Py8477yw9PT1TY5vvm1g32WQTWXXVVae+X0sAXR5BS6+ehhCAgBoC5557rlx99dU2njXXXFPOOussufDCC+3X7777ruy+++7yyy+/2K/XX399ef7552WzzTYTI2KHHXaYPProo/belltuKS+//LKss846XdfWbczpenTNNdfInXfeacV1UnQvv/xyueCCC6ZiNfNtt9129uvKAojlVVODBAKBIATeeecd2X777eWBBx6QfffdV26//XYrMEuWLJH+/n7ZaqutZGBgQO69914ZGRmxgnfggQfKrbfeKjfccIMVyhdffFH6+vpkn332ka233loefvjhrmvpNuZkRzPfcccdZ7+cFMC33npLdthhB7nnnntsrGeccYa88MIL8s0330hvb281AcTyBqk3JoWAKgK33XabFbJPPvnExjU2NmZPeU888YTssssustZaa8krr7wiu+22m71/8cUXy3XXXSc///yztctGEC+55BJ7z4x18sknyw8//CDHHnustcQ333yzvXfSSSfJb7/9Zudae+21O445eZIzJ8xDDz3UCu+XX34pG264oZx++uliRPDVV1+1Y37wwQf21PnSSy/JHnvsUU4Asbyq6o9gIBCUwD///GOf7S1fvlzee+89ueWWW+SZZ56xQmier5nvbbvttjJv3jz5+++/rR1eb7315MEHH7SnrqeeesqexsxlTmN77rmnfV74+eefywEHHCCPPPKI/P7773L00UfLm2++KVtssUXHMc3J0cRjTpJG8I488kgrbB9++KGsvvrqVkSN3b3qqqvsfOZZ4Pz58+Wuu+6SE044oVgAsbxBa43JIaCWwBtvvCF77bWXfdZnROyhhx6a8Szvs88+kxNPPFGMZTYnrnXXXdee8F577TXZaaed7LpMG/OSxJzSjK0+5ZRTrLU21/nnny/mWeP0a/aYps/1119vbbiZ5+2337YCaCywOVVus802VgQvuuiiqWEWLVpkxzWnw67PALG8amuPwCCggoA5fZkTnzllGVtrnu8Zx3jZZZfJpZdeKocffri1sIODg/LHH3/YFxPmBchBBx1k43///fftM0AjVsbmmueIRqDMi5Xx8XF7ijNXpzGN1d14443t3DvuuKN9AWPE7bHHHrOCak6RZm5zAjT/NZd5O2zs+v777z+3AGJ5VdQWQUBAJYFzzjlHli1bZl9qTF7m2Z8RGGNfjznmGHn22WftidCcxqZfpt0hhxwiZ555pv22aXP22WfL6Oio/frUU0+V++67z54qr732WvvSwlydxjTP9IyVnbyMY/3000+tBb/yyivl9ddft6fLG2+80TYxH9fZaKON5KuvvrKn0ZVOgFhelTVHUBBQQ+Dxxx+Xo446yn7cxJyijL09+OCD5aabbpIjjjjCWl3z0ZPJ53wm8FVWWcW+HT7vvPPk7rvvts/2vvvuOyteRhTvuOMO+xzR9DGns48++kiM0JoTonmj3G3M6WCMvTbjTb4Ffvrpp2W//fazgmxOmOZ0+MUXX9h/5iQ4QwCxvGpqjEAgoJaAERfzJvfJJ5+civH444+3z+Gee+45+yJjrsu8ODFvgo0gGaEyl7Gtpo/5fKB5i7v33nvL/fffb7/eddddbfsrrrjCCmynMad/35z4zIegJwXQzHnaaadZcTaX+ZiOidPMa06sVgBHR0cnTAdzmWOheVPDBQEIQKAbASMe5jc6NthgA/uZviqX+XygORWavm1c5hmjiXXyw9hmfnOZN9U9w8PDE+bV8IIFC9qIhTkgAAEIBCdgnmOaj/L8D8AwhZinzaC6AAAAAElFTkSuQmCC">
+                </main>
+                <footer class="to-r">
+                    <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+                </footer>
+            </div>
+            <div class="card">
+                <header>
+                    <h3>h3</h3>
+                </header>
+                <main>
+                    <p>This is a main tag section to add info</p>
+                    <p>Second line paragraph</p>
+                </main>
+                <footer>
+                    <img src="data:image/png;base64,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GG57MHMOBFI/QCQpgDkd4XPYhKwxLIGU91NyApj6T6ywW4HZcyaQoqNKSgBTTFDOG4616yOQ2gEjCQFM+YiubwsQUe4EUtpv0Qsgf/Ax9+3I+kMRSOEPBkctgFjeUKXPvBD4l0DsljhKAUzpCM5GgkDsBGLej9EJIJY39u1C/KkSiNESRyWAWN5Utw7rSoVAbJY4CgGM+YidSmGzDgiUJRDTflUvgFjesmVHOwjoIhCDJVYtgFheXQVNNBCoSkC7JVYpgDEdoasWBO0hkBsBzftZnQBq/4mRW/GyXgi4IqDR0akSQI2AXCWfcSAAAX0fnFYhgJqPyBQtBCDgloCm/R5cALG8bouL0SAQCwENji+oAGoAEEuxECcEUiQQ+gAURAA1HYFTLCrWBIGYCITUg9YFMLTix1QYxAqBnAiEcIStCmCIBeZUQKwVArETaPuA1IoAhjzixl4QxA+B3Ai0qRfeBZDf5c2tfFkvBNwQaON3ib0KIJbXTSEwCgRyJeDbEnsRwDaPsLkWBuuGQC4EfOqJcwHE8uZSlqwTAu0S8GGJnQoglrfdgmA2CORGwLUldiKAPo+ouSWY9UIAAt0JuNSbxgKI5aVcIQCBEARcWOJGAojlDZF25oSADgI//vijfP3117L55pvLaqutNiOov/76Sz7++GOZmJiQTTfdVNZYY40Z97///ntZsWKFDA0NlV7MXGPOtsS//vqrDA8Py8477yw9PT1TY5vvm1g32WQTWXXVVae+X0sAXR5BS6+ehhCAgBoC5557rlx99dU2njXXXFPOOussufDCC+3X7777ruy+++7yyy+/2K/XX399ef7552WzzTYTI2KHHXaYPProo/belltuKS+//LKss846XdfWbczpenTNNdfInXfeacV1UnQvv/xyueCCC6ZiNfNtt9129uvKAojlVVODBAKBIATeeecd2X777eWBBx6QfffdV26//XYrMEuWLJH+/n7ZaqutZGBgQO69914ZGRmxgnfggQfKrbfeKjfccIMVyhdffFH6+vpkn332ka233loefvjhrmvpNuZkRzPfcccdZ7+cFMC33npLdthhB7nnnntsrGeccYa88MIL8s0330hvb281AcTyBqk3JoWAKgK33XabFbJPPvnExjU2NmZPeU888YTssssustZaa8krr7wiu+22m71/8cUXy3XXXSc///yztctGEC+55BJ7z4x18sknyw8//CDHHnustcQ333yzvXfSSSfJb7/9Zudae+21O445eZIzJ8xDDz3UCu+XX34pG264oZx++uliRPDVV1+1Y37wwQf21PnSSy/JHnvsUU4Asbyq6o9gIBCUwD///GOf7S1fvlzee+89ueWWW+SZZ56xQmier5nvbbvttjJv3jz5+++/rR1eb7315MEHH7SnrqeeesqexsxlTmN77rmnfV74+eefywEHHCCPPPKI/P7773L00UfLm2++KVtssUXHMc3J0cRjTpJG8I488kgrbB9++KGsvvrqVkSN3b3qqqvsfOZZ4Pz58+Wuu+6SE044oVgAsbxBa43JIaCWwBtvvCF77bWXfdZnROyhhx6a8Szvs88+kxNPPFGMZTYnrnXXXdee8F577TXZaaed7LpMG/OSxJzSjK0+5ZRTrLU21/nnny/mWeP0a/aYps/1119vbbiZ5+2337YCaCywOVVus802VgQvuuiiqWEWLVpkxzWnw67PALG8amuPwCCggoA5fZkTnzllGVtrnu8Zx3jZZZfJpZdeKocffri1sIODg/LHH3/YFxPmBchBBx1k43///fftM0AjVsbmmueIRqDMi5Xx8XF7ijNXpzGN1d14443t3DvuuKN9AWPE7bHHHrOCak6RZm5zAjT/NZd5O2zs+v777z+3AGJ5VdQWQUBAJYFzzjlHli1bZl9qTF7m2Z8RGGNfjznmGHn22WftidCcxqZfpt0hhxwiZ555pv22aXP22WfL6Oio/frUU0+V++67z54qr732WvvSwlydxjTP9IyVnbyMY/3000+tBb/yyivl9ddft6fLG2+80TYxH9fZaKON5KuvvrKn0ZVOgFhelTVHUBBQQ+Dxxx+Xo446yn7cxJyijL09+OCD5aabbpIjjjjCWl3z0ZPJ53wm8FVWWcW+HT7vvPPk7rvvts/2vvvuOyteRhTvuOMO+xzR9DGns48++kiM0JoTonmj3G3M6WCMvTbjTb4Ffvrpp2W//fazgmxOmOZ0+MUXX9h/5iQ4QwCxvGpqjEAgoJaAERfzJvfJJ5+civH444+3z+Gee+45+yJjrsu8ODFvgo0gGaEyl7Gtpo/5fKB5i7v33nvL/fffb7/eddddbfsrrrjCCmynMad/35z4zIegJwXQzHnaaadZcTaX+ZiOidPMa06sVgBHR0cnTAdzmWOheVPDBQEIQKAbASMe5jc6NthgA/uZviqX+XygORWavm1c5hmjiXXyw9hmfnOZN9U9w8PDE+bV8IIFC9qIhTkgAAEIBCdgnmOaj/L8D8AwhZinzaC6AAAAAElFTkSuQmCC">
+                </footer>
+            </div>
+        </section>
+        <section>
+            <div class="card">
+                <header>
+                    <h3>h3</h3>
+                    <p>header</p>
+                </header>
+                <main>
+                    <p>no footer</p>
+                </main>
+            </div>
+            <div class="card">
+                <main>
+                    <p>no header</p>
+                </main>
+                <footer class="to-r">
+                    <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+                </footer>
+            </div>
+            <div class="card hoverable">
+                <header>
+                    <h3>h3</h3>
+                    <p>no content (also hoverable)</p>
+                </header>
+                <footer class="to-r">
+                    <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+                </footer>
+            </div>
+        </section>
+    </main>
+    
+    <h3><br />Tables</h3>
+    <p>To make it responsive you have to wrap it up in a <em>.responsive</em> container</p>
+    <div class="responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>header A</th>
+                    <th>header B</th>
+                    <th>header C</th>
+                    <th>header D</th>
+                    <th>header E</th>
+                    <th>header F</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>data 1 A</td>
+                    <td>data 1 B</td>
+                    <td>data 1 C</td>
+                    <td>data 1 D</td>
+                    <td>data 1 E</td>
+                    <td>data 1 F</td>
+                </tr>
+                <tr>
+                    <td>data 2 A</td>
+                    <td>data 2 B</td>
+                    <td>data 2 C</td>
+                    <td>data 2 D</td>
+                    <td>data 2 E</td>
+                    <td>data 2 F</td>
+                </tr>
+                <tr>
+                    <td>data 3 A</td>
+                    <td>data 3 B</td>
+                    <td>data 3 C</td>
+                    <td>data 3 D</td>
+                    <td>data 3 E</td>
+                    <td>data 3 F</td>
+                </tr>
+                <tr>
+                    <td>data 4 A</td>
+                    <td>data 4 B</td>
+                    <td>data 4 C</td>
+                    <td>data 4 D</td>
+                    <td>data 4 E</td>
+                    <td>data 4 F</td>
+                </tr>
+                <tr>
+                    <td>data 5 A</td>
+                    <td>data 5 B</td>
+                    <td>data 5 C</td>
+                    <td>data 5 D</td>
+                    <td>data 5 E</td>
+                    <td>data 5 F</td>
+                </tr>
+                <tr>
+                    <td>data 6 A</td>
+                    <td>data 6 B</td>
+                    <td>data 6 C</td>
+                    <td>data 6 D</td>
+                    <td>data 6 E</td>
+                    <td>data 6 F</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>footer A</td>
+                    <td>footer B</td>
+                    <td>footer C</td>
+                    <td>footer D</td>
+                    <td>footer E</td>
+                    <td>footer F</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
+    <h3><br />Chips</h3>
+    <p>Use <em>.chip</em> class to convert any container into a chip</p>
+    <main class="wrap">
+        <div class="chip">basic chip</div>
+        <div class="chip hoverable"><i>.hoverable</i> chip</div>
+        <div class="chip badge-r icon-l">multiple chip<em>55</em><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVRIie3UsU5UQRTG8d+uGwghFG6WkDWBzlCwDYTOxIqCxIY3oMBQQaW8AAmFQWmAWFvoG1DwDhsTY4MNBZ1B0MRKDGAxs8lm8e7MFMaGf3Pu3POdOTNz5gz3/EMe4CjaoqASVvATLZwUxmbzJtpXJUElO+ngFp/RRg1fS5LlsIOR+D0Sx1nUM3WT+IGrOL4SajOVE1wbGC9jFk3haOq4jnYf3/q0LWziJvpv4/9LfMFxVdI1vMhZ3RBe4nlKtIRt+UfZoxYTPMsN6GAPY5n6UexioXBhHuFQKPowmjjATGmCHm1sJTRbUVdJqhnncY7TIZpxTOCsSpAq7iI+JjTdqKukkZjgoXDvCbdnNU7YxTuhN74LdakktZNegz3Ga+Hl3cAn4bGcG9D9lcGO76eJdaHjGzHJ7z5/I/rb+IW3uEgs+g5P8B7TCd00PuBpaYJ7/h9/AI4dNAEzXJodAAAAAElFTkSuQmCC"></div>
+    </main>
+    <main class="wrap">
+        <div class="chip close-r"><i>.close-r</i> chip <em>X</em></div>
+        <div class="chip icon-r"><i>.icon-r</i> chip<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVRIie3UsU5UQRTG8d+uGwghFG6WkDWBzlCwDYTOxIqCxIY3oMBQQaW8AAmFQWmAWFvoG1DwDhsTY4MNBZ1B0MRKDGAxs8lm8e7MFMaGf3Pu3POdOTNz5gz3/EMe4CjaoqASVvATLZwUxmbzJtpXJUElO+ngFp/RRg1fS5LlsIOR+D0Sx1nUM3WT+IGrOL4SajOVE1wbGC9jFk3haOq4jnYf3/q0LWziJvpv4/9LfMFxVdI1vMhZ3RBe4nlKtIRt+UfZoxYTPMsN6GAPY5n6UexioXBhHuFQKPowmjjATGmCHm1sJTRbUVdJqhnncY7TIZpxTOCsSpAq7iI+JjTdqKukkZjgoXDvCbdnNU7YxTuhN74LdakktZNegz3Ga+Hl3cAn4bGcG9D9lcGO76eJdaHjGzHJ7z5/I/rb+IW3uEgs+g5P8B7TCd00PuBpaYJ7/h9/AI4dNAEzXJodAAAAAElFTkSuQmCC"></div>
+        <div class="chip badge-r"><i>.badge-r</i> chip <em>55</em></div>
+        <div class="chip image-r"><i>.image-r</i> chip<img src="https://avatars.githubusercontent.com/u/10222434?v=4"></div>
+    </main>
+    <main class="wrap">
+        <div class="chip close-l"><i>.close-l</i> chip <em>X</em></div>
+        <div class="chip icon-l"><i>.icon-l</i> chip<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVRIie3UsU5UQRTG8d+uGwghFG6WkDWBzlCwDYTOxIqCxIY3oMBQQaW8AAmFQWmAWFvoG1DwDhsTY4MNBZ1B0MRKDGAxs8lm8e7MFMaGf3Pu3POdOTNz5gz3/EMe4CjaoqASVvATLZwUxmbzJtpXJUElO+ngFp/RRg1fS5LlsIOR+D0Sx1nUM3WT+IGrOL4SajOVE1wbGC9jFk3haOq4jnYf3/q0LWziJvpv4/9LfMFxVdI1vMhZ3RBe4nlKtIRt+UfZoxYTPMsN6GAPY5n6UexioXBhHuFQKPowmjjATGmCHm1sJTRbUVdJqhnncY7TIZpxTOCsSpAq7iI+JjTdqKukkZjgoXDvCbdnNU7YxTuhN74LdakktZNegz3Ga+Hl3cAn4bGcG9D9lcGO76eJdaHjGzHJ7z5/I/rb+IW3uEgs+g5P8B7TCd00PuBpaYJ7/h9/AI4dNAEzXJodAAAAAElFTkSuQmCC"></div>
+        <div class="chip badge-l"><i>.badge-l</i> chip <em>55</em></div>
+        <div class="chip image-l"><i>.image-l</i> chip<img src="https://avatars.githubusercontent.com/u/10222434?v=4"></div>
+    </main>
+
+    <h3><br />List</h3>
+    <p>Lists need no classes</p>
+    <main class="wrap">
+        <ul>
+            <li>item a</li>
+            <li>item y</li>
+            <li>item b</li>
+            <ul>
+                <li>item a</li>
+                <li>item y</li>
+                <li>item b</li>
+                <ol>
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                </ol>
+            </ul>
+        </ul>
+    </main>
+
+    <h3><br />Buttons</h3>
+    <p>Only buttons can be buttons</p>
+    <main class="wrap">
+        <button>Normal</button>
+        <button disabled>Normal</button>
+    </main>
+
+    <h3><br />Dialogs</h3>
+    <p>Use <em>.card.as-dialog</em> to create dialogs</p>
+    <main class="wrap">
+        <button onclick="toggleClass(getById('dialog1'), 'is-hidden')">open dialog</button>
+    </main>
+    <div id="dialog1" class="card as-dialog is-hidden">
+        <header>
+            <h4>This is a dialog</h4>
+        </header>
+        <main>
+            <p>This is the informaton section</p>
+        </main>
+        <footer>
+            <p class="to-r">
+                <a onclick="toggleClass(getById('dialog1'), 'is-hidden')" href="#ok_dialog">OK</a> | <a onclick="toggleClass(getById('dialog1'), 'is-hidden')" href="#cancel_dialog">Cancel</a>
+            </p>
+        </footer>
+    </div>
+
+    <h3><br />Progress Indicators</h3>
+    <h4>Linear</h4>
+    <main class="grid">
+        <section>
+            <article>
+                <p>25%</p>
+                <div class="progress">
+                    <div class="indicator" style="width:25%"></div>
+                </div>
+            </article>
+            <article>
+                <p>50%</p>
+                <div class="progress">
+                    <div class="indicator" style="width:50%"></div>
+                </div>
+            </article>
+            <article>
+                <p>75%</p>
+                <div class="progress">
+                    <div class="indicator" style="width:75%"></div>
+                </div>
+            </article>
+            <article>
+                <p>100%</p>
+                <div class="progress">
+                    <div class="indicator" style="width:100%"></div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <h4>Radial</h4>
+    <main class="grid">
+        <section>
+            <article>
+                <div class="progress-circle p25">
+                    <p>25%</p>
+                </div>
+            </article>
+            <article>
+                <div class="progress-circle p50">
+                    <p>50%</p>
+                </div>
+            </article>
+            <article>
+                <div class="progress-circle p75">
+                    <p>75%</p>
+                </div>
+            </article>
+            <article>
+                <div class="progress-circle p100">
+                    <p>100%</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <h3><br />Forms</h3>
+    <p><em>form</em> tag is already a grid, so no need to add the <em>.grid</em> class</p>
+    <form action="#">
+        <section>
+            <article>
+                <label for="form-email">Email</label>
+                <input id="form-email" type="email">
+            </article>
+            <article>
+                <label for="form-password">Password</label>
+                <input id="form-password" type="password">
+            </article>
+            <article>
+                <label for="form-date">Date</label>
+                <input id="form-date" type="date">
+            </article>
+            <article>
+                <label for="form-search">Search <span class="error">* this input is disabled</span></label>
+                <input id="form-search" type="search" disabled>
+            </article>
+        </section>
+        <section>
+            <article>
+                <label for="form-area">Area</label>
+                <select>
+                    <option>Area 1</option>
+                    <option>Area 2</option>
+                    <option>Area 3</option>
+                    <option>Area 4</option>
+                </select>
+            </article>
+            <article>
+                <label for="form-texttarea">Text area</label>
+                <Textarea id="form-texttarea"></Textarea>
+            </article>
+            <article>
+                <label for="form-placeholder">Placeholder</label>
+                <input id="form-placeholder" type="text" placeholder="placeholder text">
+            </article>
+            <article>
+                <label for="form-file">File</label>
+                <input id="form-file" type="file">
+            </article>
+        </section>
+        <section>
+            <article>
+                <label>Languages</label>
+                <label for="python" class="radio">Python</label>
+                <input type="radio" name="fav_language" id="python" value="Python">
+            </article>
+            <article>
+                <label for="java" class="radio">Java</label>
+                <input type="radio" name="fav_language" id="java" value="Java">
+            </article>
+            <article>
+                <label for="csharp" class="radio">C-sharp</label>
+                <input type="radio" name="fav_language" id="csharp" value="C-sharp">
+            </article>
+            <article>
+                <label for="php" class="radio">PHP</label>
+                <input type="radio" name="fav_language" id="php" value="PHP">
+            </article>
+        </section>
+        <section>
+            <article>
+                <label>Frameworks</label>
+                <label for="vue" class="checkbox">Vue</label>
+                <input type="checkbox" id="vue" value="Vue">
+            </article>
+            <article>
+                <label for="angular" class="checkbox">Angular</label>
+                <input type="checkbox" id="angular" value="Angular">
+            </article>
+            <article>
+                <label for="react" class="checkbox">React</label>
+                <input type="checkbox" id="react" value="React">
+            </article>
+            <article>
+                <label for="svelte" class="checkbox">Svelte</label>
+                <input type="checkbox" id="svelte" value="Svelte">
+            </article>
+        </section>
+        <section>
+            <article style="flex: 3;">
+                <label for="form-range">Range</label>
+                <input id="form-range" type="range">
+            </article>
+            <article>
+                <input id="form-submit" type="submit">
+            </article>
+        </section>
+    </form>
+
+
+    <footer>
+        <h3>Footer</h3>
+        <a href="https://github.com/AndresRobert/Simple-Framework">Github project</a>
+    </footer>
+
+    <script>
+        function getById(_id) {
+            return document.getElementById(_id);
+        }
+
+        function hasClass(_element, _class) {
+            return _element.classList.contains(_class);
+        }
+
+        function addClass(_element, _class) {
+            return _element.classList.add(_class);
+        }
+
+        function removeClass(_element, _class) {
+            return _element.classList.remove(_class);
+        }
+
+        function toggleClass(_element, _class) {
+            if (hasClass(_element, _class)) {
+                removeClass(_element, _class);
+            } else {
+                addClass(_element, _class);
+            }
+        }
+    </script>
+  </body>
 </html>
