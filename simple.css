@@ -1,7 +1,7 @@
 :root {
     --body-bg: #FEFEFE;
     --normal-text:#445;
-    --error-text:#D44;
+    --error-text:#F44;
     --success-text:#4C4;
     --warning-text:#FC0;
     --highlight-text:#58F;
@@ -48,6 +48,22 @@ html.simple-me > body {
 
 html.simple-me > body ::placeholder { 
     color: var(--placeholder-text);
+}
+
+html.simple-me > body input[type="range"] {
+    pointer-events: none;
+}
+
+html.simple-me > body input[type="range"]::-webkit-slider-thumb {
+    pointer-events: auto;
+}
+
+html.simple-me > body input[type="range"]::-moz-range-thumb {
+    pointer-events: auto;
+}
+
+html.simple-me > body input[type="range"]::-ms-thumb {
+    pointer-events: auto;
 }
 
 html.simple-me > body ul, 
