@@ -412,7 +412,7 @@ Radial
 ```html
 <footer>
     <h3>Footer</h3>
-    <a href="https://github.com/AndresRobert/Simple-Framework">Github project</a>
+    <a href="https://github.com/AndresRobert/Simple-Framework">Github</a>
 </footer>
 ```
 
@@ -422,8 +422,8 @@ Radial
 <html lang="en" class="simple-me">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Simple Framework</title>
-        <link href="pathTo/simple.css?v=1" rel="stylesheet">
+        <title>Your Simple New Project</title>
+        <link href="path/to/simple.css" rel="stylesheet">
     </head>
     <body>
     <!-- Content -->
@@ -432,4 +432,4 @@ Radial
 ```
 
 ## See it in action
-Visit [ACODE Simple Framework](https://andresrobert.github.io/Simple-Framework/)
+Visit [Simple Framework](https://andresrobert.github.io/Simple-Framework/)
