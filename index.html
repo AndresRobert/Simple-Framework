@@ -29,7 +29,7 @@
     <p>Use <em>.simple-me</em> in your <em>html</em> tag and you are ready to go.</p>
 
     <h3><br />Grid System</h3>
-    <p>Grid system can be activated using class <em>.grid</em>, the children will be rows and the and the children of every child will be a cell.</p>
+    <p>Grid system can be activated using class <em>.grid</em>, the children will be rows and the and the children of every child will be a cell. You can add borders on cell using <em>.border-inside</em> in the row. You can also center the content inside using <em>.to-c-inside</em>.</p>
     <main class="grid">
         <section class="border-inside to-c-inside">
             <article>1</article>
@@ -76,11 +76,35 @@
         </section>
         <section>
             <article>
-                <p>normal paragraph.</p>
-                <p><b>bold</b> paragraph</p>
-                <p><i>italic</i> paragraph</p>
-                <p>paragraph with: <mark>marked</mark>, <em>emphasized</em>, <a href="#link">link</a> or <span class="hoverable">.hoverable</span>.</p>
+                <p>Normal text paragraph, 
+                    <b>bold text</b>, 
+                    <i>italic text</i>, 
+                    <mark>marked text</mark>, 
+                    <em>emphasized text</em>, 
+                    <span class="error">error text</span>, 
+                    <span class="warn">warning text</span>, 
+                    <span class="success">success text</span>, 
+                    <em class="error">emphasized error text</em>, 
+                    <em class="warn">emphasized warning text</em>, 
+                    <em class="success">emphasized success text</em>, 
+                    <a href="#link">a link</a> and 
+                    <span class="hoverable">.hoverable text</span>.
+                </p>
             </article>
+        </section>
+        <section class="to-c-inside">
+            <article class="error"><p>Error cell</p></article>
+            <article class="warn"><p>Warning cell</p></article>
+            <article class="success"><p>Success cell</p></article>
+        </section>
+        <section class="error to-c-inside">
+            <article><p>Error row</p></article>
+        </section>
+        <section class="warn to-c-inside">
+            <article><p>Warning row</p></article>
+        </section>
+        <section class="success to-c-inside">
+            <article><p>Success row</p></article>
         </section>
     </main>
 
@@ -273,10 +297,17 @@
     </main>
 
     <h3><br />Buttons</h3>
-    <p>Only buttons can be buttons</p>
+    <p>Only buttons, submit and <em>a.button</em> can be buttons</p>
     <main class="wrap">
         <button>Normal</button>
-        <button disabled>Normal</button>
+        <button disabled>Disabled</button>
+        <a class="button">Link Button</a>
+        <a class="button disabled">Link Button Disabled</a>
+    </main>
+    <main class="wrap">
+        <button class="error">Error</button>
+        <button class="warn">Warning</button>
+        <button class="success">Success</button>
     </main>
 
     <h3><br />Dialogs</h3>
@@ -356,7 +387,7 @@
 
     <h3><br />Forms</h3>
     <p><em>form</em> tag is already a grid, so no need to add the <em>.grid</em> class</p>
-    <form action="#">
+    <form id="forms" action="#forms">
         <section>
             <article>
                 <label for="form-email">Email</label>

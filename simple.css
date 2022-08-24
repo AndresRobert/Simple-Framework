@@ -1,15 +1,21 @@
 :root {
     --body-bg: #FEFEFE;
     --normal-text:#445;
-    --error-text:#F44;
-    --success-text:#4C4;
-    --warning-text:#FC0;
+    --error-text:#F05;
+    --success-text:#2B8;
+    --warning-text:#AA2;
+    --error-text-dark:#A05;
+    --success-text-dark:#078;
+    --warning-text-dark:#772;
     --highlight-text:#58F;
     --bold-text:#001;
     --inverted-text:#DDE;
 
     --placeholder-text:#AAB;
     --back-bg: #EDEDEE;
+    --error-bg:#F057;
+    --success-bg:#2B87;
+    --warning-bg:#EF08;
     --border:#AAB;
     --border-light:#DDE;
     --hover: #AAB;
@@ -19,7 +25,6 @@
     --shadow-dialog:#445A;
 
     --link-text: #58F;
-    --selected: #58F;
     --menu: #DDE;
 }
 
@@ -82,6 +87,7 @@ html.simple-me > body ol ol {
 
 html.simple-me > body .wrap {
     display: flow-root;
+    padding: 0.2rem 0;
 }
 
 html.simple-me > body b,
@@ -113,14 +119,16 @@ html.simple-me > body h6 {
     color: var(--bold-text);
 }
 
-html.simple-me > body > footer b,
-html.simple-me > body > footer i,
+html.simple-me > body > header b,
+html.simple-me > body > header i,
 html.simple-me > body > header h1,
 html.simple-me > body > header h2,
 html.simple-me > body > header h3,
 html.simple-me > body > header h4,
 html.simple-me > body > header h5,
 html.simple-me > body > header h6,
+html.simple-me > body > footer b,
+html.simple-me > body > footer i,
 html.simple-me > body > footer h1,
 html.simple-me > body > footer h2,
 html.simple-me > body > footer h3,
@@ -165,6 +173,7 @@ html.simple-me > body h6 {
 
 html.simple-me > body p {
     margin: 0.5rem 0;
+    line-height: 1.45rem;
 }
 
 html.simple-me > body i {
@@ -180,7 +189,7 @@ html.simple-me > body .border-inside > * {
 
 html.simple-me > body em {
     font-style: normal;
-    border: 0.1rem solid var(--normal-text);
+    border: 0.1rem solid var(--body-bg);
     background-color: var(--normal-text);
     color: var(--body-bg);
 }
@@ -189,6 +198,39 @@ html.simple-me > body a {
     text-decoration: none;
     color: var(--link-text);
     cursor: pointer;
+}
+
+html.simple-me > body .error {
+    color: var(--error-text);
+}
+
+html.simple-me > body .warn {
+    color: var(--warning-text);
+}
+
+html.simple-me > body .success {
+    color: var(--success-text);
+}
+
+html.simple-me > body em.error,
+html.simple-me > body .grid > *.error,
+html.simple-me > body .grid > * > *.error {
+    color: var(--error-text-dark);
+    background-color: var(--error-bg);
+}
+
+html.simple-me > body em.warn,
+html.simple-me > body .grid > *.warn,
+html.simple-me > body .grid > * > *.warn {
+    color: var(--warning-text-dark);
+    background-color: var(--warning-bg);
+}
+
+html.simple-me > body em.success,
+html.simple-me > body .grid > *.success,
+html.simple-me > body .grid > * > *.success {
+    color: var(--success-text-dark);
+    background-color: var(--success-bg);
 }
 
 html.simple-me > body > header a,
@@ -202,10 +244,9 @@ html.simple-me > body a:hover {
 
 html.simple-me > body .hoverable {
     cursor: pointer;
-    padding: 0.05rem;
 }
 html.simple-me > body .hoverable:hover {
-    background-color: var(--hover);
+    background-color: var(--hover-light);
 }
 
 html.simple-me > body .grid > *,
@@ -394,7 +435,7 @@ html.simple-me > body table > tbody tr:hover {
 }
 
 html.simple-me > body table > tbody tr:hover td:first-child {
-    border-left: 0.3rem solid var(--selected);
+    border-left: 0.3rem solid var(--normal-text);
 }
 
 html.simple-me > body table > tfoot > tr > td {
@@ -525,7 +566,7 @@ html.simple-me > body > button.nav {
 }
 
 html.simple-me > body > button#nav:hover {
-    background-color: var(--selected);
+    background-color: var(--hover);
 }
 
 html.simple-me > body nav {
@@ -564,7 +605,8 @@ html.simple-me > body .is-hidden {
 }
 
 html.simple-me > body button,
-html.simple-me > body form input[type="submit"] {
+html.simple-me > body form input[type="submit"],
+html.simple-me > body a.button {
     border-left: 0.1rem solid var(--border);
     border-top: 0.1rem solid var(--border);
     border-right: 0.1rem solid var(--normal-text);
@@ -575,17 +617,71 @@ html.simple-me > body form input[type="submit"] {
     cursor: pointer;
 }
 
+html.simple-me > body button.error,
+html.simple-me > body form input[type="submit"].error,
+html.simple-me > body a.button.error {
+    color: var(--error-text);
+    border-left-color: var(--error-bg);
+    border-top-color: var(--error-bg);
+    border-right-color: var(--error-text-dark);
+    border-bottom-color: var(--error-text-dark);
+}
+
+html.simple-me > body button.warn,
+html.simple-me > body form input[type="submit"].warn,
+html.simple-me > body a.button.warn {
+    color: var(--warning-text);
+    border-left-color: var(--warning-bg);
+    border-top-color: var(--warning-bg);
+    border-right-color: var(--warning-text-dark);
+    border-bottom-color: var(--warning-text-dark);
+}
+
+html.simple-me > body button.success,
+html.simple-me > body form input[type="submit"].success,
+html.simple-me > body a.button.success {
+    color: var(--success-text);
+    border-left-color: var(--success-bg);
+    border-top-color: var(--success-bg);
+    border-right-color: var(--success-text-dark);
+    border-bottom-color: var(--success-text-dark);
+}
+
 html.simple-me > body button:hover:not(:disabled),
-html.simple-me > body form input[type="submit"]:hover:not(:disabled) {
-    background-color: var(--selected);
-    color: var(--body-bg);
+html.simple-me > body form input[type="submit"]:hover:not(:disabled),
+html.simple-me > body a.button:hover:not(.disabled) {
+    background-color: var(--hover-light);
+    text-decoration: none;
+}
+
+html.simple-me > body button.error:hover:not(:disabled),
+html.simple-me > body form input[type="submit"].error:hover:not(:disabled),
+html.simple-me > body a.button.error:hover:not(.disabled) {
+    background-color: var(--error-bg);
+    color: var(--error-text-dark);
+}
+
+html.simple-me > body button.warn:hover:not(:disabled),
+html.simple-me > body form input[type="submit"].warn:hover:not(:disabled),
+html.simple-me > body a.button.warn:hover:not(.disabled) {
+    background-color: var(--warning-bg);
+    color: var(--warning-text-dark);
+}
+
+html.simple-me > body button.success:hover:not(:disabled),
+html.simple-me > body form input[type="submit"].success:hover:not(:disabled),
+html.simple-me > body a.button.success:hover:not(.disabled) {
+    background-color: var(--success-bg);
+    color: var(--success-text-dark);
 }
 
 html.simple-me > body button:disabled,
-html.simple-me > body form input[type="submit"]:disabled {
+html.simple-me > body form input[type="submit"]:disabled,
+html.simple-me > body a.button.disabled {
     cursor: default;
     color: var(--border);
     border: 0.1rem solid var(--border);
+    text-decoration: none;
 }
 
 html.simple-me > body .progress {
@@ -662,6 +758,7 @@ html.simple-me > body .progress-circle > p {
     font-size: 2em;
     text-align: center;
     width: 100%;
+    line-height: 2.5rem;
 }
 
 @media (max-width: 640px) {
