@@ -14,14 +14,11 @@ Use `simple-me` class in your `html` tag and you are ready to go.
 ## Nav
 You can add `div` tags as items inside the `nav` tag
 ```html
-<button class="nav" id="nav" onclick="toggleNav()">+</button>
-<nav id="navbar" class="is-hidden">
+<button class="nav">+</button>
+<nav class="is-hidden">
     <div>nav item 1</div>
     <div>nav item 2</div>
     <div>nav item 3</div>
-    <div>nav item 4</div>
-    <div>nav item 5</div>
-    <div>nav item 6</div>
 </nav>
 ```
 
@@ -51,19 +48,6 @@ Grid system can be activated using class `.grid`, the children will be rows and 
         <article>2</article>
         <article>3</article>
         <article>4</article>
-    </section>
-    <section class="border-inside to-c-inside">
-        <article>1</article>
-        <article>2</article>
-        <article>3</article>
-        <article>4</article>
-        <article>5</article>
-    </section>
-    <section class="border-inside to-c-inside">
-        <article>1</article>
-        <article>2</article>
-        <article>3</article>
-        <article>4</article>
         <article>5</article>
         <article>6</article>
     </section>
@@ -73,89 +57,65 @@ Grid system can be activated using class `.grid`, the children will be rows and 
 ## Typography
 Default web-safe font Helvetica, Arial, sans-serif
 ```html
-<h1>h1</h1>
-<h2>h2</h2>
-<h3>h3</h3>
-<h4>h4</h4>
-<h5>h5</h5>
-<h6>h6</h6>
-<p>normal paragraph.</p>
-<p><b>bold</b> paragraph</p>
-<p><i>italic</i> paragraph</p>
-<p>paragraph with: <mark>marked</mark>, <em>emphasized</em>, <a href="#link">link</a> or <span class="hoverable">.hoverable</span>.</p>
+<main class="grid">
+    <section>
+        <article><h1>h1</h1></article>
+        <article><h2>h2</h2></article>
+        <article><h3>h3</h3></article>
+        <article><h4>h4</h4></article>
+        <article><h5>h5</h5></article>
+        <article><h6>h6</h6></article>
+    </section>
+    <section>
+        <article>
+            <p>Normal text paragraph, 
+                <b>bold text</b>, 
+                <i>italic text</i>, 
+                <mark>marked text</mark>, 
+                <em>emphasized text</em>, 
+                <span class="error">error text</span>, 
+                <span class="warn">warning text</span>, 
+                <span class="success">success text</span>, 
+                <em class="error">emphasized error text</em>, 
+                <em class="warn">emphasized warning text</em>, 
+                <em class="success">emphasized success text</em>, 
+                <a href="#link">a link</a> and 
+                <span class="hoverable">.hoverable text</span>.
+            </p>
+        </article>
+    </section>
+    <section class="to-c-inside">
+        <article class="error"><p>Error cell</p></article>
+        <article class="warn"><p>Warning cell</p></article>
+        <article class="success"><p>Success cell</p></article>
+    </section>
+    <section class="error to-c-inside">
+        <article><p>Error row</p></article>
+    </section>
+    <section class="warn to-c-inside">
+        <article><p>Warning row</p></article>
+    </section>
+    <section class="success to-c-inside">
+        <article><p>Success row</p></article>
+    </section>
+</main>
 ```
 
 ## Cards
 Use `.card` on a div and use `header`, `main` and `footer` as template
 ```html
-<main class="grid">
-    <section>
-        <div class="card">
-            <header>
-                <img src="default.jpg">
-            </header>
-            <main>
-                <p>This is a main tag section to add info</p>
-                <p>Second line paragraph</p>
-            </main>
-            <footer class="to-r">
-                <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
-            </footer>
-        </div>
-        <div class="card">
-            <header>
-                <h3>h3</h3>
-                <p>header</p>
-            </header>
-            <main>
-                <img src="default.jpg">
-            </main>
-            <footer class="to-r">
-                <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
-            </footer>
-        </div>
-        <div class="card">
-            <header>
-                <h3>h3</h3>
-            </header>
-            <main>
-                <p>This is a main tag section to add info</p>
-                <p>Second line paragraph</p>
-            </main>
-            <footer>
-                <img src="default.jpg">
-            </footer>
-        </div>
-    </section>
-    <section>
-        <div class="card">
-            <header>
-                <h3>h3</h3>
-                <p>header</p>
-            </header>
-            <main>
-                <p>no footer</p>
-            </main>
-        </div>
-        <div class="card">
-            <main>
-                <p>no header</p>
-            </main>
-            <footer class="to-r">
-                <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
-            </footer>
-        </div>
-        <div class="card hoverable">
-            <header>
-                <h3>h3</h3>
-                <p>no content (also hoverable)</p>
-            </header>
-            <footer class="to-r">
-                <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
-            </footer>
-        </div>
-    </section>
-</main>
+<div class="card">
+    <header>
+        <img src="default.jpg">
+    </header>
+    <main>
+        <p>This is a main tag section to add info</p>
+        <p>Second line paragraph</p>
+    </main>
+    <footer class="to-r">
+        <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+    </footer>
+</div>
 ```
 
 ## Tables
@@ -168,9 +128,6 @@ To make it responsive you have to wrap it up in a `.responsive` container
                 <th>header A</th>
                 <th>header B</th>
                 <th>header C</th>
-                <th>header D</th>
-                <th>header E</th>
-                <th>header F</th>
             </tr>
         </thead>
         <tbody>
@@ -178,49 +135,16 @@ To make it responsive you have to wrap it up in a `.responsive` container
                 <td>data 1 A</td>
                 <td>data 1 B</td>
                 <td>data 1 C</td>
-                <td>data 1 D</td>
-                <td>data 1 E</td>
-                <td>data 1 F</td>
             </tr>
             <tr>
                 <td>data 2 A</td>
                 <td>data 2 B</td>
                 <td>data 2 C</td>
-                <td>data 2 D</td>
-                <td>data 2 E</td>
-                <td>data 2 F</td>
             </tr>
             <tr>
                 <td>data 3 A</td>
                 <td>data 3 B</td>
                 <td>data 3 C</td>
-                <td>data 3 D</td>
-                <td>data 3 E</td>
-                <td>data 3 F</td>
-            </tr>
-            <tr>
-                <td>data 4 A</td>
-                <td>data 4 B</td>
-                <td>data 4 C</td>
-                <td>data 4 D</td>
-                <td>data 4 E</td>
-                <td>data 4 F</td>
-            </tr>
-            <tr>
-                <td>data 5 A</td>
-                <td>data 5 B</td>
-                <td>data 5 C</td>
-                <td>data 5 D</td>
-                <td>data 5 E</td>
-                <td>data 5 F</td>
-            </tr>
-            <tr>
-                <td>data 6 A</td>
-                <td>data 6 B</td>
-                <td>data 6 C</td>
-                <td>data 6 D</td>
-                <td>data 6 E</td>
-                <td>data 6 F</td>
             </tr>
         </tbody>
         <tfoot>
@@ -228,9 +152,6 @@ To make it responsive you have to wrap it up in a `.responsive` container
                 <td>footer A</td>
                 <td>footer B</td>
                 <td>footer C</td>
-                <td>footer D</td>
-                <td>footer E</td>
-                <td>footer F</td>
             </tr>
         </tfoot>
     </table>
@@ -274,10 +195,15 @@ Lists need no classes
 ```
 
 ## Buttons
-Only buttons can be buttons
+Only buttons, submit inputs and `a` links can be buttons
 ```html
 <button>Normal</button>
 <button disabled>Disabled</button>
+<a class="button">Link Button</a>
+<a class="button disabled">Link Button Disabled</a>
+<button class="error">Error</button>
+<button class="warn">Warning</button>
+<button class="success">Success</button>
 ```
 
 ## Dialogs
