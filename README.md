@@ -11,17 +11,6 @@ Use `simple-me` class in your `html` tag and you are ready to go.
 </html>
 ```
 
-## Nav
-You can add `div` tags as items inside the `nav` tag
-```html
-<button class="nav">+</button>
-<nav class="is-hidden">
-    <div>nav item 1</div>
-    <div>nav item 2</div>
-    <div>nav item 3</div>
-</nav>
-```
-
 ## Header
 ```html
 <header>
@@ -76,9 +65,6 @@ Default web-safe font Helvetica, Arial, sans-serif
                 <span class="error">error text</span>, 
                 <span class="warn">warning text</span>, 
                 <span class="success">success text</span>, 
-                <em class="error">emphasized error text</em>, 
-                <em class="warn">emphasized warning text</em>, 
-                <em class="success">emphasized success text</em>, 
                 <a href="#link">a link</a> and 
                 <span class="hoverable">.hoverable text</span>.
             </p>
@@ -99,6 +85,17 @@ Default web-safe font Helvetica, Arial, sans-serif
         <article><p>Success row</p></article>
     </section>
 </main>
+```
+
+## Shadows
+There are 6 levels.
+```html
+<article class="shadow-1">.shadow-1</article>
+<article class="shadow-2">.shadow-2</article>
+<article class="shadow-3">.shadow-3</article>
+<article class="shadow-4">.shadow-4</article>
+<article class="shadow-5">.shadow-5</article>
+<article class="shadow-6">.shadow-6</article>
 ```
 
 ## Cards
@@ -224,6 +221,70 @@ Use `.card.as-dialog` to create dialogs
 </div>
 ```
 
+## Snackbar
+use `.snackbar` as a container and `.snackbar-item` as the actual message container
+```html
+<div class="snackbar">
+    <div class="snackbar-item">
+        <p>Snackbar important message</p>
+        <a href="#!" onclick="this.parentElement.remove()">Dismiss</a>
+    </div>
+    <div class="snackbar-item">
+        <p>Another important message</p>
+        <a href="#!" onclick="this.parentElement.remove()">Dismiss</a>
+    </div>
+</div>
+```
+
+## Appbar
+Use `header` or `footer` with class `.app-bar` to create them
+```html
+<header class="app-bar is-hidden">
+    <a href="#!">
+        <img src="src/img/menu.png" alt="menu">
+    </a>
+    <p>App Title</p>
+    <div class="appbar-links">
+        <a href="#!"><img src="src/img/link1.png" alt="link1"></a>
+        <a href="#!"><img src="src/img/link2.png" alt="link2"></a>
+    </div>
+</header>
+...
+<footer class="app-bar is-hidden">
+    <a href="#!">
+        <img src="src/img/menu.png" alt="menu">
+        <p>Menu</p>
+    </a>
+    <a href="#!">
+        <img src="src/img/link1.png" alt="link1">
+        <p>Link 1</p>
+    </a>
+    <a href="#!">
+        <img src="src/img/link2.png" alt="link2">
+        <p>Link 2</p>
+    </a>
+</footer>
+```
+You can use aside as the menu container for the sandwich button
+```html
+<aside class="is-hidden">
+    <a class="selected">nav item 1</a>
+    <a>nav item 2</a>
+    <a>nav item 3</a>
+</aside>
+```
+
+## Nav
+You can add `a` tags as items inside the `nav` tag
+```html
+<button class="nav">+</button>
+<nav class="is-hidden">
+    <a>nav item 1</a>
+    <a>nav item 2</a>
+    <a>nav item 3</a>
+</nav>
+```
+
 ## Progress Indicators
 Linear
 ```html
@@ -245,25 +306,25 @@ Radial
     <section>
         <article>
             <label for="form-email">Email</label>
-            <input id="form-email" type="email">
+            <input id="form-email" name="email" type="email">
         </article>
         <article>
             <label for="form-password">Password</label>
-            <input id="form-password" type="password">
+            <input id="form-password" name="password" type="password">
         </article>
         <article>
             <label for="form-date">Date</label>
-            <input id="form-date" type="date">
+            <input id="form-date" name="date" type="date">
         </article>
         <article>
             <label for="form-search">Search <span class="error">* this input is disabled</span></label>
-            <input id="form-search" type="search" disabled>
+            <input id="form-search" name="search" type="search" disabled>
         </article>
     </section>
     <section>
         <article>
             <label for="form-area">Area</label>
-            <select>
+            <select name="area">
                 <option>Area 1</option>
                 <option>Area 2</option>
                 <option>Area 3</option>
@@ -272,15 +333,15 @@ Radial
         </article>
         <article>
             <label for="form-texttarea">Text area</label>
-            <Textarea id="form-texttarea"></Textarea>
+            <Textarea id="form-texttarea" name="text"></Textarea>
         </article>
         <article>
             <label for="form-placeholder">Placeholder</label>
-            <input id="form-placeholder" type="text" placeholder="placeholder text">
+            <input id="form-placeholder" name="another" type="text" placeholder="placeholder text">
         </article>
         <article>
             <label for="form-file">File</label>
-            <input id="form-file" type="file">
+            <input id="form-file" name="file" type="file">
         </article>
     </section>
     <section>
@@ -306,25 +367,25 @@ Radial
         <article>
             <label>Frameworks</label>
             <label for="vue" class="checkbox">Vue</label>
-            <input type="checkbox" id="vue" value="Vue">
+            <input type="checkbox" id="vue" name="vue" value="Vue">
         </article>
         <article>
             <label for="angular" class="checkbox">Angular</label>
-            <input type="checkbox" id="angular" value="Angular">
+            <input type="checkbox" id="angular" name="angular" value="Angular">
         </article>
         <article>
             <label for="react" class="checkbox">React</label>
-            <input type="checkbox" id="react" value="React">
+            <input type="checkbox" id="react" name="react" value="React">
         </article>
         <article>
             <label for="svelte" class="checkbox">Svelte</label>
-            <input type="checkbox" id="svelte" value="Svelte">
+            <input type="checkbox" id="svelte" name="svelte" value="Svelte">
         </article>
     </section>
     <section>
         <article style="flex: 3;">
             <label for="form-range">Range</label>
-            <input id="form-range" type="range">
+            <input id="form-range" name="range" type="range">
         </article>
         <article>
             <input id="form-submit" type="submit">

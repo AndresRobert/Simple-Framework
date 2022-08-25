@@ -9,18 +9,6 @@
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABkElEQVRIie3Wv0ocURQG8N9qGkFMAnkBI6ZQ86fwAdKJzxCwEdLZJaiND5JKUibbhhACS8oUaQIWuiIsJJZRTLGL4KrFzrKXmTu7M7sLWuwHB+6cOff7OOeec2eY4A7xHle4GZNd4V1aZCoivILpMSYyjedFhP+OUbSLP3clnOG8VxlngrCKSkFbjewfOuMnEV8eHkV8mWQeRIL+oYWZwLeBVwMEP+AcD1P+VuIvhLry89qtymbKfxQTiJWa8g12rZfV4yJcsVIPEn4pe2Y3aCfruVGEY53dRVv/M0s3V5RrmIzfoJHynaGarNPNdTqK8GVAsIXZ1PufgXChjIs21wkWEqtmw50F65GE08Fh+b7gIHiu43NOLCUnpIKm3ixeRGKWxS+VRrCvmXCVwnFA0MYunvWJn9f54LeCffWyolATv6F+Yw9LWMQOfuXE1oYR/phDVsb288jzmovxfJejMzwIL3Bo+GwPRf61yuAp3uIT/vcRauI7tnXOvy/KtvoMXmMda4nvG77ih05HT3C/cAvf5qbT58OaiwAAAABJRU5ErkJggg==">
 </head>
 <body>
-    <button class="nav" id="nav" onclick="toggleClass(getById('navbar'), 'is-hidden')">+</button>
-    <nav id="navbar" class="is-hidden">
-        <h3>Navbar</h3>
-        <p>You can add <em>div</em> as items</p>
-        <div>nav item 1</div>
-        <div>nav item 2</div>
-        <div>nav item 3</div>
-        <div>nav item 4</div>
-        <div>nav item 5</div>
-        <div>nav item 6</div>
-    </nav>
-
     <header>
         <h1>Simple Framework</h1>
         <p>The Simplest <i>(CSS only)</i> framework you will ever need.</p>
@@ -31,11 +19,11 @@
     <h3><br />Grid System</h3>
     <p>Grid system can be activated using class <em>.grid</em>, the children will be rows and the and the children of every child will be a cell. You can add borders on cell using <em>.border-inside</em> in the row. You can also center the content inside using <em>.to-c-inside</em>.</p>
     <main class="grid">
-        <section class="border-inside to-c-inside">
+        <section class="border-inside to-c-inside hide-on-small">
             <article>1</article>
             <article>2</article>
         </section>
-        <section class="border-inside to-c-inside">
+        <section class="border-inside to-c-inside hide-on-small">
             <article>1</article>
             <article>2</article>
             <article>3</article>
@@ -46,14 +34,14 @@
             <article>3</article>
             <article>4</article>
         </section>
-        <section class="border-inside to-c-inside">
+        <section class="border-inside to-c-inside hide-on-small">
             <article>1</article>
             <article>2</article>
             <article>3</article>
             <article>4</article>
             <article>5</article>
         </section>
-        <section class="border-inside to-c-inside">
+        <section class="border-inside to-c-inside hide-on-small">
             <article>1</article>
             <article>2</article>
             <article>3</article>
@@ -70,41 +58,38 @@
             <article><h1>h1</h1></article>
             <article><h2>h2</h2></article>
             <article><h3>h3</h3></article>
-            <article><h4>h4</h4></article>
-            <article><h5>h5</h5></article>
-            <article><h6>h6</h6></article>
+            <article class="hide-on-small"><h4>h4</h4></article>
+            <article class="hide-on-small"><h5>h5</h5></article>
+            <article class="hide-on-small"><h6>h6</h6></article>
         </section>
         <section>
             <article>
                 <p>Normal text paragraph, 
+                    <span class="hoverable">.hoverable text</span>
                     <b>bold text</b>, 
                     <i>italic text</i>, 
                     <mark>marked text</mark>, 
                     <em>emphasized text</em>, 
                     <span class="error">error text</span>, 
-                    <span class="warn">warning text</span>, 
+                    <span class="warning">warning text</span>, 
                     <span class="success">success text</span>, 
-                    <em class="error">emphasized error text</em>, 
-                    <em class="warn">emphasized warning text</em>, 
-                    <em class="success">emphasized success text</em>, 
-                    <a href="#link">a link</a> and 
-                    <span class="hoverable">.hoverable text</span>.
+                    <a href="#link">a link</a>
                 </p>
             </article>
         </section>
-        <section class="to-c-inside">
-            <article class="error"><p>Error cell</p></article>
-            <article class="warn"><p>Warning cell</p></article>
-            <article class="success"><p>Success cell</p></article>
-        </section>
-        <section class="error to-c-inside">
-            <article><p>Error row</p></article>
-        </section>
-        <section class="warn to-c-inside">
-            <article><p>Warning row</p></article>
-        </section>
-        <section class="success to-c-inside">
-            <article><p>Success row</p></article>
+    </main>
+
+    <h3><br />Shadows</h3>
+    <p>There are 6 levels</p>
+    <main class="grid">
+        <section class="margin-inside-1 bg-background padding-2">
+            <article class="border h-6 bg-surface">.no shadow</article>
+            <article class="border h-6 bg-surface shadow-1 hide-on-small">.shadow-1</article>
+            <article class="border h-6 bg-surface shadow-2">.shadow-2</article>
+            <article class="border h-6 bg-surface shadow-3 hide-on-small">.shadow-3</article>
+            <article class="border h-6 bg-surface shadow-4">.shadow-4</article>
+            <article class="border h-6 bg-surface shadow-5 hide-on-small">.shadow-5</article>
+            <article class="border h-6 bg-surface shadow-6">.shadow-6</article>
         </section>
     </main>
 
@@ -136,7 +121,7 @@
                     <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
                 </footer>
             </div>
-            <div class="card">
+            <div class="card hide-on-small">
                 <header>
                     <h3>h3</h3>
                 </header>
@@ -150,7 +135,7 @@
             </div>
         </section>
         <section>
-            <div class="card">
+            <div class="card hide-on-small">
                 <header>
                     <h3>h3</h3>
                     <p>header</p>
@@ -159,7 +144,7 @@
                     <p>no footer</p>
                 </main>
             </div>
-            <div class="card">
+            <div class="card hide-on-small">
                 <main>
                     <p>no header</p>
                 </main>
@@ -167,7 +152,7 @@
                     <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
                 </footer>
             </div>
-            <div class="card hoverable">
+            <div class="card hoverable hide-on-small">
                 <header>
                     <h3>h3</h3>
                     <p>no content (also hoverable)</p>
@@ -218,7 +203,7 @@
                     <td>data 3 E</td>
                     <td>data 3 F</td>
                 </tr>
-                <tr>
+                <tr class="hide-on-small">
                     <td>data 4 A</td>
                     <td>data 4 B</td>
                     <td>data 4 C</td>
@@ -226,7 +211,7 @@
                     <td>data 4 E</td>
                     <td>data 4 F</td>
                 </tr>
-                <tr>
+                <tr class="hide-on-small">
                     <td>data 5 A</td>
                     <td>data 5 B</td>
                     <td>data 5 C</td>
@@ -234,7 +219,7 @@
                     <td>data 5 E</td>
                     <td>data 5 F</td>
                 </tr>
-                <tr>
+                <tr class="hide-on-small">
                     <td>data 6 A</td>
                     <td>data 6 B</td>
                     <td>data 6 C</td>
@@ -299,21 +284,21 @@
     <h3><br />Buttons</h3>
     <p>Only buttons, submit and <em>a.button</em> can be buttons</p>
     <main class="wrap">
-        <button>Normal</button>
+        <button>Primary</button>
         <button disabled>Disabled</button>
-        <a class="button">Link Button</a>
-        <a class="button disabled">Link Button Disabled</a>
-    </main>
-    <main class="wrap">
+        <a class="button">Link</a>
+        <a class="button disabled">Link Disabled</a>
+        <button class="secondary">Secondary</button>
         <button class="error">Error</button>
-        <button class="warn">Warning</button>
+        <button class="warning">Warning</button>
         <button class="success">Success</button>
     </main>
 
     <h3><br />Dialogs</h3>
     <p>Use <em>.card.as-dialog</em> to create dialogs</p>
     <main class="wrap">
-        <button onclick="toggleClass(getById('dialog1'), 'is-hidden')">open dialog</button>
+        <button onclick="toggle('dialog1')">open dialog</button>
+        <button onclick="snackbar()">add snackbar</button>
     </main>
     <div id="dialog1" class="card as-dialog is-hidden">
         <header>
@@ -324,13 +309,68 @@
         </main>
         <footer>
             <p class="to-r">
-                <a onclick="toggleClass(getById('dialog1'), 'is-hidden')" href="#ok_dialog">OK</a> | <a onclick="toggleClass(getById('dialog1'), 'is-hidden')" href="#cancel_dialog">Cancel</a>
+                <a onclick="toggle('dialog1')" href="#ok_dialog">OK</a> | <a onclick="toggle('dialog1')" href="#cancel_dialog">Cancel</a>
             </p>
         </footer>
     </div>
+    <div id="snackbar" class="snackbar"></div>
+
+    <h3><br />App bar</h3>
+    <p>Use header or footer with class <em>.app-bar</em> to create it</p>
+    <main class="wrap">
+        <button onclick="toggle('appbar_top')">Show appbar (top)</button>
+        <button onclick="toggle('appbar_bottom')">Show appbar (bottom)</button>
+        <button onclick="toggle('nav')">Show FAB</button>
+        <button onclick="toggle('aside')">Show Sidebar</button>
+    </main>
+    <header id="appbar_top" class="app-bar is-hidden">
+        <a href="#!" onclick="toggle('aside')">
+            <img src="src/img/menu.png" alt="menu">
+        </a>
+        <p>App Title</p>
+        <div class="appbar-links">
+            <a href="#!"><img src="src/img/link1.png" alt="link1"></a>
+            <a href="#!"><img src="src/img/link2.png" alt="link2"></a>
+        </div>
+    </header>
+    <footer id="appbar_bottom" class="app-bar is-hidden">
+        <a href="#!" onclick="toggle('aside')">
+            <img src="src/img/menu.png" alt="menu">
+            <p>Menu</p>
+        </a>
+        <a href="#!">
+            <img src="src/img/link1.png" alt="link1">
+            <p>Link 1</p>
+        </a>
+        <a href="#!">
+            <img src="src/img/link2.png" alt="link2">
+            <p>Link 2</p>
+        </a>
+    </footer>
+    <button class="nav is-hidden" id="nav" onclick="toggle('navdd')">
+        <img src="src/img/menu.png" alt="menu">
+    </button>
+    <nav id="navdd" class="is-hidden" style="bottom:3rem;right:3rem">
+        <h3>Dropdown</h3>
+        <p>You can add <em>a</em> as items</p>
+        <a class="selected">nav item 1</a>
+        <a>nav item 2</a>
+        <a>nav item 3</a>
+        <a>nav item 4</a>
+        <a>nav item 5</a>
+        <a>nav item 6</a>
+    </nav>
+    <aside id="aside" class="is-hidden">
+        <a class="selected">nav item 1</a>
+        <a>nav item 2</a>
+        <a>nav item 3</a>
+        <a>nav item 4</a>
+        <a>nav item 5</a>
+        <a>nav item 6</a>
+    </aside>
 
     <h3><br />Progress Indicators</h3>
-    <h4>Linear</h4>
+    <h5>Linear</h5>
     <main class="grid">
         <section>
             <article>
@@ -339,19 +379,19 @@
                     <div class="indicator" style="width:25%"></div>
                 </div>
             </article>
-            <article>
+            <article class="hide-on-small">
                 <p>50%</p>
                 <div class="progress">
                     <div class="indicator" style="width:50%"></div>
                 </div>
             </article>
-            <article>
+            <article class="hide-on-small">
                 <p>75%</p>
                 <div class="progress">
                     <div class="indicator" style="width:75%"></div>
                 </div>
             </article>
-            <article>
+            <article class="hide-on-small">
                 <p>100%</p>
                 <div class="progress">
                     <div class="indicator" style="width:100%"></div>
@@ -359,15 +399,15 @@
             </article>
         </section>
     </main>
-    <h4>Radial</h4>
+    <h5>Radial</h5>
     <main class="grid">
         <section>
-            <article>
+            <article class="hide-on-small">
                 <div class="progress-circle p25">
                     <p>25%</p>
                 </div>
             </article>
-            <article>
+            <article class="hide-on-small">
                 <div class="progress-circle p50">
                     <p>50%</p>
                 </div>
@@ -377,7 +417,7 @@
                     <p>75%</p>
                 </div>
             </article>
-            <article>
+            <article class="hide-on-small">
                 <div class="progress-circle p100">
                     <p>100%</p>
                 </div>
@@ -397,11 +437,11 @@
                 <label for="form-password">Password</label>
                 <input id="form-password" type="password">
             </article>
-            <article>
+            <article class="hide-on-small">
                 <label for="form-date">Date</label>
                 <input id="form-date" type="date">
             </article>
-            <article>
+            <article class="hide-on-small">
                 <label for="form-search">Search <span class="error">* this input is disabled</span></label>
                 <input id="form-search" type="search" disabled>
             </article>
@@ -420,11 +460,11 @@
                 <label for="form-texttarea">Text area</label>
                 <Textarea id="form-texttarea"></Textarea>
             </article>
-            <article>
+            <article class="hide-on-small">
                 <label for="form-placeholder">Placeholder</label>
                 <input id="form-placeholder" type="text" placeholder="placeholder text">
             </article>
-            <article>
+            <article class="hide-on-small">
                 <label for="form-file">File</label>
                 <input id="form-file" type="file">
             </article>
@@ -435,11 +475,11 @@
                 <label for="python" class="radio">Python</label>
                 <input type="radio" name="fav_language" id="python" value="Python">
             </article>
-            <article>
+            <article class="hide-on-small">
                 <label for="java" class="radio">Java</label>
                 <input type="radio" name="fav_language" id="java" value="Java">
             </article>
-            <article>
+            <article class="hide-on-small">
                 <label for="csharp" class="radio">C-sharp</label>
                 <input type="radio" name="fav_language" id="csharp" value="C-sharp">
             </article>
@@ -454,7 +494,7 @@
                 <label for="vue" class="checkbox">Vue</label>
                 <input type="checkbox" id="vue" value="Vue">
             </article>
-            <article>
+            <article class="hide-on-small">
                 <label for="angular" class="checkbox">Angular</label>
                 <input type="checkbox" id="angular" value="Angular">
             </article>
@@ -462,7 +502,7 @@
                 <label for="react" class="checkbox">React</label>
                 <input type="checkbox" id="react" value="React">
             </article>
-            <article>
+            <article class="hide-on-small">
                 <label for="svelte" class="checkbox">Svelte</label>
                 <input type="checkbox" id="svelte" value="Svelte">
             </article>
@@ -478,35 +518,31 @@
         </section>
     </form>
 
-
     <footer>
         <h3>Footer</h3>
         <a href="https://github.com/AndresRobert/Simple-Framework">Github</a> | <a href="simple.css">Download</a>
     </footer>
 
     <script>
-        function getById(_id) {
-            return document.getElementById(_id);
-        }
-
-        function hasClass(_element, _class) {
-            return _element.classList.contains(_class);
-        }
-
-        function addClass(_element, _class) {
-            return _element.classList.add(_class);
-        }
-
-        function removeClass(_element, _class) {
-            return _element.classList.remove(_class);
-        }
-
-        function toggleClass(_element, _class) {
-            if (hasClass(_element, _class)) {
-                removeClass(_element, _class);
+        const show = (_element) => {
+            _element.classList.remove("is-hidden");
+        };
+        const hide = (_element) => {
+            _element.classList.add("is-hidden");
+        };
+        const toggle = (_elementId) => {
+            const _element = document.getElementById(_elementId);
+            if (_element.classList.contains("is-hidden")) {
+                show(_element);
             } else {
-                addClass(_element, _class);
+                hide(_element);
             }
+        };
+        const snackbar = () => {
+            let div = document.createElement('div');
+            div.classList.add('snackbar-item');
+            div.innerHTML = `<p>snackbar important message</p><a href="#!" onclick="this.parentElement.remove()">Dismiss</a>`;
+            document.getElementById('snackbar').appendChild(div);
         }
     </script>
   </body>

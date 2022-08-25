@@ -1,37 +1,40 @@
 :root {
-    --body-bg: #FEFEFE;
-    --normal-text:#445;
-    --error-text:#F05;
-    --success-text:#2B8;
-    --warning-text:#AA2;
-    --error-text-dark:#A05;
-    --success-text-dark:#078;
-    --warning-text-dark:#772;
-    --highlight-text:#58F;
-    --bold-text:#001;
-    --inverted-text:#DDE;
+    --background: #EEEEFF;
+    --on-background: #444455;
+    --on-background-light: #DDDDEE;
+    --on-background-shadow: #000000;
 
-    --placeholder-text:#AAB;
-    --back-bg: #EDEDEE;
-    --error-bg:#F057;
-    --success-bg:#2B87;
-    --warning-bg:#EF08;
-    --border:#AAB;
-    --border-light:#DDE;
-    --hover: #AAB;
-    --hover-light: #DDE;
-    --shadow:#445;
-    --shadow-light:#AAB;
-    --shadow-dialog:#445A;
+    --surface: #FFFFFF;
+    --on-surface: #555566;
+    --on-surface-light: #9999BB;
+    --on-surface-shadow: #00000055;
+    
+    --error:#D32F2F;
+    --on-error: #FFFFFF;
+    
+    --warning:#F9A825;
+    --on-warning: #444455;
+    
+    --success:#2E7D32;
+    --on-success: #FFFFFF;
 
-    --link-text: #58F;
-    --menu: #DDE;
+    --primary: #6200EE;
+    --primary-dark: #3700B3;
+    --primary-light: #BB86FC;
+    --on-primary: #EEF;
+    --on-primary-light: #445;
+
+    --secondary: #03DAC5;
+    --secondary-dark: #00776B;
+    --secondary-light: #8BF2E8;
+    --on-secondary: #445;
+    --on-secondary-dark: #EEF;
 }
 
 html.simple-me {
     font: 14px Helvetica, Arial, sans-serif;
-    color: var(--normal-text);
-    background-color: var(--back-bg);
+    color: var(--on-background);
+    background-color: var(--background);
     margin: 0;
     padding: 0;
 }
@@ -40,19 +43,23 @@ html.simple-me * {
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    border-radius: 0.3rem;
     transition: 300ms ease;
+    border-radius: 0.1rem;
 }
 
 html.simple-me > body {
     margin: auto;
     padding: 3rem;
     max-width: 1000px;
-    background-color: var(--body-bg);
+    background-color: var(--surface);
 }
 
 html.simple-me > body ::placeholder { 
-    color: var(--placeholder-text);
+    color: var(--on-surface-light);
+}
+
+html.simple-me > body mark {
+    background-color: var(--secondary);
 }
 
 html.simple-me > body input[type="range"] {
@@ -90,6 +97,15 @@ html.simple-me > body .wrap {
     padding: 0.2rem 0;
 }
 
+html.simple-me > body a,
+html.simple-me > body b,
+html.simple-me > body i,
+html.simple-me > body em,
+html.simple-me > body mark,
+html.simple-me > body span {
+    padding: 0 0.2rem;
+}
+
 html.simple-me > body b,
 html.simple-me > body a,
 html.simple-me > body h1,
@@ -108,15 +124,21 @@ html.simple-me > body p {
     font-weight: 300;
 }
 
-html.simple-me > body b,
-html.simple-me > body i,
-html.simple-me > body h1,
-html.simple-me > body h2,
-html.simple-me > body h3,
-html.simple-me > body h4,
-html.simple-me > body h5,
-html.simple-me > body h6 {
-    color: var(--bold-text);
+html.simple-me > body > footer,
+html.simple-me > body > header {
+    background: var(--primary);
+    color: var(--on-primary);
+    border-radius: 0;
+}
+
+html.simple-me > body > footer {
+    margin: 3rem -3rem -3rem;
+    padding: 1rem 3rem 6rem 3rem;
+}
+
+html.simple-me > body > header {
+    margin: -3rem -3rem 3rem -3rem;
+    padding: 3rem 3rem 1rem 3rem;
 }
 
 html.simple-me > body > header b,
@@ -135,7 +157,99 @@ html.simple-me > body > footer h3,
 html.simple-me > body > footer h4,
 html.simple-me > body > footer h5,
 html.simple-me > body > footer h6 {
-    color: var(--body-bg);
+    color: var(--on-primary);
+}
+
+html.simple-me > body > header.app-bar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    line-height: 3rem;
+    display: inline-block;
+    z-index: 80;
+    box-shadow: 0 0.35rem 0.6rem var(--on-surface-shadow);
+}
+
+html.simple-me > body > header.app-bar > a {
+    float: left;
+}
+
+html.simple-me > body > header.app-bar > a > img {
+    filter: brightness(0) invert(1);
+    width: 1.4rem;
+    margin: 0.8rem;
+}
+
+html.simple-me > body > header.app-bar > p {
+    float: left;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+html.simple-me > body > header.app-bar > .appbar-links {
+    float: right;
+    display: flex;
+}
+html.simple-me > body > header.app-bar > a:hover,
+html.simple-me > body > header.app-bar > .appbar-links > a:hover {
+    background-color: var(--primary-dark);
+}
+
+html.simple-me > body > header.app-bar > .appbar-links > a > img {
+    filter: brightness(0) invert(1);
+    width: 1.4rem;
+    margin: 0.8rem;
+}
+
+html.simple-me > body > footer.app-bar {
+    color: var(--primary);
+    background-color: var(--surface);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 3rem;
+    line-height: 3rem;
+    display: flex;
+    z-index: 80;
+    box-shadow: 0 -0.15rem 0.5rem -0.1rem var(--on-surface-shadow);
+}
+
+html.simple-me > body > footer.app-bar > a {
+    color: var(--primary);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-decoration: none;
+}
+
+html.simple-me > body > footer.app-bar > a:hover {
+    background-color: var(--on-background-light);
+}
+
+html.simple-me > body > footer.app-bar > a > img {
+    flex: 2;
+    /*filter: brightness(0) invert(1);*/
+    filter: 
+        opacity(0.2) 
+        drop-shadow(0 0 0 var(--primary))
+        drop-shadow(0 0 0 var(--primary))
+        drop-shadow(0 0 0 var(--primary));
+    width: 1rem;
+    margin: 0.5rem auto;
+}
+
+html.simple-me > body > footer.app-bar > a > p {
+    flex: 1;
+    font-size: 0.7rem;
+    margin-top: -0.5rem;
 }
 
 html.simple-me > body h1,
@@ -180,62 +294,43 @@ html.simple-me > body i {
     font-weight: 200;
 }
 
-html.simple-me > body em,
 html.simple-me > body .border,
 html.simple-me > body .border-inside > * {
-    border: 0.1rem solid var(--border);
+    border: 0.1rem solid var(--on-background-light);
     padding: 0.05rem;
 }
 
 html.simple-me > body em {
     font-style: normal;
-    border: 0.1rem solid var(--body-bg);
-    background-color: var(--normal-text);
-    color: var(--body-bg);
+    border: 0.1rem solid transparent;
+    background-color: var(--primary);
+    color: var(--on-primary);
 }
 
 html.simple-me > body a {
     text-decoration: none;
-    color: var(--link-text);
+    color: var(--primary);
     cursor: pointer;
 }
 
 html.simple-me > body .error {
-    color: var(--error-text);
+    background-color: var(--error);
+    color: var(--on-error);
 }
 
-html.simple-me > body .warn {
-    color: var(--warning-text);
+html.simple-me > body .warning {
+    background-color: var(--warning);
+    color: var(--on-warning);
 }
 
 html.simple-me > body .success {
-    color: var(--success-text);
-}
-
-html.simple-me > body em.error,
-html.simple-me > body .grid > *.error,
-html.simple-me > body .grid > * > *.error {
-    color: var(--error-text-dark);
-    background-color: var(--error-bg);
-}
-
-html.simple-me > body em.warn,
-html.simple-me > body .grid > *.warn,
-html.simple-me > body .grid > * > *.warn {
-    color: var(--warning-text-dark);
-    background-color: var(--warning-bg);
-}
-
-html.simple-me > body em.success,
-html.simple-me > body .grid > *.success,
-html.simple-me > body .grid > * > *.success {
-    color: var(--success-text-dark);
-    background-color: var(--success-bg);
+    background-color: var(--success);
+    color: var(--on-success);
 }
 
 html.simple-me > body > header a,
 html.simple-me > body > footer a {
-    color: var(--hover-light);
+    color: var(--on-primary);
 }
 
 html.simple-me > body a:hover {
@@ -245,8 +340,9 @@ html.simple-me > body a:hover {
 html.simple-me > body .hoverable {
     cursor: pointer;
 }
-html.simple-me > body .hoverable:hover {
-    background-color: var(--hover-light);
+html.simple-me > body .hoverable:hover:not(.card) {
+    background-color: var(--on-background-light);
+    box-shadow: 0 0.25rem 0.3rem -0.125rem var(--on-surface-shadow);
 }
 
 html.simple-me > body .grid > *,
@@ -268,7 +364,7 @@ html.simple-me > body form > * {
 html.simple-me > body form {
     margin: 1rem 0;
     padding: 1rem 0;
-    border: 0.1rem solid var(--border-light);
+    border: 0.1rem solid var(--on-surface-light);
 }
 
 html.simple-me > body form > * > * > label {
@@ -278,7 +374,8 @@ html.simple-me > body form > * > * > label {
 
 html.simple-me > body form > * > * > label > span.error {
     font-size: 0.7rem;
-    color: var(--error-text);
+    color: var(--error);
+    background-color: var(--surface);
 }
 
 html.simple-me > body form > * > * > input,
@@ -286,8 +383,9 @@ html.simple-me > body form > * > * > select,
 html.simple-me > body form > * > * > textarea {
     margin-top: 1.5rem;
     width: 100%;
-    border: 0.1rem solid var(--border);
+    border: 0.1rem solid var(--on-surface-light);
     padding: 0.5em;
+    border-radius: 0.3rem;
 }
 
 html.simple-me > body form > * > * > textarea {
@@ -297,7 +395,7 @@ html.simple-me > body form > * > * > textarea {
 html.simple-me > body form > * > * > input:disabled,
 html.simple-me > body form > * > * > select:disabled,
 html.simple-me > body form > * > * > textarea:disabled {
-    border-color: var(--border-light);
+    border-color: var(--on-surface-light);
 }
 
 html.simple-me > body form > * > * > input[type="file"] {
@@ -309,12 +407,12 @@ html.simple-me > body form > * > * > input[type="checkbox"] {
     width: auto;
     margin-top: 2rem;
     transform: scale(1.5);
-    filter: hue-rotate(22deg) saturate(0.4);
+    filter: hue-rotate(30deg) saturate(1.4);
     cursor: pointer;
 }
 
 html.simple-me > body form > * > * > input[type="range"] {
-    filter: hue-rotate(22deg) saturate(0.4);
+    filter: hue-rotate(30deg) saturate(1.4);
     cursor: pointer;
 }
 
@@ -325,8 +423,8 @@ html.simple-me > body form > * > * > label.checkbox {
 }
 
 html.simple-me > body .card {
-    box-shadow: 0 2px 20px -16px var(--shadow);
-    border: 0.1rem solid var(--border-light);
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--on-surface-light);
     display: flex;
     flex-direction: column;
     justify-content:end;
@@ -346,11 +444,15 @@ html.simple-me > body .card > footer > *:not(img) {
 }
 
 html.simple-me > body .card > header {
-    border-bottom: 0.1rem solid var(--border-light);
+    border-bottom: 0.1rem solid var(--on-surface-light);
 }
 
 html.simple-me > body .card > footer {
-    border-top: 0.1rem solid var(--border-light);
+    border-top: 0.1rem solid var(--on-surface-light);
+}
+
+html.simple-me > body .card a {
+    color: var(--primary);
 }
 
 html.simple-me > body img {
@@ -360,9 +462,33 @@ html.simple-me > body img {
     display: block;
 }
 
+html.simple-me > body .shadow-1 {
+    box-shadow: 0 0.15rem 0.3rem var(--on-surface-shadow);
+}
+
+html.simple-me > body .shadow-2 {
+    box-shadow: 0 0.25rem 0.45rem var(--on-surface-shadow);
+}
+
+html.simple-me > body .shadow-3 {
+    box-shadow: 0 0.35rem 0.6rem var(--on-surface-shadow);
+}
+
+html.simple-me > body .shadow-4 {
+    box-shadow: 0 0.45rem 0.75rem var(--on-surface-shadow);
+}
+
+html.simple-me > body .shadow-5 {
+    box-shadow: 0 0.55rem 0.9rem var(--on-surface-shadow);
+}
+
+html.simple-me > body .shadow-6 {
+    box-shadow: 0 0.65rem 1.05rem var(--on-surface-shadow);
+}
+
 html.simple-me > body .card.hoverable:hover {
-    background-color: var(--hover-light);
-    box-shadow: 0 10px 20px -16px var(--shadow);
+    background-color: var(--on-background-light);
+    box-shadow: 0 0.35rem 0.6rem var(--on-surface-shadow);
 }
 
 html.simple-me > body .card.as-dialog {
@@ -372,9 +498,13 @@ html.simple-me > body .card.as-dialog {
     z-index: 100;
     width: 30rem;
     max-width: 90%;
-    background-color: var(--body-bg);
-    box-shadow: 0 0 0 9999px var(--shadow-dialog);
+    background-color: var(--surface);
+    box-shadow: 0 0 0 9999px var(--on-surface-shadow), 0 0.35rem 0.6rem var(--on-surface-shadow);
     transform: translate(-50%, -50%);
+}
+
+html.simple-me > body .card.as-dialog a {
+    color: var(--primary);
 }
 
 html.simple-me > body .card.as-dialog > main {
@@ -413,17 +543,16 @@ html.simple-me > body table * {
 }
 
 html.simple-me > body table > thead > tr > th {
-    border-bottom: 0.1rem solid var(--border);
+    border-bottom: 0.1rem solid var(--on-surface-light);
     font-weight: 400;
     font-size: 1.1rem;
-    color: var(--bold-text);
 }
 
 html.simple-me > body table > tbody > tr > td,
 html.simple-me > body ol > li,
 html.simple-me > body ul > li {
     font-weight: 300;
-    color: var(--normal-text);
+    color: var(--on-surface);
 }
 
 html.simple-me > body table > tbody > tr > td:first-child {
@@ -431,17 +560,16 @@ html.simple-me > body table > tbody > tr > td:first-child {
 }
 
 html.simple-me > body table > tbody tr:hover {
-    background-color: var(--hover-light);
+    background-color: var(--on-background-light);
 }
 
 html.simple-me > body table > tbody tr:hover td:first-child {
-    border-left: 0.3rem solid var(--normal-text);
+    border-left: 0.3rem solid var(--primary);
 }
 
 html.simple-me > body table > tfoot > tr > td {
-    border-top: 0.1rem solid var(--border);
+    border-top: 0.1rem solid var(--on-surface-light);
     font-weight: 300;
-    color: var(--bold-text);
 }
 
 html.simple-me > body .chip {
@@ -449,7 +577,7 @@ html.simple-me > body .chip {
     float: left;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
-    border: 0.1rem solid var(--border);
+    border: 0.1rem solid var(--on-surface-light);
     border-radius: 9999px;
     padding: 0.5rem 1rem;
 }
@@ -508,8 +636,8 @@ html.simple-me > body .chip.image-l > img {
 
 html.simple-me > body .chip.close-r > em,
 html.simple-me > body .chip.close-l > em {
-    background-color: var(--border);
-    color: var(--body-bg);
+    background-color: var(--primary);
+    color: var(--on-primary);
     border: none;
     font-family: system-ui;
     line-height: 1.1rem;
@@ -521,7 +649,7 @@ html.simple-me > body .chip.close-l > em {
 
 html.simple-me > body .chip.close-r > em:hover,
 html.simple-me > body .chip.close-l > em:hover {
-    background-color: var(--normal-text);
+    background-color: var(--primary-dark);
 }
 
 html.simple-me > body .chip.close-r > em {
@@ -532,32 +660,16 @@ html.simple-me > body .chip.close-l > em {
     left: 0.1rem;
 }
 
-html.simple-me > body > footer,
-html.simple-me > body > header {
-    background: var(--normal-text);
-    color: var(--inverted-text);
-    border-radius: 0;
-}
-
-html.simple-me > body > footer {
-    margin: 3rem -3rem -3rem;
-    padding: 1rem 3rem 3rem;
-}
-
-html.simple-me > body > header {
-    margin: -3rem -3rem 3rem -3rem;
-    padding: 3rem 3rem 1rem 3rem;
-}
-
 html.simple-me > body > button.nav {
     width: 5rem;
     height: 5rem;
     position: fixed;
     z-index: 99;
     border-radius: 50%;
-    background-color: var(--normal-text);
-    border: 0.2rem solid var(--body-bg);
-    color: var(--body-bg);
+    background-color: var(--primary);
+    box-shadow: 0 0.35rem 0.6rem var(--on-surface-shadow);
+    border: 0.2rem solid var(--surface);
+    color: var(--on-primary);
     font-size: 2rem;
     cursor: pointer;
     right: 1rem;
@@ -565,29 +677,74 @@ html.simple-me > body > button.nav {
     padding: 0;
 }
 
-html.simple-me > body > button#nav:hover {
-    background-color: var(--hover);
+html.simple-me > body > button.nav:hover {
+    background-color: var(--primary-dark);
+    color: var(--on-primary);
 }
 
+html.simple-me > body > button.nav > img {
+    filter: brightness(0) invert(1);
+    width: 1.4rem;
+}
+
+html.simple-me > body aside,
 html.simple-me > body nav {
     position: fixed;
-    z-index: 98;
-    background-color: var(--menu);
+    z-index: 70;
+    background-color: var(--surface);
+    color: var(--on-surface);
+    border: 0.1em solid var(--on-surface-light);
+    box-shadow: 0 0.55rem 0.9rem var(--on-surface-shadow);
+    border-radius: 0.3rem;
     width: 20rem;
-    bottom: 3rem;
-    right: 3rem;
-    padding-bottom: 4rem;
 }
 
-html.simple-me > body nav > div {
+html.simple-me > body aside {
+    top: 0;
+    left: 0;
+    z-index: 69;
+    border-radius: 0;
+    border: none;
+    height: 100%;
+    width: auto;
+    padding: 3rem 0;
+}
+
+html.simple-me > body aside > a,
+html.simple-me > body nav > a {
+    color: var(--on-surface);
     padding: 1rem;
     cursor: pointer;
+    border-radius: 0;
+    display: block;
 }
 
-html.simple-me > body nav > div:hover {
-    background-color: var(--hover);
+html.simple-me > body aside > a {
+    padding: 1rem 3rem;
 }
 
+html.simple-me > body aside > a:hover,
+html.simple-me > body nav > a:hover {
+    color: var(--on-primary);
+    background-color: var(--primary-light);
+    border-left: 0.5rem solid var(--primary);
+    margin-left: -0.01rem;
+    text-decoration: none;
+}
+
+html.simple-me > body aside > a.selected,
+html.simple-me > body nav > a.selected {
+    border-left: 0.5rem solid var(--primary);
+    margin-left: -0.01rem;
+}
+
+html.simple-me > body aside h1,
+html.simple-me > body aside h2,
+html.simple-me > body aside h3,
+html.simple-me > body aside h4,
+html.simple-me > body aside h5,
+html.simple-me > body aside h6,
+html.simple-me > body aside p,
 html.simple-me > body nav h1,
 html.simple-me > body nav h2,
 html.simple-me > body nav h3,
@@ -607,86 +764,101 @@ html.simple-me > body .is-hidden {
 html.simple-me > body button,
 html.simple-me > body form input[type="submit"],
 html.simple-me > body a.button {
-    border-left: 0.1rem solid var(--border);
-    border-top: 0.1rem solid var(--border);
-    border-right: 0.1rem solid var(--normal-text);
-    border-bottom: 0.1rem solid var(--normal-text);
+    border-left: 0.1rem solid var(--primary-light);
+    border-top: 0.1rem solid var(--primary-light);
+    border-right: 0.1rem solid var(--primary-dark);
+    border-bottom: 0.1rem solid var(--primary-dark);
     padding: 0.5rem 2rem;
-    background: var(--body-bg);
-    color: var(--normal-text);
+    background: var(--surface);
+    color: var(--primary);
     cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    margin-bottom: 0.3rem;
+}
+
+html.simple-me > body button.secondary,
+html.simple-me > body form input[type="submit"].secondary,
+html.simple-me > body a.button.secondary {
+    color: var(--secondary);
+    border-color: var(--secondary);
+    background: var(--surface);
 }
 
 html.simple-me > body button.error,
 html.simple-me > body form input[type="submit"].error,
 html.simple-me > body a.button.error {
-    color: var(--error-text);
-    border-left-color: var(--error-bg);
-    border-top-color: var(--error-bg);
-    border-right-color: var(--error-text-dark);
-    border-bottom-color: var(--error-text-dark);
+    color: var(--error);
+    border-color: var(--error);
+    background: var(--surface);
 }
 
-html.simple-me > body button.warn,
-html.simple-me > body form input[type="submit"].warn,
-html.simple-me > body a.button.warn {
-    color: var(--warning-text);
-    border-left-color: var(--warning-bg);
-    border-top-color: var(--warning-bg);
-    border-right-color: var(--warning-text-dark);
-    border-bottom-color: var(--warning-text-dark);
+html.simple-me > body button.warning,
+html.simple-me > body form input[type="submit"].warning,
+html.simple-me > body a.button.warning {
+    color: var(--warning);
+    border-color: var(--warning);
+    background: var(--surface);
 }
 
 html.simple-me > body button.success,
 html.simple-me > body form input[type="submit"].success,
 html.simple-me > body a.button.success {
-    color: var(--success-text);
-    border-left-color: var(--success-bg);
-    border-top-color: var(--success-bg);
-    border-right-color: var(--success-text-dark);
-    border-bottom-color: var(--success-text-dark);
+    color: var(--success);
+    border-color: var(--success);
+    background: var(--surface);
 }
 
-html.simple-me > body button:hover:not(:disabled),
+html.simple-me > body button:hover:not(:disabled):not(.nav),
 html.simple-me > body form input[type="submit"]:hover:not(:disabled),
 html.simple-me > body a.button:hover:not(.disabled) {
-    background-color: var(--hover-light);
+    background-color: var(--primary);
+    color: var(--on-primary);
     text-decoration: none;
+}
+
+html.simple-me > body button.secondary:hover:not(:disabled),
+html.simple-me > body form input[type="submit"].secondary:hover:not(:disabled),
+html.simple-me > body a.button.secondary:hover:not(.disabled) {
+    background-color: var(--secondary);
+    color: var(--on-secondary);
 }
 
 html.simple-me > body button.error:hover:not(:disabled),
 html.simple-me > body form input[type="submit"].error:hover:not(:disabled),
 html.simple-me > body a.button.error:hover:not(.disabled) {
-    background-color: var(--error-bg);
-    color: var(--error-text-dark);
+    background-color: var(--error);
+    color: var(--on-error);
 }
 
-html.simple-me > body button.warn:hover:not(:disabled),
-html.simple-me > body form input[type="submit"].warn:hover:not(:disabled),
-html.simple-me > body a.button.warn:hover:not(.disabled) {
-    background-color: var(--warning-bg);
-    color: var(--warning-text-dark);
+html.simple-me > body button.warning:hover:not(:disabled),
+html.simple-me > body form input[type="submit"].warning:hover:not(:disabled),
+html.simple-me > body a.button.warning:hover:not(.disabled) {
+    background-color: var(--warning);
+    color: var(--on-warning);
 }
 
 html.simple-me > body button.success:hover:not(:disabled),
 html.simple-me > body form input[type="submit"].success:hover:not(:disabled),
 html.simple-me > body a.button.success:hover:not(.disabled) {
-    background-color: var(--success-bg);
-    color: var(--success-text-dark);
+    background-color: var(--success);
+    color: var(--on-success);
 }
 
 html.simple-me > body button:disabled,
 html.simple-me > body form input[type="submit"]:disabled,
 html.simple-me > body a.button.disabled {
     cursor: default;
-    color: var(--border);
-    border: 0.1rem solid var(--border);
+    color: var(--on-surface-light);
+    border: 0.1rem solid var(--on-surface-light);
     text-decoration: none;
 }
 
 html.simple-me > body .progress {
     height: 0.3em;
-    background-color: var(--border-light);
+    background-color: var(--on-background-light);
 }
 
 html.simple-me > body .progress > .indicator {
@@ -694,7 +866,49 @@ html.simple-me > body .progress > .indicator {
     top: 0;
     left: 0;
     height: 0.3em;
-    background-color: var(--normal-text);
+    background-color: var(--primary);
+}
+
+html.simple-me > body .snackbar {
+    position: fixed;
+    color: transparent;
+    width: 100%;
+    bottom: 3.5rem;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 60;
+    pointer-events: none;
+}
+
+html.simple-me > body .snackbar-item {
+    pointer-events: all;
+    flex: 1;
+    background-color: var(--on-background);
+    width: fit-content;
+    border-radius: 0.5rem;
+    margin: auto;
+    height: auto;
+    line-height: 1rem;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.3rem;
+    box-shadow: 0 0.15rem 0.3rem var(--on-surface-shadow);
+}
+
+html.simple-me > body .snackbar-item > p {
+    flex: 3;
+    line-height: 1rem;
+    white-space: nowrap;
+    color: var(--surface);
+}
+
+html.simple-me > body .snackbar-item > a {
+    flex: 1;
+    white-space: nowrap;
+    color: var(--primary-light);
+    margin: 0.5rem 0 0.5rem 1rem;
 }
 
 html.simple-me > body .progress-circle {
@@ -704,50 +918,50 @@ html.simple-me > body .progress-circle {
     height: 8rem;
     background: 
         /* center */
-        radial-gradient(var(--body-bg) 64%, transparent 65%), 
+        radial-gradient(var(--surface) 64%, transparent 65%), 
         /* progress indicator */
         conic-gradient(
-            var(--border-light) 0deg, var(--border-light) 360deg
+            var(--on-background-light) 0deg, var(--on-background-light) 360deg
         );
 }
 
 html.simple-me > body .progress-circle.p25 {
     background: 
-        radial-gradient(var(--body-bg) 64%, transparent 65%), 
+        radial-gradient(var(--surface) 64%, transparent 65%), 
         conic-gradient(
             /* degrees = 360 * 0.25 = 90 */
-            var(--normal-text) 0deg, var(--normal-text) 90deg, 
-            var(--border-light) 0deg, var(--border-light) 360deg
+            var(--primary) 0deg, var(--primary) 90deg, 
+            var(--on-background-light) 0deg, var(--on-background-light) 360deg
         );
 }
 
 html.simple-me > body .progress-circle.p50 {
     background: 
-        radial-gradient(var(--body-bg) 64%, transparent 65%), 
+        radial-gradient(var(--surface) 64%, transparent 65%), 
         conic-gradient(
             /* degrees = 360 * 0.5 = 180 */
-            var(--normal-text) 0deg, var(--normal-text) 180deg, 
-            var(--border-light) 0deg, var(--border-light) 360deg
+            var(--primary) 0deg, var(--primary) 180deg, 
+            var(--on-background-light) 0deg, var(--on-background-light) 360deg
         );
 }
 
 html.simple-me > body .progress-circle.p75 {
     background: 
-        radial-gradient(var(--body-bg) 64%, transparent 65%), 
+        radial-gradient(var(--surface) 64%, transparent 65%), 
         conic-gradient(
             /* degrees = 360 * 0.75 = 270 */
-            var(--normal-text) 0deg, var(--normal-text) 270deg, 
-            var(--border-light) 0deg, var(--border-light) 360deg
+            var(--primary) 0deg, var(--primary) 270deg, 
+            var(--on-background-light) 0deg, var(--on-background-light) 360deg
         );
 }
 
 html.simple-me > body .progress-circle.p100 {
     background: 
-        radial-gradient(var(--body-bg) 64%, transparent 65%), 
+        radial-gradient(var(--surface) 64%, transparent 65%), 
         conic-gradient(
             /* degrees = 360 * 1 = 360 */
-            var(--normal-text) 0deg, var(--normal-text) 360deg, 
-            var(--border-light) 0deg, var(--border-light) 360deg
+            var(--primary) 0deg, var(--primary) 360deg, 
+            var(--on-background-light) 0deg, var(--on-background-light) 360deg
         );
 }
 
@@ -755,13 +969,163 @@ html.simple-me > body .progress-circle > p {
     position: absolute;
     top: 2.3rem;
     left: 0;
-    font-size: 2em;
+    font-size: 2rem;
     text-align: center;
     width: 100%;
     line-height: 2.5rem;
 }
 
+html.simple-me > body .padding-1,
+html.simple-me > body .padding-inside-1 > * {
+    padding: 0.5rem;
+}
+
+html.simple-me > body .padding-2,
+html.simple-me > body .padding-inside-2 > * {
+    padding: 1rem;
+}
+
+html.simple-me > body .padding-3,
+html.simple-me > body .padding-inside-3 > * {
+    padding: 1.5rem;
+}
+
+html.simple-me > body .padding-4,
+html.simple-me > body .padding-inside-4 > * {
+    padding: 2rem;
+}
+
+html.simple-me > body .padding-5,
+html.simple-me > body .padding-inside-5 > * {
+    padding: 2.5rem;
+}
+
+html.simple-me > body .padding-6,
+html.simple-me > body .padding-inside-6 > * {
+    padding: 3rem;
+}
+
+html.simple-me > body .margin-1,
+html.simple-me > body .margin-inside-1 > * {
+    margin: 0.5rem;
+}
+
+html.simple-me > body .margin-2,
+html.simple-me > body .margin-inside-2 > * {
+    margin: 1rem;
+}
+
+html.simple-me > body .margin-3,
+html.simple-me > body .margin-inside-3 > * {
+    margin: 1.5rem;
+}
+
+html.simple-me > body .margin-4,
+html.simple-me > body .margin-inside-4 > * {
+    margin: 2rem;
+}
+
+html.simple-me > body .margin-5,
+html.simple-me > body .margin-inside-5 > * {
+    margin: 2.5rem;
+}
+
+html.simple-me > body .margin-6,
+html.simple-me > body .margin-inside-6 > * {
+    margin: 3rem;
+}
+
+html.simple-me > body .h-1 {
+    height: 1rem;
+}
+
+html.simple-me > body .h-2 {
+    height: 2rem;
+}
+
+html.simple-me > body .h-3 {
+    height: 3rem;
+}
+
+html.simple-me > body .h-4 {
+    height: 4rem;
+}
+
+html.simple-me > body .h-5 {
+    height: 5rem;
+}
+
+html.simple-me > body .h-6 {
+    height: 6rem;
+}
+
+html.simple-me > body .w-1 {
+    width: 1rem;
+}
+
+html.simple-me > body .w-2 {
+    width: 2rem;
+}
+
+html.simple-me > body .w-3 {
+    width: 3rem;
+}
+
+html.simple-me > body .w-4 {
+    width: 4rem;
+}
+
+html.simple-me > body .w-5 {
+    width: 5rem;
+}
+
+html.simple-me > body .w-6 {
+    width: 6rem;
+}
+
+html.simple-me > body .bg-background {
+    background-color: var(--background);
+}
+
+html.simple-me > body .bg-surface {
+    background-color: var(--surface);
+}
+
 @media (max-width: 640px) {
+
+    html.simple-me > body h4 {
+        font-weight: 300;
+    }
+
+    html.simple-me > body h1 {
+        font-size: 2.2rem;
+    }
+    
+    html.simple-me > body h2 {
+        font-size: 2rem;
+    }
+    
+    html.simple-me > body h3 {
+        font-size: 1.8rem;
+    }
+    
+    html.simple-me > body h4 {
+        font-size: 1.6rem;
+    }
+    
+    html.simple-me > body h5 {
+        font-size: 1.4rem;
+    }
+    
+    html.simple-me > body h6 {
+        font-size: 1.2rem;
+    }
+    
+    html.simple-me > body p {
+        margin: 0.5rem 0;
+        line-height: 1.45rem;
+    }
+
     html.simple-me > body .grid > * {
         display: block;
     }
@@ -781,6 +1145,10 @@ html.simple-me > body .progress-circle > p {
 
     html.simple-me > body nav > div {
         padding: 2rem 1rem;
-        border-bottom: 0.1rem solid var(--body-bg);
+        border-bottom: 0.1rem solid var(--surface);
+    }
+
+    html.simple-me > body .hide-on-small {
+        display: none;
     }
 }
