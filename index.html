@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="simple-me">
+<html lang="en" class="smpl">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,34 +14,34 @@
         <p>The Simplest <i>(CSS only)</i> framework you will ever need.</p>
     </header>
     
-    <p>Use <em>.simple-me</em> in your <em>html</em> tag and you are ready to go.</p>
+    <p>Use <em>.smpl</em> in your <em>html</em> tag and you are ready to go.</p>
 
     <h3><br />Grid System</h3>
-    <p>Grid system can be activated using class <em>.grid</em>, the children will be rows and the and the children of every child will be a cell. You can add borders on cell using <em>.border-inside</em> in the row. You can also center the content inside using <em>.to-c-inside</em>.</p>
+    <p>Grid system can be activated using class <em>.grid</em>, the children will be rows and the and the children of every child will be a cell. You can add borders on cell using <em>.border-in</em> in the row. You can also center the content inside using <em>.to-c-in</em>.</p>
     <main class="grid">
-        <section class="border-inside to-c-inside hide-on-small">
+        <section class="border-in to-c-in hide-on-small">
             <article>1</article>
             <article>2</article>
         </section>
-        <section class="border-inside to-c-inside hide-on-small">
+        <section class="border-in to-c-in hide-on-small">
             <article>1</article>
             <article>2</article>
             <article>3</article>
         </section>
-        <section class="border-inside to-c-inside">
+        <section class="border-in to-c-in">
             <article>1</article>
             <article>2</article>
             <article>3</article>
             <article>4</article>
         </section>
-        <section class="border-inside to-c-inside hide-on-small">
+        <section class="border-in to-c-in hide-on-small">
             <article>1</article>
             <article>2</article>
             <article>3</article>
             <article>4</article>
             <article>5</article>
         </section>
-        <section class="border-inside to-c-inside hide-on-small">
+        <section class="border-in to-c-in hide-on-small">
             <article>1</article>
             <article>2</article>
             <article>3</article>
@@ -82,14 +82,14 @@
     <h3><br />Shadows</h3>
     <p>There are 6 levels</p>
     <main class="grid">
-        <section class="margin-inside-1 bg-background padding-2">
-            <article class="border h-6 bg-surface">.no shadow</article>
-            <article class="border h-6 bg-surface shadow-1 hide-on-small">.shadow-1</article>
-            <article class="border h-6 bg-surface shadow-2">.shadow-2</article>
-            <article class="border h-6 bg-surface shadow-3 hide-on-small">.shadow-3</article>
-            <article class="border h-6 bg-surface shadow-4">.shadow-4</article>
-            <article class="border h-6 bg-surface shadow-5 hide-on-small">.shadow-5</article>
-            <article class="border h-6 bg-surface shadow-6">.shadow-6</article>
+        <section class="bg-background" style="padding:1rem">
+            <article style="padding:2.7rem 0.5rem" class="border bg-surface">.no shadow</article>
+            <article style="padding:2.7rem 0.5rem" class="border bg-surface shadow-1 hide-on-small">.shadow-1</article>
+            <article style="padding:2.7rem 0.5rem" class="border bg-surface shadow-2">.shadow-2</article>
+            <article style="padding:2.7rem 0.5rem" class="border bg-surface shadow-3 hide-on-small">.shadow-3</article>
+            <article style="padding:2.7rem 0.5rem" class="border bg-surface shadow-4">.shadow-4</article>
+            <article style="padding:2.7rem 0.5rem" class="border bg-surface shadow-5 hide-on-small">.shadow-5</article>
+            <article style="padding:2.7rem 0.5rem" class="border bg-surface shadow-6">.shadow-6</article>
         </section>
     </main>
 
@@ -106,7 +106,7 @@
                     <p>Second line paragraph</p>
                 </main>
                 <footer class="to-r">
-                    <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+                    <p><a src="#accept">accept</a> <a src="#cancel">cancel</a></p>
                 </footer>
             </div>
             <div class="card">
@@ -118,7 +118,7 @@
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAADwCAYAAABxLb1rAAAAAXNSR0IArs4c6QAAFThJREFUeF7tnXmIr9Mfxz+D4da9umjGbQYNihTZk6z5w75EKBFCKaTsIdmyJrtsyZrCf/adFCIMEtnCGHNx70S4l2udX+f4zZiZO9/vs53znM855/XUTTPPWT7n9fmc95z383xn9AwPD0/Mnz9fFixYIFwQgAAEciCwbNkyWb58ufSMjo5OrFixwq55aGhIent7c1g/a4QABDIk8Oeff8rIyIhd+bx586RnbGxsYnBwUBYvXizj4+NWBBcuXJghGpYMAQikTOCnn36y4tfX1yeTmjclgGbhkw36+/tlYGAgZRasDQIQyIjAt99+K0uXLp1xwDOHvhkCaHhMPyJiiTOqEJYKgQQJdNOzOQVwkgGWOMFqYEkQyIjAbMs7e+ldBRBLnFGlsFQIJEZgLstbWQCxxIlVBcuBQOIEqjzCKzwBTmeFJU68clgeBCInUGR5a50Ap3fiLXHkFUL4EEiUQBnL21gAscSJVg/LgkCkBKpYXicCODkIljjSiiFsCCRCoKrldSqAZjAscSKVxDIgEBmBOpbXuQBiiSOrGsKFQOQEmlheLwKIJY68oggfApEQaGp5vQogljiSKiJMCERIwIXl9S6AWOIIK4uQIaCYgEvL24oAYokVVxOhQSAiAq4tb6sCiCWOqNIIFQLKCPiwvK0LIJZYWVURDgSUE/BpeYMIIJZYecURHgSUEPBteYMKIJZYSZURBgQUEmjD8gYXQCyxwsojJAgEJNCm5VUhgFjigNXG1BBQRKBty6tKALHEiiqRUCDQMoEQlledAGKJW646poNAYAIhLa9KAcQSB65IpodASwRCW17VAoglbqkKmQYCAQhosLzqBRBLHKAymRICHglosrxRCCCW2GM1MjQEWiSgzfJGJYBY4hYrlakg4JiARssbnQBiiR1XJcNBwDMBzZY3SgHEEnuuWIaHgCMC2i1v1AKIJXZUpQwDAQ8EYrC80QsglthD5TIkBBoQiMnyJiGAWOIG1UpXCDgkEJvlTUoAscQOK5mhIFCRQIyWNzkBxBJXrFqaQ6AhgZgtb5ICiCVuWNF0h0BJArFb3qQFEEtcsoppBoEaBFKwvMkLIJa4RmXTBQJdCKRkebMQQCwx+xkCbgikZnmzEkAssZtNwCh5EkjR8mYngFjiPDcvq65PIGXLm6UAYonrbwZ65kUgdcubtQBiifPazKy2GoEcLG/2AoglrrYpaJ0+gZwsLwI4jcDixYtlfHxchoaGZOHChelXOiuEwCwCuVleBLBDAfT398vAwAAbBALZEMjR8iKAc5R3zhYgm93OQqcIUO//FYNxgT1jY2MTg4OD2ZcIljj7EkgeQO6WlxNgQYlPFgiWOHktyG6BWN6VU84JEEucnRDktmAsb+eMI4BddgOWODepSG+9WN7uOUUAscTp7XpWZAlgeYsLAQEsZiRYiBKQaKKGAPVaPhUIYHlWgiWuAIumQQhgeathRwCr8RLeElcERvPWCGB5q6NGAKszwxLXYEYXfwSwvPXZIoD12WGJG7CjqxsCWN5mHBHAZvywxA350b0+ASxvfXaTPRHA5gyxxA4YMkR5Alje8qyKWiKARYQq3OctcQVYNK1FAMtbC1vHTgigW55YYsc8Ge4/Alhe99WAALpniiX2wDTnIbG8/rKPAPpjy1tij2xzGRrL6zfTCKBfvlhiz3xTHh7L6z+7CKB/xljiFhinNAWWt71sIoDtscYSt8g61qmwvO1mDgFslzeWuGXeMU2H5W0/Wwhg+8yxxAGYa54SyxsuOwhgOPZY4oDstUyN5Q2bCQQwLH8scWD+IafH8oak/+/cCGD4HGCJFeSgzRCwvG3S7j4XAqgnF1hiRbnwFQqW1xfZeuMigPW4eevFX5z2hjb4wFje4ClYKQAEUF9OsMQKc9IkJCxvE3p++yKAfvk2Gp0/r9UIn4rOWF4VaegYBAKoOz+8JVaen27hYXn1Jw8B1J8jLHEEOZoeIpY3noQhgPHkirfEEeQKyxtBkqaFiADGlS8sseJ8YXkVJ6dDaAhgfDnDEivLGZZXWUIqhIMAVoClrSlvicNnBMsbPgdNIkAAm9BT0JcPTodLApY3HHtXMyOArkgGHAcL1i58eLfL2+dsCKBPui2PjSX2DxzL659xmzMggG3SbmEuLLE/yFhef2xDjYwAhiLvcV4smlu48HTLU9NoCKCmbDiOBUvcHCiWtzlDzSMggJqz4yA2LHF9iFje+uxi6YkAxpKpBnFi4arBg1c1XjG3RgBjzl7F2LHExcCwvMWMUmqBAKaUzRJrwRJ3hoTlLVFAiTVBABNLaJnlYPFmUoJHmapJsw0CmGZeS60KSyxTf12nr69PBgcHS3GjUToEEMB0cllrJTlbYixvrZJJqhMCmFQ66y0mNwuY23rrVUUevRDAPPJcapU5WGLe8pYqhWwaIYDZpLrcQlO2xFjecjWQUysEMKdsl1xrahYxtfWUTCPNShBAAEtAyrVJCpYYy5tr9ZZbNwJYjlO2rWK2xFjebMu29MIRwNKo8m0Ym4WMLd58Kyv8yhHA8DmIJoIYLDGWN5pyUhEoAqgiDfEEodkSY3njqSMtkSKAWjIRURzaLKa2eCJKZfahIoDZl0B9ABosMZa3fv7oKYIAUgWNCIS0xFjeRqmjsyCAFIEDAm1b0Lbnc4CIIZQS4ASoNDExhtWGJcbyxlgZemNGAPXmJsrIfFpiLG+UJaE6aARQdXriDM61RXU9XpxUidoHAQTQB1XGtARcWGIsL8XkkwAC6JMuY0/9yfn+/n4ZGBioRATLWwkXjWsQQABrQKNLNQJVLWzV9tWioTUE/iOAAFINrREoY4mxvK2lg4n4HCA10DaBbm+JsbxtZ4P5OAFSA60TmG1xTQAjIyM2jqGhIent7W09JibMkwACmGfeVazaFN/SpUttLOYlCf9fXhVpySoIBDCrdOtarLG8S5YskYmJCVm0aFHlt8S6VkM0MRJAAGPMWuQxY4EjT2BC4SOACSUzhqV0e8tb5i1xDGskxngIIIDx5Cr6SMu85fX5u8TRA2QBzgkggM6RMuBsAlU/2Fy1PcQhUJcAAliXHP1KEWjywWYscSnENGpAAAFsAI+u3QmUsbxFDLHERYS434QAAtiEHn3nJODawroej7RBYJIAAkgtOCXQxPIWBYIlLiLE/aoEEMCqxGjfkYALy1uEF0tcRIj7VQgggFVo0bYVy1uEGUtcRIj7ZQkggGVJ0W5OAj4tbxFyLHERIe4XEUAAiwhxP6jlLcKPJS4ixP1uBBBA6qMyAW0WVFs8lYHSIRgBBDAY+jgnDml5i4hhiYsIcX82AQSQmihNoI23vKWD6dAQS9yUYF79EcC88l1rtbFZzNjirZUUOjkhgAA6wZjuIJotbxF1LHERIe4jgNRARwIxWN6i9GGJiwjlfR8BzDv/c64+NQuZ2nooWXcEEEB3LJMYKWbLW5QALHERofzuI4D55Txpy1uUTixxEaG87iOAeeU7C8tblFIscRGhfO4jgPnkes6Vpmx5i1KLJS4ilP59BDD9HGdteYvSiyUuIpT2fQQw7fxieUvkF0tcAlKiTRDARBPbaVk5W96iVGOJiwildx8BTC+nWN4GOcUSN4AXYVcEMMKkVQ0Zi1eNGLyq8Yq5NQIYc/ZKxI7lLQGpQxMscX12sfREAGPJVI04U/hd3hrLdtoFS+wUp7rBEEB1KWkeEBauOcPpI8DTLU9NoyGAmrLhIBYsrwOIWGJ/EJWNjAAqS0iTcLC8TeiV64slLscpllYIYCyZ6hInFq3dJMK7Xd4+Z0MAfdJtYWwsbwuQscThIHueGQH0DNjn8Fhen3TLjY0lLsdJaysEUGtmsLzRZAZLHE2qVgoUAYwsd1hevQnjg9N6c9MpMgQwopxhefUnC0usP0fTI0QAI8gXFiuCJE0LkXzFky8EUHmusLzKE9QlPCyx/twhgIpzhOVVnJySoWGJS4IK1AwBDAS+27RYKIVJaRAS+WwAz3NXBNAz4KrDY3mrEounPZZYX64QQEU5wfIqSoanULDEnsDWHBYBrAnOZTcskkua+sci33pyhAAGzgWWN3ACAk6PJQ4I//9TI4ABc4DlDQhfydRY4rCJQAAD8McCBYCueErqIVxyEMCW2WN5WwYe0XRY4vaThQC2yJwCbxF2pFPxA7LdxCGALfDG4rQAOaEpqJf2kokAembNT3TPgBMeHsfgP7kIoEfGvOX1CDeToXlL7DfRCKAHvlgYD1AzHpJ68pd8BNAxWyyvY6AMN0UAS+y+GBBAh0yxvA5hMtScBLDEbgsDAXTAE4viACJDlCZAvZVGVdgQASxE1L0BlrchQLrXJoAlro1uxmOFnrGxsYnBwcHmo2U2ApY3s4QrXC6WuFlSOAHW4IcFqQGNLt4IUI/10SKAFdlheSsCo3lrBLDE1VEjgBWYYXkrwKJpEAJY4mrYEcASvLAYJSDRRA0B6rV8KhDAAlZY3vLFREtdBLDExflAALswwvIWFxAtdBPAEnfPDwI4Bx8shO5NTXTVCFDPnXkhgLPYYHmrbS5ax0MAS7xyrhDAaUwokHg2M5HWI8AP+JncEEARwSLU20z0ipMA9f5f3rIXQH4ixrmJibo5ARyPSNYCSAE030SMEDeB3A8AWQogFiDuTUv0bgnkvB+yE8Dcf+K53TqMlhKBHB1RVgKYY4JT2qCsxT+B3A4IWQhgzkd8/1uGGVIjkNN+SV4Ac/uJltpmZD3hCOTgmJIWwBwSGG57MHMOBFI/QCQpgDkd4XPYhKwxLIGU91NyApj6T6ywW4HZcyaQoqNKSgBTTFDOG4616yOQ2gEjCQFM+YiubwsQUe4EUtpv0Qsgf/Ax9+3I+kMRSOEPBkctgFjeUKXPvBD4l0DsljhKAUzpCM5GgkDsBGLej9EJIJY39u1C/KkSiNESRyWAWN5Utw7rSoVAbJY4CgGM+YidSmGzDgiUJRDTflUvgFjesmVHOwjoIhCDJVYtgFheXQVNNBCoSkC7JVYpgDEdoasWBO0hkBsBzftZnQBq/4mRW/GyXgi4IqDR0akSQI2AXCWfcSAAAX0fnFYhgJqPyBQtBCDgloCm/R5cALG8bouL0SAQCwENji+oAGoAEEuxECcEUiQQ+gAURAA1HYFTLCrWBIGYCITUg9YFMLTix1QYxAqBnAiEcIStCmCIBeZUQKwVArETaPuA1IoAhjzixl4QxA+B3Ai0qRfeBZDf5c2tfFkvBNwQaON3ib0KIJbXTSEwCgRyJeDbEnsRwDaPsLkWBuuGQC4EfOqJcwHE8uZSlqwTAu0S8GGJnQoglrfdgmA2CORGwLUldiKAPo+ouSWY9UIAAt0JuNSbxgKI5aVcIQCBEARcWOJGAojlDZF25oSADgI//vijfP3117L55pvLaqutNiOov/76Sz7++GOZmJiQTTfdVNZYY40Z97///ntZsWKFDA0NlV7MXGPOtsS//vqrDA8Py8477yw9PT1TY5vvm1g32WQTWXXVVae+X0sAXR5BS6+ehhCAgBoC5557rlx99dU2njXXXFPOOussufDCC+3X7777ruy+++7yyy+/2K/XX399ef7552WzzTYTI2KHHXaYPProo/belltuKS+//LKss846XdfWbczpenTNNdfInXfeacV1UnQvv/xyueCCC6ZiNfNtt9129uvKAojlVVODBAKBIATeeecd2X777eWBBx6QfffdV26//XYrMEuWLJH+/n7ZaqutZGBgQO69914ZGRmxgnfggQfKrbfeKjfccIMVyhdffFH6+vpkn332ka233loefvjhrmvpNuZkRzPfcccdZ7+cFMC33npLdthhB7nnnntsrGeccYa88MIL8s0330hvb281AcTyBqk3JoWAKgK33XabFbJPPvnExjU2NmZPeU888YTssssustZaa8krr7wiu+22m71/8cUXy3XXXSc///yztctGEC+55BJ7z4x18sknyw8//CDHHnustcQ333yzvXfSSSfJb7/9Zudae+21O445eZIzJ8xDDz3UCu+XX34pG264oZx++uliRPDVV1+1Y37wwQf21PnSSy/JHnvsUU4Asbyq6o9gIBCUwD///GOf7S1fvlzee+89ueWWW+SZZ56xQmier5nvbbvttjJv3jz5+++/rR1eb7315MEHH7SnrqeeesqexsxlTmN77rmnfV74+eefywEHHCCPPPKI/P7773L00UfLm2++KVtssUXHMc3J0cRjTpJG8I488kgrbB9++KGsvvrqVkSN3b3qqqvsfOZZ4Pz58+Wuu+6SE044oVgAsbxBa43JIaCWwBtvvCF77bWXfdZnROyhhx6a8Szvs88+kxNPPFGMZTYnrnXXXdee8F577TXZaaed7LpMG/OSxJzSjK0+5ZRTrLU21/nnny/mWeP0a/aYps/1119vbbiZ5+2337YCaCywOVVus802VgQvuuiiqWEWLVpkxzWnw67PALG8amuPwCCggoA5fZkTnzllGVtrnu8Zx3jZZZfJpZdeKocffri1sIODg/LHH3/YFxPmBchBBx1k43///fftM0AjVsbmmueIRqDMi5Xx8XF7ijNXpzGN1d14443t3DvuuKN9AWPE7bHHHrOCak6RZm5zAjT/NZd5O2zs+v777z+3AGJ5VdQWQUBAJYFzzjlHli1bZl9qTF7m2Z8RGGNfjznmGHn22WftidCcxqZfpt0hhxwiZ555pv22aXP22WfL6Oio/frUU0+V++67z54qr732WvvSwlydxjTP9IyVnbyMY/3000+tBb/yyivl9ddft6fLG2+80TYxH9fZaKON5KuvvrKn0ZVOgFhelTVHUBBQQ+Dxxx+Xo446yn7cxJyijL09+OCD5aabbpIjjjjCWl3z0ZPJ53wm8FVWWcW+HT7vvPPk7rvvts/2vvvuOyteRhTvuOMO+xzR9DGns48++kiM0JoTonmj3G3M6WCMvTbjTb4Ffvrpp2W//fazgmxOmOZ0+MUXX9h/5iQ4QwCxvGpqjEAgoJaAERfzJvfJJ5+civH444+3z+Gee+45+yJjrsu8ODFvgo0gGaEyl7Gtpo/5fKB5i7v33nvL/fffb7/eddddbfsrrrjCCmynMad/35z4zIegJwXQzHnaaadZcTaX+ZiOidPMa06sVgBHR0cnTAdzmWOheVPDBQEIQKAbASMe5jc6NthgA/uZviqX+XygORWavm1c5hmjiXXyw9hmfnOZN9U9w8PDE+bV8IIFC9qIhTkgAAEIBCdgnmOaj/L8D8AwhZinzaC6AAAAAElFTkSuQmCC">
                 </main>
                 <footer class="to-r">
-                    <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+                    <p><a src="#accept">accept</a> <a src="#cancel">cancel</a></p>
                 </footer>
             </div>
             <div class="card hide-on-small">
@@ -149,7 +149,7 @@
                     <p>no header</p>
                 </main>
                 <footer class="to-r">
-                    <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+                    <p><a src="#accept">accept</a> <a src="#cancel">cancel</a></p>
                 </footer>
             </div>
             <div class="card hoverable hide-on-small">
@@ -158,7 +158,7 @@
                     <p>no content (also hoverable)</p>
                 </header>
                 <footer class="to-r">
-                    <p><a src="#accept">accept</a> | <a src="#cancel">cancel</a></p>
+                    <p><a src="#accept">accept</a> <a src="#cancel">cancel</a></p>
                 </footer>
             </div>
         </section>
@@ -246,19 +246,55 @@
     <main class="wrap">
         <div class="chip">basic chip</div>
         <div class="chip hoverable"><i>.hoverable</i> chip</div>
-        <div class="chip badge-r icon-l">multiple chip<em>55</em><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVRIie3UsU5UQRTG8d+uGwghFG6WkDWBzlCwDYTOxIqCxIY3oMBQQaW8AAmFQWmAWFvoG1DwDhsTY4MNBZ1B0MRKDGAxs8lm8e7MFMaGf3Pu3POdOTNz5gz3/EMe4CjaoqASVvATLZwUxmbzJtpXJUElO+ngFp/RRg1fS5LlsIOR+D0Sx1nUM3WT+IGrOL4SajOVE1wbGC9jFk3haOq4jnYf3/q0LWziJvpv4/9LfMFxVdI1vMhZ3RBe4nlKtIRt+UfZoxYTPMsN6GAPY5n6UexioXBhHuFQKPowmjjATGmCHm1sJTRbUVdJqhnncY7TIZpxTOCsSpAq7iI+JjTdqKukkZjgoXDvCbdnNU7YxTuhN74LdakktZNegz3Ga+Hl3cAn4bGcG9D9lcGO76eJdaHjGzHJ7z5/I/rb+IW3uEgs+g5P8B7TCd00PuBpaYJ7/h9/AI4dNAEzXJodAAAAAElFTkSuQmCC"></div>
+        <div class="chip icon-r"><i>.icon-r</i> chip<img src="src/img/link1.png"></div>
+        <div class="chip icon-l"><i>.icon-l</i> chip<img src="src/img/link2.png"></div>
+        <div class="chip close-r"><i>.close-r</i> chip <a href="#!"><img src="src/img/close.png" alt="close"></a></div>
+        <div class="chip close-l"><i>.close-l</i> chip <a href="#!"><img src="src/img/close.png" alt="close"></a></div>
+        <div class="chip img-r"><i>.img-r</i> chip<img src="https://avatars.githubusercontent.com/u/10222434?v=4"></div>
+        <div class="chip img-l"><i>.img-l</i> chip<img src="https://avatars.githubusercontent.com/u/10222434?v=4"></div>
+        <div class="chip badge-r"><i>.badge-r</i> chip <em>12</em></div>
+        <div class="chip badge-l"><i>.badge-l</i> chip <em>34</em></div>
+        <div class="chip badge-r icon-l">multiple chip<em>56</em><img src="src/img/menu.png"></div>
     </main>
-    <main class="wrap">
-        <div class="chip close-r"><i>.close-r</i> chip <em>X</em></div>
-        <div class="chip icon-r"><i>.icon-r</i> chip<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVRIie3UsU5UQRTG8d+uGwghFG6WkDWBzlCwDYTOxIqCxIY3oMBQQaW8AAmFQWmAWFvoG1DwDhsTY4MNBZ1B0MRKDGAxs8lm8e7MFMaGf3Pu3POdOTNz5gz3/EMe4CjaoqASVvATLZwUxmbzJtpXJUElO+ngFp/RRg1fS5LlsIOR+D0Sx1nUM3WT+IGrOL4SajOVE1wbGC9jFk3haOq4jnYf3/q0LWziJvpv4/9LfMFxVdI1vMhZ3RBe4nlKtIRt+UfZoxYTPMsN6GAPY5n6UexioXBhHuFQKPowmjjATGmCHm1sJTRbUVdJqhnncY7TIZpxTOCsSpAq7iI+JjTdqKukkZjgoXDvCbdnNU7YxTuhN74LdakktZNegz3Ga+Hl3cAn4bGcG9D9lcGO76eJdaHjGzHJ7z5/I/rb+IW3uEgs+g5P8B7TCd00PuBpaYJ7/h9/AI4dNAEzXJodAAAAAElFTkSuQmCC"></div>
-        <div class="chip badge-r"><i>.badge-r</i> chip <em>55</em></div>
-        <div class="chip image-r"><i>.image-r</i> chip<img src="https://avatars.githubusercontent.com/u/10222434?v=4"></div>
+    
+    <h3><br />Tabs</h3>
+    <p><em>.tabs</em> class is used to organize data in a seamless layout</p>
+    <main class="tabs">
+        <section>
+            <a id="title1" href="#!" onclick="tab('1')" class="selected">Title 1</a>
+            <a id="title2" href="#!" onclick="tab('2')">Title 2</a>
+            <a id="title3" href="#!" onclick="tab('3')">Title 3</a>
+        </section>
+        <article id="tab1" class="selected">
+            Content A
+        </article>
+        <article id="tab2">
+            Content B
+        </article>
+        <article id="tab3">
+            Content C
+        </article>
     </main>
-    <main class="wrap">
-        <div class="chip close-l"><i>.close-l</i> chip <em>X</em></div>
-        <div class="chip icon-l"><i>.icon-l</i> chip<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVRIie3UsU5UQRTG8d+uGwghFG6WkDWBzlCwDYTOxIqCxIY3oMBQQaW8AAmFQWmAWFvoG1DwDhsTY4MNBZ1B0MRKDGAxs8lm8e7MFMaGf3Pu3POdOTNz5gz3/EMe4CjaoqASVvATLZwUxmbzJtpXJUElO+ngFp/RRg1fS5LlsIOR+D0Sx1nUM3WT+IGrOL4SajOVE1wbGC9jFk3haOq4jnYf3/q0LWziJvpv4/9LfMFxVdI1vMhZ3RBe4nlKtIRt+UfZoxYTPMsN6GAPY5n6UexioXBhHuFQKPowmjjATGmCHm1sJTRbUVdJqhnncY7TIZpxTOCsSpAq7iI+JjTdqKukkZjgoXDvCbdnNU7YxTuhN74LdakktZNegz3Ga+Hl3cAn4bGcG9D9lcGO76eJdaHjGzHJ7z5/I/rb+IW3uEgs+g5P8B7TCd00PuBpaYJ7/h9/AI4dNAEzXJodAAAAAElFTkSuQmCC"></div>
-        <div class="chip badge-l"><i>.badge-l</i> chip <em>55</em></div>
-        <div class="chip image-l"><i>.image-l</i> chip<img src="https://avatars.githubusercontent.com/u/10222434?v=4"></div>
+    <p>There's also a dotted layout for indexing data</p>
+    <main class="dots">
+        <article class="selected">
+            Content Dot A
+        </article>
+        <section>
+            <a class="prev" href="#!">
+                <img src="src/img/prev.png" alt="prev">
+            </a>
+            <a href="#!" class="selected"></a>
+            <a href="#!"></a>
+            <a href="#!"></a>
+            <a href="#!"></a>
+            <a href="#!"></a>
+            <a href="#!"></a>
+            <a href="#!"></a>
+            <a class="next" href="#!">
+                <img src="src/img/next.png" alt="next">
+            </a>
+        </section>
     </main>
 
     <h3><br />List</h3>
@@ -282,25 +318,27 @@
     </main>
 
     <h3><br />Buttons</h3>
-    <p>Only buttons, submit and <em>a.button</em> can be buttons</p>
+    <p>Only buttons, submit and <em>a.btn</em> can be buttons</p>
     <main class="wrap">
         <button>Primary</button>
         <button disabled>Disabled</button>
-        <a class="button">Link</a>
-        <a class="button disabled">Link Disabled</a>
+        <a class="btn">Link</a>
+        <a class="btn disabled">Link Disabled</a>
         <button class="secondary">Secondary</button>
         <button class="error">Error</button>
         <button class="warning">Warning</button>
         <button class="success">Success</button>
+        <button>Icon right<img class="to-r" src="src/img/link2.png" alt="icon"></button>
+        <button>Icon left<img class="to-l" src="src/img/link2.png" alt="icon"></button>
     </main>
 
     <h3><br />Dialogs</h3>
-    <p>Use <em>.card.as-dialog</em> to create dialogs</p>
+    <p>Use <em>.card.dialog</em> to create dialogs</p>
     <main class="wrap">
         <button onclick="toggle('dialog1')">open dialog</button>
         <button onclick="snackbar()">add snackbar</button>
     </main>
-    <div id="dialog1" class="card as-dialog is-hidden">
+    <div id="dialog1" class="card dialog is-hidden">
         <header>
             <h4>This is a dialog</h4>
         </header>
@@ -309,31 +347,31 @@
         </main>
         <footer>
             <p class="to-r">
-                <a onclick="toggle('dialog1')" href="#ok_dialog">OK</a> | <a onclick="toggle('dialog1')" href="#cancel_dialog">Cancel</a>
+                <a onclick="toggle('dialog1')" href="#ok_dialog">OK</a> <a onclick="toggle('dialog1')" href="#cancel_dialog">Cancel</a>
             </p>
         </footer>
     </div>
     <div id="snackbar" class="snackbar"></div>
 
     <h3><br />App bar</h3>
-    <p>Use header or footer with class <em>.app-bar</em> to create it</p>
+    <p>Use header or footer with class <em>.appbar</em> to create it</p>
     <main class="wrap">
         <button onclick="toggle('appbar_top')">Show appbar (top)</button>
         <button onclick="toggle('appbar_bottom')">Show appbar (bottom)</button>
         <button onclick="toggle('nav')">Show FAB</button>
         <button onclick="toggle('aside')">Show Sidebar</button>
     </main>
-    <header id="appbar_top" class="app-bar is-hidden">
+    <header id="appbar_top" class="appbar is-hidden">
         <a href="#!" onclick="toggle('aside')">
             <img src="src/img/menu.png" alt="menu">
         </a>
         <p>App Title</p>
-        <div class="appbar-links">
+        <div class="ab-lnks">
             <a href="#!"><img src="src/img/link1.png" alt="link1"></a>
             <a href="#!"><img src="src/img/link2.png" alt="link2"></a>
         </div>
     </header>
-    <footer id="appbar_bottom" class="app-bar is-hidden">
+    <footer id="appbar_bottom" class="appbar is-hidden">
         <a href="#!" onclick="toggle('aside')">
             <img src="src/img/menu.png" alt="menu">
             <p>Menu</p>
@@ -524,13 +562,13 @@
     </footer>
 
     <script>
-        const show = (_element) => {
+        const show = _element => {
             _element.classList.remove("is-hidden");
         };
-        const hide = (_element) => {
+        const hide = _element => {
             _element.classList.add("is-hidden");
         };
-        const toggle = (_elementId) => {
+        const toggle = _elementId => {
             const _element = document.getElementById(_elementId);
             if (_element.classList.contains("is-hidden")) {
                 show(_element);
@@ -543,6 +581,25 @@
             div.classList.add('snackbar-item');
             div.innerHTML = `<p>snackbar important message</p><a href="#!" onclick="this.parentElement.remove()">Dismiss</a>`;
             document.getElementById('snackbar').appendChild(div);
+        }
+        const tab = _index => {
+            clearTabs();
+            document.getElementById('tab' + _index).classList.add('selected');
+            document.getElementById('title' + _index).classList.add('selected');
+        };
+        const clearTabs = () => {
+            const _tabs = document.querySelectorAll('.tabs > article');
+            _tabs.forEach(
+                (item , index) => {
+                    item.classList.remove('selected');
+                }
+            );
+            const _titles = document.querySelectorAll('.tabs > section > a');
+            _titles.forEach(
+                (item , index) => {
+                    item.classList.remove('selected');
+                }
+            );
         }
     </script>
   </body>

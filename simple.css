@@ -29,138 +29,429 @@
     --secondary-light: #8BF2E8;
     --on-secondary: #445;
     --on-secondary-dark: #EEF;
+
+    --main-px: 14px;
 }
 
-html.simple-me {
-    font: 14px Helvetica, Arial, sans-serif;
+/* BASE */
+
+.smpl {
+    font: var(--main-px) Helvetica, Arial, sans-serif;
     color: var(--on-background);
     background-color: var(--background);
     margin: 0;
     padding: 0;
 }
 
-html.simple-me * {
+.smpl * {
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    transition: 300ms ease;
+    transition: 300ms all ease-in-out;
     border-radius: 0.1rem;
 }
 
-html.simple-me > body {
+.smpl > body {
     margin: auto;
     padding: 3rem;
-    max-width: 1000px;
+    max-width: 70rem;
     background-color: var(--surface);
 }
 
-html.simple-me > body ::placeholder { 
-    color: var(--on-surface-light);
-}
-
-html.simple-me > body mark {
-    background-color: var(--secondary);
-}
-
-html.simple-me > body input[type="range"] {
+.smpl input[type="range"] {
     pointer-events: none;
 }
 
-html.simple-me > body input[type="range"]::-webkit-slider-thumb {
+.smpl input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
 }
 
-html.simple-me > body input[type="range"]::-moz-range-thumb {
+.smpl input[type="range"]::-moz-range-thumb {
     pointer-events: auto;
 }
 
-html.simple-me > body input[type="range"]::-ms-thumb {
-    pointer-events: auto;
-}
-
-html.simple-me > body ul, 
-html.simple-me > body ol {
+.smpl ul, 
+.smpl ol {
     margin: 0.5rem 0;
     line-height: 1.5rem;
     padding-left: 1.5rem;
 }
 
-html.simple-me > body ul ul, 
-html.simple-me > body ul ol, 
-html.simple-me > body ol ul,
-html.simple-me > body ol ol {
+.smpl ul ul, 
+.smpl ul ol, 
+.smpl ol ul,
+.smpl ol ol {
     margin: 0;
 }
 
-html.simple-me > body .wrap {
+.smpl .wrap {
     display: flow-root;
     padding: 0.2rem 0;
 }
 
-html.simple-me > body a,
-html.simple-me > body b,
-html.simple-me > body i,
-html.simple-me > body em,
-html.simple-me > body mark,
-html.simple-me > body span {
+.smpl a,
+.smpl b,
+.smpl i,
+.smpl em,
+.smpl mark,
+.smpl span {
     padding: 0 0.2rem;
 }
 
-html.simple-me > body b,
-html.simple-me > body a,
-html.simple-me > body h1,
-html.simple-me > body h2 {
+.smpl b,
+.smpl a,
+.smpl h1,
+.smpl h2 {
     font-weight: 500;
 }
 
-html.simple-me > body h3,
-html.simple-me > body h4 {
+.smpl h3,
+.smpl h4 {
     font-weight: 400;
 }
 
-html.simple-me > body h5,
-html.simple-me > body h6,
-html.simple-me > body p {
+.smpl h5,
+.smpl h6,
+.smpl p {
     font-weight: 300;
 }
 
-html.simple-me > body > footer,
-html.simple-me > body > header {
+.smpl > body > footer,
+.smpl > body > header {
     background: var(--primary);
     color: var(--on-primary);
     border-radius: 0;
 }
 
-html.simple-me > body > footer {
+.smpl > body > footer {
     margin: 3rem -3rem -3rem;
-    padding: 1rem 3rem 6rem 3rem;
+    padding: 1rem 3rem 6rem;
 }
 
-html.simple-me > body > header {
-    margin: -3rem -3rem 3rem -3rem;
-    padding: 3rem 3rem 1rem 3rem;
+.smpl > body > header {
+    margin: -3rem -3rem 3rem;
+    padding: 3rem 3rem 1rem;
 }
 
-html.simple-me > body > header b,
-html.simple-me > body > header i,
-html.simple-me > body > header h1,
-html.simple-me > body > header h2,
-html.simple-me > body > header h3,
-html.simple-me > body > header h4,
-html.simple-me > body > header h5,
-html.simple-me > body > header h6,
-html.simple-me > body > footer b,
-html.simple-me > body > footer i,
-html.simple-me > body > footer h1,
-html.simple-me > body > footer h2,
-html.simple-me > body > footer h3,
-html.simple-me > body > footer h4,
-html.simple-me > body > footer h5,
-html.simple-me > body > footer h6 {
+.smpl > body > header b,
+.smpl > body > header i,
+.smpl > body > header h1,
+.smpl > body > header h2,
+.smpl > body > header h3,
+.smpl > body > header h4,
+.smpl > body > header h5,
+.smpl > body > header h6,
+.smpl > body > footer b,
+.smpl > body > footer i,
+.smpl > body > footer h1,
+.smpl > body > footer h2,
+.smpl > body > footer h3,
+.smpl > body > footer h4,
+.smpl > body > footer h5,
+.smpl > body > footer h6 {
     color: var(--on-primary);
 }
 
-html.simple-me > body > header.app-bar {
+.smpl h1,
+.smpl h2,
+.smpl h3,
+.smpl h4,
+.smpl h5,
+.smpl h6 {
+    margin: 2.5rem 0 2rem 0;
+}
+
+.smpl h1 {
+    font-size: 3.2rem;
+}
+
+.smpl h2 {
+    font-size: 2.8rem;
+}
+
+.smpl h3 {
+    font-size: 2.4rem;
+}
+
+.smpl h4 {
+    font-size: 2rem;
+}
+
+.smpl h5 {
+    font-size: 1.6rem;
+}
+
+.smpl h6 {
+    font-size: 1.2rem;
+}
+
+.smpl p {
+    margin: 0.5rem 0;
+    line-height: 1.45rem;
+}
+
+.smpl i {
+    font-weight: 200;
+}
+
+.smpl em {
+    font-style: normal;
+    border: 0.1rem solid transparent;
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+
+.smpl a {
+    text-decoration: none;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.smpl > body > header a,
+.smpl > body > footer a {
+    color: var(--on-primary);
+}
+
+.smpl a:hover {
+    text-decoration: underline;
+}
+
+.smpl form > * {
+    padding: 0.25rem 0;
+}
+
+.smpl form {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border: 0.1rem solid var(--on-surface-light);
+}
+
+.smpl form > * > * > label {
+    position: absolute;
+    font-weight: 300;
+}
+
+.smpl form > * > * > input,
+.smpl form > * > * > select,
+.smpl form > * > * > textarea {
+    margin-top: 1.5rem;
+    width: 100%;
+    border: 0.1rem solid var(--on-surface-light);
+    padding: 0.5em;
+    border-radius: 0.3rem;
+}
+
+.smpl form > * > * > textarea {
+    max-width: 100%;
+}
+
+.smpl ::placeholder {
+    color: var(--on-surface-light);
+}
+
+.smpl form > * > * > input:disabled,
+.smpl form > * > * > select:disabled,
+.smpl form > * > * > textarea:disabled {
+    border-color: var(--on-surface-light);
+}
+
+.smpl form > * > * > input[type="file"] {
+    padding: 0.25em;
+}
+
+.smpl form > * > * > input[type="radio"],
+.smpl form > * > * > input[type="checkbox"] {
+    width: auto;
+    margin-top: 2rem;
+    transform: scale(1.5);
+    filter: hue-rotate(30deg) saturate(1.4);
+    cursor: pointer;
+}
+
+.smpl form > * > * > input[type="range"] {
+    filter: hue-rotate(30deg) saturate(1.4);
+    cursor: pointer;
+}
+
+.smpl img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+.smpl table {
+    width: 100%;
+    min-width: 600px;
+    text-align: center;
+    border-spacing:0;
+    border-collapse: collapse;
+}
+
+.smpl table * {
+    margin: 0;
+    padding: 0.5rem 0.1rem;
+    vertical-align: middle;
+    border-radius: 0;
+}
+
+.smpl table > thead > tr > th {
+    border-bottom: 0.1rem solid var(--on-surface-light);
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.smpl table > tbody > tr > td,
+.smpl ol > li,
+.smpl ul > li {
+    font-weight: 300;
+    color: var(--on-surface);
+}
+
+.smpl table > tbody > tr > td:first-child {
+    border-left: 0.3rem solid transparent;
+}
+
+.smpl table > tbody tr:hover {
+    background-color: var(--on-background-light);
+}
+
+.smpl table > tbody tr:hover td:first-child {
+    border-left: 0.3rem solid var(--primary);
+}
+
+.smpl table > tfoot > tr > td {
+    border-top: 0.1rem solid var(--on-surface-light);
+    font-weight: 300;
+}
+
+.smpl .chip > img,
+.smpl .chip > a > img,
+.smpl .chip > em {
+    position: absolute;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0.4rem;
+    border-radius: 50%;
+    top: -0.1rem;
+    line-height: 1.2rem;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.smpl aside,
+.smpl nav {
+    position: fixed;
+    z-index: 70;
+    background-color: var(--surface);
+    color: var(--on-surface);
+    border: 0.1em solid var(--on-surface-light);
+    box-shadow: 0 0.55rem 0.9rem var(--on-surface-shadow);
+    border-radius: 0.3rem;
+    width: 20rem;
+}
+
+.smpl aside {
+    top: 0;
+    left: 0;
+    z-index: 69;
+    border-radius: 0;
+    border: none;
+    height: 100%;
+    width: auto;
+    padding: 3rem 0;
+}
+
+.smpl aside > a,
+.smpl nav > a {
+    color: var(--on-surface);
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 0;
+    display: block;
+}
+
+.smpl aside > a {
+    padding: 1rem 3rem;
+}
+
+.smpl aside > a:hover,
+.smpl nav > a:hover {
+    color: var(--on-primary);
+    background-color: var(--primary-light);
+    border-left: 0.5rem solid var(--primary);
+    margin-left: -0.01rem;
+    text-decoration: none;
+}
+
+.smpl aside > a.selected,
+.smpl nav > a.selected {
+    border-left: 0.5rem solid var(--primary);
+    margin-left: -0.01rem;
+}
+
+.smpl aside h1,
+.smpl aside h2,
+.smpl aside h3,
+.smpl aside h4,
+.smpl aside h5,
+.smpl aside h6,
+.smpl aside p,
+.smpl nav h1,
+.smpl nav h2,
+.smpl nav h3,
+.smpl nav h4,
+.smpl nav h5,
+.smpl nav h6,
+.smpl nav p {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+.smpl button,
+.smpl form input[type="submit"],
+.smpl a.btn {
+    border-left: 0.1rem solid var(--primary-light);
+    border-top: 0.1rem solid var(--primary-light);
+    border-right: 0.1rem solid var(--primary-dark);
+    border-bottom: 0.1rem solid var(--primary-dark);
+    padding: 0.5rem 2rem;
+    background: var(--surface);
+    color: var(--primary);
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    margin-bottom: 0.3rem;
+}
+
+.smpl button > img {
+    height: 1rem;
+    filter: 
+        opacity(0.2) 
+        drop-shadow(0 0 0 var(--primary))
+        drop-shadow(0 0 0 var(--primary))
+        drop-shadow(0 0 0 var(--primary));
+}
+
+.smpl button:hover > img {
+    filter: brightness(0) invert(1);
+}
+
+.smpl button:hover:not(:disabled):not(.nav),
+.smpl form input[type="submit"]:hover:not(:disabled),
+.smpl a.btn:hover:not(.disabled) {
+    background-color: var(--primary);
+    color: var(--on-primary);
+    text-decoration: none;
+}
+
+/* CLASSES */
+
+.smpl header.appbar {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -174,38 +465,39 @@ html.simple-me > body > header.app-bar {
     box-shadow: 0 0.35rem 0.6rem var(--on-surface-shadow);
 }
 
-html.simple-me > body > header.app-bar > a {
+.smpl header.appbar > a {
     float: left;
 }
 
-html.simple-me > body > header.app-bar > a > img {
+.smpl header.appbar > a > img {
     filter: brightness(0) invert(1);
     width: 1.4rem;
     margin: 0.8rem;
 }
 
-html.simple-me > body > header.app-bar > p {
+.smpl header.appbar > p {
     float: left;
     line-height: 2rem;
     font-weight: 400;
 }
 
-html.simple-me > body > header.app-bar > .appbar-links {
+.smpl header.appbar > .ab-lnks {
     float: right;
     display: flex;
 }
-html.simple-me > body > header.app-bar > a:hover,
-html.simple-me > body > header.app-bar > .appbar-links > a:hover {
+
+.smpl header.appbar > a:hover,
+.smpl header.appbar > .ab-lnks > a:hover {
     background-color: var(--primary-dark);
 }
 
-html.simple-me > body > header.app-bar > .appbar-links > a > img {
+.smpl header.appbar > .ab-lnks > a > img {
     filter: brightness(0) invert(1);
     width: 1.4rem;
     margin: 0.8rem;
 }
 
-html.simple-me > body > footer.app-bar {
+.smpl footer.appbar {
     color: var(--primary);
     background-color: var(--surface);
     margin: 0;
@@ -214,14 +506,14 @@ html.simple-me > body > footer.app-bar {
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 3rem;
+    height: 4rem;
     line-height: 3rem;
     display: flex;
     z-index: 80;
     box-shadow: 0 -0.15rem 0.5rem -0.1rem var(--on-surface-shadow);
 }
 
-html.simple-me > body > footer.app-bar > a {
+.smpl footer.appbar > a {
     color: var(--primary);
     flex: 1;
     display: flex;
@@ -230,11 +522,11 @@ html.simple-me > body > footer.app-bar > a {
     text-decoration: none;
 }
 
-html.simple-me > body > footer.app-bar > a:hover {
+.smpl footer.appbar > a:hover {
     background-color: var(--on-background-light);
 }
 
-html.simple-me > body > footer.app-bar > a > img {
+.smpl footer.appbar > a > img {
     flex: 2;
     /*filter: brightness(0) invert(1);*/
     filter: 
@@ -242,187 +534,71 @@ html.simple-me > body > footer.app-bar > a > img {
         drop-shadow(0 0 0 var(--primary))
         drop-shadow(0 0 0 var(--primary))
         drop-shadow(0 0 0 var(--primary));
-    width: 1rem;
+    width: 1.5rem;
     margin: 0.5rem auto;
 }
 
-html.simple-me > body > footer.app-bar > a > p {
+.smpl footer.appbar > a > p {
     flex: 1;
     font-size: 0.7rem;
     margin-top: -0.5rem;
 }
 
-html.simple-me > body h1,
-html.simple-me > body h2,
-html.simple-me > body h3,
-html.simple-me > body h4,
-html.simple-me > body h5,
-html.simple-me > body h6 {
-    margin: 2.5rem 0 2rem 0;
-}
-
-html.simple-me > body h1 {
-    font-size: 3.2rem;
-}
-
-html.simple-me > body h2 {
-    font-size: 2.8rem;
-}
-
-html.simple-me > body h3 {
-    font-size: 2.4rem;
-}
-
-html.simple-me > body h4 {
-    font-size: 2rem;
-}
-
-html.simple-me > body h5 {
-    font-size: 1.6rem;
-}
-
-html.simple-me > body h6 {
-    font-size: 1.2rem;
-}
-
-html.simple-me > body p {
-    margin: 0.5rem 0;
-    line-height: 1.45rem;
-}
-
-html.simple-me > body i {
-    font-weight: 200;
-}
-
-html.simple-me > body .border,
-html.simple-me > body .border-inside > * {
+.smpl .border,
+.smpl .border-in > * {
     border: 0.1rem solid var(--on-background-light);
     padding: 0.05rem;
 }
 
-html.simple-me > body em {
-    font-style: normal;
-    border: 0.1rem solid transparent;
-    background-color: var(--primary);
-    color: var(--on-primary);
-}
-
-html.simple-me > body a {
-    text-decoration: none;
-    color: var(--primary);
-    cursor: pointer;
-}
-
-html.simple-me > body .error {
+.smpl .error {
     background-color: var(--error);
     color: var(--on-error);
 }
 
-html.simple-me > body .warning {
+.smpl .warning {
     background-color: var(--warning);
     color: var(--on-warning);
 }
 
-html.simple-me > body .success {
+.smpl .success {
     background-color: var(--success);
     color: var(--on-success);
 }
 
-html.simple-me > body > header a,
-html.simple-me > body > footer a {
-    color: var(--on-primary);
-}
-
-html.simple-me > body a:hover {
-    text-decoration: underline;
-}
-
-html.simple-me > body .hoverable {
+.smpl .hoverable {
     cursor: pointer;
 }
-html.simple-me > body .hoverable:hover:not(.card) {
+
+.smpl .hoverable:hover:not(.card) {
     background-color: var(--on-background-light);
     box-shadow: 0 0.25rem 0.3rem -0.125rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .grid > *,
-html.simple-me > body form > * {
+.smpl .grid > *,
+.smpl form > * {
     display: flex;
 }
 
-html.simple-me > body .grid > * > *,
-html.simple-me > body form > * > * {
+.smpl .grid > * > *,
+.smpl form > * > * {
     flex: 1;
-    margin: 0.2rem;
+    margin: 0.5rem;
     padding: 0.2rem;
 }
 
-html.simple-me > body form > * {
-    padding: 0.25rem 0;
-}
-
-html.simple-me > body form {
-    margin: 1rem 0;
-    padding: 1rem 0;
-    border: 0.1rem solid var(--on-surface-light);
-}
-
-html.simple-me > body form > * > * > label {
-    position: absolute;
-    font-weight: 300;
-}
-
-html.simple-me > body form > * > * > label > span.error {
+.smpl form > * > * > label > span.error {
     font-size: 0.7rem;
     color: var(--error);
     background-color: var(--surface);
 }
 
-html.simple-me > body form > * > * > input,
-html.simple-me > body form > * > * > select,
-html.simple-me > body form > * > * > textarea {
-    margin-top: 1.5rem;
-    width: 100%;
-    border: 0.1rem solid var(--on-surface-light);
-    padding: 0.5em;
-    border-radius: 0.3rem;
-}
-
-html.simple-me > body form > * > * > textarea {
-    max-width: 100%;
-}
-
-html.simple-me > body form > * > * > input:disabled,
-html.simple-me > body form > * > * > select:disabled,
-html.simple-me > body form > * > * > textarea:disabled {
-    border-color: var(--on-surface-light);
-}
-
-html.simple-me > body form > * > * > input[type="file"] {
-    padding: 0.25em;
-}
-
-html.simple-me > body form > * > * > input[type="radio"],
-html.simple-me > body form > * > * > input[type="checkbox"] {
-    width: auto;
-    margin-top: 2rem;
-    transform: scale(1.5);
-    filter: hue-rotate(30deg) saturate(1.4);
-    cursor: pointer;
-}
-
-html.simple-me > body form > * > * > input[type="range"] {
-    filter: hue-rotate(30deg) saturate(1.4);
-    cursor: pointer;
-}
-
-html.simple-me > body form > * > * > label.radio,
-html.simple-me > body form > * > * > label.checkbox {
+.smpl form > * > * > label.radio,
+.smpl form > * > * > label.checkbox {
     left: 2rem;
     top: 2.1rem;
 }
 
-html.simple-me > body .card {
+.smpl .card {
     border-radius: 0.5rem;
     border: 0.1rem solid var(--on-surface-light);
     display: flex;
@@ -430,68 +606,64 @@ html.simple-me > body .card {
     justify-content:end;
 }
 
-html.simple-me > body .card > header,
-html.simple-me > body .card > main,
-html.simple-me > body .card > footer {
+.smpl .card > header,
+.smpl .card > main,
+.smpl .card > footer {
     padding: 0.5rem 1rem;
     border-radius: 0;
 }
 
-html.simple-me > body .card > header > *:not(img),
-html.simple-me > body .card > main > *:not(img),
-html.simple-me > body .card > footer > *:not(img) {
+.smpl .card > header > *:not(img),
+.smpl .card > main > *:not(img),
+.smpl .card > footer > *:not(img) {
     margin: 0;
 }
 
-html.simple-me > body .card > header {
+.smpl .card > header {
     border-bottom: 0.1rem solid var(--on-surface-light);
 }
 
-html.simple-me > body .card > footer {
+.smpl .card > footer {
     border-top: 0.1rem solid var(--on-surface-light);
+    padding: 0.5rem;
 }
 
-html.simple-me > body .card a {
+.smpl .card a {
     color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
-html.simple-me > body img {
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-    display: block;
-}
-
-html.simple-me > body .shadow-1 {
+.smpl .shadow-1 {
     box-shadow: 0 0.15rem 0.3rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .shadow-2 {
+.smpl .shadow-2 {
     box-shadow: 0 0.25rem 0.45rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .shadow-3 {
+.smpl .shadow-3 {
     box-shadow: 0 0.35rem 0.6rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .shadow-4 {
+.smpl .shadow-4 {
     box-shadow: 0 0.45rem 0.75rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .shadow-5 {
+.smpl .shadow-5 {
     box-shadow: 0 0.55rem 0.9rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .shadow-6 {
+.smpl .shadow-6 {
     box-shadow: 0 0.65rem 1.05rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .card.hoverable:hover {
+.smpl .card.hoverable:hover {
     background-color: var(--on-background-light);
     box-shadow: 0 0.35rem 0.6rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .card.as-dialog {
+.smpl .card.dialog {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -503,164 +675,132 @@ html.simple-me > body .card.as-dialog {
     transform: translate(-50%, -50%);
 }
 
-html.simple-me > body .card.as-dialog a {
+.smpl .card.dialog a {
     color: var(--primary);
 }
 
-html.simple-me > body .card.as-dialog > main {
+.smpl .card.dialog > main {
     min-height: 5rem;
 }
 
-html.simple-me > body .to-r-inside > *,
-html.simple-me > body .to-r {
+.smpl .to-r-in > *,
+.smpl .to-r {
     text-align: right;
 }
 
-html.simple-me > body .to-l-inside > *,
-html.simple-me > body .to-l {
+.smpl .to-l-in > *,
+.smpl .to-l {
     text-align: left;
 }
 
-html.simple-me > body .to-c-inside > *,
-html.simple-me > body .to-c {
+.smpl .to-c-in > *,
+.smpl .to-c {
     text-align: center;
     border-radius: 0;
 }
 
-html.simple-me > body table {
-    width: 100%;
-    min-width: 600px;
-    text-align: center;
-    border-spacing:0;
-    border-collapse: collapse;
-}
-
-html.simple-me > body table * {
-    margin: 0;
-    padding: 0.5rem 0.1rem;
-    vertical-align: middle;
-    border-radius: 0;
-}
-
-html.simple-me > body table > thead > tr > th {
-    border-bottom: 0.1rem solid var(--on-surface-light);
-    font-weight: 400;
-    font-size: 1.1rem;
-}
-
-html.simple-me > body table > tbody > tr > td,
-html.simple-me > body ol > li,
-html.simple-me > body ul > li {
-    font-weight: 300;
-    color: var(--on-surface);
-}
-
-html.simple-me > body table > tbody > tr > td:first-child {
-    border-left: 0.3rem solid transparent;
-}
-
-html.simple-me > body table > tbody tr:hover {
-    background-color: var(--on-background-light);
-}
-
-html.simple-me > body table > tbody tr:hover td:first-child {
-    border-left: 0.3rem solid var(--primary);
-}
-
-html.simple-me > body table > tfoot > tr > td {
-    border-top: 0.1rem solid var(--on-surface-light);
-    font-weight: 300;
-}
-
-html.simple-me > body .chip {
+.smpl .chip {
     position: relative;
-    float: left;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
     border: 0.1rem solid var(--on-surface-light);
     border-radius: 9999px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
+    display: inline-block;
+    line-height: 1rem;
 }
 
-html.simple-me > body .chip > img,
-html.simple-me > body .chip > em {
-    position: absolute;
-    width: 2.3rem;
-    height: 2.3rem;
-    padding: 0.4rem;
-    border-radius: 50%;
-    top: -0.1rem;
-    line-height: 1.4rem;
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-html.simple-me > body .chip.icon-l {
-    padding-left: 2.2rem;
-}
-
-html.simple-me > body .chip.icon-r {
-    padding-right: 2.2rem;
-}
-
-html.simple-me > body .chip.icon-l > img,
-html.simple-me > body .chip.badge-l > em,
-html.simple-me > body .chip.image-l > img {
-    left: -0.1rem;
-}
-
-html.simple-me > body .chip.icon-r > img,
-html.simple-me > body .chip.badge-r > em,
-html.simple-me > body .chip.image-r > img {
-    right: -0.1rem;
-}
-
-html.simple-me > body .chip.badge-r,
-html.simple-me > body .chip.close-r,
-html.simple-me > body .chip.image-r {
-    padding-right: 2.5rem;
-}
-
-html.simple-me > body .chip.badge-l,
-html.simple-me > body .chip.close-l,
-html.simple-me > body .chip.image-l {
+.smpl .chip.icon-l {
     padding-left: 2.5rem;
 }
 
-html.simple-me > body .chip.image-r > img,
-html.simple-me > body .chip.image-l > img {
+.smpl .chip.icon-r {
+    padding-right: 2.5rem;
+}
+.smpl .chip.icon-l > img,
+.smpl .chip.icon-r > img {
+    width: 1.75rem;
+    border-radius: 0;
+    height: auto;
+    top: 0.1rem;
+}
+
+.smpl .chip.icon-l > img {
+    left: 0.5rem;
+}
+
+.smpl .chip.icon-r > img {
+    right: 0.5rem;
+}
+
+.smpl .chip.badge-l > em,
+.smpl .chip.img-l > img {
+    left: -0.1rem;
+}
+
+.smpl .chip.badge-r > em,
+.smpl .chip.img-r > img {
+    right: -0.1rem;
+}
+
+.smpl .chip.close-r {
+    padding-right: 2.5rem;
+}
+
+.smpl .chip.badge-r,
+.smpl .chip.img-r {
+    padding-right: 3rem;
+}
+
+.smpl .chip.close-l {
+    padding-left: 2.5rem;
+}
+
+.smpl .chip.badge-l,
+.smpl .chip.img-l {
+    padding-left: 3rem;
+}
+
+.smpl .chip.img-r > img,
+.smpl .chip.img-l > img {
     padding: 0;
 }
 
-html.simple-me > body .chip.close-r > em,
-html.simple-me > body .chip.close-l > em {
+.smpl .chip.close-r > a,
+.smpl .chip.close-l > a {
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0.4rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.2rem;
+}
+
+.smpl .chip.close-r > a {
+    right: 0.3rem;
+}
+
+.smpl .chip.close-l > a {
+    left: 0.3rem;
+}
+
+.smpl .chip.close-r > a > img,
+.smpl .chip.close-l > a > img {
+    width: 1.6rem;
+    height: 1.6rem;
+    top: 0;
+    right: 0;
+}
+
+.smpl .chip.close-r > a:hover,
+.smpl .chip.close-l > a:hover {
     background-color: var(--primary);
-    color: var(--on-primary);
-    border: none;
-    font-family: system-ui;
-    line-height: 1.1rem;
-    width: 1.9rem;
-    height: 1.9rem;
-    top: 0.1rem;
-    cursor: pointer;
 }
 
-html.simple-me > body .chip.close-r > em:hover,
-html.simple-me > body .chip.close-l > em:hover {
-    background-color: var(--primary-dark);
+.smpl .chip.close-r > a:hover > img,
+.smpl .chip.close-l > a:hover > img {
+    filter: brightness(0) invert(1);
 }
 
-html.simple-me > body .chip.close-r > em {
-    right: 0.1rem;
-}
-
-html.simple-me > body .chip.close-l > em {
-    left: 0.1rem;
-}
-
-html.simple-me > body > button.nav {
+.smpl button.nav {
     width: 5rem;
     height: 5rem;
     position: fixed;
@@ -677,191 +817,106 @@ html.simple-me > body > button.nav {
     padding: 0;
 }
 
-html.simple-me > body > button.nav:hover {
+.smpl button.nav:hover {
     background-color: var(--primary-dark);
     color: var(--on-primary);
 }
 
-html.simple-me > body > button.nav > img {
+.smpl button.nav > img {
     filter: brightness(0) invert(1);
     width: 1.4rem;
 }
 
-html.simple-me > body aside,
-html.simple-me > body nav {
-    position: fixed;
-    z-index: 70;
-    background-color: var(--surface);
-    color: var(--on-surface);
-    border: 0.1em solid var(--on-surface-light);
-    box-shadow: 0 0.55rem 0.9rem var(--on-surface-shadow);
-    border-radius: 0.3rem;
-    width: 20rem;
-}
-
-html.simple-me > body aside {
-    top: 0;
-    left: 0;
-    z-index: 69;
-    border-radius: 0;
-    border: none;
-    height: 100%;
-    width: auto;
-    padding: 3rem 0;
-}
-
-html.simple-me > body aside > a,
-html.simple-me > body nav > a {
-    color: var(--on-surface);
-    padding: 1rem;
-    cursor: pointer;
-    border-radius: 0;
-    display: block;
-}
-
-html.simple-me > body aside > a {
-    padding: 1rem 3rem;
-}
-
-html.simple-me > body aside > a:hover,
-html.simple-me > body nav > a:hover {
-    color: var(--on-primary);
-    background-color: var(--primary-light);
-    border-left: 0.5rem solid var(--primary);
-    margin-left: -0.01rem;
-    text-decoration: none;
-}
-
-html.simple-me > body aside > a.selected,
-html.simple-me > body nav > a.selected {
-    border-left: 0.5rem solid var(--primary);
-    margin-left: -0.01rem;
-}
-
-html.simple-me > body aside h1,
-html.simple-me > body aside h2,
-html.simple-me > body aside h3,
-html.simple-me > body aside h4,
-html.simple-me > body aside h5,
-html.simple-me > body aside h6,
-html.simple-me > body aside p,
-html.simple-me > body nav h1,
-html.simple-me > body nav h2,
-html.simple-me > body nav h3,
-html.simple-me > body nav h4,
-html.simple-me > body nav h5,
-html.simple-me > body nav h6,
-html.simple-me > body nav p {
-    padding: 0.5rem 1rem;
-    margin: 0;
-}
-
-html.simple-me > body .is-hidden {
+.smpl .is-hidden {
     pointer-events: none;
     opacity: 0;
 }
 
-html.simple-me > body button,
-html.simple-me > body form input[type="submit"],
-html.simple-me > body a.button {
-    border-left: 0.1rem solid var(--primary-light);
-    border-top: 0.1rem solid var(--primary-light);
-    border-right: 0.1rem solid var(--primary-dark);
-    border-bottom: 0.1rem solid var(--primary-dark);
-    padding: 0.5rem 2rem;
-    background: var(--surface);
-    color: var(--primary);
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    border-radius: 0.5rem;
-    white-space: nowrap;
-    margin-bottom: 0.3rem;
+.smpl button > img.to-r {
+    float: right;
+    margin: 0 -0.5rem 0 0.5rem;
 }
 
-html.simple-me > body button.secondary,
-html.simple-me > body form input[type="submit"].secondary,
-html.simple-me > body a.button.secondary {
+.smpl button > img.to-l {
+    float: left;
+    margin: 0 0.5rem 0 -0.5rem;
+}
+
+.smpl button.secondary,
+.smpl form input[type="submit"].secondary,
+.smpl a.btn.secondary {
     color: var(--secondary);
     border-color: var(--secondary);
     background: var(--surface);
 }
 
-html.simple-me > body button.error,
-html.simple-me > body form input[type="submit"].error,
-html.simple-me > body a.button.error {
+.smpl button.error,
+.smpl form input[type="submit"].error,
+.smpl a.btn.error {
     color: var(--error);
     border-color: var(--error);
     background: var(--surface);
 }
 
-html.simple-me > body button.warning,
-html.simple-me > body form input[type="submit"].warning,
-html.simple-me > body a.button.warning {
+.smpl button.warning,
+.smpl form input[type="submit"].warning,
+.smpl a.btn.warning {
     color: var(--warning);
     border-color: var(--warning);
     background: var(--surface);
 }
 
-html.simple-me > body button.success,
-html.simple-me > body form input[type="submit"].success,
-html.simple-me > body a.button.success {
+.smpl button.success,
+.smpl form input[type="submit"].success,
+.smpl a.btn.success {
     color: var(--success);
     border-color: var(--success);
     background: var(--surface);
 }
 
-html.simple-me > body button:hover:not(:disabled):not(.nav),
-html.simple-me > body form input[type="submit"]:hover:not(:disabled),
-html.simple-me > body a.button:hover:not(.disabled) {
-    background-color: var(--primary);
-    color: var(--on-primary);
-    text-decoration: none;
-}
-
-html.simple-me > body button.secondary:hover:not(:disabled),
-html.simple-me > body form input[type="submit"].secondary:hover:not(:disabled),
-html.simple-me > body a.button.secondary:hover:not(.disabled) {
+.smpl mark,
+.smpl button.secondary:hover:not(:disabled),
+.smpl form input[type="submit"].secondary:hover:not(:disabled),
+.smpl a.btn.secondary:hover:not(.disabled) {
     background-color: var(--secondary);
     color: var(--on-secondary);
 }
 
-html.simple-me > body button.error:hover:not(:disabled),
-html.simple-me > body form input[type="submit"].error:hover:not(:disabled),
-html.simple-me > body a.button.error:hover:not(.disabled) {
+.smpl button.error:hover:not(:disabled),
+.smpl form input[type="submit"].error:hover:not(:disabled),
+.smpl a.btn.error:hover:not(.disabled) {
     background-color: var(--error);
     color: var(--on-error);
 }
 
-html.simple-me > body button.warning:hover:not(:disabled),
-html.simple-me > body form input[type="submit"].warning:hover:not(:disabled),
-html.simple-me > body a.button.warning:hover:not(.disabled) {
+.smpl button.warning:hover:not(:disabled),
+.smpl form input[type="submit"].warning:hover:not(:disabled),
+.smpl a.btn.warning:hover:not(.disabled) {
     background-color: var(--warning);
     color: var(--on-warning);
 }
 
-html.simple-me > body button.success:hover:not(:disabled),
-html.simple-me > body form input[type="submit"].success:hover:not(:disabled),
-html.simple-me > body a.button.success:hover:not(.disabled) {
+.smpl button.success:hover:not(:disabled),
+.smpl form input[type="submit"].success:hover:not(:disabled),
+.smpl a.btn.success:hover:not(.disabled) {
     background-color: var(--success);
     color: var(--on-success);
 }
 
-html.simple-me > body button:disabled,
-html.simple-me > body form input[type="submit"]:disabled,
-html.simple-me > body a.button.disabled {
+.smpl :disabled,
+.smpl a.disabled {
     cursor: default;
     color: var(--on-surface-light);
-    border: 0.1rem solid var(--on-surface-light);
+    border-color: var(--on-surface-light);
     text-decoration: none;
 }
 
-html.simple-me > body .progress {
+.smpl .progress {
     height: 0.3em;
     background-color: var(--on-background-light);
 }
 
-html.simple-me > body .progress > .indicator {
+.smpl .progress > .indicator {
     position: absolute;
     top: 0;
     left: 0;
@@ -869,7 +924,7 @@ html.simple-me > body .progress > .indicator {
     background-color: var(--primary);
 }
 
-html.simple-me > body .snackbar {
+.smpl .snackbar {
     position: fixed;
     color: transparent;
     width: 100%;
@@ -881,7 +936,7 @@ html.simple-me > body .snackbar {
     pointer-events: none;
 }
 
-html.simple-me > body .snackbar-item {
+.smpl .snackbar-item {
     pointer-events: all;
     flex: 1;
     background-color: var(--on-background);
@@ -897,21 +952,23 @@ html.simple-me > body .snackbar-item {
     box-shadow: 0 0.15rem 0.3rem var(--on-surface-shadow);
 }
 
-html.simple-me > body .snackbar-item > p {
+.smpl .snackbar-item > p {
     flex: 3;
     line-height: 1rem;
     white-space: nowrap;
     color: var(--surface);
 }
 
-html.simple-me > body .snackbar-item > a {
+.smpl .snackbar-item > a {
     flex: 1;
     white-space: nowrap;
     color: var(--primary-light);
     margin: 0.5rem 0 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
-html.simple-me > body .progress-circle {
+.smpl .progress-circle {
     margin: auto;
     border-radius: 50%;
     width: 8rem;
@@ -925,7 +982,7 @@ html.simple-me > body .progress-circle {
         );
 }
 
-html.simple-me > body .progress-circle.p25 {
+.smpl .progress-circle.p25 {
     background: 
         radial-gradient(var(--surface) 64%, transparent 65%), 
         conic-gradient(
@@ -935,7 +992,7 @@ html.simple-me > body .progress-circle.p25 {
         );
 }
 
-html.simple-me > body .progress-circle.p50 {
+.smpl .progress-circle.p50 {
     background: 
         radial-gradient(var(--surface) 64%, transparent 65%), 
         conic-gradient(
@@ -945,7 +1002,7 @@ html.simple-me > body .progress-circle.p50 {
         );
 }
 
-html.simple-me > body .progress-circle.p75 {
+.smpl .progress-circle.p75 {
     background: 
         radial-gradient(var(--surface) 64%, transparent 65%), 
         conic-gradient(
@@ -955,7 +1012,7 @@ html.simple-me > body .progress-circle.p75 {
         );
 }
 
-html.simple-me > body .progress-circle.p100 {
+.smpl .progress-circle.p100 {
     background: 
         radial-gradient(var(--surface) 64%, transparent 65%), 
         conic-gradient(
@@ -965,7 +1022,7 @@ html.simple-me > body .progress-circle.p100 {
         );
 }
 
-html.simple-me > body .progress-circle > p {
+.smpl .progress-circle > p {
     position: absolute;
     top: 2.3rem;
     left: 0;
@@ -975,180 +1032,217 @@ html.simple-me > body .progress-circle > p {
     line-height: 2.5rem;
 }
 
-html.simple-me > body .padding-1,
-html.simple-me > body .padding-inside-1 > * {
-    padding: 0.5rem;
-}
-
-html.simple-me > body .padding-2,
-html.simple-me > body .padding-inside-2 > * {
-    padding: 1rem;
-}
-
-html.simple-me > body .padding-3,
-html.simple-me > body .padding-inside-3 > * {
-    padding: 1.5rem;
-}
-
-html.simple-me > body .padding-4,
-html.simple-me > body .padding-inside-4 > * {
-    padding: 2rem;
-}
-
-html.simple-me > body .padding-5,
-html.simple-me > body .padding-inside-5 > * {
-    padding: 2.5rem;
-}
-
-html.simple-me > body .padding-6,
-html.simple-me > body .padding-inside-6 > * {
-    padding: 3rem;
-}
-
-html.simple-me > body .margin-1,
-html.simple-me > body .margin-inside-1 > * {
-    margin: 0.5rem;
-}
-
-html.simple-me > body .margin-2,
-html.simple-me > body .margin-inside-2 > * {
-    margin: 1rem;
-}
-
-html.simple-me > body .margin-3,
-html.simple-me > body .margin-inside-3 > * {
-    margin: 1.5rem;
-}
-
-html.simple-me > body .margin-4,
-html.simple-me > body .margin-inside-4 > * {
-    margin: 2rem;
-}
-
-html.simple-me > body .margin-5,
-html.simple-me > body .margin-inside-5 > * {
-    margin: 2.5rem;
-}
-
-html.simple-me > body .margin-6,
-html.simple-me > body .margin-inside-6 > * {
-    margin: 3rem;
-}
-
-html.simple-me > body .h-1 {
-    height: 1rem;
-}
-
-html.simple-me > body .h-2 {
-    height: 2rem;
-}
-
-html.simple-me > body .h-3 {
-    height: 3rem;
-}
-
-html.simple-me > body .h-4 {
-    height: 4rem;
-}
-
-html.simple-me > body .h-5 {
-    height: 5rem;
-}
-
-html.simple-me > body .h-6 {
-    height: 6rem;
-}
-
-html.simple-me > body .w-1 {
-    width: 1rem;
-}
-
-html.simple-me > body .w-2 {
-    width: 2rem;
-}
-
-html.simple-me > body .w-3 {
-    width: 3rem;
-}
-
-html.simple-me > body .w-4 {
-    width: 4rem;
-}
-
-html.simple-me > body .w-5 {
-    width: 5rem;
-}
-
-html.simple-me > body .w-6 {
-    width: 6rem;
-}
-
-html.simple-me > body .bg-background {
+.smpl .bg-background {
     background-color: var(--background);
 }
 
-html.simple-me > body .bg-surface {
+.smpl .bg-surface {
     background-color: var(--surface);
 }
 
+.smpl .bg-error {
+    background-color: var(--error);
+}
+
+.smpl .bg-warning {
+    background-color: var(--warning);
+}
+
+.smpl .bg-success {
+    background-color: var(--success);
+}
+
+.smpl .bg-primary {
+    background-color: var(--primary);
+}
+
+.smpl .bg-secondary {
+    background-color: var(--secondary);
+}
+
+.smpl .on-background {
+    background-color: var(--on-background);
+}
+
+.smpl .on-surface {
+    background-color: var(--on-surface);
+}
+
+.smpl .dots,
+.smpl .tabs {
+    background-color: var(--background);
+}
+
+.smpl .dots {
+    padding-top: 0.5rem;
+}
+
+.smpl .tabs {
+    padding-bottom: 0.5rem;
+}
+
+.smpl .tabs > section {
+    border-bottom: 0.1rem solid var(--on-background-light);
+    display: flex;
+    width: 100%;
+    background-color: var(--surface);
+}
+
+.smpl .tabs > section > a {
+    padding: 0.75rem 1rem;
+    border-bottom: 0.3rem solid transparent;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.smpl .tabs > section > a:hover {
+    text-decoration: none;
+    background-color: var(--on-background-light);
+}
+
+.smpl .tabs > section > a.selected {
+    border-bottom-color: var(--primary);
+}
+
+.smpl .dots > article,
+.smpl .tabs > article {
+    display: none;
+    margin: 0.5rem 0.5rem 0;
+    padding: 1rem;
+    background-color: var(--surface);
+    border-radius: 0.5rem;
+}
+
+.smpl .dots > article {
+    margin: 0 0.5rem 0.5rem;
+}
+
+.smpl .dots > article.selected,
+.smpl .tabs > article.selected {
+    display: inherit;
+}
+
+.smpl .dots > section {
+    width: 100%;
+    background-color: var(--surface);
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+
+.smpl .dots > section > a {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.smpl .dots > section > a.next,
+.smpl .dots > section > a.prev {
+    margin-bottom: -0.2rem;
+}
+
+.smpl .dots > section > a.next > img,
+.smpl .dots > section > a.prev > img {
+    width: 1rem;
+    filter: 
+        opacity(0.2) 
+        drop-shadow(0 0 0 var(--primary))
+        drop-shadow(0 0 0 var(--primary))
+        drop-shadow(0 0 0 var(--primary));
+}
+
+.smpl .dots > section > a:not(.prev):not(.next) {
+    background-color: var(--on-background-light);
+    border-radius: 50%;
+    height: 0.5rem;
+    width: 0.5rem;
+}
+
+.smpl .dots > section > a:not(.prev):not(.next).selected {
+    background-color: var(--primary);
+}
+
+/* MEDIA */
+
 @media (max-width: 640px) {
 
-    html.simple-me > body h4 {
+    .smpl h4 {
         font-weight: 300;
     }
 
-    html.simple-me > body h1 {
+    .smpl h1 {
         font-size: 2.2rem;
     }
     
-    html.simple-me > body h2 {
+    .smpl h2 {
         font-size: 2rem;
     }
     
-    html.simple-me > body h3 {
+    .smpl h3 {
         font-size: 1.8rem;
     }
     
-    html.simple-me > body h4 {
+    .smpl h4 {
         font-size: 1.6rem;
     }
     
-    html.simple-me > body h5 {
+    .smpl h5 {
         font-size: 1.4rem;
     }
     
-    html.simple-me > body h6 {
+    .smpl h6 {
         font-size: 1.2rem;
     }
     
-    html.simple-me > body p {
+    .smpl p {
         margin: 0.5rem 0;
         line-height: 1.45rem;
     }
 
-    html.simple-me > body .grid > * {
+    .smpl form > * {
         display: block;
     }
 
-    html.simple-me > body form > * {
-        display: block;
-    }
-
-    html.simple-me > body .responsive {
-        overflow-x: auto;
-    }
-
-    html.simple-me > body nav {
+    .smpl nav {
         width: 75%;
         padding-bottom: 0;
     }
 
-    html.simple-me > body nav > div {
+    .smpl nav > div {
         padding: 2rem 1rem;
         border-bottom: 0.1rem solid var(--surface);
     }
 
-    html.simple-me > body .hide-on-small {
+    .smpl .grid > * {
+        display: block;
+    }
+
+    .smpl .responsive {
+        overflow-x: auto;
+    }
+
+    .smpl .hide-on-small {
         display: none;
+    }
+
+    .smpl .card.dialog {
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        max-width: unset;
+        box-shadow: 0 0 0 9999px var(--on-surface-shadow), 0 0.35rem 0.6rem var(--on-surface-shadow);
+        transform: translate(0, 0);
+    }
+
+    .smpl .card.dialog > header {
+        height: fit-content;
+    }
+
+    .smpl .card.dialog > main {
+        height: 100%;
+    }
+
+    .smpl .card.dialog > footer {
+        height: fit-content;
     }
 }
