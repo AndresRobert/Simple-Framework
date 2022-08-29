@@ -153,6 +153,7 @@
     color: var(--surface);
     padding: 1rem;
     display: block;
+    overflow: auto;
 }
 .smpl pre {
     padding: 0;
