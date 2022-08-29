@@ -27,6 +27,8 @@
     /* SIZES */
     --main-px: 14px;
     --media-width: 640px;
+    --hue-rotate: 30deg;
+    --saturate: 1.4;
 }
 /* BASE */
 .smpl {
@@ -289,17 +291,17 @@
 .smpl form > * > * > input[type="file"] {
     padding: .25em;
 }
+.smpl form > * > * > input[type="range"],
+.smpl form > * > * > input[type="radio"],
+.smpl form > * > * > input[type="checkbox"] {
+    filter: hue-rotate(var(--hue-rotate)) saturate(var(--saturate));
+    cursor: pointer;
+}
 .smpl form > * > * > input[type="radio"],
 .smpl form > * > * > input[type="checkbox"] {
     width: auto;
     margin-top: 2rem;
     transform: scale(1.5);
-    filter: hue-rotate(30deg) saturate(1.4);
-    cursor: pointer;
-}
-.smpl form > * > * > input[type="range"] {
-    filter: hue-rotate(30deg) saturate(1.4);
-    cursor: pointer;
 }
 .smpl input[type="range"] {
     pointer-events: none;

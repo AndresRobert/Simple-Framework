@@ -461,5 +461,40 @@ Radial
 </html>
 ```
 
+## Apply themes as easy as this:
+Simple Blue Theme
+```css
+:root {
+    --background: #DEF;
+    --on-background-light: #CDF;
+    --primary: #06D;
+    --primary-dark: #049;
+    --primary-light: #9CF;
+    --hue-rotate: 360deg;
+}
+```
+Simple Green Theme
+```css
+:root {
+    --background: #DFD;
+    --on-background-light: #BDA;
+    --primary: #3A0;
+    --primary-dark: #270;
+    --primary-light: #AF8;
+    --hue-rotate: 245deg;
+}
+```
+Simple Red Theme
+```css
+:root {
+    --background: #ffdddd;
+    --on-background-light: #FFCCDD;
+    --primary: #DD0011;
+    --primary-dark: #770011;
+    --primary-light: #FF9999;
+    --hue-rotate: 145deg;
+}
+```
+
 ## See it in action
 Visit [Simple Framework](https://andresrobert.github.io/Simple-Framework/)
