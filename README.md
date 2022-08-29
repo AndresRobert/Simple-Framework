@@ -171,6 +171,49 @@ Use `.chip` class to convert any container into a chip
 <div class="chip image-l"><i>.image-l</i> chip<img src="default.jpg"></div>
 ```
 
+## Tabs
+`.tabs` class is used to organize data in a seamless layout
+```html
+<main class="tabs">
+    <section>
+        <a id="title1" href="#!" class="selected">Title 1</a>
+        <a id="title2" href="#!">Title 2</a>
+        <a id="title3" href="#!">Title 3</a>
+    </section>
+    <article id="tab1" class="selected">
+        Content A
+    </article>
+    <article id="tab2">
+        Content B
+    </article>
+    <article id="tab3">
+        Content C
+    </article>
+</main>
+```
+
+## Dots
+`.dots` is also a dotted layout for indexing data
+```html
+<main class="dots">
+    <article class="selected">
+        Content Dot A
+    </article>
+    <section>
+        <a class="prev" href="#!">
+            <img src="src/img/prev.png" alt="prev">
+        </a>
+        <a href="#!" class="selected"></a>
+        <a href="#!"></a>
+        ...
+        <a href="#!"></a>
+        <a class="next" href="#!">
+            <img src="src/img/next.png" alt="next">
+        </a>
+    </section>
+</main>
+```
+
 ## Lists
 Lists need no classes
 ```html
@@ -239,7 +282,7 @@ use `.snackbar` as a container and `.snackbar-item` as the actual message contai
 ## Appbar
 Use `header` or `footer` with class `.app-bar` to create them
 ```html
-<header class="app-bar is-hidden">
+<header class="app-bar">
     <a href="#!">
         <img src="src/img/menu.png" alt="menu">
     </a>
@@ -250,7 +293,7 @@ Use `header` or `footer` with class `.app-bar` to create them
     </div>
 </header>
 ...
-<footer class="app-bar is-hidden">
+<footer class="app-bar">
     <a href="#!">
         <img src="src/img/menu.png" alt="menu">
         <p>Menu</p>
@@ -267,7 +310,7 @@ Use `header` or `footer` with class `.app-bar` to create them
 ```
 You can use aside as the menu container for the sandwich button
 ```html
-<aside class="is-hidden">
+<aside>
     <a class="selected">nav item 1</a>
     <a>nav item 2</a>
     <a>nav item 3</a>
@@ -406,11 +449,11 @@ Radial
 ## Start Here
 ```html
 <!DOCTYPE html>
-<html lang="en" class="simple-me">
+<html lang="en" class="smpl">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Your Simple New Project</title>
-        <link href="path/to/simple.css" rel="stylesheet">
+        <link href="path/to/smpl.min.css" rel="stylesheet">
     </head>
     <body>
     <!-- Content -->
