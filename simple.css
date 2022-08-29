@@ -154,6 +154,10 @@
     padding: 1rem;
     display: block;
 }
+.smpl pre {
+    padding: 0;
+    margin: 0;
+}
 /* LAYOUT */
 .smpl > body > footer,
 .smpl > body > header {
