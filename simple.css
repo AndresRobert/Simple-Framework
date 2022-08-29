@@ -148,6 +148,12 @@
 .smpl ::placeholder {
     color: var(--on-surface-light);
 }
+.smpl code {
+    background: var(--on-surface);
+    color: var(--surface);
+    padding: 1rem;
+    display: block;
+}
 /* LAYOUT */
 .smpl > body > footer,
 .smpl > body > header {
