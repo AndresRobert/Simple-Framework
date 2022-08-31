@@ -496,5 +496,6 @@ Simple Red Theme
 }
 ```
 
-## See it in action
-Visit [Simple Framework](https://andresrobert.github.io/Simple-Framework/)
+## Version
+Version 1.0.0
+See it in action [here](https://andresrobert.github.io/Simple-Framework/)
